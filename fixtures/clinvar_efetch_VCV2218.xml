@@ -1,0 +1,2726 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+                        
+<ClinVarResult-Set><VariationArchive VariationID="2218" VariationName="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp)" VariationType="single nucleotide variant" Accession="VCV000002218" Version="44" RecordType="classified" NumberOfSubmissions="22" NumberOfSubmitters="21" DateLastUpdated="2026-04-13" DateCreated="2013-04-04" MostRecentSubmission="2026-02-23">
+  <RecordStatus>current</RecordStatus>
+  <Species>Homo sapiens</Species>
+  <ClassifiedRecord>
+    <SimpleAllele AlleleID="17257" VariationID="2218">
+      <GeneList>
+        <Gene Symbol="LOC107303340" FullName="3p25 von Hippel-Lindau tumor suppressor, E3 ubiquitin protein ligase Alu-mediated recombination region" GeneID="107303340" Source="calculated" RelationshipType="within multiple genes by overlap">
+          <Location>
+            <CytogeneticLocation>3p25.3</CytogeneticLocation>
+            <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" AssemblyStatus="current" Chr="3" Accession="NC_000003.12" start="10142339" stop="10160352" display_start="10142339" display_stop="10160352" Strand="+"/>
+          </Location>
+        </Gene>
+        <Gene Symbol="VHL" FullName="von Hippel-Lindau tumor suppressor" GeneID="7428" HGNC_ID="HGNC:12687" Source="submitted" RelationshipType="within multiple genes by overlap">
+          <Location>
+            <CytogeneticLocation>3p25.3</CytogeneticLocation>
+            <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" AssemblyStatus="current" Chr="3" Accession="NC_000003.12" start="10141778" stop="10153667" display_start="10141778" display_stop="10153667" Strand="+"/>
+            <SequenceLocation Assembly="GRCh37" AssemblyAccessionVersion="GCF_000001405.25" AssemblyStatus="previous" Chr="3" Accession="NC_000003.11" start="10183318" stop="10195353" display_start="10183318" display_stop="10195353" Strand="+"/>
+          </Location>
+          <OMIM>608537</OMIM>
+          <Haploinsufficiency last_evaluated="2022-05-11" ClinGen="https://www.ncbi.nlm.nih.gov/projects/dbvar/ISCA/isca_gene.cgi?sym=VHL">Sufficient evidence for dosage pathogenicity</Haploinsufficiency>
+          <Triplosensitivity last_evaluated="2022-05-11" ClinGen="https://www.ncbi.nlm.nih.gov/projects/dbvar/ISCA/isca_gene.cgi?sym=VHL">No evidence available</Triplosensitivity>
+          <Property>gene_acmg_incidental_2013</Property>
+          <Property>gene_acmg_incidental_2016</Property>
+          <Property>gene_acmg_incidental_2021</Property>
+          <Property>gene_acmg_incidental_2022</Property>
+        </Gene>
+      </GeneList>
+      <Name>NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp)</Name>
+      <CanonicalSPDI>NC_000003.12:10149821:C:T</CanonicalSPDI>
+      <VariantType>single nucleotide variant</VariantType>
+      <Location>
+        <CytogeneticLocation>3p25.3</CytogeneticLocation>
+        <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" forDisplay="true" AssemblyStatus="current" Chr="3" Accession="NC_000003.12" start="10149822" stop="10149822" display_start="10149822" display_stop="10149822" variantLength="1" positionVCF="10149822" referenceAlleleVCF="C" alternateAlleleVCF="T"/>
+        <SequenceLocation Assembly="GRCh37" AssemblyAccessionVersion="GCF_000001405.25" AssemblyStatus="previous" Chr="3" Accession="NC_000003.11" start="10191506" stop="10191506" display_start="10191506" display_stop="10191506" variantLength="1" positionVCF="10191506" referenceAlleleVCF="C" alternateAlleleVCF="T"/>
+      </Location>
+      <OtherNameList>
+        <Name>p.R167W:CGG&gt;TGG</Name>
+      </OtherNameList>
+      <ProteinChange>R167W</ProteinChange>
+      <ProteinChange>R126W</ProteinChange>
+      <HGVSlist>
+        <HGVS Type="protein">
+          <ProteinExpression sequenceAccessionVersion="P40337" sequenceAccession="P40337" change="p.Arg167Trp">
+            <Expression>P40337:p.Arg167Trp</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Assembly="GRCh38" Type="genomic, top-level">
+          <NucleotideExpression sequenceAccessionVersion="NC_000003.12" sequenceAccession="NC_000003" sequenceVersion="12" change="g.10149822C&gt;T" Assembly="GRCh38">
+            <Expression>NC_000003.12:g.10149822C&gt;T</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="NG_008212.3" sequenceAccession="NG_008212" sequenceVersion="3" change="g.13188C&gt;T">
+            <Expression>NG_008212.3:g.13188C&gt;T</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="NG_046756.1" sequenceAccession="NG_046756" sequenceVersion="1" change="g.7584C&gt;T">
+            <Expression>NG_046756.1:g.7584C&gt;T</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_000551.4" sequenceAccession="NM_000551" sequenceVersion="4" change="c.499C&gt;T" MANESelect="true">
+            <Expression>NM_000551.4:c.499C&gt;T</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_000542.1" sequenceAccession="NP_000542" sequenceVersion="1" change="p.Arg167Trp" singleLetterProteinChange="R167W">
+            <Expression>NP_000542.1:p.Arg167Trp</Expression>
+          </ProteinExpression>
+          <MolecularConsequence ID="SO:0001583" Type="missense variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_001354723.2" sequenceAccession="NM_001354723" sequenceVersion="2" change="c.*53C&gt;T">
+            <Expression>NM_001354723.2:c.*53C&gt;T</Expression>
+          </NucleotideExpression>
+          <MolecularConsequence ID="SO:0001624" Type="3 prime UTR variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_198156.3" sequenceAccession="NM_198156" sequenceVersion="3" change="c.376C&gt;T">
+            <Expression>NM_198156.3:c.376C&gt;T</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_937799.1" sequenceAccession="NP_937799" sequenceVersion="1" change="p.Arg126Trp" singleLetterProteinChange="R126W">
+            <Expression>NP_937799.1:p.Arg126Trp</Expression>
+          </ProteinExpression>
+          <MolecularConsequence ID="SO:0001583" Type="missense variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="LRG_322" sequenceAccession="LRG_322">
+            <Expression>LRG_322:g.13188C&gt;T</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="LRG_322t1" sequenceAccession="LRG_322t1">
+            <Expression>LRG_322t1:c.499C&gt;T</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="LRG_322p1" sequenceAccession="LRG_322p1" change="p.Arg167Trp">
+            <Expression>LRG_322p1:p.Arg167Trp</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Assembly="GRCh37" Type="genomic, top-level">
+          <NucleotideExpression sequenceAccessionVersion="NC_000003.11" sequenceAccession="NC_000003" sequenceVersion="11" change="g.10191506C&gt;T" Assembly="GRCh37">
+            <Expression>NC_000003.11:g.10191506C&gt;T</Expression>
+          </NucleotideExpression>
+        </HGVS>
+      </HGVSlist>
+      <XRefList>
+        <XRef ID="CA020450" DB="ClinGen"/>
+        <XRef ID="P40337#VAR_005762" DB="UniProtKB"/>
+        <XRef Type="Allelic variant" ID="608537.0003" DB="OMIM"/>
+        <XRef Type="rs" ID="5030820" DB="dbSNP"/>
+      </XRefList>
+      <AlleleFrequencyList>
+        <AlleleFrequency Value="0.00001" Source="Exome Aggregation Consortium (ExAC)"/>
+        <AlleleFrequency Value="0.00001" Source="The Genome Aggregation Database (gnomAD)"/>
+        <AlleleFrequency Value="0.00001" Source="The Genome Aggregation Database (gnomAD), exomes"/>
+      </AlleleFrequencyList>
+    </SimpleAllele>
+    <RCVList>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND Von Hippel-Lindau syndrome" Accession="RCV000002302" Version="22">
+        <ClassifiedConditionList TraitSetID="570">
+          <ClassifiedCondition DB="MedGen" ID="C0019562">Von Hippel-Lindau syndrome</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, multiple submitters, no conflicts</ReviewStatus>
+            <Description DateLastEvaluated="2025-11-21" SubmissionCount="9">Pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND Pheochromocytoma" Accession="RCV000002303" Version="15">
+        <ClassifiedConditionList TraitSetID="572">
+          <ClassifiedCondition DB="MedGen" ID="C0031511">Pheochromocytoma</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description DateLastEvaluated="2025-01-20" SubmissionCount="2">Pathogenic</Description>
+          </GermlineClassification>
+          <SomaticClinicalImpact>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description ClinicalImpactAssertionType="diagnostic" ClinicalImpactClinicalSignificance="supports diagnosis" DateLastEvaluated="2024-07-12" SubmissionCount="1">Tier I - Strong</Description>
+          </SomaticClinicalImpact>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND Hereditary cancer-predisposing syndrome" Accession="RCV000132159" Version="18">
+        <ClassifiedConditionList TraitSetID="13598">
+          <ClassifiedCondition DB="MedGen" ID="C0027672">Hereditary cancer-predisposing syndrome</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description DateLastEvaluated="2025-06-25" SubmissionCount="1">Pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND not provided" Accession="RCV000213079" Version="24">
+        <ClassifiedConditionList TraitSetID="9460">
+          <ClassifiedCondition DB="MedGen" ID="C3661900">not provided</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, multiple submitters, no conflicts</ReviewStatus>
+            <Description DateLastEvaluated="2024-07-15" SubmissionCount="5">Pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND multiple conditions" Accession="RCV000627746" Version="19">
+        <ClassifiedConditionList TraitSetID="23764">
+          <ClassifiedCondition DB="MedGen" ID="C1837915">Chuvash polycythemia</ClassifiedCondition>
+          <ClassifiedCondition DB="MedGen" ID="C0019562">Von Hippel-Lindau syndrome</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description DateLastEvaluated="2025-11-24" SubmissionCount="1">Pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND multiple conditions" Accession="RCV000763092" Version="12">
+        <ClassifiedConditionList TraitSetID="10168">
+          <ClassifiedCondition DB="MedGen" ID="C1837915">Chuvash polycythemia</ClassifiedCondition>
+          <ClassifiedCondition DB="MedGen" ID="CN074294">Nonpapillary renal cell carcinoma</ClassifiedCondition>
+          <ClassifiedCondition DB="MedGen" ID="C0031511">Pheochromocytoma</ClassifiedCondition>
+          <ClassifiedCondition DB="MedGen" ID="C0019562">Von Hippel-Lindau syndrome</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, multiple submitters, no conflicts</ReviewStatus>
+            <Description DateLastEvaluated="2024-05-13" SubmissionCount="2">Pathogenic/Likely pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.499C&gt;T (p.Arg167Trp) AND Chuvash polycythemia" Accession="RCV003992144" Version="3">
+        <ClassifiedConditionList TraitSetID="574">
+          <ClassifiedCondition DB="MedGen" ID="C1837915">Chuvash polycythemia</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description DateLastEvaluated="2024-04-04" SubmissionCount="1">Likely pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+    </RCVList>
+    <Classifications>
+      <GermlineClassification DateLastEvaluated="2025-11-24" NumberOfSubmissions="21" NumberOfSubmitters="20" DateCreated="2013-04-04" MostRecentSubmission="2026-02-23">
+        <ReviewStatus>criteria provided, multiple submitters, no conflicts</ReviewStatus>
+        <Description>Pathogenic/Likely pathogenic</Description>
+        <Explanation DataSource="ClinVar" Type="public">Pathogenic (15); Likely pathogenic (2)</Explanation>
+        <Citation Type="general">
+          <ID Source="PubMed">10205047</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">10900011</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">12000816</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">14722919</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">14973063</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">15300849</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">17102069</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">18836774</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">19464396</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">19574279</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">19602254</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">20233476</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">20660572</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">21463266</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">21519372</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">22799452</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">23512077</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">25119015</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">25390905</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">25563310</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">27527340</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">27539324</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">28944243</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">29124493</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">29616089</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">30042107</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">33720516</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">33745191</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">34654685</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">34926252</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">35524216</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">36715412</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">37529773</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">7604013</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">7728151</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">7784063</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">7987306</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">8270255</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">8592333</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">8956040</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9156047</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9829911</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9829912</ID>
+        </Citation>
+        <DescriptionHistory Dated="2024-04-11">
+          <Description>Pathogenic</Description>
+        </DescriptionHistory>
+        <DescriptionHistory Dated="2023-07-15">
+          <Description>Conflicting classifications of pathogenicity</Description>
+        </DescriptionHistory>
+        <DescriptionHistory Dated="2023-07-03">
+          <Description>Pathogenic</Description>
+        </DescriptionHistory>
+        <DescriptionHistory Dated="2018-05-29">
+          <Description>Pathogenic/Likely pathogenic</Description>
+        </DescriptionHistory>
+        <DescriptionHistory Dated="2017-03-07">
+          <Description>Pathogenic</Description>
+        </DescriptionHistory>
+        <ConditionList>
+          <TraitSet ID="13598" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="18746" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">Neoplastic Syndromes, Hereditary</ElementValue>
+                <XRef ID="D009386" DB="MeSH"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Hereditary Cancer Syndrome</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+                <XRef ID="699346009" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Tumor predisposition</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Hereditary neoplastic syndrome</ElementValue>
+                <XRef ID="MONDO:0015356" DB="MONDO"/>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="19921"/>
+                <XRef ID="19921" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <Citation Type="general" Abbrev="IARC, 2008">
+                <ID Source="pmc">3075918</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <XRef ID="140162" DB="Orphanet"/>
+              <XRef ID="C0027672" DB="MedGen"/>
+              <XRef ID="D009386" DB="MeSH"/>
+              <XRef ID="MONDO:0015356" DB="MONDO"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="23764" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="1779" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">POLYCYTHEMIA, VHL-DEPENDENT</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Chuvash polycythemia</ElementValue>
+                <XRef ID="MONDO:0009892" DB="MONDO"/>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Alternate">CP</ElementValue>
+              </Symbol>
+              <Symbol>
+                <ElementValue Type="Alternate">ECYT2</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="17176"/>
+                <XRef ID="17176" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <Citation Type="Translational/Evidence-based" Abbrev="EuroGenetest, 2012">
+                <ID Source="PubMed">22274579</ID>
+              </Citation>
+              <XRef ID="238557" DB="Orphanet"/>
+              <XRef ID="C1837915" DB="MedGen"/>
+              <XRef ID="MONDO:0009892" DB="MONDO"/>
+              <XRef Type="MIM" ID="263400" DB="OMIM"/>
+            </Trait>
+            <Trait ID="6116" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">VHL syndrome</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Von Hippel-Lindau syndrome</ElementValue>
+                <XRef ID="46659004" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Von Hippel-Lindau</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">von Hippel–Lindau syndrome</ElementValue>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">VHLS</ElementValue>
+                <XRef Type="MIM" ID="193300" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="public definition">Von Hippel-Lindau syndrome (VHL) is characterized by hemangioblastomas of the brain, spinal cord, and retina; renal cysts and clear cell renal cell carcinoma; pheochromocytoma and paraganglioma; pancreatic cysts and neuroendocrine tumors; endolymphatic sac tumors; and epididymal and broad ligament cystadenomas. Retinal hemangioblastomas may be the initial manifestation of VHL and can cause vision loss. Cerebellar hemangioblastomas may be associated with headache, vomiting, gait disturbances, or ataxia. Spinal hemangioblastomas and related syrinx usually present with pain. Sensory and motor loss may develop with cord compression. Renal cell carcinoma occurs in about 70% of individuals with VHL and is the leading cause of mortality. Pheochromocytomas can be asymptomatic but may cause sustained or episodic hypertension. Pancreatic lesions often remain asymptomatic and rarely cause endocrine or exocrine insufficiency. Endolymphatic sac tumors can cause hearing loss of varying severity, which can be a presenting symptom. Cystadenomas of the epididymis are relatively common. They rarely cause problems, unless bilateral, in which case they may result in infertility.</Attribute>
+                <XRef ID="NBK1463" DB="GeneReviews"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="273">loss of function</Attribute>
+                <XRef ID="GTR000314230" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552245" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000528276" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000592450" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552165" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="7855"/>
+                <XRef ID="7855" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301636</ID>
+                <ID Source="BookShelf">NBK1463</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NSGC, 2004">
+                <ID Source="PubMed">15604628</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2013">
+                <ID Source="PubMed">23788249</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2015">
+                <ID Source="PubMed">25356965</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2016">
+                <ID Source="PubMed">27854360</ID>
+                <ID Source="DOI">10.1038/gim.2016.190</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Renal cell carcinoma genetics">
+                <ID Source="PubMed">26389510</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Von Hippel-Lindau">
+                <URL>https://www.cancer.gov/types/kidney/hp/renal-cell-carcinoma-genetics/vhl-syndrome</URL>
+                <CitationText>PDQ® Cancer Genetics Editorial Board. PDQ Von Hippel-Lindau Disease. Bethesda, MD: National Cancer Institute. Updated &lt;03/08/2021&gt;. Accessed &lt;05/05/2021&gt;.</CitationText>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <XRef ID="892" DB="Orphanet"/>
+              <XRef ID="C0019562" DB="MedGen"/>
+              <XRef ID="MONDO:0008667" DB="MONDO"/>
+              <XRef Type="MIM" ID="193300" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="10168" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="1779" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">POLYCYTHEMIA, VHL-DEPENDENT</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Chuvash polycythemia</ElementValue>
+                <XRef ID="MONDO:0009892" DB="MONDO"/>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Alternate">CP</ElementValue>
+              </Symbol>
+              <Symbol>
+                <ElementValue Type="Alternate">ECYT2</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="17176"/>
+                <XRef ID="17176" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <Citation Type="Translational/Evidence-based" Abbrev="EuroGenetest, 2012">
+                <ID Source="PubMed">22274579</ID>
+              </Citation>
+              <XRef ID="238557" DB="Orphanet"/>
+              <XRef ID="C1837915" DB="MedGen"/>
+              <XRef ID="MONDO:0009892" DB="MONDO"/>
+              <XRef Type="MIM" ID="263400" DB="OMIM"/>
+            </Trait>
+            <Trait ID="3796" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Pheochromocytoma</ElementValue>
+                <XRef ID="HP:0002666" DB="Human Phenotype Ontology"/>
+                <XRef ID="MONDO:0008233" DB="MONDO"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">MAX-Related Hereditary Paraganglioma-Pheochromocytoma Syndrome</ElementValue>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="15105"/>
+                <XRef ID="15105" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">TMEM127-Related Susceptibility to Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">RET-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">KIF1B-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">MAX-Related Susceptibility to Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">VHL-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">SDHB-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">SDHD-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">MAX-Related Hereditary Paraganglioma-Pheochromocytoma Syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="public definition">Hereditary paraganglioma-pheochromocytoma (PGL/PCC) syndromes are characterized by paragangliomas (tumors that arise from neuroendocrine tissues distributed along the paravertebral axis from the base of the skull to the pelvis) and pheochromocytomas (paragangliomas that are confined to the adrenal medulla). Sympathetic paragangliomas cause catecholamine excess; parasympathetic paragangliomas are most often nonsecretory. Extra-adrenal parasympathetic paragangliomas are located predominantly in the skull base and neck (referred to as head and neck paragangliomas [HNPGLs]) and sometimes in the upper mediastinum; approximately 95% of such tumors are nonsecretory. In contrast, extra-adrenal sympathetic paragangliomas are generally confined to the lower mediastinum, abdomen, and pelvis, and are typically secretory. Pheochromocytomas, which arise from the adrenal medulla, typically lead to catecholamine excess. Symptoms of PGL/PCCs result from either mass effects or catecholamine hypersecretion (e.g., sustained or paroxysmal elevations in blood pressure, headache, episodic profuse sweating, forceful palpitations, pallor, and apprehension or anxiety). The risk for developing metastatic disease is greater for extra-adrenal sympathetic paragangliomas than for pheochromocytomas. Additional tumors reported in individuals with hereditary PGL/PCC syndromes include gastrointestinal stromal tumors (GISTs), pulmonary chondromas, and clear cell renal cell carcinoma.</Attribute>
+                <XRef ID="NBK1548" DB="GeneReviews"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301715</ID>
+                <ID Source="BookShelf">NBK1548</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ASCO, 2014">
+                <ID Source="PubMed">24493721</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Endocrine and Neuroendocrine Neoplasia genetics">
+                <ID Source="PubMed">26389271</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2021">
+                <ID Source="PubMed">33939658</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="NCCN, 2023">
+                <URL>https://www.nccn.org/professionals/physician_gls/pdf/neuroendocrine.pdf</URL>
+                <CitationText>NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines®), Neuroendocrine and Adrenal Tumors, 2023</CitationText>
+              </Citation>
+              <XRef ID="29072" DB="Orphanet"/>
+              <XRef ID="C0031511" DB="MedGen"/>
+              <XRef ID="MONDO:0008233" DB="MONDO"/>
+              <XRef Type="MIM" ID="171300" DB="OMIM"/>
+              <XRef Type="primary" ID="HP:0002666" DB="Human Phenotype Ontology"/>
+            </Trait>
+            <Trait ID="15944" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Nonpapillary renal cell carcinoma</ElementValue>
+                <XRef ID="MONDO:0007763" DB="MONDO"/>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Alternate">RCC</ElementValue>
+                <XRef Type="MIM" ID="144700" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="24575"/>
+                <XRef ID="24575" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <XRef ID="422526" DB="Orphanet"/>
+              <XRef ID="CN074294" DB="MedGen"/>
+              <XRef ID="MONDO:0007763" DB="MONDO"/>
+              <XRef Type="MIM" ID="144700" DB="OMIM"/>
+            </Trait>
+            <Trait ID="6116" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">VHL syndrome</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Von Hippel-Lindau syndrome</ElementValue>
+                <XRef ID="46659004" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Von Hippel-Lindau</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">von Hippel–Lindau syndrome</ElementValue>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">VHLS</ElementValue>
+                <XRef Type="MIM" ID="193300" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="public definition">Von Hippel-Lindau syndrome (VHL) is characterized by hemangioblastomas of the brain, spinal cord, and retina; renal cysts and clear cell renal cell carcinoma; pheochromocytoma and paraganglioma; pancreatic cysts and neuroendocrine tumors; endolymphatic sac tumors; and epididymal and broad ligament cystadenomas. Retinal hemangioblastomas may be the initial manifestation of VHL and can cause vision loss. Cerebellar hemangioblastomas may be associated with headache, vomiting, gait disturbances, or ataxia. Spinal hemangioblastomas and related syrinx usually present with pain. Sensory and motor loss may develop with cord compression. Renal cell carcinoma occurs in about 70% of individuals with VHL and is the leading cause of mortality. Pheochromocytomas can be asymptomatic but may cause sustained or episodic hypertension. Pancreatic lesions often remain asymptomatic and rarely cause endocrine or exocrine insufficiency. Endolymphatic sac tumors can cause hearing loss of varying severity, which can be a presenting symptom. Cystadenomas of the epididymis are relatively common. They rarely cause problems, unless bilateral, in which case they may result in infertility.</Attribute>
+                <XRef ID="NBK1463" DB="GeneReviews"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="273">loss of function</Attribute>
+                <XRef ID="GTR000314230" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552245" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000528276" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000592450" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552165" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="7855"/>
+                <XRef ID="7855" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301636</ID>
+                <ID Source="BookShelf">NBK1463</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NSGC, 2004">
+                <ID Source="PubMed">15604628</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2013">
+                <ID Source="PubMed">23788249</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2015">
+                <ID Source="PubMed">25356965</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2016">
+                <ID Source="PubMed">27854360</ID>
+                <ID Source="DOI">10.1038/gim.2016.190</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Renal cell carcinoma genetics">
+                <ID Source="PubMed">26389510</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Von Hippel-Lindau">
+                <URL>https://www.cancer.gov/types/kidney/hp/renal-cell-carcinoma-genetics/vhl-syndrome</URL>
+                <CitationText>PDQ® Cancer Genetics Editorial Board. PDQ Von Hippel-Lindau Disease. Bethesda, MD: National Cancer Institute. Updated &lt;03/08/2021&gt;. Accessed &lt;05/05/2021&gt;.</CitationText>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <XRef ID="892" DB="Orphanet"/>
+              <XRef ID="C0019562" DB="MedGen"/>
+              <XRef ID="MONDO:0008667" DB="MONDO"/>
+              <XRef Type="MIM" ID="193300" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="9460" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="17556" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">not provided</ElementValue>
+                <XRef ID="13DG0619" DB="Genomic Medicine Center of Excellence, King Faisal Specialist Hospital and Research Centre"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">none provided</ElementValue>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="public definition">The term 'not provided' is registered in MedGen to support identification of submissions to ClinVar for which no condition was named when assessing the variant. 'not provided' differs from 'not specified', which is used when a variant is asserted to be benign, likely benign, or of uncertain significance for conditions that have not been specified.</Attribute>
+              </AttributeSet>
+              <XRef ID="C3661900" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="574" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="1779" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">POLYCYTHEMIA, VHL-DEPENDENT</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Chuvash polycythemia</ElementValue>
+                <XRef ID="MONDO:0009892" DB="MONDO"/>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Alternate">CP</ElementValue>
+              </Symbol>
+              <Symbol>
+                <ElementValue Type="Alternate">ECYT2</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="17176"/>
+                <XRef ID="17176" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <Citation Type="Translational/Evidence-based" Abbrev="EuroGenetest, 2012">
+                <ID Source="PubMed">22274579</ID>
+              </Citation>
+              <XRef ID="238557" DB="Orphanet"/>
+              <XRef ID="C1837915" DB="MedGen"/>
+              <XRef ID="MONDO:0009892" DB="MONDO"/>
+              <XRef Type="MIM" ID="263400" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="572" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="3796" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Pheochromocytoma</ElementValue>
+                <XRef ID="HP:0002666" DB="Human Phenotype Ontology"/>
+                <XRef ID="MONDO:0008233" DB="MONDO"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">MAX-Related Hereditary Paraganglioma-Pheochromocytoma Syndrome</ElementValue>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="15105"/>
+                <XRef ID="15105" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">TMEM127-Related Susceptibility to Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">RET-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">KIF1B-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">MAX-Related Susceptibility to Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">VHL-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">SDHB-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">SDHD-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">MAX-Related Hereditary Paraganglioma-Pheochromocytoma Syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="public definition">Hereditary paraganglioma-pheochromocytoma (PGL/PCC) syndromes are characterized by paragangliomas (tumors that arise from neuroendocrine tissues distributed along the paravertebral axis from the base of the skull to the pelvis) and pheochromocytomas (paragangliomas that are confined to the adrenal medulla). Sympathetic paragangliomas cause catecholamine excess; parasympathetic paragangliomas are most often nonsecretory. Extra-adrenal parasympathetic paragangliomas are located predominantly in the skull base and neck (referred to as head and neck paragangliomas [HNPGLs]) and sometimes in the upper mediastinum; approximately 95% of such tumors are nonsecretory. In contrast, extra-adrenal sympathetic paragangliomas are generally confined to the lower mediastinum, abdomen, and pelvis, and are typically secretory. Pheochromocytomas, which arise from the adrenal medulla, typically lead to catecholamine excess. Symptoms of PGL/PCCs result from either mass effects or catecholamine hypersecretion (e.g., sustained or paroxysmal elevations in blood pressure, headache, episodic profuse sweating, forceful palpitations, pallor, and apprehension or anxiety). The risk for developing metastatic disease is greater for extra-adrenal sympathetic paragangliomas than for pheochromocytomas. Additional tumors reported in individuals with hereditary PGL/PCC syndromes include gastrointestinal stromal tumors (GISTs), pulmonary chondromas, and clear cell renal cell carcinoma.</Attribute>
+                <XRef ID="NBK1548" DB="GeneReviews"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301715</ID>
+                <ID Source="BookShelf">NBK1548</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ASCO, 2014">
+                <ID Source="PubMed">24493721</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Endocrine and Neuroendocrine Neoplasia genetics">
+                <ID Source="PubMed">26389271</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2021">
+                <ID Source="PubMed">33939658</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="NCCN, 2023">
+                <URL>https://www.nccn.org/professionals/physician_gls/pdf/neuroendocrine.pdf</URL>
+                <CitationText>NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines®), Neuroendocrine and Adrenal Tumors, 2023</CitationText>
+              </Citation>
+              <XRef ID="29072" DB="Orphanet"/>
+              <XRef ID="C0031511" DB="MedGen"/>
+              <XRef ID="MONDO:0008233" DB="MONDO"/>
+              <XRef Type="MIM" ID="171300" DB="OMIM"/>
+              <XRef Type="primary" ID="HP:0002666" DB="Human Phenotype Ontology"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="570" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="6116" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">VHL syndrome</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Von Hippel-Lindau syndrome</ElementValue>
+                <XRef ID="46659004" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Von Hippel-Lindau</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">von Hippel–Lindau syndrome</ElementValue>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">VHLS</ElementValue>
+                <XRef Type="MIM" ID="193300" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="public definition">Von Hippel-Lindau syndrome (VHL) is characterized by hemangioblastomas of the brain, spinal cord, and retina; renal cysts and clear cell renal cell carcinoma; pheochromocytoma and paraganglioma; pancreatic cysts and neuroendocrine tumors; endolymphatic sac tumors; and epididymal and broad ligament cystadenomas. Retinal hemangioblastomas may be the initial manifestation of VHL and can cause vision loss. Cerebellar hemangioblastomas may be associated with headache, vomiting, gait disturbances, or ataxia. Spinal hemangioblastomas and related syrinx usually present with pain. Sensory and motor loss may develop with cord compression. Renal cell carcinoma occurs in about 70% of individuals with VHL and is the leading cause of mortality. Pheochromocytomas can be asymptomatic but may cause sustained or episodic hypertension. Pancreatic lesions often remain asymptomatic and rarely cause endocrine or exocrine insufficiency. Endolymphatic sac tumors can cause hearing loss of varying severity, which can be a presenting symptom. Cystadenomas of the epididymis are relatively common. They rarely cause problems, unless bilateral, in which case they may result in infertility.</Attribute>
+                <XRef ID="NBK1463" DB="GeneReviews"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="273">loss of function</Attribute>
+                <XRef ID="GTR000314230" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552245" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000528276" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000592450" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552165" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="7855"/>
+                <XRef ID="7855" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301636</ID>
+                <ID Source="BookShelf">NBK1463</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NSGC, 2004">
+                <ID Source="PubMed">15604628</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2013">
+                <ID Source="PubMed">23788249</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2015">
+                <ID Source="PubMed">25356965</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2016">
+                <ID Source="PubMed">27854360</ID>
+                <ID Source="DOI">10.1038/gim.2016.190</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Renal cell carcinoma genetics">
+                <ID Source="PubMed">26389510</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Von Hippel-Lindau">
+                <URL>https://www.cancer.gov/types/kidney/hp/renal-cell-carcinoma-genetics/vhl-syndrome</URL>
+                <CitationText>PDQ® Cancer Genetics Editorial Board. PDQ Von Hippel-Lindau Disease. Bethesda, MD: National Cancer Institute. Updated &lt;03/08/2021&gt;. Accessed &lt;05/05/2021&gt;.</CitationText>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <XRef ID="892" DB="Orphanet"/>
+              <XRef ID="C0019562" DB="MedGen"/>
+              <XRef ID="MONDO:0008667" DB="MONDO"/>
+              <XRef Type="MIM" ID="193300" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+        </ConditionList>
+      </GermlineClassification>
+      <SomaticClinicalImpact DateLastEvaluated="2024-07-12" NumberOfSubmissions="1" NumberOfSubmitters="1" DateCreated="2025-11-22" MostRecentSubmission="2025-11-22">
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Description>Tier I - Strong</Description>
+        <Citation Type="general">
+          <ID Source="PubMed">12673678</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">14973063</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">21784903</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">25545346</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">28162975</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">29413423</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">33362715</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">36854674</ID>
+        </Citation>
+        <ConditionList>
+          <TraitSet ID="572" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="3796" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Pheochromocytoma</ElementValue>
+                <XRef ID="HP:0002666" DB="Human Phenotype Ontology"/>
+                <XRef ID="MONDO:0008233" DB="MONDO"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">MAX-Related Hereditary Paraganglioma-Pheochromocytoma Syndrome</ElementValue>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="15105"/>
+                <XRef ID="15105" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">TMEM127-Related Susceptibility to Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">RET-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">KIF1B-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">MAX-Related Susceptibility to Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">VHL-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">SDHB-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">SDHD-Related Pheochromocytoma</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">MAX-Related Hereditary Paraganglioma-Pheochromocytoma Syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="public definition">Hereditary paraganglioma-pheochromocytoma (PGL/PCC) syndromes are characterized by paragangliomas (tumors that arise from neuroendocrine tissues distributed along the paravertebral axis from the base of the skull to the pelvis) and pheochromocytomas (paragangliomas that are confined to the adrenal medulla). Sympathetic paragangliomas cause catecholamine excess; parasympathetic paragangliomas are most often nonsecretory. Extra-adrenal parasympathetic paragangliomas are located predominantly in the skull base and neck (referred to as head and neck paragangliomas [HNPGLs]) and sometimes in the upper mediastinum; approximately 95% of such tumors are nonsecretory. In contrast, extra-adrenal sympathetic paragangliomas are generally confined to the lower mediastinum, abdomen, and pelvis, and are typically secretory. Pheochromocytomas, which arise from the adrenal medulla, typically lead to catecholamine excess. Symptoms of PGL/PCCs result from either mass effects or catecholamine hypersecretion (e.g., sustained or paroxysmal elevations in blood pressure, headache, episodic profuse sweating, forceful palpitations, pallor, and apprehension or anxiety). The risk for developing metastatic disease is greater for extra-adrenal sympathetic paragangliomas than for pheochromocytomas. Additional tumors reported in individuals with hereditary PGL/PCC syndromes include gastrointestinal stromal tumors (GISTs), pulmonary chondromas, and clear cell renal cell carcinoma.</Attribute>
+                <XRef ID="NBK1548" DB="GeneReviews"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301715</ID>
+                <ID Source="BookShelf">NBK1548</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ASCO, 2014">
+                <ID Source="PubMed">24493721</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Endocrine and Neuroendocrine Neoplasia genetics">
+                <ID Source="PubMed">26389271</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2021">
+                <ID Source="PubMed">33939658</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="NCCN, 2023">
+                <URL>https://www.nccn.org/professionals/physician_gls/pdf/neuroendocrine.pdf</URL>
+                <CitationText>NCCN Clinical Practice Guidelines in Oncology (NCCN Guidelines®), Neuroendocrine and Adrenal Tumors, 2023</CitationText>
+              </Citation>
+              <XRef ID="29072" DB="Orphanet"/>
+              <XRef ID="C0031511" DB="MedGen"/>
+              <XRef ID="MONDO:0008233" DB="MONDO"/>
+              <XRef Type="MIM" ID="171300" DB="OMIM"/>
+              <XRef Type="primary" ID="HP:0002666" DB="Human Phenotype Ontology"/>
+            </Trait>
+          </TraitSet>
+        </ConditionList>
+      </SomaticClinicalImpact>
+    </Classifications>
+    <ClinicalAssertionList>
+      <ClinicalAssertion ID="2901849" SubmissionDate="2020-12-11" ContributesToAggregateClassification="true" DateLastUpdated="2021-01-26" DateCreated="2021-01-26">
+        <ClinVarSubmissionID localKey="12924|MedGen:CN235283" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV001473258" DateUpdated="2021-01-26" DateCreated="2021-01-26" Type="SCV" Version="1" SubmitterName="ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories" OrgID="25969" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2020-08-03">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Comment>The VHL c.499C&gt;T; p.Arg167Trp variant (rs5030820), also reported as p.Arg238Trp, is a common pathogenic variant in individuals and families affected with Von Hippel-Lindau syndrome (Crossey 1994, Fishbein 2013, Peng 2017, Wang 2018, Zhang 2015). This variant is reported in ClinVar (Variation ID: 2218), and is only observed on two alleles in the Genome Aggregation Database, indicating it is not a common polymorphism. The arginine at codon 167 is highly conserved, and computational analyses (SIFT, PolyPhen-2) predict that this variant is deleterious. Functional analyses of the variant protein show loss of elongin binding leading to VHL protein degradation (Leonardi 2011, Ohh 1999, Peng 2017, Schoenfeld 2000). Additionally, other amino acid substitutions at this codon (Gln, Gly, Leu, Pro) have been reported in individuals with Von Hippel-Lindau syndrome and are considered pathogenic (Crossey 1994, Zhang 2015). Based on available information, this variant is considered to be pathogenic. References: Crossey PA et al. Identification of intragenic mutations in the von Hippel-Lindau disease tumour suppressor gene and correlation with disease phenotype. Hum Mol Genet. 1994;3(8):1303-1308. Fishbein L et al. Inherited mutations in pheochromocytoma and paraganglioma: why all patients should be offered genetic testing. Ann Surg Oncol. 2013;20(5):1444-1450. Leonardi E et al. Identification and in silico analysis of novel von Hippel-Lindau (VHL) gene variants from a large population. Ann Hum Genet. 2011;75(4):483-496. Ohh M et al. Synthetic peptides define critical contacts between elongin C, elongin B, and the von Hippel-Lindau protein. J Clin Invest. 1999;104(11):1583-1591. Peng S et al. Genotype-phenotype correlations in Chinese von Hippel-Lindau disease patients. Oncotarget. 2017;8(24):38456-38465. Schoenfeld AR et al. Elongin BC complex prevents degradation of von Hippel-Lindau tumor suppressor gene products. Proc Natl Acad Sci U S A. 2000;97(15):8507-8512. Wang Y et al. Pedigree analysis, diagnosis and treatment in Von Hippel-Lindau syndrome: A report of three cases. Oncol Lett. 2018;15(4):4882-4890. Zhang J et al. Clinical and genetic investigation of a multi-generational Chinese family afflicted with Von Hippel-Lindau disease. Chin Med J (Engl). 2015;128(1):32-38.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ARUP Molecular Germline Variant Investigation Process</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/w2yp3qyt/arup_molecular_germline_variant_investigation_process.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NC_000003.11:g.10191506C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Finding">
+          <Trait Type="Finding">
+            <XRef DB="MedGen" ID="CN235283" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>2020 ARUP</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="2812632" SubmissionDate="2020-05-28" ContributesToAggregateClassification="true" DateLastUpdated="2020-08-01" DateCreated="2020-08-01">
+        <ClinVarSubmissionID localKey="NM_000551.3:c.499C&gt;T|OMIM:193300" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV001425320" DateUpdated="2020-08-01" DateCreated="2020-08-01" Type="SCV" Version="1" SubmitterName="Johns Hopkins Genomics, Johns Hopkins University" OrgID="506823" OrganizationCategory="laboratory" OrgAbbreviation="JHG"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2020-05-01">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">10900011</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">14973063</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19464396</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22799452</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23512077</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25563310</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9829911</ID>
+          </Citation>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB7512543</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1750065" SubmissionDate="2022-12-13" ContributesToAggregateClassification="true" DateLastUpdated="2022-12-31" DateCreated="2019-03-31">
+        <ClinVarSubmissionID localKey="NM_000551.3:c.499C&gt;T|OMIM:144700;171300;193300;263400" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000893626" DateUpdated="2022-12-31" DateCreated="2019-03-31" Type="SCV" Version="2" SubmitterName="Fulgent Genetics, Fulgent Genetics" OrgID="500105" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2021-10-01">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="TraitChoice">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="144700" Type="MIM"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="171300" Type="MIM"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="263400" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <Citation Abbrev="ACMG, 2015" Type="practice guideline">
+          <ID Source="PubMed">25741868</ID>
+          <ID Source="pmc">4544753</ID>
+          <ID Source="DOI">10.1038/gim.2015.30</ID>
+        </Citation>
+        <SubmissionNameList>
+          <SubmissionName>SUB12390657</SubmissionName>
+          <SubmissionName>SUB4786688</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="3924461" SubmissionDate="2023-07-12" ContributesToAggregateClassification="true" DateLastUpdated="2023-07-16" DateCreated="2021-11-06">
+        <ClinVarSubmissionID localKey="Chr.3_10149822_10149822_C_T|not provided"/>
+        <ClinVarAccession Accession="SCV002011308" DateUpdated="2023-07-16" DateCreated="2021-11-06" Type="SCV" Version="3" SubmitterName="Institute for Clinical Genetics, University Hospital TU Dresden, University Hospital TU Dresden" OrgID="505632" OrganizationCategory="clinic" OrgAbbreviation="KGE"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2021-11-03">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <SequenceLocation Assembly="GRCh38" Chr="3" alternateAllele="T" referenceAllele="C" start="10149822" stop="10149822"/>
+          </Location>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB10612882</SubmissionName>
+          <SubmissionName>SUB13603663</SubmissionName>
+          <SubmissionName>SUB13676335</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="7348155" SubmissionDate="2023-08-29" ContributesToAggregateClassification="true" DateLastUpdated="2023-06-17" DateCreated="2023-06-17">
+        <ClinVarSubmissionID localKey="NM_000551.4:c.499C&gt;T|OMIM:193300" submittedAssembly="GRCh38"/>
+        <ClinVarAccession Accession="SCV003930394" DateUpdated="2023-06-17" DateCreated="2023-06-17" Type="SCV" Version="1" SubmitterName="Laboratory of Molecular and Cytogenetics, Department of Anatomy, All India Institute of Medical Sciences (AIIMS)" OrgID="509119" OrganizationCategory="laboratory" OrgAbbreviation="AIIMS"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2023-05-21">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <TypePlatform>Next-gen sequencing</TypePlatform>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.4:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB13477666</SubmissionName>
+          <SubmissionName>SUB13801768</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="10883858" SubmissionDate="2025-01-20" ContributesToAggregateClassification="true" DateLastUpdated="2025-04-13" DateCreated="2025-01-25">
+        <ClinVarSubmissionID localKey="SUB15019711" submittedAssembly="GRCh37" title="SUB15019711"/>
+        <ClinVarAccession Accession="SCV005627754" DateUpdated="2025-04-13" DateCreated="2025-01-25" Type="SCV" Version="2" SubmitterName="KCCC/NGS Laboratory, Kuwait Cancer Control Center" OrgID="509089" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2025-01-20">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Comment>This sequence change replaces arginine, which is basic and polar, with tryptophan, which is neutral and slightly polar, at codon 167 of the VHL protein (p.Arg167Trp). This variant is present in population databases (rs5030820, gnomAD 0.0009%). This missense change has been observed in individual(s) with von Hippel-Lindau syndrome and pheochromocytoma (PMID: 28873162, 14973063, 10205047, 9156047, 21519372, 23512077, 18836774, 12000816, 25119015, 19602254, 10900011, 7987306, 25563310, 27539324, 27527340, 27682873, 28944243, 28094316, 9829912, 22799452, 9829911, 8956040, 29124493, 25390905, 16042317, 29616089, 30522901, 30042107, 20233476, 29625052, 33745191, 32561571, 31589614, 30787465, 34377882, 34439168, 33828526, 34036514). It has also been observed to segregate with disease in related individuals. ClinVar contains an entry for this variant (Variation ID: 2218). In silico analysis, which includes protein predictors and evolutionary conservation, supports a deleterious effect. This variant disrupts the p.Arg167 amino acid residue in VHL. Other variant(s) that disrupt this residue have been determined to be pathogenic (PMID: 7987306, 9829911, 19574279, 21463266, 22799452). This suggests that this residue is clinically significant, and that variants that disrupt this residue are likely to be disease-causing. For these reasons, this variant has been classified as Pathogenic.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="ModeOfInheritance">Autosomal dominant inheritance</Attribute>
+        </AttributeSet>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">40</Age>
+              <Age Type="maximum" age_unit="years">49</Age>
+              <AffectedStatus>yes</AffectedStatus>
+              <Sex>male</Sex>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="SingleHeterozygote" integerValue="1"/>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL">
+              <Name>von Hippel-Lindau tumor suppressor</Name>
+            </Gene>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="171300"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB15019711</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="13991785" SubmissionDate="2026-01-20" ContributesToAggregateClassification="true" DateLastUpdated="2026-01-24" DateCreated="2026-01-24">
+        <ClinVarSubmissionID localKey="205548:375|Von Hippel Lindau syndrome"/>
+        <ClinVarAccession Accession="SCV007333776" DateUpdated="2026-01-24" DateCreated="2026-01-24" Type="SCV" Version="1" SubmitterName="Genetics Laboratory, Great Ormond Street Hospital NHS Foundation Trust, North Thames Genomic Laboratory Hub" OrgID="509173" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2025-11-21">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Comment Type="public">PS4_strong, PM2_supporting, PP3_supporting, PS3_supporting, PM1_moderate, PP1_moderate</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">CanVIG Consensus Spec V3.0</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/yh2sxhrw/canvig_consensus_spec_v3.0_13122024.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="SubmitterVariantId">205548:375</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NC_000003.12:g.10149822C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Von Hippel Lindau syndrome</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB15944273</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="495468" SubmissionDate="2016-03-02" ContributesToAggregateClassification="false" DateLastUpdated="2016-03-08" DateCreated="2016-03-08">
+        <ClinVarSubmissionID localKey="VHL_100|OMIM:193300" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000264764" DateUpdated="2016-03-08" DateCreated="2016-03-08" Type="SCV" Version="1" SubmitterName="Genomic Diagnostic Laboratory, Division of Genomic Diagnostics, Children's Hospital of Philadelphia" OrgID="165021" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2016-02-26">
+          <ReviewStatus>no assertion criteria provided</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="74"/>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name>p.[Arg167Trp]</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>VHL</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1363876" SubmissionDate="2018-01-25" ContributesToAggregateClassification="true" DateLastUpdated="2017-12-26" DateCreated="2017-12-26">
+        <ClinVarSubmissionID localKey="NM_000551.3:c.499C&gt;T|MedGen:C0019562" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000697524" DateUpdated="2017-12-26" DateCreated="2017-12-26" Type="SCV" Version="1" SubmitterName="Women's Health and Genetics/Laboratory Corporation of America, LabCorp" OrgID="500026" OrganizationCategory="laboratory" OrgAbbreviation="WHG-LC"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2017-04-20">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">15300849</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9156047</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">17102069</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">10900011</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22799452</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">14722919</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19602254</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">8592333</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25119015</ID>
+          </Citation>
+          <Comment>Variant summary: The VHL c.499C&gt;T (p.Arg167Trp) variant located in the alpha domain (via InterPro) involves the alteration of a conserved nucleotide and 5/5 in silico tools predict a damaging outcome. This variant was found in 1/121114 control chromosomes at a frequency of 0.0000083, which does not exceed the estimated maximal expected allele frequency of a pathogenic VHL variant (0.0000208). Multiple publications have cited the variant in affected individuals ranging in phenotypes from VHL, renal carcinoma, hemangioblastoma and pheochromocytoma. Functional study, Schoenfield_2000, indicates the variant disrupts the elongin binding capability to VHL, a function that is essential for the tumor suppressor function of VHL. In addition, multiple clinical diagnostic laboratories/reputable databases classified this variant as pathogenic. Taken together, this variant is classified as pathogenic.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">LabCorp Variant Classification Summary - May 2015</Attribute>
+          <Citation Type="general">
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/rtxspsnt/labcorp_variant_classification_method_-_may_2015.pdf</URL>
+            <CitationText>LabCorp Variant Classification Summary - May 2015.docx</CitationText>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <XRefList>
+            <XRef DB="dbSNP" ID="5030820" Type="rsNumber"/>
+          </XRefList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C0019562" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>2016-2017-variants</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1570235" SubmissionDate="2018-06-11" ContributesToAggregateClassification="true" DateLastUpdated="2017-12-19" DateCreated="2017-12-19">
+        <ClinVarSubmissionID localKey="NM_000551.3:c.499C&gt;T|not provided" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000805354" DateUpdated="2017-12-19" DateCreated="2017-12-19" Type="SCV" Version="1" SubmitterName="PreventionGenetics, part of Exact Sciences" OrgID="239772" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2018-03-12">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4139689</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="3983099" SubmissionDate="2021-12-06" ContributesToAggregateClassification="true" DateLastUpdated="2021-12-12" DateCreated="2021-12-12">
+        <ClinVarSubmissionID localKey="NM_000551.3:c.499C&gt;T|OMIM:193300" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV002030160" DateUpdated="2021-12-12" DateCreated="2021-12-12" Type="SCV" Version="1" SubmitterName="Baylor Genetics" OrgID="1006" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2021-08-24">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Comment>This variant was determined to be pathogenic according to ACMG Guidelines, 2015 [PMID:25741868].</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <StudyName>CSER-TexasKidsCanSeq</StudyName>
+        <StudyDescription>The Texas KidsCanSeq Study is part of the Clinical Sequencing Evidence-Generating Research (CSER) consortium funded by the NIH National Human Genome Research Institute.</StudyDescription>
+        <SubmissionNameList>
+          <SubmissionName>SUB10768122</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="377517" SubmissionDate="2022-06-01" ContributesToAggregateClassification="true" DateLastUpdated="2023-03-04" DateCreated="2015-02-24">
+        <ClinVarSubmissionID localKey="GDXSV:229547" localKeyIsSubmitted="1"/>
+        <ClinVarAccession Accession="SCV000211816" DateUpdated="2023-03-04" DateCreated="2015-02-24" Type="SCV" Version="14" SubmitterName="GeneDx" OrgID="26957" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2022-05-25">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Comment>Published functional studies demonstrate a damaging effect: Variant does not bind to elongin B or elongin C, resulting in an unstable protein that is rapidly degraded by the proteasome (Schoenfeld 2000); In silico analysis, which includes protein predictors and evolutionary conservation, supports a deleterious effect; Not observed at a significant frequency in large population cohorts (gnomAD); Also known as p.(R208W) and p.(R238W); This variant is associated with the following publications: (PMID: 28873162, 14973063, 10205047, 9156047, 21519372, 23512077, 18836774, 12000816, 25119015, 19602254, 10900011, 7987306, 25563310, 27539324, 27527340, 27682873, 28944243, 28094316, 9829912, 22799452, 9829911, 8956040, 29124493, 25390905, 16042317, 29616089, 30522901, 30042107, 20233476, 29625052, 33745191, 32561571, 31589614, 30787465, 34377882, 34439168, 33828526, 34036514)</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">GeneDx Variant Classification Process June 2021</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/fc81e176/genedx_variant_classification_process_june_2021.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="SubmitterVariantId">GDX:68542</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Not Provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>GeneDX_Clinvar_Submission_109_20220601054204</SubmissionName>
+          <SubmissionName>SUB5098196</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="8992141" SubmissionDate="2024-04-05" ContributesToAggregateClassification="true" DateLastUpdated="2024-04-15" DateCreated="2024-04-15">
+        <ClinVarSubmissionID localKey="NM_000551.4:c.499C&gt;T|OMIM:263400" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV004809624" DateUpdated="2024-04-15" DateCreated="2024-04-15" Type="SCV" Version="1" SubmitterName="Genomic Medicine Center of Excellence, King Faisal Specialist Hospital and Research Centre" OrgID="500184" OrganizationCategory="laboratory" OrgAbbreviation="DGU-KFSHRC"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2024-04-04">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Likely pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.4:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="263400" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB14359275</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="22460" SubmissionDate="2020-03-05" ContributesToAggregateClassification="false" DateLastUpdated="2024-06-09" DateCreated="2013-04-04">
+        <ClinVarSubmissionID localKey="608537.0003_VON HIPPEL-LINDAU SYNDROME" title="VHL, ARG167TRP_VON HIPPEL-LINDAU SYNDROME"/>
+        <ClinVarAccession Accession="SCV000022460" DateUpdated="2024-06-09" DateCreated="2013-04-04" Type="SCV" Version="3" SubmitterName="OMIM" OrgID="3" OrganizationCategory="resource"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2002-05-09">
+          <ReviewStatus>no assertion criteria provided</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species>human</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>literature only</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">Following the revised codon numbering system of Kuzmin et al. (1995), the ARG238TRP mutation has been renumbered as ARG167TRP (R167W).</Attribute>
+              <Citation>
+                <ID Source="PubMed">7784063</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In a study of 94 patients with von Hippel-Lindau syndrome (VHLS; 193300) patients without large deletions, Crossey et al. (1994) found that the 2 most frequent mutations were missense mutations at codon 238: 4 kindreds had a 712C-T transition, resulting in an arg238-to-trp (R238W) substitution, and 5 kindreds had a 713G-A transition, leading to an arg238-to-gln (R238Q; 608537.0005) substitution. Another identified mutation was a 712C-G transversion, resulting in an arg238-to-gly (R238G) substitution (608537.0004). All 3 mutations at codon 238 occurred at a CpG dinucleotide. The authors noted that although pheochromocytoma occurs in only about 7% of patients with VHL, a codon 238 mutation carried a high risk (62%) of pheochromocytoma.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8270255</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="193300" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">The R238W mutation was found by Garcia et al. (1997) in a Spanish family in which VHLS was manifested predominantly as familial pheochromocytoma in 2 generations, consistent with VHL syndrome type 2C.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9156047</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In a mother and 2 sons with pheochromocytoma (171300), consistent with VHL syndrome type 2C, Crossey et al. (1995) identified the R238W mutation.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8592333</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="171300" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Zbar et al. (1996) confirmed previous observations that germline codon 167 mutations of the VHL gene (R167W and R167Q, 608537.0005) convey a high risk for the development of pheochromocytoma and renal cell carcinoma. In 21 of 33 families with mutations at codon 167, pheochromocytoma occurred, compared to 15 of 223 families without a mutation at codon 167. The association between codon 167 mutations and pheochromocytoma was detected in all nationalities tested. Two of 4 Japanese VHL pheochromocytoma families had mutations at codon 167; and 3 of 10 French VHL pheochromocytoma families had mutations at codon 167.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8956040</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Neumann et al. (2002) identified the R167Q substitution in the germline of a patient with sporadic pheochromocytoma (171300).</Attribute>
+              <Citation>
+                <ID Source="PubMed">12000816</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="171300" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In the germlines of 6 unrelated patients with sporadic pheochromocytoma, Neumann et al. (2002) identified the R167W substitution. The mutation was not identified in 600 control chromosomes.</Attribute>
+              <Citation>
+                <ID Source="PubMed">12000816</ID>
+              </Citation>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <Name>VHL, ARG167TRP</Name>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="NonHGVS">ARG167TRP</Name>
+          </OtherNameList>
+          <XRefList>
+            <XRef DB="OMIM" ID="608537.0003" Type="Allelic variant"/>
+          </XRefList>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">VON HIPPEL-LINDAU SYNDROME</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="22461" SubmissionDate="2020-03-05" ContributesToAggregateClassification="false" DateLastUpdated="2024-06-09" DateCreated="2013-04-04">
+        <ClinVarSubmissionID localKey="608537.0003_PHEOCHROMOCYTOMA" title="VHL, ARG167TRP_PHEOCHROMOCYTOMA"/>
+        <ClinVarAccession Accession="SCV000022461" DateUpdated="2024-06-09" DateCreated="2013-04-04" Type="SCV" Version="3" SubmitterName="OMIM" OrgID="3" OrganizationCategory="resource"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2002-05-09">
+          <ReviewStatus>no assertion criteria provided</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+        </Classification>
+        <Assertion>variation to included disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species>human</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>literature only</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">Following the revised codon numbering system of Kuzmin et al. (1995), the ARG238TRP mutation has been renumbered as ARG167TRP (R167W).</Attribute>
+              <Citation>
+                <ID Source="PubMed">7784063</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In a study of 94 patients with von Hippel-Lindau syndrome (VHLS; 193300) patients without large deletions, Crossey et al. (1994) found that the 2 most frequent mutations were missense mutations at codon 238: 4 kindreds had a 712C-T transition, resulting in an arg238-to-trp (R238W) substitution, and 5 kindreds had a 713G-A transition, leading to an arg238-to-gln (R238Q; 608537.0005) substitution. Another identified mutation was a 712C-G transversion, resulting in an arg238-to-gly (R238G) substitution (608537.0004). All 3 mutations at codon 238 occurred at a CpG dinucleotide. The authors noted that although pheochromocytoma occurs in only about 7% of patients with VHL, a codon 238 mutation carried a high risk (62%) of pheochromocytoma.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8270255</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="193300" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">The R238W mutation was found by Garcia et al. (1997) in a Spanish family in which VHLS was manifested predominantly as familial pheochromocytoma in 2 generations, consistent with VHL syndrome type 2C.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9156047</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In a mother and 2 sons with pheochromocytoma (171300), consistent with VHL syndrome type 2C, Crossey et al. (1995) identified the R238W mutation.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8592333</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="171300" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Zbar et al. (1996) confirmed previous observations that germline codon 167 mutations of the VHL gene (R167W and R167Q, 608537.0005) convey a high risk for the development of pheochromocytoma and renal cell carcinoma. In 21 of 33 families with mutations at codon 167, pheochromocytoma occurred, compared to 15 of 223 families without a mutation at codon 167. The association between codon 167 mutations and pheochromocytoma was detected in all nationalities tested. Two of 4 Japanese VHL pheochromocytoma families had mutations at codon 167; and 3 of 10 French VHL pheochromocytoma families had mutations at codon 167.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8956040</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Neumann et al. (2002) identified the R167Q substitution in the germline of a patient with sporadic pheochromocytoma (171300).</Attribute>
+              <Citation>
+                <ID Source="PubMed">12000816</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="171300" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In the germlines of 6 unrelated patients with sporadic pheochromocytoma, Neumann et al. (2002) identified the R167W substitution. The mutation was not identified in 600 control chromosomes.</Attribute>
+              <Citation>
+                <ID Source="PubMed">12000816</ID>
+              </Citation>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <Name>VHL, ARG167TRP</Name>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="NonHGVS">ARG167TRP</Name>
+          </OtherNameList>
+          <XRefList>
+            <XRef DB="OMIM" ID="608537.0003" Type="Allelic variant"/>
+          </XRefList>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="included">PHEOCHROMOCYTOMA</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1163123" SubmissionDate="2016-08-18" ContributesToAggregateClassification="false" DateLastUpdated="2025-04-13" DateCreated="2016-03-08">
+        <ClinVarSubmissionID localKey="933667|OMIM:193300" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000599963" DateUpdated="2025-04-13" DateCreated="2016-03-08" Type="SCV" Version="2" SubmitterName="Donald Williams Parsons Laboratory, Baylor College of Medicine" OrgID="505863" OrganizationCategory="laboratory"/>
+        <AdditionalSubmitters>
+          <SubmitterDescription OrgID="505863" SubmitterName="Donald Williams Parsons Laboratory, Baylor College of Medicine" Type="secondary" OrganizationCategory="laboratory"/>
+        </AdditionalSubmitters>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2015-06-02">
+          <ReviewStatus>no assertion criteria provided</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">7987306</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19602254</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">18836774</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">10900011</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23512077</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">12000816</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25119015</ID>
+          </Citation>
+          <Comment>This variant has been previously reported as disease-causing and was found twice in our study in patients with pheochromocytoma and family history of VHL.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="ModeOfInheritance">Autosomal dominant inheritance</Attribute>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>Hispanic Americans</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">11</Age>
+              <Age Type="maximum" age_unit="years">14</Age>
+              <AffectedStatus>yes</AffectedStatus>
+              <Sex>mixed</Sex>
+              <FamilyData NumFamiliesWithSegregationObserved="1" NumFamiliesWithVariant="2">
+                <FamilyHistory>yes</FamilyHistory>
+              </FamilyData>
+            </Sample>
+            <Method>
+              <TypePlatform>Next-gen sequencing</TypePlatform>
+              <XRef DB="GTR" ID="GTR000508680.4" URL="http://www.ncbi.nlm.nih.gov/gtr/tests/508680/"/>
+              <MethodType>research</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="2"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="VariantChromosomes" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SingleHeterozygote" integerValue="1"/>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <SequenceLocation Assembly="GRCh37" Chr="3" alternateAllele="T" referenceAllele="C" start="10191506" stop="10191506" variantLength="1"/>
+          </Location>
+          <XRefList>
+            <XRef DB="OMIM" ID="608537.0003" Type="Allelic variant"/>
+            <XRef DB="dbSNP" ID="5030820" Type="rsNumber"/>
+          </XRefList>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+          <Comment>GERMLINE</Comment>
+        </TraitSet>
+        <Citation Type="general">
+          <ID Source="PubMed">26822237</ID>
+        </Citation>
+        <StudyName>CSER-BASIC3</StudyName>
+        <StudyDescription>CSER (Clinical Sequencing Exploratory Research) Basic3 (BCM Advancing Sequencing Into Childhood Cancer Care)</StudyDescription>
+        <SubmissionNameList>
+          <SubmissionName>BCM_BASIC3_SOMATIC_GERMLINE</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="11516500" SubmissionDate="2025-04-21" ContributesToAggregateClassification="true" DateLastUpdated="2025-04-28" DateCreated="2025-04-28">
+        <ClinVarSubmissionID localKey="NM_000551.3:c.499C&gt;T|OMIM:144700;171300;193300;263400" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV006054178" DateUpdated="2025-04-28" DateCreated="2025-04-28" Type="SCV" Version="1" SubmitterName="Department of Pathology and Laboratory Medicine, Sinai Health System" OrgID="506152" OrganizationCategory="laboratory" OrgAbbreviation="PLM-SHS"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2024-05-13">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Likely pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">12000816</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">15300849</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">17102069</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19464396</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">20660572</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">21463266</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22799452</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23512077</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25119015</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25563310</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27539324</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28944243</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">29616089</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">30042107</ID>
+          </Citation>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease" multipleConditionExplanation="Uncertain">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="144700" Type="MIM"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="171300" Type="MIM"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="263400" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB15272596</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="305748" SubmissionDate="2025-09-30" ContributesToAggregateClassification="true" DateLastUpdated="2025-10-05" DateCreated="2014-08-06">
+        <ClinVarSubmissionID localKey="a9443|MedGen:C0027672" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000187233" DateUpdated="2025-10-05" DateCreated="2014-08-06" Type="SCV" Version="10" SubmitterName="Ambry Genetics" OrgID="61756" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2025-06-25">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">10900011</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">20660572</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23512077</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27539324</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28944243</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">29616089</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">30042107</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">7728151</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">7987306</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">8956040</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9829912</ID>
+          </Citation>
+          <Comment Type="public">The p.R167W pathogenic mutation (also known as c.499C&gt;T), located in coding exon 3 of the VHL gene, results from a C to T substitution at nucleotide position 499. The arginine at codon 167 is replaced by tryptophan, an amino acid with dissimilar properties. The p.R167W mutation has been reported in multiple patients and families with von Hippel-Lindau (VHL) syndrome (Babinska A et al. Neuro Endocrinol. Lett. 2015 Dec;36:517-20; Vikkath N et al. Fam. Cancer. 2015 Dec;14:585-94; Lee JS et al. BMC Med. Genet. 2016 Jul;17:48; Pandit R et al. Eur. J. Endocrinol. 2016 Oct;175(4):311-23; Chew WHW et al. Mol Genet Genomic Med. 2017 Sep;5(5):602-607) and is considered one of the most common mutations in the VHL gene. Available evidence suggests that germline mutations at codon 167 convey an increased risk for developing pheochromocytoma (Crossey PA et al. Hum. Mol. Genet. 1994 Aug;3:1303-8; Chen F et al. Hum. Mut. 1995;5:66-75; Zbar B et al. Hum. Mutat. 1996;8:348-57; Olschwang S et al. Hum. Mut. 1998;12:424-30; Fishbein L et al. Ann. Surg. Oncol. 2013 May;20:1444-50). In one study of sporadic versus hereditary pancreatic islet cell tumors (ICTs), ICTs were found in 7 of 15 individuals (47%) with this mutation. In contrast, ICTs were found in only 1% of individuals with the p.Y98H founder mutation, suggesting an increased risk for ICTs in carriers of the p.R167W mutation (Erlic Z et al. Endocr. Relat. Cancer. 2010 Oct;17:875-83). The p.R167W mutation has been shown in transfection assays to prevent elongin-mediated stabilization of the VHL protein (Schoenfeld AR et al. Proc. Natl. Acad. Sci .USA. 2000 Jul;97:8507-12). Of note, this mutation is also designated as p.R238W (c.712C&gt;T) in published literature. Based on the available evidence, this alteration is classified as a pathogenic mutation.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Ambry Variant Classification Scheme 2023</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/api/2.0/files/i9igeqse/ambry_variant_classification_scheme_2023.pdf/?format=attachment</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C0027672" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>All AVA3 Novel and Update Variants_103122</SubmissionName>
+          <SubmissionName>FinalClinVarSubmissionFile_20140101to20240315_ava3_1</SubmissionName>
+          <SubmissionName>FinalClinVarSubmissionFile_20250615to20250915</SubmissionName>
+          <SubmissionName>NonExomeUpdate_081220AmbryReport</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="13564541" SubmissionDate="2025-11-20" ContributesToAggregateClassification="true" DateLastUpdated="2025-11-22" DateCreated="2025-11-22">
+        <ClinVarSubmissionID localKey="204c13d45b254016483fdcba987e1a4a7545c70623d1f2f61cda00e9e30187b1" localKeyIsSubmitted="1"/>
+        <ClinVarAccession Accession="SCV007104365" DateUpdated="2025-11-22" DateCreated="2025-11-22" Type="SCV" Version="1" SubmitterName="Institute for Genomic Medicine (IGM) Clinical Laboratory, Nationwide Children's Hospital" OrgID="196472" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2024-07-12">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <SomaticClinicalImpact ClinicalImpactAssertionType="diagnostic" ClinicalImpactClinicalSignificance="supports diagnosis">Tier I - Strong</SomaticClinicalImpact>
+          <Citation>
+            <ID Source="PubMed">14973063</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">21784903</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25545346</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28162975</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">29413423</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">33362715</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">36854674</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">12673678</ID>
+          </Citation>
+          <Comment Type="public">Variant has Tier I (strong) clinical significance as a diagnostic inclusion criterion in pheochromocytoma, based on the following evidence: 1) Documented in one or more cancer databases (e.g., St. Jude Pecan, COSMIC, CIViC, OncoKB). 2) Appears in one or more well-established professional guidelines (e.g., World Health Organization [WHO]; National Comprehensive Cancer Network [NCCN]) as providing diagnostic, prognostic, or therapeutic information. 3) Information in the literature supports potential biologic effect of variant (PMID: 14973063). 4) Diagnostic for a specific tumor type/classification based on well-powered studies with expert-level consensus (Evidence Level B; PMIDs: 21784903, 25545346, 28162975, 29413423, 33362715, 36854674, 12673678).</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">AMP/ASCO/CAP Guidelines, 2017</Attribute>
+          <Citation>
+            <ID Source="PubMed">27993330</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>somatic</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="SubmitterVariantId">NM_000551.4:c.499C&gt;T p.(Arg167Trp)</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.4:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MONDO" ID="MONDO:0008233"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB15784428</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="540727" SubmissionDate="2026-02-10" ContributesToAggregateClassification="true" DateLastUpdated="2026-02-23" DateCreated="2016-07-01">
+        <ClinVarSubmissionID localKey="619886|MedGen:C0019562;C1837915" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000285500" DateUpdated="2026-02-23" DateCreated="2016-07-01" Type="SCV" Version="13" SubmitterName="Labcorp Genetics (formerly Invitae), Labcorp" OrgID="500031" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2025-11-24">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">7987306</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9829912</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">12000816</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">15300849</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19464396</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23512077</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25563310</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">14973063</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">7987306</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9829911</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19574279</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">21463266</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22799452</ID>
+          </Citation>
+          <Comment Type="public">This sequence change replaces arginine, which is basic and polar, with tryptophan, which is neutral and slightly polar, at codon 167 of the VHL protein (p.Arg167Trp). This variant is present in population databases (rs5030820, gnomAD 0.0009%). This missense change has been observed in individual(s) with von Hippel-Lindau syndrome and pheochromocytoma (PMID: 7987306, 9829912, 12000816, 15300849, 19464396, 23512077, 25563310). It has also been observed to segregate with disease in related individuals. ClinVar contains an entry for this variant (Variation ID: 2218). Invitae Evidence Modeling of protein sequence and biophysical properties (such as structural, functional, and spatial information, amino acid conservation, physicochemical variation, residue mobility, and thermodynamic stability) indicates that this missense variant is expected to disrupt VHL protein function with a positive predictive value of 95%. Experimental studies have shown that this missense change affects VHL function (PMID: 14973063). This variant disrupts the p.Arg167 amino acid residue in VHL. Other variant(s) that disrupt this residue have been determined to be pathogenic (PMID: 7987306, 9829911, 19574279, 21463266, 22799452). This suggests that this residue is clinically significant, and that variants that disrupt this residue are likely to be disease-causing. For these reasons, this variant has been classified as Pathogenic.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Invitae Variant Classification Sherloc (09022015)</Attribute>
+          <Citation>
+            <ID Source="PubMed">28492532</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NC_000003.11:g.10191506C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease" multipleConditionExplanation="Uncertain">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C0019562" Type="CUI"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C1837915" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <Citation Type="general">
+          <ID Source="PubMed">28492532</ID>
+        </Citation>
+        <SubmissionNameList>
+          <SubmissionName>SUB11431369</SubmissionName>
+          <SubmissionName>SUB12508014</SubmissionName>
+          <SubmissionName>SUB14224806</SubmissionName>
+          <SubmissionName>SUB15089977</SubmissionName>
+          <SubmissionName>SUB15998985</SubmissionName>
+          <SubmissionName>SUB8755776</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="10393903" SubmissionDate="2024-11-08" ContributesToAggregateClassification="true" DateLastUpdated="2024-11-24" DateCreated="2024-11-24">
+        <ClinVarSubmissionID localKey="201200|Not provided" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV005413568" DateUpdated="2024-11-24" DateCreated="2024-11-24" Type="SCV" Version="1" SubmitterName="Mayo Clinic Laboratories, Mayo Clinic" OrgID="500068" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2024-07-15">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">10205047</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">10900011</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">12000816</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">20233476</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">21519372</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23512077</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25119015</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25390905</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25563310</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27527340</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27539324</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">29124493</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">29616089</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">33720516</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">33745191</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">34654685</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">34926252</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">35524216</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">36715412</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">37529773</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">7604013</ID>
+          </Citation>
+          <Comment>PP1_strong, PP3, PM1, PM2, PS3_supporting, PS4_very_strong</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="2"/>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <GeneLocation>NM_000551.3:exon 3</GeneLocation>
+          </Location>
+          <OtherNameList>
+            <Name>p.Arg167Trp</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Not provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB14852428</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="12654759" SubmissionDate="2025-10-10" ContributesToAggregateClassification="true" DateLastUpdated="2025-10-25" DateCreated="2025-10-25">
+        <ClinVarSubmissionID localKey="3-10149822-C-T|OMIM:193300" submittedAssembly="GRCh38"/>
+        <ClinVarAccession Accession="SCV006585644" DateUpdated="2025-10-25" DateCreated="2025-10-25" Type="SCV" Version="1" SubmitterName="3billion" OrgID="507830" OrganizationCategory="other" OrgAbbreviation="3billion"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2024-08-22">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">21463266</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19464396</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9829912</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">15300849</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">14973063</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">7987306</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">25563310</ID>
+          </Citation>
+          <Comment Type="public">The variant is observed at an extremely low frequency in the gnomAD v4.0.0 dataset (total allele frequency: &lt;0.001%). Predicted Consequence/Location: Missense variant Functional studies provide supporting evidence of the variant having a damaging effect on the gene or gene product (PMID: 14973063). In silico tool predictions suggest damaging effect of the variant on gene or gene product [REVEL: 0.87 (&gt;=0.6, sensitivity 0.68 and specificity 0.92); 3Cnet: 0.99 (&gt;=0.6, sensitivity 0.72 and precision 0.9)]. The same nucleotide change resulting in the same amino acid change has been previously reported as pathogenic/likely pathogenic with strong evidence (ClinVar ID: VCV000002218 /PMID: 7987306). The variant has been observed in multiple (&gt;3) similarly affected unrelated individuals (PMID: 15300849, 19464396, 25563310, 9829912). The variant has been reported to co-segregate with the disease in at least 7 similarly affected relatives/individuals in at least two unrelated families (PMID: 25563310, 9829912). Different missense changes at the same codon (p.Arg167Gln, p.Arg167Gly, p.Arg167Leu, p.Arg167Pro) have been reported as pathogenic/likely pathogenic with strong evidence (ClinVar ID: VCV000002216, VCV000002219, VCV000428799, VCV000526685 /PMID: 21463266, 28388566, 7987306). Therefore, this variant is classified as Pathogenic according to the recommendation of ACMG/AMP guideline.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <Description>exome sequencing</Description>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.4:c.499C&gt;T</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="193300" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB15694834</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+    </ClinicalAssertionList>
+    <TraitMappingList>
+      <TraitMapping ClinicalAssertionID="2901849" TraitType="Finding" MappingType="XRef" MappingValue="CN235283" MappingRef="MedGen">
+        <MedGen CUI="C3661900" Name="not provided"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="2812632" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1750065" TraitType="Disease" MappingType="XRef" MappingValue="144700" MappingRef="OMIM">
+        <MedGen CUI="CN074294" Name="Nonpapillary renal cell carcinoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1750065" TraitType="Disease" MappingType="XRef" MappingValue="171300" MappingRef="OMIM">
+        <MedGen CUI="C0031511" Name="Pheochromocytoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1750065" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1750065" TraitType="Disease" MappingType="XRef" MappingValue="263400" MappingRef="OMIM">
+        <MedGen CUI="C1837915" Name="Chuvash polycythemia"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="3924461" TraitType="Disease" MappingType="Name" MappingValue="not provided" MappingRef="Preferred">
+        <MedGen CUI="C3661900" Name="not provided"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="7348155" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="10883858" TraitType="Disease" MappingType="XRef" MappingValue="171300" MappingRef="OMIM">
+        <MedGen CUI="C0031511" Name="Pheochromocytoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="13991785" TraitType="Disease" MappingType="Name" MappingValue="Von Hippel Lindau syndrome" MappingRef="Preferred">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="495468" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1363876" TraitType="Disease" MappingType="XRef" MappingValue="C0019562" MappingRef="MedGen">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1570235" TraitType="Disease" MappingType="Name" MappingValue="not provided" MappingRef="Preferred">
+        <MedGen CUI="C3661900" Name="not provided"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="3983099" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="377517" TraitType="Disease" MappingType="Name" MappingValue="Not Provided" MappingRef="Preferred">
+        <MedGen CUI="C3661900" Name="not provided"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="8992141" TraitType="Disease" MappingType="XRef" MappingValue="263400" MappingRef="OMIM">
+        <MedGen CUI="C1837915" Name="Chuvash polycythemia"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="22460" TraitType="Disease" MappingType="Name" MappingValue="VON HIPPEL-LINDAU SYNDROME" MappingRef="Preferred">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="22461" TraitType="Disease" MappingType="Name" MappingValue="PHEOCHROMOCYTOMA" MappingRef="Alternate">
+        <MedGen CUI="C0031511" Name="Pheochromocytoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="1163123" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="11516500" TraitType="Disease" MappingType="XRef" MappingValue="144700" MappingRef="OMIM">
+        <MedGen CUI="CN074294" Name="Nonpapillary renal cell carcinoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="11516500" TraitType="Disease" MappingType="XRef" MappingValue="171300" MappingRef="OMIM">
+        <MedGen CUI="C0031511" Name="Pheochromocytoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="11516500" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="11516500" TraitType="Disease" MappingType="XRef" MappingValue="263400" MappingRef="OMIM">
+        <MedGen CUI="C1837915" Name="Chuvash polycythemia"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="305748" TraitType="Disease" MappingType="XRef" MappingValue="C0027672" MappingRef="MedGen">
+        <MedGen CUI="C0027672" Name="Hereditary cancer-predisposing syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="13564541" TraitType="Disease" MappingType="XRef" MappingValue="MONDO:0008233" MappingRef="MONDO">
+        <MedGen CUI="C0031511" Name="Pheochromocytoma"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="540727" TraitType="Disease" MappingType="XRef" MappingValue="C0019562" MappingRef="MedGen">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="540727" TraitType="Disease" MappingType="XRef" MappingValue="C1837915" MappingRef="MedGen">
+        <MedGen CUI="C1837915" Name="Chuvash polycythemia"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="10393903" TraitType="Disease" MappingType="Name" MappingValue="Not provided" MappingRef="Preferred">
+        <MedGen CUI="C3661900" Name="not provided"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="12654759" TraitType="Disease" MappingType="XRef" MappingValue="193300" MappingRef="OMIM">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+    </TraitMappingList>
+    <DeletedSCVList>
+      <SCV>
+        <Accession Version="1" DateDeleted="2024-12-20">SCV000504907</Accession>
+        <Description>This record was deleted because the classification was outdated and the DoCM project was retired. Classification of these variants is now being addressed by CIViC (civicdb.org).</Description>
+      </SCV>
+    </DeletedSCVList>
+  </ClassifiedRecord>
+</VariationArchive>
+</ClinVarResult-Set>

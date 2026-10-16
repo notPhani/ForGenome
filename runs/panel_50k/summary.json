@@ -1,0 +1,1340 @@
+{
+ "generated_at": "2026-08-19T10:13:57.869117+00:00",
+ "panel": "forge-actionable-panel-v1",
+ "genes_completed": [
+  "VHL",
+  "BRCA1",
+  "MYH7",
+  "KCNQ1",
+  "FBN1",
+  "LDLR",
+  "BRCA2",
+  "MYBPC3",
+  "KCNH2"
+ ],
+ "stopped_early": "deadline reached before TGFBR1",
+ "connectors_run": [
+  "ensembl_structure",
+  "uniprot",
+  "clingen",
+  "clinvar",
+  "dbsnp",
+  "ensembl_vep",
+  "gnomad"
+ ],
+ "connectors_stubbed": [
+  "omim",
+  "clingen_gene_disease",
+  "cosmic",
+  "dbnsfp",
+  "mondo",
+  "pharmgkb"
+ ],
+ "totals": {
+  "nodes": 53146,
+  "edges": 152391,
+  "variants_requested": 49957,
+  "variants_ingested": 5478,
+  "batches_committed": 2123,
+  "batches_rejected": 67,
+  "identity_merges": 8866,
+  "dirty_nodes": 5000,
+  "quarantined": 467,
+  "elapsed_seconds": 3683.2
+ },
+ "quarantine_reasons": {
+  "relationship: in_gene edge to out-of-scope gene HGNC:6547 (variant overlaps a neighbouring gene)": 293,
+  "batch: verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00": 29,
+  "batch: verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00": 18,
+  "batch: verification failed: [\"edge dst 'Ensembl:ENST00000227163' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00": 9,
+  "record: Ensembl VEP unavailable: HTTPError: 400 Client Error: Bad Request for url: https://rest.ensembl.org/vep/human/region/19:": 6,
+  "batch: verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00": 6,
+  "batch: verification failed: [\"edge dst 'Ensembl:ENST00000378538' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00": 3,
+  "batch: verification failed: [\"edge dst 'Ensembl:ENST00000533490' does not resolve to any known node\"]": 2,
+  "record: Ensembl VEP unavailable: HTTPError: 400 Client Error: Bad Request for url: https://rest.ensembl.org/vep/human/region/11:": 2,
+  "record: VCV000226404: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000226405: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000226406: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000226407: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250921: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250922: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250923: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250924: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250931: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250932: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250933: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250934: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250935: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250936: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250937: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250938: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250939: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250940: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "relationship: in_gene edge to out-of-scope gene HGNC:54407 (variant overlaps a neighbouring gene)": 1,
+  "record: VCV000250989: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250990: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250994: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250995: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250996: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250997: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250998: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000250999: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251000: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251001: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251002: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251003: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251004: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251054: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251055: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251058: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251059: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251060: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251061: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251062: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251063: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251064: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251065: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251066: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251067: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251068: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251069: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251070: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251140: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251143: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251144: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251145: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251146: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000251147: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: Ensembl VEP unavailable: HTTPError: 400 Client Error: Bad Request for url: https://rest.ensembl.org/vep/human/region/13:": 1,
+  "record: VCV000033174: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000037728: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000037870: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000037881: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000038117: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000038133: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000042814: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000057329: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000146079: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000148316: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000150595: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000151005: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000180924: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000057001: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000057118: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000057215: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000057401: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000057408: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000059716: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000060300: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000060302: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000060312: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000060313: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000146075: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000146558: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000146852: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000147398: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000147547: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000148181: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000148263: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000148391: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000148715: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000148943: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000149061: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000149569: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000149905: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000150858: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000150864: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000152912: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000154525: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000154735: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000155436: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000155640: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: VCV000155687: not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/CNV -- no single canonical SPDI to key a Varia": 1,
+  "record: Ensembl VEP unavailable: RetryExhausted: GET https://rest.ensembl.org/vep/human/region/7:150950171-150950172/G: 4 attemp": 1
+ },
+ "rejected_batches": [
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000237860",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000237868",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000250930",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000250946",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000250954",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000250970",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000250978",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251010",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251018",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251034",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251050",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251074",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251082",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251098",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251106",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251114",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251122",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251130",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251138",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251154",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251162",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251178",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251186",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251194",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251202",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251210",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251218",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251226",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000251234",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000252444' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000455727' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000535915' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000037718",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380133' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380139' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000037734",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000533490' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000037758",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000533490' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000038256",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380133' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380139' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000038264",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380133' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380139' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000051038",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380133' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380139' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000051046",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380133' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380139' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000051054",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000380130' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380133' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000380139' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000008621",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042672",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042680",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042688",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042696",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042704",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042712",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042720",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042728",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042736",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042744",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000311027' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000342922' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000349238' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042752",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000227163' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000378538' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000713542' does not resolve to any known node\"]"
+  },
+  {
+   "scope": "batch",
+   "context": "clinvar:VCV000042760",
+   "reason": "verification failed: [\"edge dst 'Ensembl:ENST00000227163' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000378538' does not resolve to any known node\", \"edge dst 'Ensembl:ENST00000713542' does not resolve to any known node\"]"
+  }
+ ],
+ "dirty": {
+  "total": 14962,
+  "open": 14962,
+  "by_state": {
+   "pending": 14962
+  },
+  "by_connector": {
+   "dbsnp": {
+    "deferred_budget": 4981,
+    "not_applicable": 1
+   },
+   "ensembl_vep": {
+    "deferred_budget": 4981,
+    "fetch_failed": 18
+   },
+   "gnomad": {
+    "deferred_budget": 4981
+   }
+  }
+ },
+ "allocations": [
+  {
+   "gene": "VHL",
+   "family_size": 2267,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "BRCA1",
+   "family_size": 16061,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MYH7",
+   "family_size": 5909,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "KCNQ1",
+   "family_size": 3159,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "FBN1",
+   "family_size": 9501,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "LDLR",
+   "family_size": 4935,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "BRCA2",
+   "family_size": 22021,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MYBPC3",
+   "family_size": 4747,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "KCNH2",
+   "family_size": 3922,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TGFBR1",
+   "family_size": 1272,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "APOB",
+   "family_size": 5199,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PALB2",
+   "family_size": 6885,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TNNT2",
+   "family_size": 1180,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SCN5A",
+   "family_size": 5095,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TGFBR2",
+   "family_size": 1414,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PCSK9",
+   "family_size": 1570,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TP53",
+   "family_size": 4019,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TNNI3",
+   "family_size": 898,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "RYR2",
+   "family_size": 10144,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SMAD3",
+   "family_size": 1322,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "OTC",
+   "family_size": 1184,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "STK11",
+   "family_size": 3128,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TPM1",
+   "family_size": 1101,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "CASQ2",
+   "family_size": 897,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "ACTA2",
+   "family_size": 781,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "BTD",
+   "family_size": 995,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PTEN",
+   "family_size": 4205,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MYL2",
+   "family_size": 666,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TRDN",
+   "family_size": 1648,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MYH11",
+   "family_size": 4710,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "GAA",
+   "family_size": 3678,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "CDH1",
+   "family_size": 5284,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MYL3",
+   "family_size": 517,
+   "budget": 517,
+   "resolved": true
+  },
+  {
+   "gene": "RYR1",
+   "family_size": 11191,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "COL3A1",
+   "family_size": 4012,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "ATP7B",
+   "family_size": 3805,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MLH1",
+   "family_size": 6499,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "ACTC1",
+   "family_size": 914,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "CACNA1S",
+   "family_size": 3537,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "RPE65",
+   "family_size": 1184,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MSH2",
+   "family_size": 8623,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PRKAG2",
+   "family_size": 1604,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TTR",
+   "family_size": 497,
+   "budget": 497,
+   "resolved": true
+  },
+  {
+   "gene": "MSH6",
+   "family_size": 10796,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "GLA",
+   "family_size": 2245,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "HNF1A",
+   "family_size": 1261,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PMS2",
+   "family_size": 6264,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "LMNA",
+   "family_size": 2513,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "ACVRL1",
+   "family_size": 1279,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "APC",
+   "family_size": 17168,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "FLNC",
+   "family_size": 6309,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "ENG",
+   "family_size": 2172,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MUTYH",
+   "family_size": 4247,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TTN",
+   "family_size": 40061,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "HFE",
+   "family_size": 355,
+   "budget": 355,
+   "resolved": true
+  },
+  {
+   "gene": "BMPR1A",
+   "family_size": 2876,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "BAG3",
+   "family_size": 1449,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SMAD4",
+   "family_size": 2692,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PLN",
+   "family_size": 213,
+   "budget": 213,
+   "resolved": true
+  },
+  {
+   "gene": "RB1",
+   "family_size": 4875,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "DSP",
+   "family_size": 6209,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "RET",
+   "family_size": 4470,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "PKP2",
+   "family_size": 2432,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MEN1",
+   "family_size": 3185,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "DSG2",
+   "family_size": 2370,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TSC1",
+   "family_size": 5815,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "DSC2",
+   "family_size": 2162,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TSC2",
+   "family_size": 12763,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TMEM43",
+   "family_size": 1207,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "WT1",
+   "family_size": 2104,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "NF2",
+   "family_size": 2641,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "BAP1",
+   "family_size": 3642,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SDHB",
+   "family_size": 1732,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SDHC",
+   "family_size": 1063,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SDHD",
+   "family_size": 971,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "SDHAF2",
+   "family_size": 777,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "MAX",
+   "family_size": 692,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "TMEM127",
+   "family_size": 1256,
+   "budget": 645,
+   "resolved": true
+  },
+  {
+   "gene": "FH",
+   "family_size": 2651,
+   "budget": 645,
+   "resolved": true
+  }
+ ],
+ "feeds": [
+  {
+   "feed": "Ensembl gene structure",
+   "group": "core_biology",
+   "nodes": 122,
+   "edges": 47
+  },
+  {
+   "feed": "UniProt",
+   "group": "core_biology",
+   "nodes": 3,
+   "edges": 1
+  },
+  {
+   "feed": "ClinVar",
+   "group": "evidence",
+   "nodes": 51010,
+   "edges": 27931
+  },
+  {
+   "feed": "Ensembl VEP",
+   "group": "evidence",
+   "nodes": 1639,
+   "edges": 474
+  },
+  {
+   "feed": "dbSNP",
+   "group": "evidence",
+   "nodes": 189,
+   "edges": 0
+  },
+  {
+   "feed": "gnomAD",
+   "group": "evidence",
+   "nodes": 183,
+   "edges": 14
+  }
+ ],
+ "edge_stats": {
+  "total_edges": 152391,
+  "total_nodes": 53146,
+  "edges_per_node": 2.87,
+  "cross_layer_edges": 107982,
+  "derived_edges": 6153,
+  "node_subtypes": {
+   "ClinicalAssertion": 18583,
+   "CaseObservation": 18583,
+   "AggregateClassification": 11311,
+   "Variant": 2286,
+   "ComputationalPrediction": 1639,
+   "Submitter": 292,
+   "PopulationFrequency": 183,
+   "Disease": 137,
+   "Exon": 77,
+   "Transcript": 39,
+   "Protein": 6,
+   "ClinicalImpactClassification": 6,
+   "Gene": 3,
+   "SourceManifest": 1
+  },
+  "unused_predicates": [
+   "REQUIRES",
+   "APPLIES_TO",
+   "ACTIVATED_BY"
+  ],
+  "predicates": [
+   {
+    "predicate": "RELATES_TO",
+    "count": 47331,
+    "share_pct": 31.1,
+    "qualifiers": {
+     "submitted_by": 18583,
+     "for_condition": 9194,
+     "aggregates_into": 9194,
+     "contributes_to": 6298,
+     "has_consequence": 2206,
+     "in_gene": 1853,
+     "encodes": 3
+    },
+    "origins": {
+     "SOURCE": 47331
+    },
+    "layer_pairs": {
+     "EVIDENCE\u2192ADMINISTRATIVE": 18583,
+     "EVIDENCE\u2192EVIDENCE": 15492,
+     "EVIDENCE\u2192CORE_BIOLOGY": 9194,
+     "CORE_BIOLOGY\u2192CORE_BIOLOGY": 4062
+    },
+    "driver": "39.3% of them are ClinicalAssertion \u2014RELATES_TO[submitted_by]\u2192 Submitter \u2014 breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "ClinicalAssertion \u2014RELATES_TO[submitted_by]\u2192 Submitter",
+      "src_subtype": "ClinicalAssertion",
+      "predicate": "RELATES_TO",
+      "qualifier": "submitted_by",
+      "dst_subtype": "Submitter",
+      "count": 18583,
+      "distinct_src_nodes": 18583,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "AggregateClassification \u2014RELATES_TO[for_condition]\u2192 Disease",
+      "src_subtype": "AggregateClassification",
+      "predicate": "RELATES_TO",
+      "qualifier": "for_condition",
+      "dst_subtype": "Disease",
+      "count": 9194,
+      "distinct_src_nodes": 9194,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "AggregateClassification \u2014RELATES_TO[aggregates_into]\u2192 AggregateClassification",
+      "src_subtype": "AggregateClassification",
+      "predicate": "RELATES_TO",
+      "qualifier": "aggregates_into",
+      "dst_subtype": "AggregateClassification",
+      "count": 9194,
+      "distinct_src_nodes": 9194,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "ClinicalAssertion \u2014RELATES_TO[contributes_to]\u2192 AggregateClassification",
+      "src_subtype": "ClinicalAssertion",
+      "predicate": "RELATES_TO",
+      "qualifier": "contributes_to",
+      "dst_subtype": "AggregateClassification",
+      "count": 6298,
+      "distinct_src_nodes": 6298,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "Variant \u2014RELATES_TO[has_consequence]\u2192 Transcript",
+      "src_subtype": "Variant",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst_subtype": "Transcript",
+      "count": 2206,
+      "distinct_src_nodes": 195,
+      "edges_per_source_node": 11.31
+     },
+     {
+      "label": "Variant \u2014RELATES_TO[in_gene]\u2192 Gene",
+      "src_subtype": "Variant",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst_subtype": "Gene",
+      "count": 1853,
+      "distinct_src_nodes": 1853,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "Transcript \u2014RELATES_TO[encodes]\u2192 Protein",
+      "src_subtype": "Transcript",
+      "predicate": "RELATES_TO",
+      "qualifier": "encodes",
+      "dst_subtype": "Protein",
+      "count": 3,
+      "distinct_src_nodes": 3,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   },
+   {
+    "predicate": "ASSERTS",
+    "count": 29900,
+    "share_pct": 19.6,
+    "qualifiers": {
+     "\u2014": 29900
+    },
+    "origins": {
+     "SOURCE": 29900
+    },
+    "layer_pairs": {
+     "EVIDENCE\u2192CORE_BIOLOGY": 29900
+    },
+    "driver": "62.2% of them are ClinicalAssertion \u2014ASSERTS\u2192 Variant \u2014 breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "ClinicalAssertion \u2014ASSERTS\u2192 Variant",
+      "src_subtype": "ClinicalAssertion",
+      "predicate": "ASSERTS",
+      "qualifier": null,
+      "dst_subtype": "Variant",
+      "count": 18583,
+      "distinct_src_nodes": 18583,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "AggregateClassification \u2014ASSERTS\u2192 Variant",
+      "src_subtype": "AggregateClassification",
+      "predicate": "ASSERTS",
+      "qualifier": null,
+      "dst_subtype": "Variant",
+      "count": 11311,
+      "distinct_src_nodes": 11311,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "ClinicalImpactClassification \u2014ASSERTS\u2192 Variant",
+      "src_subtype": "ClinicalImpactClassification",
+      "predicate": "ASSERTS",
+      "qualifier": null,
+      "dst_subtype": "Variant",
+      "count": 6,
+      "distinct_src_nodes": 6,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   },
+   {
+    "predicate": "SOURCED_FROM",
+    "count": 29900,
+    "share_pct": 19.6,
+    "qualifiers": {
+     "\u2014": 29900
+    },
+    "origins": {
+     "SOURCE": 29900
+    },
+    "layer_pairs": {
+     "EVIDENCE\u2192ADMINISTRATIVE": 29900
+    },
+    "driver": "62.2% of them are ClinicalAssertion \u2014SOURCED_FROM\u2192 SourceManifest \u2014 breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "ClinicalAssertion \u2014SOURCED_FROM\u2192 SourceManifest",
+      "src_subtype": "ClinicalAssertion",
+      "predicate": "SOURCED_FROM",
+      "qualifier": null,
+      "dst_subtype": "SourceManifest",
+      "count": 18583,
+      "distinct_src_nodes": 18583,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "AggregateClassification \u2014SOURCED_FROM\u2192 SourceManifest",
+      "src_subtype": "AggregateClassification",
+      "predicate": "SOURCED_FROM",
+      "qualifier": null,
+      "dst_subtype": "SourceManifest",
+      "count": 11311,
+      "distinct_src_nodes": 11311,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "ClinicalImpactClassification \u2014SOURCED_FROM\u2192 SourceManifest",
+      "src_subtype": "ClinicalImpactClassification",
+      "predicate": "SOURCED_FROM",
+      "qualifier": null,
+      "dst_subtype": "SourceManifest",
+      "count": 6,
+      "distinct_src_nodes": 6,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   },
+   {
+    "predicate": "OBSERVES",
+    "count": 20405,
+    "share_pct": 13.4,
+    "qualifiers": {
+     "\u2014": 20405
+    },
+    "origins": {
+     "SOURCE": 20405
+    },
+    "layer_pairs": {
+     "EVIDENCE\u2192CORE_BIOLOGY": 20405
+    },
+    "driver": "91.1% of them are CaseObservation \u2014OBSERVES\u2192 Variant \u2014 breadth: 18583 distinct CaseObservation nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "CaseObservation \u2014OBSERVES\u2192 Variant",
+      "src_subtype": "CaseObservation",
+      "predicate": "OBSERVES",
+      "qualifier": null,
+      "dst_subtype": "Variant",
+      "count": 18583,
+      "distinct_src_nodes": 18583,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "ComputationalPrediction \u2014OBSERVES\u2192 Variant",
+      "src_subtype": "ComputationalPrediction",
+      "predicate": "OBSERVES",
+      "qualifier": null,
+      "dst_subtype": "Variant",
+      "count": 1639,
+      "distinct_src_nodes": 1639,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "PopulationFrequency \u2014OBSERVES\u2192 Variant",
+      "src_subtype": "PopulationFrequency",
+      "predicate": "OBSERVES",
+      "qualifier": null,
+      "dst_subtype": "Variant",
+      "count": 183,
+      "distinct_src_nodes": 183,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   },
+   {
+    "predicate": "SUPPORTS",
+    "count": 18583,
+    "share_pct": 12.2,
+    "qualifiers": {
+     "corroborates": 18583
+    },
+    "origins": {
+     "SOURCE": 18583
+    },
+    "layer_pairs": {
+     "EVIDENCE\u2192EVIDENCE": 18583
+    },
+    "driver": "100.0% of them are CaseObservation \u2014SUPPORTS[corroborates]\u2192 ClinicalAssertion \u2014 breadth: 18583 distinct CaseObservation nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "CaseObservation \u2014SUPPORTS[corroborates]\u2192 ClinicalAssertion",
+      "src_subtype": "CaseObservation",
+      "predicate": "SUPPORTS",
+      "qualifier": "corroborates",
+      "dst_subtype": "ClinicalAssertion",
+      "count": 18583,
+      "distinct_src_nodes": 18583,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   },
+   {
+    "predicate": "CONTRADICTS",
+    "count": 6153,
+    "share_pct": 4.0,
+    "qualifiers": {
+     "\u2014": 6153
+    },
+    "origins": {
+     "DERIVED": 6153
+    },
+    "layer_pairs": {
+     "EVIDENCE\u2192EVIDENCE": 6153
+    },
+    "driver": "100.0% of them are ClinicalAssertion \u2014CONTRADICTS\u2192 ClinicalAssertion \u2014 fan-out: each ClinicalAssertion emits 2.52 on average",
+    "shapes": [
+     {
+      "label": "ClinicalAssertion \u2014CONTRADICTS\u2192 ClinicalAssertion",
+      "src_subtype": "ClinicalAssertion",
+      "predicate": "CONTRADICTS",
+      "qualifier": null,
+      "dst_subtype": "ClinicalAssertion",
+      "count": 6153,
+      "distinct_src_nodes": 2443,
+      "edges_per_source_node": 2.52
+     }
+    ]
+   },
+   {
+    "predicate": "PART_OF",
+    "count": 116,
+    "share_pct": 0.1,
+    "qualifiers": {
+     "\u2014": 116
+    },
+    "origins": {
+     "SOURCE": 116
+    },
+    "layer_pairs": {
+     "CORE_BIOLOGY\u2192CORE_BIOLOGY": 116
+    },
+    "driver": "66.4% of them are Exon \u2014PART_OF\u2192 Transcript \u2014 breadth: 77 distinct Exon nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "Exon \u2014PART_OF\u2192 Transcript",
+      "src_subtype": "Exon",
+      "predicate": "PART_OF",
+      "qualifier": null,
+      "dst_subtype": "Transcript",
+      "count": 77,
+      "distinct_src_nodes": 77,
+      "edges_per_source_node": 1.0
+     },
+     {
+      "label": "Transcript \u2014PART_OF\u2192 Gene",
+      "src_subtype": "Transcript",
+      "predicate": "PART_OF",
+      "qualifier": null,
+      "dst_subtype": "Gene",
+      "count": 39,
+      "distinct_src_nodes": 39,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   },
+   {
+    "predicate": "REPRESENTS",
+    "count": 3,
+    "share_pct": 0.0,
+    "qualifiers": {
+     "\u2014": 3
+    },
+    "origins": {
+     "SOURCE": 3
+    },
+    "layer_pairs": {
+     "CORE_BIOLOGY\u2192CORE_BIOLOGY": 3
+    },
+    "driver": "100.0% of them are Protein \u2014REPRESENTS\u2192 Protein \u2014 breadth: 3 distinct Protein nodes emit ~1 each",
+    "shapes": [
+     {
+      "label": "Protein \u2014REPRESENTS\u2192 Protein",
+      "src_subtype": "Protein",
+      "predicate": "REPRESENTS",
+      "qualifier": null,
+      "dst_subtype": "Protein",
+      "count": 3,
+      "distinct_src_nodes": 3,
+      "edges_per_source_node": 1.0
+     }
+    ]
+   }
+  ]
+ },
+ "coverage": {
+  "clinvar": {
+   "declarative": 0.0,
+   "escape_hatch": 100.0
+  },
+  "ensembl_structure": {
+   "declarative": 0.0,
+   "escape_hatch": 100.0
+  },
+  "uniprot": {
+   "declarative": 0.0,
+   "escape_hatch": 0.0
+  }
+ }
+}

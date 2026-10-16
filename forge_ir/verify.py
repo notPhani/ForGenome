@@ -1,0 +1,267 @@
+"""The 9 correctness checks -- forge-ir-v3-schema.md §7.
+
+Written and tested against deliberately-broken synthetic fixtures (see
+tests/test_verify.py) before any real connector code exists, per the pipeline
+doc's own stated discipline: nothing gets to claim "verified" against real
+data until the verifier has first proven it catches fake, engineered failures.
+"""
+from __future__ import annotations
+
+from collections import deque
+from dataclasses import dataclass, field
+
+from forge_ir.core import (
+    NODE_SUBTYPE_REGISTRY,
+    Layer,
+    Origin,
+    StorageScope,
+    is_allowed_edge,
+    layer_for,
+    storage_scope_for,
+)
+from forge_ir.graph import ForgeEdge, ForgeNode
+from forge_ir.provenance import DerivedProvenance, RuntimeProvenance, SourceProvenance
+
+DEFAULT_CONNECTIVITY_AUDIT_HOPS = 6  # a performance bound, NOT a semantic truth --
+                                      # forge-ir-v2 review round 4 point 7: don't hardcode "2"
+                                      # as if it were derived; every real edge we have today is
+                                      # 1 hop, this bound exists only to catch pathological cases
+
+
+@dataclass
+class VerificationReport:
+    valid: bool
+    type_errors: list[str] = field(default_factory=list)
+    referential_errors: list[str] = field(default_factory=list)
+    conservation_errors: list[str] = field(default_factory=list)
+    layer_errors: list[str] = field(default_factory=list)
+    provenance_errors: list[str] = field(default_factory=list)
+    hydration_errors: list[str] = field(default_factory=list)
+    connectivity_errors: list[str] = field(default_factory=list)
+    storage_scope_errors: list[str] = field(default_factory=list)
+
+    def all_errors(self) -> list[str]:
+        return (
+            self.type_errors + self.referential_errors + self.conservation_errors
+            + self.layer_errors + self.provenance_errors + self.hydration_errors
+            + self.connectivity_errors + self.storage_scope_errors
+        )
+
+
+def verify(
+    nodes: list[ForgeNode],
+    edges: list[ForgeEdge],
+    known_node_ids: set[str] | None = None,
+    connectivity_audit_hops: int = DEFAULT_CONNECTIVITY_AUDIT_HOPS,
+) -> VerificationReport:
+    """Runs all 9 checks over one batch. `known_node_ids` lets referential-integrity
+    checking see nodes already committed in prior batches (cross-batch), not just
+    this batch -- pass None/empty when verifying a batch in isolation (e.g. unit tests)."""
+    known_node_ids = known_node_ids or set()
+    by_id = {n.id: n for n in nodes}
+    all_ids = set(by_id) | known_node_ids
+
+    report = VerificationReport(valid=True)
+
+    report.type_errors = _check_type_correctness(nodes, edges, by_id)
+    report.referential_errors = _check_referential_integrity(edges, all_ids)
+    report.layer_errors = _check_layer_consistency(nodes)
+    report.provenance_errors = _check_multi_provenance_integrity(nodes, edges)
+    report.hydration_errors = _check_hydration_pointer_integrity(nodes)
+    report.connectivity_errors = _check_connectivity(nodes, edges, connectivity_audit_hops)
+    report.storage_scope_errors = _check_storage_scope_integrity(nodes, edges)
+
+    report.valid = len(report.all_errors()) == 0
+    return report
+
+
+def check_record_conservation(records_in: int, committed: int, quarantined: int, rejected: int) -> list[str]:
+    """§7 check 3, kept as a standalone function (not part of verify()) because it
+    operates on RECORD counts from the ingest pipeline, not on ForgeNode/ForgeEdge
+    objects -- one source record legitimately produces several nodes/edges, so this
+    invariant is never mixed with node/edge counts (forge-ir-v3-schema.md §7 fix)."""
+    total = committed + quarantined + rejected
+    if total != records_in:
+        return [f"record conservation violated: {records_in} in != {committed}+{quarantined}+{rejected}={total}"]
+    return []
+
+
+# ---------------------------------------------------------------------------
+# 1. Type correctness
+# ---------------------------------------------------------------------------
+
+def _check_type_correctness(nodes: list[ForgeNode], edges: list[ForgeEdge],
+                             by_id: dict[str, ForgeNode]) -> list[str]:
+    errors = []
+    for n in nodes:
+        if (n.role, n.subtype) not in NODE_SUBTYPE_REGISTRY:
+            errors.append(f"node {n.id!r}: unregistered (role, subtype) = ({n.role.value}, {n.subtype!r})")
+
+    for e in edges:
+        src, dst = by_id.get(e.src), by_id.get(e.dst)
+        if src is None or dst is None:
+            continue  # referential-integrity check reports this; avoid double-reporting here
+        if not is_allowed_edge(src.role, src.subtype, e.predicate, e.qualifier, dst.role, dst.subtype):
+            errors.append(
+                f"edge {e.src!r}--{e.predicate.value}"
+                f"{f'[{e.qualifier}]' if e.qualifier else ''}-->{e.dst!r}: "
+                f"({src.role.value}:{src.subtype}) -> ({dst.role.value}:{dst.subtype}) not in "
+                "ALLOWED_EDGE_COMBINATIONS"
+            )
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# 2. Referential integrity
+# ---------------------------------------------------------------------------
+
+def _check_referential_integrity(edges: list[ForgeEdge], all_ids: set[str]) -> list[str]:
+    errors = []
+    for e in edges:
+        if e.src not in all_ids:
+            errors.append(f"edge src {e.src!r} does not resolve to any known node")
+        if e.dst not in all_ids:
+            errors.append(f"edge dst {e.dst!r} does not resolve to any known node")
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# 4. Layer-tag consistency
+# ---------------------------------------------------------------------------
+
+def _check_layer_consistency(nodes: list[ForgeNode]) -> list[str]:
+    errors = []
+    for n in nodes:
+        if n.storage_scope != StorageScope.PERSISTENT:
+            expected = Layer.NOT_APPLICABLE
+        else:
+            try:
+                expected = layer_for(n.role, n.subtype)
+            except ValueError:
+                continue  # unregistered (role, subtype) is _check_type_correctness's finding to
+                          # report, not this check's -- don't let one check crash on another's failure
+        if n.layer != expected:
+            actual_label = n.layer.value if isinstance(n.layer, Layer) else repr(n.layer)
+            errors.append(f"node {n.id!r}: layer={actual_label} but recomputed layer={expected.value}")
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# 5. Multi-provenance integrity
+# ---------------------------------------------------------------------------
+
+_ORIGIN_PROVENANCE_TYPE = {
+    Origin.SOURCE: SourceProvenance,
+    Origin.DERIVED: DerivedProvenance,
+    Origin.RUNTIME: RuntimeProvenance,
+}
+
+
+def _check_provenance_entry(owner_label: str, origin: Origin, provenance: list) -> list[str]:
+    errors = []
+    if not provenance:
+        errors.append(f"{owner_label}: provenance list is empty")
+        return errors
+    expected_type = _ORIGIN_PROVENANCE_TYPE[origin]
+    for i, p in enumerate(provenance):
+        if not isinstance(p, expected_type):
+            errors.append(
+                f"{owner_label}: provenance[{i}] is {type(p).__name__}, expected {expected_type.__name__} "
+                f"for origin={origin.value}"
+            )
+    return errors
+
+
+def _check_multi_provenance_integrity(nodes: list[ForgeNode], edges: list[ForgeEdge]) -> list[str]:
+    errors = []
+    for n in nodes:
+        errors += _check_provenance_entry(f"node {n.id!r}", n.origin, n.provenance)
+    for e in edges:
+        errors += _check_provenance_entry(f"edge {e.src!r}->{e.dst!r}", e.origin, e.provenance)
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# 7. Hydration-pointer integrity, origin-branched
+# ---------------------------------------------------------------------------
+
+def _check_hydration_pointer_integrity(nodes: list[ForgeNode]) -> list[str]:
+    errors = []
+    for n in nodes:
+        if n.lod >= 4:
+            continue  # fully hydrated, no pointer needed
+        if n.origin == Origin.SOURCE:
+            has_pointer = any(
+                isinstance(p, SourceProvenance) and p.source_record_id for p in n.provenance
+            )
+            if not has_pointer:
+                errors.append(f"node {n.id!r}: origin=SOURCE, lod={n.lod}<4, but no resolvable source_record_id")
+        elif n.origin == Origin.DERIVED:
+            has_lineage = any(
+                isinstance(p, DerivedProvenance) and p.input_node_ids for p in n.provenance
+            )
+            if not has_lineage:
+                errors.append(f"node {n.id!r}: origin=DERIVED but no derivation lineage (input_node_ids empty)")
+        elif n.origin == Origin.RUNTIME:
+            has_investigation = any(
+                isinstance(p, RuntimeProvenance) and p.investigation_id for p in n.provenance
+            )
+            if not has_investigation:
+                errors.append(f"node {n.id!r}: origin=RUNTIME but no valid investigation_id")
+    return errors
+
+
+# ---------------------------------------------------------------------------
+# 8. Connectivity integrity
+# ---------------------------------------------------------------------------
+
+def _check_connectivity(nodes: list[ForgeNode], edges: list[ForgeEdge], max_hops: int) -> list[str]:
+    adjacency: dict[str, list[str]] = {}
+    for e in edges:
+        adjacency.setdefault(e.src, []).append(e.dst)
+        adjacency.setdefault(e.dst, []).append(e.src)  # undirected reachability
+
+    core_biology_ids = {n.id for n in nodes if n.layer == Layer.CORE_BIOLOGY}
+    evidence_nodes = [n for n in nodes if n.layer == Layer.EVIDENCE]
+
+    errors = []
+    for n in evidence_nodes:
+        if not _reachable_within(n.id, core_biology_ids, adjacency, max_hops):
+            errors.append(
+                f"node {n.id!r} (EVIDENCE layer): no path to any CORE_BIOLOGY node within "
+                f"{max_hops} hops -- orphaned evidence"
+            )
+    return errors
+
+
+def _reachable_within(start: str, targets: set[str], adjacency: dict[str, list[str]], max_hops: int) -> bool:
+    if start in targets:
+        return True
+    visited = {start}
+    frontier = deque([(start, 0)])
+    while frontier:
+        node_id, hops = frontier.popleft()
+        if hops >= max_hops:
+            continue
+        for neighbor in adjacency.get(node_id, []):
+            if neighbor in targets:
+                return True
+            if neighbor not in visited:
+                visited.add(neighbor)
+                frontier.append((neighbor, hops + 1))
+    return False
+
+
+# ---------------------------------------------------------------------------
+# 9. Storage-scope integrity
+# ---------------------------------------------------------------------------
+
+def _check_storage_scope_integrity(nodes: list[ForgeNode], edges: list[ForgeEdge]) -> list[str]:
+    errors = []
+    for n in nodes:
+        if n.origin == Origin.SOURCE and storage_scope_for(n.role) == StorageScope.RUNTIME_ONLY:
+            errors.append(f"node {n.id!r}: RUNTIME_ONLY role {n.role.value} has origin=SOURCE (connector-emitted)")
+    for e in edges:
+        if e.origin == Origin.SOURCE and e.storage_scope == StorageScope.RUNTIME_ONLY:
+            errors.append(f"edge {e.src!r}->{e.dst!r}: RUNTIME_ONLY predicate {e.predicate.value} has origin=SOURCE")
+    return errors

@@ -1,0 +1,99 @@
+[persistent] Core Biology — Ensembl gene structure for VHL
+[persistent] Operational — ClinGen VCEP GN078 rule set
+[evidence] ESearch: 'VHL[gene]'
+[evidence] family size: 2267 ClinVar records
+[evidence] selected 1134 variants (sample_pct=50.0, limit=None, seed=62)
+[evidence] fetching batch 1 (50 variants)…
+[evidence] fetching batch 2 (50 variants)…
+[evidence] fetching batch 3 (50 variants)…
+[evidence] fetching batch 4 (50 variants)…
+[evidence] fetching batch 5 (50 variants)…
+[evidence] fetching batch 6 (50 variants)…
+[evidence] fetching batch 7 (50 variants)…
+[evidence] fetching batch 8 (50 variants)…
+[evidence] fetching batch 9 (50 variants)…
+[evidence] fetching batch 10 (50 variants)…
+[evidence] fetching batch 11 (50 variants)…
+[evidence] fetching batch 12 (50 variants)…
+[evidence] fetching batch 13 (50 variants)…
+[evidence] fetching batch 14 (50 variants)…
+[evidence] fetching batch 15 (50 variants)…
+[evidence] fetching batch 16 (50 variants)…
+[evidence] fetching batch 17 (50 variants)…
+[evidence] fetching batch 18 (50 variants)…
+[evidence] fetching batch 19 (50 variants)…
+[evidence] fetching batch 20 (50 variants)…
+[evidence] fetching batch 21 (50 variants)…
+[evidence] fetching batch 22 (50 variants)…
+[evidence] fetching batch 23 (34 variants)…
+[evidence] fetched 1134 archives
+  … 100/1134 variants · 713 nodes · 1187 edges
+  … 200/1134 variants · 1254 nodes · 2300 edges
+  … 300/1134 variants · 1830 nodes · 3525 edges
+  … 400/1134 variants · 2461 nodes · 4878 edges
+  … 500/1134 variants · 3119 nodes · 6302 edges
+  … 600/1134 variants · 3802 nodes · 7773 edges
+  … 700/1134 variants · 4376 nodes · 9024 edges
+  … 800/1134 variants · 5278 nodes · 11110 edges
+  … 900/1134 variants · 6312 nodes · 13527 edges
+  … 1000/1134 variants · 7457 nodes · 16272 edges
+  … 1100/1134 variants · 8837 nodes · 19458 edges
+
+========================================================================================
+RUN SUMMARY  ·  mode=full  ·  gene=VHL  ·  LIVE  ·  115.0s
+========================================================================================
+  connectors           clinvar
+  variants requested   1134
+  variants ingested    1053
+  micro-batches        1082 committed / 0 rejected
+  quarantined records  81
+  committed graph      9727 nodes / 21393 edges
+  identity merges      1973 (cross-batch: a Gene/Variant/Disease resolved onto an existing node)
+  connector feeds:
+      core_biology  Ensembl gene structure       20 nodes      19 edges
+      operational   ClinGen VCEP                168 nodes     168 edges
+      evidence      ClinVar                    9539 nodes   21206 edges
+  quarantine reasons:
+         81  not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/
+          2  3585 (variant overlaps a neighbouring gene)
+========================================================================================
+
+========================================================================================
+EDGE TYPE STATISTICS  ·  21393 edges over 9727 nodes (2.2 edges/node)
+========================================================================================
+PREDICATE        COUNT   SHARE  DOMINANT SHAPE / DRIVER
+----------------------------------------------------------------------------------------
+RELATES_TO        9776   45.7%  ███████████████
+                                26.4% of them are ClinicalAssertion —RELATES_TO[submitted_by]→ Submitter — breadth: 2584 distinct ClinicalAssertion nodes emit ~1 each
+                  2117    9.9%    · AggregateClassification —RELATES_TO[for_condition]→ Disease  (1.0/src)
+                  2117    9.9%    · AggregateClassification —RELATES_TO[aggregates_into]→ AggregateClassification  (1.0/src)
+
+ASSERTS           5763   26.9%  █████████
+                                55.0% of them are AggregateClassification —ASSERTS→ Variant — breadth: 3170 distinct AggregateClassification nodes emit ~1 each
+                  2584   12.1%    · ClinicalAssertion —ASSERTS→ Variant  (1.0/src)
+                     9    0.0%    · ClinicalImpactClassification —ASSERTS→ Variant  (1.0/src)
+
+OBSERVES          2584   12.1%  ████
+                                100.0% of them are CaseObservation —OBSERVES→ Variant — breadth: 2584 distinct CaseObservation nodes emit ~1 each
+
+SUPPORTS          2584   12.1%  ████
+                                100.0% of them are CaseObservation —SUPPORTS[corroborates]→ ClinicalAssertion — breadth: 2584 distinct CaseObservation nodes emit ~1 each
+
+CONTRADICTS        500    2.3%  █
+                                100.0% of them are ClinicalAssertion —CONTRADICTS→ ClinicalAssertion — breadth: 317 distinct ClinicalAssertion nodes emit ~1 each
+
+REQUIRES           140    0.7%  █
+                                100.0% of them are ACMGCriterion —REQUIRES→ Requirement — fan-out: each ACMGCriterion emits 5.0 on average
+
+APPLIES_TO          28    0.1%  █
+                                100.0% of them are ACMGCriterion —APPLIES_TO→ Gene — breadth: 28 distinct ACMGCriterion nodes emit ~1 each
+
+PART_OF             18    0.1%  █
+                                83.3% of them are Transcript —PART_OF→ Gene — breadth: 15 distinct Transcript nodes emit ~1 each
+                     3    0.0%    · Exon —PART_OF→ Transcript  (1.0/src)
+
+Ontology predicates with zero edges in this run: REPRESENTS, SOURCED_FROM, ACTIVATED_BY
+Cross-layer edges: 13076 (61.1%)  ·  DERIVED-origin edges: 500
+========================================================================================
+Event log → demo/graph_data.json (33093 events)
+Edge statistics → runs/vhl_50pct_edge_stats.json

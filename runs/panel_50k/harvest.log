@@ -1,0 +1,722 @@
+[02:02:05] ============================================================================================
+[02:02:05] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[02:02:05]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[02:02:05]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[02:02:05]   enrichment  1 in 10 variants
+[02:02:05]   output      D:\ForgePOC\runs/panel_50k
+[02:02:05] ============================================================================================
+[02:02:05]   VHL        ESearch FAILED (NameError)
+[02:02:05]   BRCA1      ESearch FAILED (NameError)
+[02:02:05]   MYH7       ESearch FAILED (NameError)
+[02:02:06]   KCNQ1      ESearch FAILED (NameError)
+[02:02:06]   FBN1       ESearch FAILED (NameError)
+[02:02:06]   LDLR       ESearch FAILED (NameError)
+[02:02:07]   BRCA2      ESearch FAILED (NameError)
+[02:02:07]   MYBPC3     ESearch FAILED (NameError)
+[02:02:07]   KCNH2      ESearch FAILED (NameError)
+[02:02:08]   TGFBR1     ESearch FAILED (NameError)
+[02:02:08]   APOB       ESearch FAILED (NameError)
+[02:02:08]   PALB2      ESearch FAILED (NameError)
+[02:02:09]   TNNT2      ESearch FAILED (NameError)
+[02:02:09]   SCN5A      ESearch FAILED (NameError)
+[02:02:09]   TGFBR2     ESearch FAILED (NameError)
+[02:02:10]   PCSK9      ESearch FAILED (NameError)
+[02:02:10]   TP53       ESearch FAILED (NameError)
+[02:02:10]   TNNI3      ESearch FAILED (NameError)
+[02:02:11]   RYR2       ESearch FAILED (NameError)
+[02:02:11]   SMAD3      ESearch FAILED (NameError)
+[02:02:12]   OTC        ESearch FAILED (NameError)
+[02:02:12]   STK11      ESearch FAILED (NameError)
+[02:02:12]   TPM1       ESearch FAILED (NameError)
+[02:02:13]   CASQ2      ESearch FAILED (NameError)
+[02:02:13]   ACTA2      ESearch FAILED (NameError)
+[02:02:13]   BTD        ESearch FAILED (NameError)
+[02:02:14]   PTEN       ESearch FAILED (NameError)
+[02:02:14]   MYL2       ESearch FAILED (NameError)
+[02:02:14]   TRDN       ESearch FAILED (NameError)
+[02:02:15]   MYH11      ESearch FAILED (NameError)
+[02:02:15]   GAA        ESearch FAILED (NameError)
+[02:02:15]   CDH1       ESearch FAILED (NameError)
+[02:02:16]   MYL3       ESearch FAILED (NameError)
+[02:02:16]   RYR1       ESearch FAILED (NameError)
+[02:02:16]   COL3A1     ESearch FAILED (NameError)
+[02:02:17]   ATP7B      ESearch FAILED (NameError)
+[02:02:17]   MLH1       ESearch FAILED (NameError)
+[02:02:17]   ACTC1      ESearch FAILED (NameError)
+[02:02:18]   CACNA1S    ESearch FAILED (NameError)
+[02:02:18]   RPE65      ESearch FAILED (NameError)
+[02:02:18]   MSH2       ESearch FAILED (NameError)
+[02:02:19]   PRKAG2     ESearch FAILED (NameError)
+[02:02:19]   TTR        ESearch FAILED (NameError)
+[02:02:19]   MSH6       ESearch FAILED (NameError)
+[02:02:20]   GLA        ESearch FAILED (NameError)
+[02:02:20]   HNF1A      ESearch FAILED (NameError)
+[02:02:20]   PMS2       ESearch FAILED (NameError)
+[02:02:21]   LMNA       ESearch FAILED (NameError)
+[02:02:21]   ACVRL1     ESearch FAILED (NameError)
+[02:02:21]   APC        ESearch FAILED (NameError)
+[02:02:22]   FLNC       ESearch FAILED (NameError)
+[02:02:22]   ENG        ESearch FAILED (NameError)
+[02:02:22]   MUTYH      ESearch FAILED (NameError)
+[02:02:23]   TTN        ESearch FAILED (NameError)
+[02:02:23]   HFE        ESearch FAILED (NameError)
+[02:02:23]   BMPR1A     ESearch FAILED (NameError)
+[02:02:24]   BAG3       ESearch FAILED (NameError)
+[02:02:24]   SMAD4      ESearch FAILED (NameError)
+[02:02:24]   PLN        ESearch FAILED (NameError)
+[02:02:25]   RB1        ESearch FAILED (NameError)
+[02:02:25]   DSP        ESearch FAILED (NameError)
+[02:02:25]   RET        ESearch FAILED (NameError)
+[02:02:26]   PKP2       ESearch FAILED (NameError)
+[02:02:26]   MEN1       ESearch FAILED (NameError)
+[02:02:26]   DSG2       ESearch FAILED (NameError)
+[02:02:27]   TSC1       ESearch FAILED (NameError)
+[02:02:27]   DSC2       ESearch FAILED (NameError)
+[02:02:28]   TSC2       ESearch FAILED (NameError)
+[02:02:28]   TMEM43     ESearch FAILED (NameError)
+[02:02:28]   WT1        ESearch FAILED (NameError)
+[02:02:29]   NF2        ESearch FAILED (NameError)
+[02:02:29]   BAP1       ESearch FAILED (NameError)
+[02:02:29]   SDHB       ESearch FAILED (NameError)
+[02:02:30]   SDHC       ESearch FAILED (NameError)
+[02:02:30]   SDHD       ESearch FAILED (NameError)
+[02:02:30]   SDHAF2     ESearch FAILED (NameError)
+[02:02:31]   MAX        ESearch FAILED (NameError)
+[02:02:31]   TMEM127    ESearch FAILED (NameError)
+[02:02:31]   FH         ESearch FAILED (NameError)
+[02:02:32] 
+[02:02:32] GENE        CLINVAR FAMILY   ALLOCATED   COVERAGE
+[02:02:32] ------------------------------------------------------------
+[02:02:32] VHL                      0           0     0.0%  UNRESOLVED
+[02:02:32] BRCA1                    0           0     0.0%  UNRESOLVED
+[02:02:32] MYH7                     0           0     0.0%  UNRESOLVED
+[02:02:32] KCNQ1                    0           0     0.0%  UNRESOLVED
+[02:02:32] FBN1                     0           0     0.0%  UNRESOLVED
+[02:02:32] LDLR                     0           0     0.0%  UNRESOLVED
+[02:02:32] BRCA2                    0           0     0.0%  UNRESOLVED
+[02:02:32] MYBPC3                   0           0     0.0%  UNRESOLVED
+[02:02:32] KCNH2                    0           0     0.0%  UNRESOLVED
+[02:02:32] TGFBR1                   0           0     0.0%  UNRESOLVED
+[02:02:32] APOB                     0           0     0.0%  UNRESOLVED
+[02:02:32] PALB2                    0           0     0.0%  UNRESOLVED
+[02:02:32] TNNT2                    0           0     0.0%  UNRESOLVED
+[02:02:32] SCN5A                    0           0     0.0%  UNRESOLVED
+[02:02:32] TGFBR2                   0           0     0.0%  UNRESOLVED
+[02:02:32] PCSK9                    0           0     0.0%  UNRESOLVED
+[02:02:32] TP53                     0           0     0.0%  UNRESOLVED
+[02:02:32] TNNI3                    0           0     0.0%  UNRESOLVED
+[02:02:32] RYR2                     0           0     0.0%  UNRESOLVED
+[02:02:32] SMAD3                    0           0     0.0%  UNRESOLVED
+[02:02:32] OTC                      0           0     0.0%  UNRESOLVED
+[02:02:32] STK11                    0           0     0.0%  UNRESOLVED
+[02:02:32] TPM1                     0           0     0.0%  UNRESOLVED
+[02:02:32] CASQ2                    0           0     0.0%  UNRESOLVED
+[02:02:32] ACTA2                    0           0     0.0%  UNRESOLVED
+[02:02:32] BTD                      0           0     0.0%  UNRESOLVED
+[02:02:32] PTEN                     0           0     0.0%  UNRESOLVED
+[02:02:32] MYL2                     0           0     0.0%  UNRESOLVED
+[02:02:32] TRDN                     0           0     0.0%  UNRESOLVED
+[02:02:32] MYH11                    0           0     0.0%  UNRESOLVED
+[02:02:32] GAA                      0           0     0.0%  UNRESOLVED
+[02:02:32] CDH1                     0           0     0.0%  UNRESOLVED
+[02:02:32] MYL3                     0           0     0.0%  UNRESOLVED
+[02:02:32] RYR1                     0           0     0.0%  UNRESOLVED
+[02:02:32] COL3A1                   0           0     0.0%  UNRESOLVED
+[02:02:32] ATP7B                    0           0     0.0%  UNRESOLVED
+[02:02:32] MLH1                     0           0     0.0%  UNRESOLVED
+[02:02:32] ACTC1                    0           0     0.0%  UNRESOLVED
+[02:02:32] CACNA1S                  0           0     0.0%  UNRESOLVED
+[02:02:32] RPE65                    0           0     0.0%  UNRESOLVED
+[02:02:32] MSH2                     0           0     0.0%  UNRESOLVED
+[02:02:32] PRKAG2                   0           0     0.0%  UNRESOLVED
+[02:02:32] TTR                      0           0     0.0%  UNRESOLVED
+[02:02:32] MSH6                     0           0     0.0%  UNRESOLVED
+[02:02:32] GLA                      0           0     0.0%  UNRESOLVED
+[02:02:32] HNF1A                    0           0     0.0%  UNRESOLVED
+[02:02:32] PMS2                     0           0     0.0%  UNRESOLVED
+[02:02:32] LMNA                     0           0     0.0%  UNRESOLVED
+[02:02:32] ACVRL1                   0           0     0.0%  UNRESOLVED
+[02:02:32] APC                      0           0     0.0%  UNRESOLVED
+[02:02:32] FLNC                     0           0     0.0%  UNRESOLVED
+[02:02:32] ENG                      0           0     0.0%  UNRESOLVED
+[02:02:32] MUTYH                    0           0     0.0%  UNRESOLVED
+[02:02:32] TTN                      0           0     0.0%  UNRESOLVED
+[02:02:32] HFE                      0           0     0.0%  UNRESOLVED
+[02:02:32] BMPR1A                   0           0     0.0%  UNRESOLVED
+[02:02:32] BAG3                     0           0     0.0%  UNRESOLVED
+[02:02:32] SMAD4                    0           0     0.0%  UNRESOLVED
+[02:02:32] PLN                      0           0     0.0%  UNRESOLVED
+[02:02:32] RB1                      0           0     0.0%  UNRESOLVED
+[02:02:32] DSP                      0           0     0.0%  UNRESOLVED
+[02:02:32] RET                      0           0     0.0%  UNRESOLVED
+[02:02:32] PKP2                     0           0     0.0%  UNRESOLVED
+[02:02:32] MEN1                     0           0     0.0%  UNRESOLVED
+[02:02:32] DSG2                     0           0     0.0%  UNRESOLVED
+[02:02:32] TSC1                     0           0     0.0%  UNRESOLVED
+[02:02:32] DSC2                     0           0     0.0%  UNRESOLVED
+[02:02:32] TSC2                     0           0     0.0%  UNRESOLVED
+[02:02:32] TMEM43                   0           0     0.0%  UNRESOLVED
+[02:02:32] WT1                      0           0     0.0%  UNRESOLVED
+[02:02:32] NF2                      0           0     0.0%  UNRESOLVED
+[02:02:32] BAP1                     0           0     0.0%  UNRESOLVED
+[02:02:32] SDHB                     0           0     0.0%  UNRESOLVED
+[02:02:32] SDHC                     0           0     0.0%  UNRESOLVED
+[02:02:32] SDHD                     0           0     0.0%  UNRESOLVED
+[02:02:32] SDHAF2                   0           0     0.0%  UNRESOLVED
+[02:02:32] MAX                      0           0     0.0%  UNRESOLVED
+[02:02:32] TMEM127                  0           0     0.0%  UNRESOLVED
+[02:02:32] FH                       0           0     0.0%  UNRESOLVED
+[02:02:32] ------------------------------------------------------------
+[02:02:32] TOTAL                    0           0
+[02:04:55] ============================================================================================
+[02:04:55] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[02:04:55]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[02:04:55]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[02:04:55]   enrichment  1 in 10 variants
+[02:04:55]   output      D:\ForgePOC\runs/panel_50k
+[02:04:55] ============================================================================================
+[02:07:23] ============================================================================================
+[02:07:23] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[02:07:23]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[02:07:23]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[02:07:23]   enrichment  1 in 10 variants
+[02:07:23]   output      D:\ForgePOC\runs/panel_50k
+[02:07:23] ============================================================================================
+[02:07:26]   [ 1/79] VHL         2,267 ClinVar records
+[02:07:30]   [ 2/79] BRCA1      16,061 ClinVar records
+[02:07:34]   [ 3/79] MYH7        5,909 ClinVar records
+[02:07:36]   [ 4/79] KCNQ1       3,159 ClinVar records
+[02:07:40]   [ 5/79] FBN1        9,501 ClinVar records
+[02:07:45]   [ 6/79] LDLR        4,935 ClinVar records
+[02:07:47]   [ 7/79] BRCA2      22,021 ClinVar records
+[02:07:49]   [ 8/79] MYBPC3      4,747 ClinVar records
+[02:07:51]   [ 9/79] KCNH2       3,922 ClinVar records
+[02:07:53]   [10/79] TGFBR1      1,272 ClinVar records
+[02:07:55]   [11/79] APOB        5,199 ClinVar records
+[02:07:59]   [12/79] PALB2       6,885 ClinVar records
+[02:08:00]   [13/79] TNNT2       1,180 ClinVar records
+[02:08:04]   [14/79] SCN5A       5,095 ClinVar records
+[02:08:07]   [15/79] TGFBR2      1,414 ClinVar records
+[02:08:08]   [16/79] PCSK9       1,570 ClinVar records
+[02:08:10]   [17/79] TP53        4,019 ClinVar records
+[02:08:11]   [18/79] TNNI3         898 ClinVar records
+[02:08:13]   [19/79] RYR2       10,144 ClinVar records
+[02:08:14]   [20/79] SMAD3       1,322 ClinVar records
+[02:08:15]   [21/79] OTC         1,184 ClinVar records
+[02:08:17]   [22/79] STK11       3,128 ClinVar records
+[02:08:19]   [23/79] TPM1        1,101 ClinVar records
+[02:08:20]   [24/79] CASQ2         897 ClinVar records
+[02:08:22]   [25/79] ACTA2         781 ClinVar records
+[02:08:23]   [26/79] BTD           995 ClinVar records
+[02:08:24]   [27/79] PTEN        4,205 ClinVar records
+[02:08:26]   [28/79] MYL2          666 ClinVar records
+[02:08:28]   [29/79] TRDN        1,648 ClinVar records
+[02:08:30]   [30/79] MYH11       4,710 ClinVar records
+[02:08:31]   [31/79] GAA         3,678 ClinVar records
+[02:08:36]   [32/79] CDH1        5,284 ClinVar records
+[02:08:38]   [33/79] MYL3          517 ClinVar records
+[02:08:40]   [34/79] RYR1       11,191 ClinVar records
+[02:08:44]   [35/79] COL3A1      4,012 ClinVar records
+[02:08:45]   [36/79] ATP7B       3,805 ClinVar records
+[02:08:47]   [37/79] MLH1        6,499 ClinVar records
+[02:08:48]   [38/79] ACTC1         914 ClinVar records
+[02:08:51]   [39/79] CACNA1S     3,537 ClinVar records
+[02:08:52]   [40/79] RPE65       1,184 ClinVar records
+[02:08:53]   [41/79] MSH2        8,623 ClinVar records
+[02:08:55]   [42/79] PRKAG2      1,604 ClinVar records
+[02:08:56]   [43/79] TTR           497 ClinVar records
+[02:08:58]   [44/79] MSH6       10,796 ClinVar records
+[02:08:59]   [45/79] GLA         2,245 ClinVar records
+[02:09:01]   [46/79] HNF1A       1,261 ClinVar records
+[02:09:02]   [47/79] PMS2        6,264 ClinVar records
+[02:09:04]   [48/79] LMNA        2,513 ClinVar records
+[02:09:06]   [49/79] ACVRL1      1,279 ClinVar records
+[02:09:08]   [50/79] APC        17,168 ClinVar records
+[02:09:10]   [51/79] FLNC        6,309 ClinVar records
+[02:09:12]   [52/79] ENG         2,172 ClinVar records
+[02:09:14]   [53/79] MUTYH       4,247 ClinVar records
+[02:09:16]   [54/79] TTN        40,061 ClinVar records
+[02:09:18]   [55/79] HFE           355 ClinVar records
+[02:09:20]   [56/79] BMPR1A      2,876 ClinVar records
+[02:09:22]   [57/79] BAG3        1,449 ClinVar records
+[02:09:23]   [58/79] SMAD4       2,692 ClinVar records
+[02:09:25]   [59/79] PLN           213 ClinVar records
+[02:09:28]   [60/79] RB1         4,875 ClinVar records
+[02:09:29]   [61/79] DSP         6,209 ClinVar records
+[02:09:31]   [62/79] RET         4,470 ClinVar records
+[02:09:35]   [63/79] PKP2        2,432 ClinVar records
+[02:09:37]   [64/79] MEN1        3,185 ClinVar records
+[02:09:38]   [65/79] DSG2        2,370 ClinVar records
+[02:09:40]   [66/79] TSC1        5,815 ClinVar records
+[02:09:41]   [67/79] DSC2        2,162 ClinVar records
+[02:09:43]   [68/79] TSC2       12,763 ClinVar records
+[02:09:45]   [69/79] TMEM43      1,207 ClinVar records
+[02:09:47]   [70/79] WT1         2,104 ClinVar records
+[02:09:49]   [71/79] NF2         2,641 ClinVar records
+[02:09:51]   [72/79] BAP1        3,642 ClinVar records
+[02:09:53]   [73/79] SDHB        1,732 ClinVar records
+[02:09:55]   [74/79] SDHC        1,063 ClinVar records
+[02:09:57]   [75/79] SDHD          971 ClinVar records
+[02:09:58]   [76/79] SDHAF2        777 ClinVar records
+[02:10:01]   [77/79] MAX           692 ClinVar records
+[02:10:04]   [78/79] TMEM127     1,256 ClinVar records
+[02:10:05]   [79/79] FH          2,651 ClinVar records
+[02:10:06] 
+[02:10:06] GENE        CLINVAR FAMILY   ALLOCATED   COVERAGE
+[02:10:06] ------------------------------------------------------------
+[02:10:06] TTN                 40,061         645     1.6%
+[02:10:06] BRCA2               22,021         645     2.9%
+[02:10:06] APC                 17,168         645     3.8%
+[02:10:06] BRCA1               16,061         645     4.0%
+[02:10:06] TSC2                12,763         645     5.1%
+[02:10:06] RYR1                11,191         645     5.8%
+[02:10:06] MSH6                10,796         645     6.0%
+[02:10:06] RYR2                10,144         645     6.4%
+[02:10:06] FBN1                 9,501         645     6.8%
+[02:10:06] MSH2                 8,623         645     7.5%
+[02:10:06] PALB2                6,885         645     9.4%
+[02:10:06] MLH1                 6,499         645     9.9%
+[02:10:06] FLNC                 6,309         645    10.2%
+[02:10:06] PMS2                 6,264         645    10.3%
+[02:10:06] DSP                  6,209         645    10.4%
+[02:10:06] MYH7                 5,909         645    10.9%
+[02:10:06] TSC1                 5,815         645    11.1%
+[02:10:06] CDH1                 5,284         645    12.2%
+[02:10:06] APOB                 5,199         645    12.4%
+[02:10:06] SCN5A                5,095         645    12.7%
+[02:10:06] LDLR                 4,935         645    13.1%
+[02:10:06] RB1                  4,875         645    13.2%
+[02:10:06] MYBPC3               4,747         645    13.6%
+[02:10:06] MYH11                4,710         645    13.7%
+[02:10:06] RET                  4,470         645    14.4%
+[02:10:06] MUTYH                4,247         645    15.2%
+[02:10:06] PTEN                 4,205         645    15.3%
+[02:10:06] TP53                 4,019         645    16.0%
+[02:10:06] COL3A1               4,012         645    16.1%
+[02:10:06] KCNH2                3,922         645    16.4%
+[02:10:06] ATP7B                3,805         645    17.0%
+[02:10:06] GAA                  3,678         645    17.5%
+[02:10:06] BAP1                 3,642         645    17.7%
+[02:10:06] CACNA1S              3,537         645    18.2%
+[02:10:06] MEN1                 3,185         645    20.3%
+[02:10:06] KCNQ1                3,159         645    20.4%
+[02:10:06] STK11                3,128         645    20.6%
+[02:10:06] BMPR1A               2,876         645    22.4%
+[02:10:06] SMAD4                2,692         645    24.0%
+[02:10:06] FH                   2,651         645    24.3%
+[02:10:06] NF2                  2,641         645    24.4%
+[02:10:06] LMNA                 2,513         645    25.7%
+[02:10:06] PKP2                 2,432         645    26.5%
+[02:10:06] DSG2                 2,370         645    27.2%
+[02:10:06] VHL                  2,267         645    28.5%
+[02:10:06] GLA                  2,245         645    28.7%
+[02:10:06] ENG                  2,172         645    29.7%
+[02:10:06] DSC2                 2,162         645    29.8%
+[02:10:06] WT1                  2,104         645    30.7%
+[02:10:06] SDHB                 1,732         645    37.2%
+[02:10:06] TRDN                 1,648         645    39.1%
+[02:10:06] PRKAG2               1,604         645    40.2%
+[02:10:06] PCSK9                1,570         645    41.1%
+[02:10:06] BAG3                 1,449         645    44.5%
+[02:10:06] TGFBR2               1,414         645    45.6%
+[02:10:06] SMAD3                1,322         645    48.8%
+[02:10:06] ACVRL1               1,279         645    50.4%
+[02:10:06] TGFBR1               1,272         645    50.7%
+[02:10:06] HNF1A                1,261         645    51.1%
+[02:10:06] TMEM127              1,256         645    51.4%
+[02:10:06] TMEM43               1,207         645    53.4%
+[02:10:06] OTC                  1,184         645    54.5%
+[02:10:06] RPE65                1,184         645    54.5%
+[02:10:06] TNNT2                1,180         645    54.7%
+[02:10:06] TPM1                 1,101         645    58.6%
+[02:10:06] SDHC                 1,063         645    60.7%
+[02:10:06] BTD                    995         645    64.8%
+[02:10:06] SDHD                   971         645    66.4%
+[02:10:06] ACTC1                  914         645    70.6%
+[02:10:06] TNNI3                  898         645    71.8%
+[02:10:06] CASQ2                  897         645    71.9%
+[02:10:06] ACTA2                  781         645    82.6%
+[02:10:06] SDHAF2                 777         645    83.0%
+[02:10:06] MAX                    692         645    93.2%
+[02:10:06] MYL2                   666         645    96.8%
+[02:10:06] MYL3                   517         517   100.0%  complete
+[02:10:06] TTR                    497         497   100.0%  complete
+[02:10:06] HFE                    355         355   100.0%  complete
+[02:10:06] PLN                    213         213   100.0%  complete
+[02:10:06] ------------------------------------------------------------
+[02:10:06] TOTAL              347,097      49,957
+[02:14:13] ============================================================================================
+[02:14:13] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[02:14:13]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[02:14:13]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[02:14:13]   enrichment  1 in 10 variants
+[02:14:13]   output      D:\ForgePOC\runs/panel_50k
+[02:14:13] ============================================================================================
+[02:14:15] [plan] VHL: 2267 ClinVar records
+[02:14:17] [plan] BRCA1: 16061 ClinVar records
+[02:14:18] [plan] MYH7: 5909 ClinVar records
+[02:14:21] [plan] KCNQ1: 3159 ClinVar records
+[02:14:23] [plan] FBN1: 9501 ClinVar records
+[02:14:24] [plan] LDLR: 4935 ClinVar records
+[02:14:26] [plan] BRCA2: 22021 ClinVar records
+[02:14:30] [plan] MYBPC3: 4747 ClinVar records
+[02:14:32] [plan] KCNH2: 3922 ClinVar records
+[02:14:34] [plan] TGFBR1: 1272 ClinVar records
+[02:14:36] [plan] APOB: 5199 ClinVar records
+[02:14:38] [plan] PALB2: 6885 ClinVar records
+[02:14:39] [plan] TNNT2: 1180 ClinVar records
+[02:14:41] [plan] SCN5A: 5095 ClinVar records
+[02:14:42] [plan] TGFBR2: 1414 ClinVar records
+[02:14:43] [plan] PCSK9: 1570 ClinVar records
+[02:14:45] [plan] TP53: 4019 ClinVar records
+[02:14:46] [plan] TNNI3: 898 ClinVar records
+[02:14:48] [plan] RYR2: 10144 ClinVar records
+[02:14:49] [plan] SMAD3: 1322 ClinVar records
+[02:14:50] [plan] OTC: 1184 ClinVar records
+[02:14:52] [plan] STK11: 3128 ClinVar records
+[02:14:54] [plan] TPM1: 1101 ClinVar records
+[02:14:55] [plan] CASQ2: 897 ClinVar records
+[02:14:57] [plan] ACTA2: 781 ClinVar records
+[02:14:58] [plan] BTD: 995 ClinVar records
+[02:14:59] [plan] PTEN: 4205 ClinVar records
+[02:15:01] [plan] MYL2: 666 ClinVar records
+[02:15:03] [plan] TRDN: 1648 ClinVar records
+[02:15:05] [plan] MYH11: 4710 ClinVar records
+[02:15:06] [plan] GAA: 3678 ClinVar records
+[02:15:08] [plan] CDH1: 5284 ClinVar records
+[02:15:09] [plan] MYL3: 517 ClinVar records
+[02:15:11] [plan] RYR1: 11191 ClinVar records
+[02:15:13] [plan] COL3A1: 4012 ClinVar records
+[02:15:14] [plan] ATP7B: 3805 ClinVar records
+[02:15:16] [plan] MLH1: 6499 ClinVar records
+[02:15:18] [plan] ACTC1: 914 ClinVar records
+[02:15:19] [plan] CACNA1S: 3537 ClinVar records
+[02:15:20] [plan] RPE65: 1184 ClinVar records
+[02:15:22] [plan] MSH2: 8623 ClinVar records
+[02:15:24] [plan] PRKAG2: 1604 ClinVar records
+[02:15:26] [plan] TTR: 497 ClinVar records
+[02:15:27] [plan] MSH6: 10796 ClinVar records
+[02:15:28] [plan] GLA: 2245 ClinVar records
+[02:15:30] [plan] HNF1A: 1261 ClinVar records
+[02:15:33] [plan] PMS2: 6264 ClinVar records
+[02:15:34] [plan] LMNA: 2513 ClinVar records
+[02:15:35] [plan] ACVRL1: 1279 ClinVar records
+[02:15:38] [plan] APC: 17168 ClinVar records
+[02:15:39] [plan] FLNC: 6309 ClinVar records
+[02:15:41] [plan] ENG: 2172 ClinVar records
+[02:15:43] [plan] MUTYH: 4247 ClinVar records
+[02:15:46] [plan] TTN: 40061 ClinVar records
+[02:15:48] [plan] HFE: 355 ClinVar records
+[02:15:49] [plan] BMPR1A: 2876 ClinVar records
+[02:15:51] [plan] BAG3: 1449 ClinVar records
+[02:15:53] [plan] SMAD4: 2692 ClinVar records
+[02:15:55] [plan] PLN: 213 ClinVar records
+[02:15:56] [plan] RB1: 4875 ClinVar records
+[02:15:58] [plan] DSP: 6209 ClinVar records
+[02:15:59] [plan] RET: 4470 ClinVar records
+[02:16:01] [plan] PKP2: 2432 ClinVar records
+[02:16:03] [plan] MEN1: 3185 ClinVar records
+[02:16:05] [plan] DSG2: 2370 ClinVar records
+[02:16:07] [plan] TSC1: 5815 ClinVar records
+[02:16:08] [plan] DSC2: 2162 ClinVar records
+[02:16:10] [plan] TSC2: 12763 ClinVar records
+[02:16:12] [plan] TMEM43: 1207 ClinVar records
+[02:16:13] [plan] WT1: 2104 ClinVar records
+[02:16:15] [plan] NF2: 2641 ClinVar records
+[02:16:17] [plan] BAP1: 3642 ClinVar records
+[02:16:19] [plan] SDHB: 1732 ClinVar records
+[02:16:20] [plan] SDHC: 1063 ClinVar records
+[02:16:21] [plan] SDHD: 971 ClinVar records
+[02:16:23] [plan] SDHAF2: 777 ClinVar records
+[02:16:24] [plan] MAX: 692 ClinVar records
+[02:16:26] [plan] TMEM127: 1256 ClinVar records
+[02:16:29] [plan] FH: 2651 ClinVar records
+[02:16:29] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[02:16:50] [VHL] persistent layer failed (HTTPError: 403 Client Error: Forbidden for url: https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/GN078) — continuing with evidence only
+[02:16:50] [VHL] 645 variants allocated of 2267 in family
+[02:19:13] ============================================================================================
+[02:19:13] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[02:19:13]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[02:19:13]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[02:19:13]   enrichment  1 in 10 variants
+[02:19:13]   output      D:\ForgePOC\runs/panel_50k
+[02:19:13] ============================================================================================
+[02:19:13] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[02:19:18] [VHL] 645 variants allocated of 2267 in family
+[02:28:57]   … 250 variants · 4432 nodes · 12356 edges · 612 dirty tickets
+[09:52:25] ============================================================================================
+[09:52:25] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[09:52:25]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[09:52:25]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[09:52:25]   enrichment  1 in 15 variants
+[09:52:25]   output      D:\ForgePOC\runs/panel_50k
+[09:52:25] ============================================================================================
+[09:52:26] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[09:52:26] [VHL] 645 variants allocated of 2267 in family · resuming at 300
+[09:55:33]   … 500 variants · 2148 nodes · 6099 edges · 1267 dirty tickets
+[09:58:46] ============================================================================================
+[09:58:46] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[09:58:46]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[09:58:46]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[09:58:46]   enrichment  1 in 30 variants
+[09:58:46]   output      D:\ForgePOC\runs/panel_50k
+[09:58:46] ============================================================================================
+[09:58:47] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[09:58:47] [VHL] 645 variants allocated of 2267 in family · resuming at 600
+[09:59:40] [BRCA1] 645 variants allocated of 16061 in family
+[10:03:08]   … 750 variants · 5871 nodes · 15656 edges · 1960 dirty tickets
+[10:08:17]   … 1000 variants · 15659 nodes · 42964 edges · 2665 dirty tickets
+[10:13:51]   … 1250 variants · 20963 nodes · 58309 edges · 3388 dirty tickets
+[10:47:36] ============================================================================================
+[10:47:36] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[10:47:36]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[10:47:36]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[10:47:36]   enrichment  1 in 8 variants
+[10:47:36]   output      D:\ForgePOC\runs/panel_50k
+[10:47:36] ============================================================================================
+[10:47:36] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[10:48:30] [MYH7] 645 variants allocated of 5909 in family
+[10:55:59]   … 1500 variants · 6899 nodes · 18574 edges · 4048 dirty tickets
+[11:00:28]   … 1750 variants · 13191 nodes · 36572 edges · 4675 dirty tickets
+[11:04:37] [KCNQ1] 645 variants allocated of 3159 in family
+[11:06:09]   … 2000 variants · 19610 nodes · 53968 edges · 5323 dirty tickets
+[11:13:11]   … 2250 variants · 24085 nodes · 66722 edges · 5974 dirty tickets
+[11:19:16]   … 2500 variants · 27654 nodes · 77176 edges · 6601 dirty tickets
+[11:21:47] [FBN1] 645 variants allocated of 9501 in family
+[11:25:36]   … 2750 variants · 32006 nodes · 89647 edges · 7253 dirty tickets
+[11:31:41]   … 3000 variants · 37077 nodes · 104774 edges · 7899 dirty tickets
+[11:41:17] [LDLR] 645 variants allocated of 4935 in family
+[11:41:44]   … 3250 variants · 41600 nodes · 117439 edges · 8545 dirty tickets
+[11:49:58]   … 3500 variants · 51026 nodes · 142843 edges · 9169 dirty tickets
+[11:50:10] 
+[11:50:10] ============================================================================================
+[11:50:10] HARVEST SUMMARY  ·  1.04h  ·  5/79 genes completed
+[11:50:10] ============================================================================================
+[11:50:10]   variants allocated   49,957
+[11:50:10]   variants ingested    3,361
+[11:50:10]   committed graph      51,560 nodes / 144,383 edges
+[11:50:10]   micro-batches        2,157 committed / 25 rejected
+[11:50:10]   identity merges      8,287
+[11:50:10]   dirty nodes          3,077 (9,215 open retry tickets of 9,215 filed)
+[11:50:10]   STOPPED EARLY        deadline reached during LDLR
+[11:50:10]   retry tickets by connector:
+[11:50:10]       dbsnp            deferred_budget=3,069
+[11:50:10]       ensembl_vep      deferred_budget=3,069, fetch_failed=8
+[11:50:10]       gnomad           deferred_budget=3,069
+[11:50:10]   connector feeds:
+[11:50:10]       core_biology  Ensembl gene structure        276 nodes
+[11:50:10]       core_biology  UniProt                         4 nodes
+[11:50:10]       evidence      ClinVar                    45,588 nodes
+[11:50:10]       evidence      Ensembl VEP                 5,326 nodes
+[11:50:10]       evidence      gnomAD                        212 nodes
+[11:50:10]       evidence      dbSNP                         154 nodes
+[11:50:10]   quarantined          91
+[11:50:10]            61  not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/
+[11:50:10]             7  ENST00000737300' does not resolve to any known node"]
+[11:50:10]             5  ENST00000710657' does not resolve to any known node"]
+[11:50:10]             4  ENST00000737447' does not resolve to any known node"]
+[11:50:10]             3  ENST00000557368' does not resolve to any known node"]
+[11:50:10]             2  ENST00000968250' does not resolve to any known node"]
+[11:50:10] ============================================================================================
+[11:50:10] 
+========================================================================================
+EDGE TYPE STATISTICS  ·  144383 edges over 51560 nodes (2.8 edges/node)
+========================================================================================
+PREDICATE        COUNT   SHARE  DOMINANT SHAPE / DRIVER
+----------------------------------------------------------------------------------------
+RELATES_TO       48209   33.4%  ███████████
+                                33.4% of them are ClinicalAssertion —RELATES_TO[submitted_by]→ Submitter — breadth: 16091 distinct ClinicalAssertion nodes emit ~1 each
+                  8724    6.0%    · AggregateClassification —RELATES_TO[for_condition]→ Disease  (1.0/src)
+
+ASSERTS          26964   18.7%  ██████
+                                59.7% of them are ClinicalAssertion —ASSERTS→ Variant — breadth: 16091 distinct ClinicalAssertion nodes emit ~1 each
+                 10873    7.5%    · AggregateClassification —ASSERTS→ Variant  (1.0/src)
+
+SOURCED_FROM     26964   18.7%  ██████
+                                59.7% of them are ClinicalAssertion —SOURCED_FROM→ SourceManifest — breadth: 16091 distinct ClinicalAssertion nodes emit ~1 each
+                 10873    7.5%    · AggregateClassification —SOURCED_FROM→ SourceManifest  (1.0/src)
+
+OBSERVES         21629   15.0%  █████
+                                74.4% of them are CaseObservation —OBSERVES→ Variant — breadth: 16091 distinct CaseObservation nodes emit ~1 each
+                  5326    3.7%    · ComputationalPrediction —OBSERVES→ Variant  (1.0/src)
+
+SUPPORTS         16091   11.1%  ████
+                                100.0% of them are CaseObservation —SUPPORTS[corroborates]→ ClinicalAssertion — breadth: 16091 distinct CaseObservation nodes emit ~1 each
+
+CONTRADICTS       4254    2.9%  █
+                                100.0% of them are ClinicalAssertion —CONTRADICTS→ ClinicalAssertion — fan-out: each ClinicalAssertion emits 2.41 on average
+
+PART_OF            268    0.2%  █
+                                52.2% of them are Exon —PART_OF→ Transcript — breadth: 140 distinct Exon nodes emit ~1 each
+                   128    0.1%    · Transcript —PART_OF→ Gene  (1.0/src)
+
+REPRESENTS           4    0.0%  █
+                                100.0% of them are Protein —REPRESENTS→ Protein — breadth: 4 distinct Protein nodes emit ~1 each
+
+Ontology predicates with zero edges in this run: REQUIRES, APPLIES_TO, ACTIVATED_BY
+Cross-layer edges: 100372 (69.5%)  ·  DERIVED-origin edges: 4254
+========================================================================================
+[11:50:10] Wrote D:\ForgePOC\runs/panel_50k\summary.json
+[11:50:10] Graph dump → D:\ForgePOC\runs/panel_50k\graph.jsonl.gz
+[11:50:10] Dirty ledger → D:\ForgePOC\runs/panel_50k\dirty_ledger.jsonl
+[11:50:10] Total wall clock: 1.04h
+[14:42:34] ============================================================================================
+[14:42:34] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[14:42:34]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[14:42:34]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[14:42:34]   enrichment  1 in 8 variants
+[14:42:34]   output      D:\ForgePOC\runs/panel_50k
+[14:42:34] ============================================================================================
+[14:42:35] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[14:42:35] [LDLR] 645 variants allocated of 4935 in family · resuming at 300
+[14:43:53]   ! batch REJECTED (clinvar:VCV000237860): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:44:03]   ! batch REJECTED (clinvar:VCV000237868): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:44:29]   ! batch REJECTED (clinvar:VCV000250930): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:44:45]   ! batch REJECTED (clinvar:VCV000250946): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:45:02]   ! batch REJECTED (clinvar:VCV000250954): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:45:43]   ! batch REJECTED (clinvar:VCV000250970): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:45:56]   ! batch REJECTED (clinvar:VCV000250978): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:46:29]   ! batch REJECTED (clinvar:VCV000251010): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:46:37]   ! batch REJECTED (clinvar:VCV000251018): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:47:29]   ! batch REJECTED (clinvar:VCV000251034): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:48:14]   ! batch REJECTED (clinvar:VCV000251050): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:48:30]   ! batch REJECTED (clinvar:VCV000251074): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:48:48]   ! batch REJECTED (clinvar:VCV000251082): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:27]   ! batch REJECTED (clinvar:VCV000251098): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:35]   ! batch REJECTED (clinvar:VCV000251106): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:42]   ! batch REJECTED (clinvar:VCV000251114): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:43]   … 3750 variants · 2467 nodes · 6449 edges · 9695 dirty tickets
+[14:49:50]   ! batch REJECTED (clinvar:VCV000251122): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:02]   ! batch REJECTED (clinvar:VCV000251130): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:13]   ! batch REJECTED (clinvar:VCV000251138): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:16]   ! batch REJECTED (clinvar:VCV000251154): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:21]   ! batch REJECTED (clinvar:VCV000251162): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:37]   ! batch REJECTED (clinvar:VCV000251178): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:49]   ! batch REJECTED (clinvar:VCV000251186): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:03]   ! batch REJECTED (clinvar:VCV000251194): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:26]   ! batch REJECTED (clinvar:VCV000251202): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:29]   ! batch REJECTED (clinvar:VCV000251210): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:46]   ! batch REJECTED (clinvar:VCV000251218): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:52:03]   ! batch REJECTED (clinvar:VCV000251226): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:52:17]   ! batch REJECTED (clinvar:VCV000251234): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:52:37] [BRCA2] 645 variants allocated of 22021 in family
+[14:53:39]   ! batch REJECTED (clinvar:VCV000037718): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[14:54:17]   ! batch REJECTED (clinvar:VCV000037734): verification failed: ["edge dst 'Ensembl:ENST00000533490' does not resolve to any known node"]
+[14:54:53]   ! batch REJECTED (clinvar:VCV000037758): verification failed: ["edge dst 'Ensembl:ENST00000533490' does not resolve to any known node"]
+[14:56:27]   … 4000 variants · 9225 nodes · 24988 edges · 10330 dirty tickets
+[15:04:18]   … 4250 variants · 19521 nodes · 54172 edges · 10981 dirty tickets
+[15:09:58]   ! batch REJECTED (clinvar:VCV000038256): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:10:02]   ! batch REJECTED (clinvar:VCV000038264): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:11:44]   ! batch REJECTED (clinvar:VCV000051038): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:11:59]   ! batch REJECTED (clinvar:VCV000051046): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:12:21]   ! batch REJECTED (clinvar:VCV000051054): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:12:32]   … 4500 variants · 29905 nodes · 83612 edges · 11632 dirty tickets
+[15:13:17] [MYBPC3] 645 variants allocated of 4747 in family
+[15:13:32]   ! batch REJECTED (clinvar:VCV000008621): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:19:06]   ! batch REJECTED (clinvar:VCV000042672): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:19:46]   ! batch REJECTED (clinvar:VCV000042680): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:19]   ! batch REJECTED (clinvar:VCV000042688): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:34]   ! batch REJECTED (clinvar:VCV000042696): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:34]   … 4750 variants · 36502 nodes · 103290 edges · 12289 dirty tickets
+[15:20:46]   ! batch REJECTED (clinvar:VCV000042704): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:55]   ! batch REJECTED (clinvar:VCV000042712): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:21:07]   ! batch REJECTED (clinvar:VCV000042720): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:21:23]   ! batch REJECTED (clinvar:VCV000042728): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:21:48]   ! batch REJECTED (clinvar:VCV000042736): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:22:00]   ! batch REJECTED (clinvar:VCV000042744): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:22:32]   ! batch REJECTED (clinvar:VCV000042752): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node"]
+[15:22:38]   ! batch REJECTED (clinvar:VCV000042760): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node"]
+[15:22:46]   ! batch REJECTED (clinvar:VCV000042768): verification failed: ["edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713543' does not resolve to any known node"]
+[15:24:44]   ! batch REJECTED (clinvar:VCV000155808): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:25:56]   ! batch REJECTED (clinvar:VCV000164053): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:28:11]   ! batch REJECTED (clinvar:VCV000164149): verification failed: ["edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713543' does not resolve to any known node"]
+[15:28:17]   ! batch REJECTED (clinvar:VCV000177638): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:28:31]   ! batch REJECTED (clinvar:VCV000177675): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:28:53]   ! batch REJECTED (clinvar:VCV000177780): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:28:53]   … 5000 variants · 42138 nodes · 120440 edges · 12930 dirty tickets
+[15:29:27]   ! batch REJECTED (clinvar:VCV000178872): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:29:39]   ! batch REJECTED (clinvar:VCV000179554): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:29:47]   ! batch REJECTED (clinvar:VCV000179989): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node"]
+[15:30:05]   ! batch REJECTED (clinvar:VCV000180413): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:30:17]   ! batch REJECTED (clinvar:VCV000180923): verification failed: ["edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713543' does not resolve to any known node"]
+[15:31:30]   ! batch REJECTED (clinvar:VCV000180981): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:31:36]   ! batch REJECTED (clinvar:VCV000180989): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:31:45]   ! batch REJECTED (clinvar:VCV000180997): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:31:57]   ! batch REJECTED (clinvar:VCV000181005): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:32:07]   ! batch REJECTED (clinvar:VCV000181013): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:32:21] [KCNH2] 645 variants allocated of 3922 in family
+[15:34:32]   … 5250 variants · 45726 nodes · 130885 edges · 13557 dirty tickets
+[15:38:35]   … 5500 variants · 49075 nodes · 140429 edges · 14214 dirty tickets
+[15:41:57]   … 5750 variants · 52605 nodes · 150820 edges · 14817 dirty tickets
+[15:43:57] 
+[15:43:57] ============================================================================================
+[15:43:57] HARVEST SUMMARY  ·  1.02h  ·  9/79 genes completed
+[15:43:57] ============================================================================================
+[15:43:57]   variants allocated   49,957
+[15:43:57]   variants ingested    5,478
+[15:43:57]   committed graph      53,146 nodes / 152,391 edges
+[15:43:57]   micro-batches        2,123 committed / 67 rejected
+[15:43:57]   identity merges      8,866
+[15:43:57]   dirty nodes          5,000 (14,962 open retry tickets of 14,962 filed)
+[15:43:57]   STOPPED EARLY        deadline reached before TGFBR1
+[15:43:57]   retry tickets by connector:
+[15:43:57]       dbsnp            deferred_budget=4,981, not_applicable=1
+[15:43:57]       ensembl_vep      deferred_budget=4,981, fetch_failed=18
+[15:43:57]       gnomad           deferred_budget=4,981
+[15:43:57]   connector feeds:
+[15:43:57]       core_biology  Ensembl gene structure        122 nodes
+[15:43:57]       core_biology  UniProt                         3 nodes
+[15:43:57]       evidence      ClinVar                    51,010 nodes
+[15:43:57]       evidence      Ensembl VEP                 1,639 nodes
+[15:43:57]       evidence      dbSNP                         189 nodes
+[15:43:57]       evidence      gnomAD                        183 nodes
+[15:43:57]   quarantined          467
+[15:43:57]           293  6547 (variant overlaps a neighbouring gene)
+[15:43:57]            96  not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/
+[15:43:57]            29  ENST00000535915' does not resolve to any known node"]
+[15:43:57]            18  ENST00000349238' does not resolve to any known node"]
+[15:43:57]             6  ENST00000380139' does not resolve to any known node"]
+[15:43:57]             6  ENST00000533030' does not resolve to any known node"]
+[15:43:57] ============================================================================================
+[15:43:57] 
+========================================================================================
+EDGE TYPE STATISTICS  ·  152391 edges over 53146 nodes (2.87 edges/node)
+========================================================================================
+PREDICATE        COUNT   SHARE  DOMINANT SHAPE / DRIVER
+----------------------------------------------------------------------------------------
+RELATES_TO       47331   31.1%  ██████████
+                                39.3% of them are ClinicalAssertion —RELATES_TO[submitted_by]→ Submitter — breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each
+                  9194    6.0%    · AggregateClassification —RELATES_TO[for_condition]→ Disease  (1.0/src)
+
+ASSERTS          29900   19.6%  ███████
+                                62.2% of them are ClinicalAssertion —ASSERTS→ Variant — breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each
+                 11311    7.4%    · AggregateClassification —ASSERTS→ Variant  (1.0/src)
+
+SOURCED_FROM     29900   19.6%  ███████
+                                62.2% of them are ClinicalAssertion —SOURCED_FROM→ SourceManifest — breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each
+                 11311    7.4%    · AggregateClassification —SOURCED_FROM→ SourceManifest  (1.0/src)
+
+OBSERVES         20405   13.4%  ████
+                                91.1% of them are CaseObservation —OBSERVES→ Variant — breadth: 18583 distinct CaseObservation nodes emit ~1 each
+                  1639    1.1%    · ComputationalPrediction —OBSERVES→ Variant  (1.0/src)
+
+SUPPORTS         18583   12.2%  ████
+                                100.0% of them are CaseObservation —SUPPORTS[corroborates]→ ClinicalAssertion — breadth: 18583 distinct CaseObservation nodes emit ~1 each
+
+CONTRADICTS       6153    4.0%  █
+                                100.0% of them are ClinicalAssertion —CONTRADICTS→ ClinicalAssertion — fan-out: each ClinicalAssertion emits 2.52 on average
+
+PART_OF            116    0.1%  █
+                                66.4% of them are Exon —PART_OF→ Transcript — breadth: 77 distinct Exon nodes emit ~1 each
+                    39    0.0%    · Transcript —PART_OF→ Gene  (1.0/src)
+
+REPRESENTS           3    0.0%  █
+                                100.0% of them are Protein —REPRESENTS→ Protein — breadth: 3 distinct Protein nodes emit ~1 each
+
+Ontology predicates with zero edges in this run: REQUIRES, APPLIES_TO, ACTIVATED_BY
+Cross-layer edges: 107982 (70.9%)  ·  DERIVED-origin edges: 6153
+========================================================================================
+[15:43:58] Wrote D:\ForgePOC\runs/panel_50k\summary.json
+[15:43:58] Graph dump → D:\ForgePOC\runs/panel_50k\graph.jsonl.gz
+[15:43:58] Dirty ledger → D:\ForgePOC\runs/panel_50k\dirty_ledger.jsonl
+[15:43:58] Total wall clock: 1.02h

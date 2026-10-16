@@ -1,0 +1,198 @@
+"""The pluggable connector contract -- closes the gap where adding a new source meant
+hand-editing orchestration/runner.py's core loop.
+
+A connector becomes known to the system by calling `register_connector()` once, at
+import time, in its own module -- nothing in this file or in runner.py needs editing to
+add one. `main.py`/`runner.py` never import a specific connector module by name; they
+import `connectors` (the package `__init__.py`), which imports every connector module,
+which registers itself as a side effect. That's the entire contract:
+
+    1. A `SourceAdapter` (forge_ir/contracts.py) -- `.fetch()`, `.capabilities()`, `.manifest()`
+    2. A `build_query(scope, anchor) -> dict | None` -- None means "not applicable to
+       this scope" (e.g. a variant-level connector has nothing to say about `gene` scope)
+    3. A `build_emission(raw, ctx) -> Emission` -- turns one fetched payload into tagged
+       nodes/edges (reuses whatever parser/MappingSpec/escape-hatch the connector already has)
+    4. `requires` -- names of other connectors this one HARD-depends on (gnomAD needs
+       ClinVar's variant identity to exist first; most connectors depend on nothing)
+
+`Emission` lives here (not in orchestration/runner.py, where it was first built) because
+it's now a shared contract type every connector's `build_emission` returns, not a
+runner-private implementation detail.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass
+from datetime import datetime
+from typing import Callable
+
+from forge_ir.core import EdgeType, NodeRole, Origin
+from forge_ir.graph import ForgeEdge, ForgeNode
+from forge_ir.provenance import SourceProvenance
+
+
+class Emission:
+    """Nodes and edges plus the connector feed that produced each one.
+
+    The feed is recorded at production time rather than inferred from provenance later,
+    because provenance alone can't do it: two feeds from the same adapter (e.g. Ensembl's
+    gene-structure feed and its VEP-consequence feed) can carry the identical
+    `SourceProvenance("Ensembl", ...)`. Only the call site knows which feed it is."""
+
+    def __init__(self) -> None:
+        self.nodes: list[ForgeNode] = []
+        self.edges: list[ForgeEdge] = []
+        self.feed_of: dict[str, str] = {}     # node id or edge key -> feed name
+
+    def add(self, feed: str, results: list) -> None:
+        for r in results:
+            if isinstance(r, ForgeNode):
+                self.nodes.append(r)
+                self.feed_of.setdefault(r.id, feed)
+            else:
+                self.edges.append(r)
+                self.feed_of.setdefault(edge_key_str(r), feed)
+
+    def feed_for_node(self, node: ForgeNode) -> str | None:
+        return self.feed_of.get(node.id)
+
+    def feed_for_edge(self, edge: ForgeEdge) -> str | None:
+        return self.feed_of.get(edge_key_str(edge))
+
+    def merge(self, other: "Emission") -> None:
+        """Folds another Emission's nodes/edges/feed-tags into this one -- used when a
+        single record (e.g. one ClinVar variant) is enriched by several connectors
+        (gnomAD, VEP, dbSNP, ...) before being committed as one micro-batch.
+
+        First writer wins on feed attribution -- real, confirmed bug this fixes: dict.update()
+        here used to let whichever connector merged LAST silently steal credit for a node id
+        another connector already owned (e.g. dbSNP re-deriving the exact same canonical
+        Variant id ClinVar already built reassigned that node's feed from "ClinVar" to
+        "dbSNP", even though dbSNP contributed nothing new for it). `Emission.add()` already
+        uses `setdefault` for the same reason; merge() has to match it."""
+        self.nodes.extend(other.nodes)
+        self.edges.extend(other.edges)
+        for key, feed in other.feed_of.items():
+            self.feed_of.setdefault(key, feed)
+
+
+def edge_key_str(e: ForgeEdge) -> str:
+    return f"{e.src}|{e.predicate.value}|{e.qualifier or ''}|{e.dst}"
+
+
+def tag_with_source_manifest(emission: "Emission", descriptor: "ConnectorDescriptor", now: datetime) -> None:
+    """forge-pipeline-v1.md §5: "mandatory, not design-only." Called once per
+    connector's Emission, right after build_emission() produces it -- adds one
+    SourceManifest node (built from the connector's own already-implemented
+    `adapter.manifest()`) and a SOURCED_FROM edge from every CLAIM-role node in the
+    emission to it. Centralized here rather than duplicated inside every connector's
+    build_emission, since it's the same operation for all of them: read the manifest,
+    tag the claims. `ALLOWED_EDGE_COMBINATIONS` already permits
+    CLAIM(any subtype) --SOURCED_FROM--> ENTITY(SourceManifest), so no ontology change
+    was needed to make this legal."""
+    # Local import: forge_ir.core -> connectors.common would otherwise need to import
+    # this module in the other direction, and this function is only ever called after
+    # connectors are already fully loaded.
+    from connectors.common import build_source_manifest_node
+
+    claims = [n for n in emission.nodes if n.role == NodeRole.CLAIM]
+    if not claims:
+        return   # nothing to attribute -- e.g. Ensembl's gene-structure feed is all ENTITY
+
+    manifest_info = descriptor.adapter.manifest()
+    manifest_node = build_source_manifest_node(
+        source=manifest_info["source"], dataset=manifest_info["dataset"],
+        version=manifest_info.get("source_version"), retrieved_at=now,
+        schema_version=manifest_info.get("schema_version", "1"),
+    )
+    emission.nodes.append(manifest_node)
+    emission.feed_of.setdefault(manifest_node.id, descriptor.feed_label)
+
+    prov = [SourceProvenance(manifest_info["source"], manifest_info["dataset"],
+                              manifest_info.get("source_version"), now)]
+    for claim in claims:
+        edge = ForgeEdge(src=claim.id, predicate=EdgeType.SOURCED_FROM, dst=manifest_node.id,
+                          qualifier=None, attributes={}, provenance=prov, origin=Origin.SOURCE)
+        emission.edges.append(edge)
+        emission.feed_of.setdefault(edge_key_str(edge), descriptor.feed_label)
+
+
+@dataclass(frozen=True)
+class ConnectorDescriptor:
+    name: str                              # registry key -- "ensembl_structure", "dbsnp", ...
+    group: str                             # "core_biology" | "operational" | "evidence"
+    cadence: str                           # "persistent" (gene-scoped, one-shot) |
+                                            # "ephemeral" (per-variant, refetched per investigation)
+    adapter: object                        # a SourceAdapter (forge_ir/contracts.py)
+    build_query: Callable[[str, str], dict | None]
+    build_emission: Callable[..., "Emission"]
+    feed_label: str                        # human-readable label build_emission tags its nodes/edges
+                                            # with -- the ONE place a feed's display name and its
+                                            # group are joined, so callers never need a reverse
+                                            # feed-label -> group lookup table of their own
+    requires: tuple[str, ...] = ()
+    implemented: bool = True
+    description: str = ""
+    default_included: bool = True   # persistent connectors only: whether a run with no
+                                     # explicit --connectors selection includes this one
+                                     # by default. False for connectors added AFTER the
+                                     # original Ensembl+ClinGen baseline (e.g. UniProt) --
+                                     # real bug this guards against: registering a new
+                                     # persistent connector used to silently change every
+                                     # existing default run's node/edge counts, since the
+                                     # old fallback was "no selection -> ALL persistent
+                                     # connectors." Explicit naming in --connectors always
+                                     # still works regardless of this flag.
+
+
+_REGISTRY: dict[str, ConnectorDescriptor] = {}
+
+
+def register_connector(descriptor: ConnectorDescriptor) -> None:
+    if descriptor.name in _REGISTRY:
+        raise ValueError(f"connector {descriptor.name!r} already registered -- "
+                         f"names must be unique across the whole registry")
+    if descriptor.group not in ("core_biology", "operational", "evidence"):
+        raise ValueError(f"connector {descriptor.name!r}: unknown group {descriptor.group!r}")
+    if descriptor.cadence not in ("persistent", "ephemeral"):
+        raise ValueError(f"connector {descriptor.name!r}: unknown cadence {descriptor.cadence!r}")
+    _REGISTRY[descriptor.name] = descriptor
+
+
+def get_connector(name: str) -> ConnectorDescriptor:
+    if name not in _REGISTRY:
+        raise KeyError(f"no connector registered under {name!r} -- known: {sorted(_REGISTRY)}")
+    return _REGISTRY[name]
+
+
+def list_connectors() -> list[ConnectorDescriptor]:
+    order = {"core_biology": 0, "operational": 1, "evidence": 2}
+    return sorted(_REGISTRY.values(), key=lambda d: (order.get(d.group, 9), d.name))
+
+
+def is_registered(name: str) -> bool:
+    return name in _REGISTRY
+
+
+def group_for_feed_label(feed_label: str) -> str:
+    """Maps a feed's display label (what Emission.add() tags nodes/edges with) back to
+    its connector's registered group. The registry is the single source of truth for
+    this join -- callers never maintain their own feed-label -> group table."""
+    for descriptor in _REGISTRY.values():
+        if descriptor.feed_label == feed_label:
+            return descriptor.group
+    return "evidence"
+
+
+def _reset_registry_for_tests() -> None:
+    """Test-only escape hatch -- module-level registries are otherwise process-global,
+    which would let one test's registrations leak into another's."""
+    _REGISTRY.clear()
+
+
+def _unregister_for_tests(name: str) -> None:
+    """Removes a single entry -- safer than `_reset_registry_for_tests()` for a test that
+    registers one throwaway connector alongside the real, already-imported registry:
+    `importlib.reload()` on the `connectors` package does NOT re-run already-imported
+    submodules' top-level `register_connector()` calls, so a full clear+reload does not
+    actually restore the real registry -- only removing exactly what was added does."""
+    _REGISTRY.pop(name, None)

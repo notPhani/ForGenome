@@ -1,0 +1,3947 @@
+{
+  "data": {
+    "entContent": {
+      "approvedOn": "2025-01-10T22:36:48.784Z",
+      "description": "",
+      "doi": {
+        "authors": [
+          {
+            "affiliations": [
+              {
+                "name": "National Institutes of Health (NIH)"
+              }
+            ],
+            "person_or_org": {
+              "name": "The Clinical Genome Resource (ClinGen)",
+              "type": "organizational"
+            },
+            "role": {
+              "id": "rightsholder"
+            }
+          },
+          {
+            "affiliations": [
+              {
+                "name": "The Clinical Genome Resource (ClinGen)"
+              }
+            ],
+            "person_or_org": {
+              "name": "VHL Variant Curation Expert Panel",
+              "type": "organizational"
+            },
+            "role": {
+              "id": "researchgroup"
+            }
+          }
+        ],
+        "conceptDoi": "10.5281/zenodo.21433969",
+        "docDoi": "10.5281/zenodo.21433974",
+        "keywords": [
+          {
+            "subject": "human"
+          },
+          {
+            "subject": "biology"
+          },
+          {
+            "subject": "genomics"
+          },
+          {
+            "subject": "variant"
+          },
+          {
+            "subject": "variant classification"
+          },
+          {
+            "subject": "clingen"
+          },
+          {
+            "subject": "disease"
+          },
+          {
+            "subject": "standards"
+          },
+          {
+            "subject": "VHL"
+          },
+          {
+            "subject": "NM_000551.4"
+          },
+          {
+            "subject": "Autosomal dominant inheritance"
+          },
+          {
+            "subject": "von Hippel-Lindau disease"
+          }
+        ]
+      },
+      "namespace": "GN078",
+      "releaseNotes": "Please see clarifications made to PM2, BA1 and BS1. We updated language to gnomAD v4, removed language around using the “non-cancer” set (which did not contain TCGA germline samples) as this set is no longer used in v4. We changed PM2\\_Supporting from complete absence in gnomAD to PM2\\_Supporting ≤ 1.56E-6 GroupMax FAF. This is one order of magnitude less than the BS1 cut-off and strictly limits the presence of variants in gnomAD v4 but does not require complete absence.\n\nV 1.1.0 Disease entity and transcript added",
+      "releasedUnderRevision": true,
+      "shortTitle": "VHL Specification",
+      "specificationSource": "",
+      "states": [
+        {
+          "current": false,
+          "event": {
+            "name": "cspec-created",
+            "prevState": "START",
+            "timeStamp": "2022-09-28T19:36:26.972Z"
+          },
+          "name": "Pilot Rules In Prep"
+        },
+        {
+          "current": false,
+          "event": {
+            "name": "pilot-rules-submitted",
+            "prevState": "Pilot Rules In Prep",
+            "timeStamp": "2024-11-07T19:55:01.216Z"
+          },
+          "name": "Pilot Rules Submitted"
+        },
+        {
+          "current": false,
+          "event": {
+            "name": "pilot-rules-reviewed",
+            "prevState": "Pilot Rules Submitted",
+            "timeStamp": "2023-08-23T14:19:44.628Z"
+          },
+          "name": "Pilot Rules In Prep"
+        },
+        {
+          "current": false,
+          "event": {
+            "name": "pilot-rules-reviewed",
+            "prevState": "Approved For Release",
+            "timeStamp": "2024-01-09T14:19:44.628Z"
+          },
+          "name": "Pilot Rules In Prep"
+        },
+        {
+          "current": false,
+          "event": {
+            "name": "pilot-rules-approved",
+            "prevState": "Pilot Rules Submitted",
+            "timeStamp": "2025-01-10T21:52:48.528Z"
+          },
+          "name": "Approved For Release"
+        },
+        {
+          "current": true,
+          "event": {
+            "name": "cspec-released",
+            "prevState": "Approved For Release",
+            "timeStamp": "2025-01-10T22:36:48.784Z"
+          },
+          "name": "Released"
+        },
+        {
+          "current": false,
+          "event": {
+            "name": "cspec-reopened",
+            "prevState": "Released",
+            "timeStamp": "2024-11-07T19:49:52.332Z"
+          },
+          "name": "Pilot Rules In Prep"
+        }
+      ],
+      "tagNameSpaces": [
+        "078"
+      ],
+      "title": "ClinGen VHL Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines for VHL Version 1.1",
+      "version": "1.1",
+      "versioned": true
+    },
+    "entId": "GN078",
+    "entType": "SequenceVariantInterpretation",
+    "ld": {
+      "CriteriaCode": [
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP7_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BP7",
+            "ns": "078",
+            "originalACMGSummary": "A synonymous variant for which splicing prediction algorithms predict no impact to the splice consensus sequence nor the creation of a new splice site AND the nucleotide is not highly conserved.",
+            "sepioID": "SEPIO-CG:99049",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0221",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0219",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0065",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0220",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0079",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "To evaluate splice prediction, use the BP4 code. If BP4 is met for lack of splice effect, BP7 can be applied to silent or intronic variants where the PhyloP score is ≤0.2.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943310",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943310",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7RO---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP4_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "The Splice AI score alone can be applied if VarSeak is unable to accept the variant type.",
+            "label": "BP4",
+            "ns": "078",
+            "originalACMGSummary": "Multiple lines of computational evidence suggest no impact on gene or gene product (conservation, evolutionary, splicing impact, etc)\nCaveat: As many in silico algorithms use the same or very similar input for their predictions, each algorithm cannot be counted as an independent criterion. BP4 can be used only once in any evaluation of a variant.",
+            "sepioID": "SEPIO-CG:99046",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0215",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0213",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0066",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0214",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0080",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "Due to the lack of benign variants, and the drop in classification accuracy for benign VHL variants, missense predictors should not be used to assign the BP4 evidence code. \n\nBP4 can be applied to assess lack of splicing impact, with concordance of Splice AI (≤0.1) and VarSeak (Class 1 or Class 2).",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943307",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943307",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Tm---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BS4_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Strong",
+            "evidenceCategory": "Segregation Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "For BS4, affected members of the pedigree should fulfill the Danish Criteria for VHL. BS4 should not be used if the affected members are only affected with pheochromocytoma (e.g. VHL 2c) and/or Renal Cell Carcinoma. Family members should also be fully characterized for VHL manifestations to be considered unaffected, and be at least 65 years old (age at which full penetrance should be reached).\n\nFor example: two siblings who both have VHL as per the Danish criteria, one has a _VHL_ variant, and the other sibling does not, BS4 could be used. \n\nConversely, two siblings both fully characterized, one sibling has VHL manifestations, the other sibling is >65 yo and does not have VHL manifestations. If both siblings carry the _VHL_ variant, BS4 could be used.\n\nIf the above are fulfilled, BS4 strong could be used if lack of segregation of the variant is seen in affected members of two or more families and BS4\\_supporting be used if one family is observed.\n\nIf a parent fulfills the Danish criteria for VHL disease, but the child is phenotyped and has no manifestations,   BS4 cannot be used as the child could develop VHL manifestations at a later age.",
+            "label": "BS4",
+            "ns": "078",
+            "originalACMGSummary": "Lack of segregation in affected members of a family.\nCaveat: The presence of phenocopies for common phenotypes (i.e. cancer, epilepsy) can mimic lack of segregation among affected individuals. Also, families may have more than one pathogenic variant contributing to an autosomal dominant disorder, further confounding an apparent lack of segregation.",
+            "sepioID": "SEPIO-CG:99042",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0229",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0227",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0071",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "Lack of segregation is seen in affected members of ≥2 families",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0228",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0077",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "Lack of segregation is seen in 1 family.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943303",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943303",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Hi---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BS3_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Strong",
+            "evidenceCategory": "Functional Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BS3",
+            "ns": "078",
+            "originalACMGSummary": "Well-established in vitro or in vivo functional studies show no damaging effect on protein function or splicing.",
+            "sepioID": "SEPIO-CG:99041",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0226",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0225",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0072",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0100",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0001327",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0085",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "• HIF 1/2a assay replicates WT function and/or\n\n• VBC complex stability is not affected and/or \n\n• ECM formation/fibronectin binding is unaffected \n\nThis rule can be used and weighted as appropriate for functional tests of variants prior to codon 54 (which show the VHL19 product is not impacted). Evidence of benign effect for VHL Type 1 and 2A/B can be seen when HIF1/2a displays degradation (i.e. replicates WT function), and/or the VHL Elongin C, Elongin B, Cullin2 RBX1 (VCB-CR) E3 ubiquitin ligase complex stability is not affected and/or ECM formation/fibronectin binding is unaffected. Note: VHL Type 2C variants typically do not affect HIF1/2a; absence of HIF1/2a alone when testing a suspected VHL Type 2C variant should not be used for BS3. Functional studies of fibronectin and ECM formation are needed for VHL Type 2C. Follow modified SVI guidance for functional assays, general controls and benign controls. For splicing variants (and intronic/synonymous), RNA assays must demonstrate no impact on splicing.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943302",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943302",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7YW---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BS2_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Strong",
+            "evidenceCategory": "Population Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BS2",
+            "ns": "078",
+            "originalACMGSummary": "Observed in a healthy adult individual for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with full penetrance expected at an early age.",
+            "sepioID": "SEPIO-CG:99040",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0091",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000357",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0224",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0069",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "VHL is not highly penetrant _at an early age._ BS2 can be applied if: There are at least 3 individuals, all >=65yo, unaffected, harboring the same variant, _**with full phenotyping and screening**_ for the absence of VHL-related cancers.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0098",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0076",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "VHL is not highly penetrant _at an early age._ BS2\\_Supporting can be applied if: At least 3 individuals, all >=65yo, unaffected, harboring the same variant, _**lacking full phenotyping and screening**_, with no noted VHL-related cancers",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943301",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943301",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7bO---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BA1_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Stand Alone",
+            "evidenceCategory": "Population Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "Follow all [SVI general guidance](https://clinicalgenome.org/working-groups/sequence-variant-interpretation/) on applying population filters.",
+            "label": "BA1",
+            "ns": "078",
+            "originalACMGSummary": "Allele frequency is above 5% in Exome Sequencing Project, 1000 Genomes or Exome Aggregation Consortium.",
+            "sepioID": "SEPIO-CG:99038",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Applicable",
+                "id": "0087",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "Use a BA1 cut off of >=0.000156 (0.0156%) GroupMax Filtering Allele Frequency in gnomAD (based on gnomAD v4 release).",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0201",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0202",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0203",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0089",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943299",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943299",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7I6---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PP2_nuclear_VHL",
+            "additionalComments": "Do not use. While there are known pathogenic missense in VHL, there is also evidence of benign or common missense in VHL. gnomAD shows VHL is not intolerant to missense (Z score = -0.39). Missense variants in VHL will need to achieve pathogenic interpretation via other evidence codes.",
+            "applicability": "Not applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Supporting",
+            "evidenceCategory": "Functional Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "**Do not use.** While there are known pathogenic missense in VHL, there is also evidence of benign or common missense in VHL. gnomAD shows VHL is not intolerant to missense (Z score = -0.39). Missense variants in VHL will need to achieve pathogenic interpretation via other evidence codes.",
+            "label": "PP2",
+            "ns": "078",
+            "originalACMGSummary": "Missense variant in a gene that has a low rate of benign missense variation and where missense variants are a common mechanism of disease.",
+            "sepioID": "SEPIO-CG:99034",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0237",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0049",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0033",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0034",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0061",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943295",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943295",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7WG---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PM2_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Moderate",
+            "evidenceCategory": "Population Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "Follow all [SVI general guidance](https://clinicalgenome.org/working-groups/sequence-variant-interpretation/) on applying population filters.",
+            "label": "PM2",
+            "ns": "078",
+            "originalACMGSummary": "Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes or Exome Aggregation Consortium.\nCaveat: Population data for indels may be poorly called by next generation sequencing.",
+            "sepioID": "SEPIO-CG:99028",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0231",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0044",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0013",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0011",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0030",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "Strength"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "PM2\\_Supporting can be applied for variants either absent from gnomAD or with \\<= 0.00000156 (0.000156%) GroupMax Filtering Allele Frequency in gnomAD (based on gnomAD v4 release). If no GroupMax Filtering Allele Frequency is calculated (ex. due to a single variant present), PM2\\_Supporting may also be applied.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943289",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943289",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Jy---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP3_nuclear_VHL",
+            "additionalComments": "Not applicable at this time.",
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BP3",
+            "ns": "078",
+            "originalACMGSummary": "In frame-deletions/insertions in a repetitive region without a known function.",
+            "sepioID": "SEPIO-CG:99045",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0212",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0210",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0074",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0211",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0081",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "BP3 can be applied to the 8x GXEEX AA repeat motif in the 5’ end of VHL p30 (AA14-AA48). Otherwise, the rest of the coding regions in VHL do not contain repeats (and none contain LINE/SINE, low complexity or other repeat types as identified by RepeatMasker) and BP3 is not applicable.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943306",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943306",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Ua---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP1_nuclear_VHL",
+            "additionalComments": "This rule code does not apply to this gene, as truncating variants account for only a portion of disease-causing variants.",
+            "applicability": "Not applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BP1",
+            "ns": "078",
+            "originalACMGSummary": "Missense variant in a gene for which primarily truncating variants are known to cause disease.",
+            "sepioID": "SEPIO-CG:99043",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0206",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0204",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0075",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0205",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0082",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943304",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943304",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7G2---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PP4_nuclear_VHL",
+            "additionalComments": "Combine with PS4 to avoid double counting probands. ",
+            "applicability": "Not applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Supporting",
+            "evidenceCategory": "Other Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "PP4",
+            "ns": "078",
+            "originalACMGSummary": "Patient’s phenotype or family history is highly specific for a disease with a single genetic etiology.",
+            "sepioID": "SEPIO-CG:99036",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0239",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "002",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "005",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0018",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0063",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943297",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943297",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7cq---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PP1_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Supporting",
+            "evidenceCategory": "Segregation Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "Meioses can be counted additively across multiple families. This code may only be applied when the phenotype is highly consistent with VHL (Danish Criteria in a family with history of disease).",
+            "label": "PP1",
+            "ns": "078",
+            "originalACMGSummary": "Co-segregation with disease in multiple affected family members in a gene definitively known to cause the disease.\nNote: May be used as stronger evidence with increasing segregation data.",
+            "sepioID": "SEPIO-CG:99033",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0236",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0042",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0023",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "\\>7 meioses across >=2 families",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0040",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "5 – 6 meioses across ≥1 family.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0060",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "3 – 4 meioses across ≥1 family.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943294",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943294",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7d6---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PS3_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Strong",
+            "evidenceCategory": "Functional Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "PS3",
+            "ns": "078",
+            "originalACMGSummary": "Well-established in vitro or in vivo functional studies supportive of a damaging effect on the gene or gene product.\nNote: Functional studies that have been validated and shown to be reproducible and robust in a clinical diagnostic laboratory setting are considered the most well-established.",
+            "sepioID": "SEPIO-CG:99025",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0242",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0031",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0052",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0039",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "General recommendation"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0045",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "Strength"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "Acceptable assays that display functional effect in VHL are the following:  \n\n• HIF 1/2a degradation assays -- HIF1/2a is not degraded and/or \n\n• VBC complex stability is affected and/or\n\n• Pathogenicity supported by abnormal ECM formation and impaired fibronectin binding [<sup>1</sup>](#pmid_9651579) , [<sup>2</sup>](#pmid_11331613) , [<sup>3</sup>](#pmid_11358843) , [<sup>17</sup>](#pmid_14706840)\n\nMultiple studies and publications confirm the role of VHL in HIF1/2a regulation and VBC complex stability for VHL Type 1, and 2A/B, as well as fibronectin binding/deposition and assays evaluating extra-cellular matrix composition. In-vitro assays should display total loss of HIF1/2a degradation (i.e. HIF1/2a presence) for VHL Type 1, and 2A/B.  VHL Type 2C should display presence of HIF1/2a (with VBC complex stability variably affected and fibronectin deposition/extra cellular matrix composition affected). These assays are typically performed in Renal Cell Carcinoma (RCC) cells lacking VHL, introducing normal pVHL as a control in addition to a variant-VHL, then comparing HIF1/2a levels to WT pVHL. Brnich et al proposed 10 controls to achieve PS3\\_Supporting and 11 for PS3\\_Moderate [<sup>10</sup>](#pmid_31892348). We propose to _follow the workflow outlined in Brnich et al._  Type 2C VHL variants are typically missense variants in the alpha domain of VHL, and do not usually affect HIF1/2a. If HIF1/2a maintains presence and VHL Type 2C is suspected, assays evaluating fibronectin deposition or extracellular matrix assembly should be used. \n\n**SPLICING:** **PS3:** RNA transcripts carrying splicing mutation display splicing defects in patient cells. **PS3\\_Moderate**: RNA transcripts carrying splicing mutation display splicing defects in in-vivo or in-vitro assays.   **Functional Assay Documentation** : [https://drive.google.com/file/d/1w8P8zs1fHUolaAYmBL1jw-vcjsX3N_yh/view?usp=sharing](https://drive.google.com/file/d/1w8P8zs1fHUolaAYmBL1jw-vcjsX3N_yh/view?usp=sharing)",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943286",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943286",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7K2---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP6_nuclear_VHL",
+            "additionalComments": "This criterion is not for use as recommended by the ClinGen Sequence Variant Interpretation VCEP Review Committee.",
+            "applicability": "Not Applicable for this VCEP",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Other Database",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BP6",
+            "ns": "078",
+            "originalACMGSummary": "Reputable source recently reports variant as benign, but the evidence is not available to the laboratory to perform an independent evaluation.",
+            "references": [
+              {
+                "id": "29543229",
+                "source": "PubMed",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/29543229"
+              }
+            ],
+            "sepioID": "SEPIO-CG:99048",
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000326",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943309",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943309",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Fe---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BS1_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Strong",
+            "evidenceCategory": "Population Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "Follow all [SVI general guidance](https://clinicalgenome.org/working-groups/sequence-variant-interpretation/) on applying population filters.",
+            "label": "BS1",
+            "ns": "078",
+            "originalACMGSummary": "Allele frequency is greater than expected for disorder.",
+            "sepioID": "SEPIO-CG:99039",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable",
+                "id": "0090",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0222",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0070",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "Use BS1 cut off of  >=0.0000156 (0.00156%) GroupMax Filtering Allele Frequency in gnomAD (based on gnomAD v4).",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0223",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0086",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943300",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943300",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7b2---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PP5_nuclear_VHL",
+            "additionalComments": "This criterion is not for use as recommended by the ClinGen Sequence Variant Interpretation VCEP Review Committee.",
+            "applicability": "Not Applicable for this VCEP",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Supporting",
+            "evidenceCategory": "Other Database",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "PP5",
+            "ns": "078",
+            "originalACMGSummary": "Reputable source recently reports variant as pathogenic, but the evidence is not available to the laboratory to perform an independent evaluation.",
+            "references": [
+              {
+                "id": "29543229",
+                "source": "PubMed",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/29543229"
+              }
+            ],
+            "sepioID": "SEPIO-CG:99049",
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943298",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943298",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7NG---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP5_nuclear_VHL",
+            "additionalComments": "Given the broad spectrum of DICER1-related neoplasms and the General recommendation lack of evidence of other high-penetrance germline variants that could account for such neoplasms (except perhaps for some already low-specificity phenotypes such as Wilms tumor), this rule should not be used at this time.",
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Other Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "BP5",
+            "ns": "078",
+            "originalACMGSummary": "Variant found in a case with an alternate molecular basis for disease.",
+            "sepioID": "SEPIO-CG:99047",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0218",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0216",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0073",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0217",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0078",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "BP5 can be applied for two or more co-occurrences with pathogenic variants in a different gene that fully explained the patient's phenotype, but specific circumstances would need to be met in order for a case to be considered for inclusion. First, the variant in the other gene must be considered highly penetrant, with both the individual's age, tumour type and gender taken into consideration. Additionally, the patient's personal and family history (including up to 2nd degree relatives) should not overlap with features seen in VHL and VHL tumour histologies. As an example, an individual with a personal and family history of pheochromocytoma who harbored a _VHL_ variant in addition to a pathogenic SDHB variant BP5 would not apply, because pheochromocytoma is a known risk in VHL and the _VHL_ variant might have contributed to this individual's pheochromocytoma cancer risk. However, an individual with a personal and family history of chromophobic RCC who was positive for a _VHL_ variant as well as a pathogenic FLCN variant would be considered for BP5 application, as non-clear cell RCC is not associated with VHL disease.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943308",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943308",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Sm---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_BP2_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Benign",
+            "defaultStrength": "Benign Supporting",
+            "evidenceCategory": "Allelic Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "BP2 should not be used in the presence of any clinical or molecular findings of congenital polycythemia",
+            "label": "BP2",
+            "ns": "078",
+            "originalACMGSummary": "Observed in trans with a pathogenic variant for a fully penetrant dominant gene/disorder or observed in cis with a pathogenic variant in any inheritance pattern.",
+            "sepioID": "SEPIO-CG:99044",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0209",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "SEPIO:0000325",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0207",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0068",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000328",
+                "text": "i) -variant observed in trans with a known pathogenic variant (phase confirmed), in the absence of congenital polycythemia (clinical manifestations or molecular)\n\nii) -OR observed in the homozygous state in an individual without personal &/or family history of Von Hippel-Lindau disease or congenital polycythemia\n\niii) -OR observed _in cis_ or with unknown phase with three or more different pathogenic _VHL_ variants",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0208",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000699",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0084",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000327",
+                "text": "\\-variant is observed _in cis_ (or phase is unknown) w/ a pathogenic _VHL_ variant",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943305",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943305",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7L6---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PM5_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Moderate",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "",
+            "label": "PM5",
+            "ns": "078",
+            "originalACMGSummary": "Novel missense change at an amino acid residue where a different missense change determined to be pathogenic has been seen before.\nExample: Arg156His is pathogenic; now you observe Arg156Cys.\nCaveat: Beware of changes that impact splicing rather than at the amino acid/protein level.",
+            "sepioID": "SEPIO-CG:99031",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0234",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0047",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0056",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "008",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "Pathogenicity of prior variant is established by interpretation of the VHL VCEP or variants with pathogenicity established using VHL VCEP specifications. The Grantham distance should be used to compare variants. The variant under consideration must be equal or a larger distance than the classified pathogenic variant (Grantham, 1974, Table 2 [<sup>16</sup>](#pmid_4843792) ). Splice metapredictors should be used to ensure the variant is not predicted to have an effect on splicing.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0048",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943292",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943292",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7f----"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PM4_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Moderate",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "PM4",
+            "ns": "078",
+            "originalACMGSummary": "Protein length changes due to in-frame deletions/insertions in a non-repeat region or stop-loss variants.",
+            "sepioID": "SEPIO-CG:99030",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0233",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0012",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0035",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "009",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "In-frame insertion / deletions in the B and alpha domains and stop-loss variants adding significant additional amino acids to VHL [<sup>15</sup>](#pmid_20560986) cites multiple pathogenic cases and experimental evidence of stop loss extensions in VHL that are associated with Type 2A VHL disease).  The functional domains are: Beta (β) domain (AA 63 - 155, Nuclear Export), Alpha (ɑ) domain (AA 156-192, Elongin C binding), and Second Beta (β) domain (AA 193-204). \n\nPM4 does not apply to in-frame indels prior to codon 54 that do not alter the Met54 VHL p19 codon and beyond.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0059",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943291",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943291",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7N2---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PM1_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Moderate",
+            "evidenceCategory": "Functional Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "_**See germline and somatic hotspot residue table.**_ PM1 can be used for (1) known germline mutational hotspots, and for (2) currently 11 somatic hotspots (cancerhotspots.org) where there is not already a germline mutational hotspot (see Walsh et al 2018 [<sup>11</sup>](#pmid_30311369) and cancer hotspots.org(v2) [<sup>12</sup>](#pmid_29247016) ): Following PM1 somatic hotspot recommendations through the ClinGen Germline/Somatic Subcommittee where: AA with >= 10 somatic occurrences in the same AA can receive PM1, while AA with \\<10 can receive PM1\\_Supporting. It can also be used for (3) location in a key functional domain if a residue is not a germline or somatic hotspot.",
+            "label": "PM1",
+            "ns": "078",
+            "originalACMGSummary": "Located in a mutational hot spot and/or critical and well-established functional domain (e.g. active site of an enzyme) without benign variation.",
+            "sepioID": "SEPIO-CG:99027",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0230",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0015",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0028",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "006",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "Putative missense variants that are known germline hotspots AND/OR in key functional domains AND/OR somatic variants that have ≥10 instances for the same AA in cancerhotspots.org. See the table of Germline and Somatic Hotspots.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0054",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "Putative missense variants seen in somatic databases, having \\<10 instances for the same AA in cancerhotspots.org. See the table of Germline and Somatic Hotspots.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943288",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943288",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7aa---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PS4_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Strong",
+            "evidenceCategory": "Population Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "**See phenotype and points tables.** When the phenotype meets Danish Criteria (panel is not required, unless only RCC+Pheo. If a case with RCC+Pheo does not have a panel, they are scored as \"Nonspecific\" (0.25 points)), count 1 point per proband. When the phenotype is consistent with VHL but is not highly specific (such as RCC+Pheo) count 0.5 and when not specific and no panel, count as 0.25. Unrelated probands are to be used, and may be aggregated across all three categories (highly specific Danish Criteria, Consistent and Nonspecific). If there is a pedigree with a choice of probands with VHL disease, choose the proband that most closely matches Danish Criteria. When the phenotype is not available (e.g. from a published article on a VHL cohort that does not detail the phenotype), count 0.25 points per proband. For example, for variant A, 2 probands meet Danish Criteria, 2 probands display Pheochromocytoma only and 4 probands were defined as VHL probands in a published manuscript but lack any further specific criteria or phenotypic details. This would be calculated as (2, 1 pt each per Danish Criteria proband) + (1, 0.5 pt each per Consistent proband) + (1, 0.25 pt each per Nonspecific proband) = 4.  PS4 would be downgraded to moderate (PS4\\_Moderate).",
+            "label": "PS4",
+            "ns": "078",
+            "originalACMGSummary": "The prevalence of the variant in affected individuals is significantly increased compared to the prevalence in controls.\nNote 1: Relative risk (RR) or odds ratio (OR), as obtained from case-control studies, is >5.0 and the confidence interval around the estimate of RR or OR does not include 1.0. See manuscript for detailed guidance.\nNote 2: In instances of very rare variants where case-control studies may not reach statistical significance, the prior observation of the variant in multiple unrelated patients with the same phenotype, and its absence in controls, may be used as moderate level of evidence.",
+            "sepioID": "SEPIO-CG:99026",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0243",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0029",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "Strength"
+                ],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "**16+ points the PS4 cut-off and Proband Scoring Tables from a mix of any of the following phenotypes: specific, consistent and nonspecific.**",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0053",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "Strength"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "**5-15 points the PS4 cut-off and Proband Scoring Tables from a mix of any of the following phenotypes: specific, consistent and nonspecific.**",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0057",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "Strength"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "**2 – 4 points the PS4 cut-off and Proband Scoring Tables from a mix of any of the following phenotypes: specific, consistent and nonspecific.**",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0032",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "Strength"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "**1 point the PS4 cut-off and Proband Scoring Tables from a mix of any of the following phenotypes: specific, consistent and nonspecific.**",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943287",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943287",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7PC---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PVS1_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Very Strong",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "",
+            "label": "PVS1",
+            "ns": "078",
+            "originalACMGSummary": "Null variant (nonsense, frameshift, canonical +/−1 or 2 splice sites, initiation codon, single or multi-exon deletion) in a gene where loss of function (LOF) is a known mechanism of disease.\nCaveats:\n * Beware of genes where LOF is not a known disease mechanism (e.g. GFAP, MYH7).\n * Use caution interpreting LOF variants at the extreme 3’ end of a gene.\n * Use caution with splice variants that are predicted to lead to exon skipping but leave the remainder of the protein intact.\n * Use caution in the presence of multiple transcripts.",
+            "sepioID": "SEPIO-CG:99022",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0245",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0017",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "General recommendation"
+                ],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "**LINK TO PVS1 DECISION TREE DOCUMENT:** [**https://drive.google.com/file/d/1mGfChgxbGVbzYn6Ggmb9rYvoGGah25ll/view?usp=sharing**](https://drive.google.com/file/d/1mGfChgxbGVbzYn6Ggmb9rYvoGGah25ll/view?usp=sharing)\n\n**Do not apply PVS1 for truncations that occur prior to Codon 54 (including frameshift events that start and end prior to Codon 54 but the truncation extends beyond Codon 54.)**\n\n**Note1: Exon presence in biologically relevant transcripts:** In some transcripts exon 2 of _VHL_ is skipped and expressed at low levels. The function of this transcript is not fully known. Exon 2 comprises almost the entirety of the nuclear export function region of the Beta domain and is critical for known VHL function. Exon 1 contains the only initiator codons in _VHL_. Exon 3 contains the elongin binding function. _**All exons should be considered as \"present in biologically relevant transcripts\" in the PVS1 decision tree.**_\n\n**Note 2: The 10% PVS1 downgrade to Moderate cannot apply to VHL** because of the small size.\n\n**Nonsense Mediated Decay** [<sup>5</sup>](#pmid_22825683) [<sup>4</sup>](#pmid_20145706)  **NMD experimental evidence in 1st exon after codon 54 and to 5' region of 2nd exon (codon 138)**.\\*\\*\n\n**Critical Domains:**\n\n1st Beta (β) domain (63-154), especially Nuclear Export (114-155)\n\nAlpha (ɑ) domain (155-192), especially Elongin C binding (157 - 172)\n\nSecond Beta domain (193-204)   \n\n_Truncating variants after Met54 and predicted to undergo NMD (from AA55-AA136/c.408) or in the beta or alpha domains can receive PVS1, and those outside the second Beta domain (205-213) can receive PVS1\\_Moderate downgrade to account for minimal loss of VHL protein. Notably a frame shift deletion at 205 is pathogenic in ClinVar (ID 18971) as are stop loss extension variants in the last codons (see PM4)._\n\n**SPLICE: If any canonical exon is skipped, the variant receives PVS1.** If a cryptic splice disrupts the reading frame, and is in a critical domain (AA63-AA204) or is predicted to undergo NMD (AA55-AA136) it receives PVS1. If it is outside a critical domain and predicted to undergo NMD (AA55-62), it receives PVS1\\_Strong (the second site outside of critical domains AA205-213 is not predicted to undergo NMD). If a cryptic splice does not alter the reading frame, and is in a critical domain (AA 63-204), it can receive PVS1\\_Strong, and if it is outside the critical domain (AA 205-213) or  in an NMD prediction (AA 55-62), it receives PVS1\\_Moderate. Note:  There is a cryptic exon (E1) in intron 1 [<sup>7</sup>](#pmid_31996412) [<sup>6</sup>](#pmid_29891534), and silent variants in exon 2 that are reported to cause skipping of exon 1. If there is functional evidence of exon skipping (RNA splice assay) then PVS1 can apply. Do not double count evidence. Ex. PVS1 should be used in place of PS3 functional evidence confirming splice alteration, but PS3 evidence code could still apply to other relevant assays confirming effect on HIF1/2a presence etc. \n\n**EXON DELETION:** SVI PVS1 decision tree modified for whole exon deletions. There are only 3 exons in _VHL_ and each has an important functional domain. Any exon deletion of _VHL_ receives PVS1. \n\n**EXON DUPLICATION:** Follow PVS1 decision tree. Note: few pathogenic exon duplications are reported in ClinVar.   (ID:417571, ID:584137). These have no literature cited. \n\n**INITIATION CODON:** VHL Met 1 (in VHL p30) truncation or missense would not affect VHL p19, as VHL has a second start at codon 54 (VHL p19), it cannot be scored in the PVS1 decision tree. After that, no other viable alternative starts are known. Start loss at codon 54 would presumably result in an impact, as VHL p30 and p19 would be truncated prior to any known functional domains (PVS1). Ong 2007 has 1 family (2 subjects) with Met54X and reports cerebellar hemangioblastomas. There is no functional study in the paper for this variant. Olschwang et al 1998 VHL Type 2A, one subject with 161insT (FS result). There is no functional study in the paper. Missense at Met 54 (VHL p19 initiation codon) would presumably not result in as strong an impact as the full length VHL p30 would still be produced (PVS1 decision tree = N/A). ClinVar has M54T (ID:819688) and M54L (ID:843990). M54T is uncertain, with no other evidence provided. M54L references M54I which segregates in homozygous state with erythrocytosis in individuals of Moroccan descent [<sup>9</sup>](#pmid_26224408) [<sup>8</sup>](#pmid_27578599), and those heterozygous for M54I did not present VHL phenotype [<sup>9</sup>](#pmid_26224408).",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0020",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0026",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "001",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943283",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943283",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7gq---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PP3_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Supporting",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "The Splice AI score alone can be applied if VarSeak is unable to accept the variant type. Note: for canonical splice variants do not use PP3 if PVS1 is applied.",
+            "label": "PP3",
+            "ns": "078",
+            "originalACMGSummary": "Multiple lines of computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.).\nCaveat: As many in silico algorithms use the same or very similar input for their predictions, each algorithm should not be counted as an independent criterion. PP3 can be used only once in any evaluation of a variant.",
+            "sepioID": "SEPIO-CG:99035",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0238",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0024",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0019",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0025",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0062",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "For missense variants, use REVEL score >=0.664. \n\nFor splice variants, concordance of Splice AI (>0.5) and VarSeak (class 4 or class 5).",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943296",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943296",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7Vi---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PM6_nuclear_VHL",
+            "additionalComments": "Combined with PS2. Use PS2 instead of PM6.",
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Moderate",
+            "evidenceCategory": "De novo Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "See PS2 evidence code for scoring and phenotypes.",
+            "label": "PM6",
+            "ns": "078",
+            "originalACMGSummary": "Assumed de novo, but without confirmation of paternity and maternity.",
+            "sepioID": "SEPIO-CG:99032",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0235",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0014",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0037",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0010",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Disease-specific",
+                  "General recommendation"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "See PS2 evidence code for scoring and phenotypes. Assumed _de novo_ receives half the points as compared to maternity and paternity confirmed _de novo_. If paternity and maternity are not confirmed, score as the PM6 code. PM6 can receive “VeryStrong” strength. For example, if there are >4 de novo probands with Danish Criteria and none have paternity confirmed, this can receive PM6\\_VeryStrong. Note: the VCI as of Nov 2022 does not allow PM6\\_VeryStrong. Instead apply the PS2 evidence code and increase the strength to “VeryStrong” with a note that paternity and/or maternity is not confirmed.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0022",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943293",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943293",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7XC---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PM3_nuclear_VHL",
+            "additionalComments": "Autosomal dominant.",
+            "applicability": "Not applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Moderate",
+            "evidenceCategory": "Allelic Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "PM3",
+            "ns": "078",
+            "originalACMGSummary": "For recessive disorders, detected in trans with a pathogenic variant\nNote: This requires testing of parents (or offspring) to determine phase.",
+            "sepioID": "SEPIO-CG:99029",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not applicable",
+                "id": "0232",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0038",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0058",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "007",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not applicable",
+                "id": "0027",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943290",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943290",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7ZW---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PS2_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Strong",
+            "evidenceCategory": "De novo Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": "Use the SVI-recommended scoring system ( 0.5 supporting, 1 moderate, 2 strong, 4 very strong) with disease-specific phenotype detailed as follows: Danish Criteria (see recently updated Danish Criteria [<sup>18</sup>](#pmid_35709961) ), Consistent Phenotype (1 phenotype of VHL disease without family history or strong indication of VHL phenotype) or Nonspecific Phenotype (specific information on tumor types is not provided). Negative panel testing is required as follows: For Renal Cell Carcinoma, tumor histopathologies should be clear cell and a negative panel should include at least SDHB/C/D  and for Pheochromocytoma only negative panels should include at least SDHB/C/D and RET. If paper states Danish or International Criteria but does not provide case-specific details, count these cases as \"Phenotype consistent.\"   If there is no family history of VHL disease, Renal Cell Carcinoma and Pheochromocytoma only will count as \"Phenotype consistent\" (with negative panel testing).",
+            "label": "PS2",
+            "ns": "078",
+            "originalACMGSummary": "De novo (both maternity and paternity confirmed) in a patient with the disease and no family history.\nNote: Confirmation of paternity only is insufficient. Egg donation, surrogate motherhood, errors in embryo transfer, etc. can contribute to non-maternity.",
+            "sepioID": "SEPIO-CG:99024",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0241",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0016",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "A single proband cannot be very strong evidence, but multiple probands can be combined to reach very strong (4+ points).",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0051",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "Phenotype highly specific for the gene (Danish Criteria) (≥2 but less than 4 _de novo_ points).",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "004",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation",
+                  "Strength"
+                ],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "Phenotype consistent but not highly specific. Ex. VHL spectrum cancer without family history or strong indication of VHL phenotype. (≥1 but less than 2 _de novo_ points)",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0043",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "Strength"
+                ],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "Phenotype consistent but not highly specific (≥0.5 but less than 1 _de novo_ points) Ex. subject included in a VHL cohort, but specific information on tumor types is not provided.",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943285",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943285",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7QG---"
+        },
+        {
+          "created": "2024-02-29T04:26:35.312Z",
+          "creator": "dritter@bcm.edu",
+          "entContent": {
+            "_uniqueProp": "078_PS1_nuclear_VHL",
+            "additionalComments": null,
+            "applicability": "Applicable",
+            "baseStrength": "Pathogenic",
+            "defaultStrength": "Pathogenic Strong",
+            "evidenceCategory": "Computational And Predictive Data",
+            "gene": [
+              "VHL"
+            ],
+            "geneType": "nuclear",
+            "instructionsToUse": null,
+            "label": "PS1",
+            "ns": "078",
+            "originalACMGSummary": "Same amino acid change as a previously established pathogenic variant regardless of nucleotide change.\nExample: Val->Leu caused by either G>C or G>T in the same codon.\nCaveat: Beware of changes that impact splicing rather than at the amino acid/protein level.",
+            "sepioID": "SEPIO-CG:99023",
+            "status": {
+              "Pilot Rules In Prep": {
+                "completed": true
+              }
+            },
+            "strengthDescriptor": [
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0240",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Stand Alone",
+                "strengthSepioID": "",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable for this VCEP",
+                "id": "0021",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Very Strong",
+                "strengthSepioID": "SEPIO:0000220",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Applicable",
+                "id": "0050",
+                "instructionsToUse": "",
+                "specificationType": [
+                  "General recommendation"
+                ],
+                "strength": "Strong",
+                "strengthSepioID": "SEPIO:0000330",
+                "text": "Applied only to variants with interpretation by the VHL VCEP or by a variant with pathogenicity established using VHL VCEP specifications.",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0046",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Moderate",
+                "strengthSepioID": "SEPIO:0000216",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              },
+              {
+                "applicability": "Not Applicable",
+                "id": "0036",
+                "instructionsToUse": "",
+                "specificationType": [],
+                "strength": "Supporting",
+                "strengthSepioID": "SEPIO:0000329",
+                "text": "",
+                "type": "EvidenceLineStrength"
+              }
+            ]
+          },
+          "entType": "CriteriaCode",
+          "ldhId": "1743943284",
+          "ldhIri": "https://cspec.genome.network/cspec/CriteriaCode/id/1743943284",
+          "modified": "2025-01-10T22:36:51.153Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa7fq---"
+        }
+      ],
+      "Disease": [
+        {
+          "entContent": {
+            "MONDO": {
+              "id": "http://purl.obolibrary.org/obo/MONDO_0008667",
+              "lbl": "von Hippel-Lindau disease",
+              "meta": {
+                "basicPropertyValues": [
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/IAO_0000233",
+                    "val": "https://github.com/monarch-initiative/mondo/issues/4521"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/IAO_0000233",
+                    "val": "https://github.com/monarch-initiative/mondo/issues/9178"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#curated_content_resource",
+                    "val": "https://search.clinicalgenome.org/kb/conditions/MONDO:0008667"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#curated_content_resource",
+                    "val": "https://www.malacards.org/card/von_hippel_lindau_syndrome"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0005328"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0015079"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0015953"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0016756"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0017891"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0019741"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0019755"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0020676"
+                  },
+                  {
+                    "pred": "http://purl.obolibrary.org/obo/mondo#excluded_subClassOf",
+                    "val": "http://purl.obolibrary.org/obo/MONDO_0021147"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+                    "val": "https://rarediseases.info.nih.gov/diseases/7855/von-hippel-lindau-disease"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#closeMatch",
+                    "val": "http://identifiers.org/meddra/10047716"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://id.who.int/icd/entity/1985408165"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://identifiers.org/medgen/42458"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://identifiers.org/mesh/D006623"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://identifiers.org/snomedct/46659004"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://linkedlifedata.com/resource/umls/id/C0019562"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://purl.obolibrary.org/obo/DOID_14175"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://purl.obolibrary.org/obo/NCIT_C3105"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "http://www.orpha.net/ORDO/Orphanet_892"
+                  },
+                  {
+                    "pred": "http://www.w3.org/2004/02/skos/core#exactMatch",
+                    "val": "https://omim.org/entry/193300"
+                  }
+                ],
+                "definition": {
+                  "val": "An autosomal dominant disorder caused by pathogenic variants in the VHL gene, leading to an increased risk of various benign and malignant tumors, including hemangioblastomas, retinal hemangiomas, endolymphatic sac tumors, renal cell carcinoma, and pheochromocytomas.",
+                  "xrefs": [
+                    "Orphanet:892",
+                    "https://www.clinicalgenome.org/working-groups/clinical-domain/hereditary-cancer/"
+                  ]
+                },
+                "subsets": [
+                  "http://purl.obolibrary.org/obo/mondo#clingen",
+                  "http://purl.obolibrary.org/obo/mondo#gard_rare",
+                  "http://purl.obolibrary.org/obo/mondo#nord_rare",
+                  "http://purl.obolibrary.org/obo/mondo#omim_susceptibility",
+                  "http://purl.obolibrary.org/obo/mondo#ordo_disorder",
+                  "http://purl.obolibrary.org/obo/mondo#orphanet_rare",
+                  "http://purl.obolibrary.org/obo/mondo#otar",
+                  "http://purl.obolibrary.org/obo/mondo#rare"
+                ],
+                "synonyms": [
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "Hippel Lindau syndrome",
+                    "xrefs": [
+                      "DOID:14175"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "Lindau disease",
+                    "xrefs": [
+                      "Orphanet:892"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "synonymType": "http://purl.obolibrary.org/obo/mondo#ABBREVIATION",
+                    "val": "VHL",
+                    "xrefs": [
+                      "MONDO:Lexical",
+                      "OMIM:193300",
+                      "Orphanet:892"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "VHL-related von Hippel-Lindau disease",
+                    "xrefs": [
+                      "https://www.clinicalgenome.org/working-groups/clinical-domain/hereditary-cancer/"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "Von Hippel-Lindau syndrome",
+                    "xrefs": [
+                      "DOID:14175",
+                      "MONDO:Lexical",
+                      "NCIT:C3105",
+                      "OMIM:193300",
+                      "Orphanet:892",
+                      "icd11.foundation:1985408165"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "Von Hippel-Lindau syndrome (VHL)",
+                    "xrefs": [
+                      "NCIT:C3105"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "cerebroretinal angiomatosis",
+                    "xrefs": [
+                      "NCIT:C3105"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "familial cerebelloretinal angiomatosis",
+                    "xrefs": [
+                      "Orphanet:892"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "von Hippel-Lindau disease",
+                    "xrefs": [
+                      "DOID:14175",
+                      "NCIT:C3105",
+                      "Orphanet:892",
+                      "icd11.foundation:1985408165"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "von Hippel-Lindau syndrome",
+                    "xrefs": [
+                      "DOID:14175",
+                      "NCIT:C3105",
+                      "OMIM:193300",
+                      "Orphanet:892",
+                      "icd11.foundation:1985408165"
+                    ]
+                  },
+                  {
+                    "pred": "hasExactSynonym",
+                    "val": "von Hippel-Lindau syndrome, modifier of"
+                  },
+                  {
+                    "pred": "hasRelatedSynonym",
+                    "val": "VHL syndrome",
+                    "xrefs": [
+                      "GARD:0007855"
+                    ]
+                  },
+                  {
+                    "pred": "hasRelatedSynonym",
+                    "val": "Von Hippel Lindau disease",
+                    "xrefs": [
+                      "GARD:0007855"
+                    ]
+                  },
+                  {
+                    "pred": "hasRelatedSynonym",
+                    "val": "Von Hippel-Lindau syndrome, Modifiers of"
+                  }
+                ],
+                "xrefs": [
+                  {
+                    "val": "DOID:14175"
+                  },
+                  {
+                    "val": "GARD:7855"
+                  },
+                  {
+                    "val": "ICD9:759.6"
+                  },
+                  {
+                    "val": "MEDGEN:42458"
+                  },
+                  {
+                    "val": "MESH:D006623"
+                  },
+                  {
+                    "val": "MedDRA:10047716"
+                  },
+                  {
+                    "val": "NANDO:2200408"
+                  },
+                  {
+                    "val": "NANDO:2200829"
+                  },
+                  {
+                    "val": "NCIT:C3105"
+                  },
+                  {
+                    "val": "NORD:1830"
+                  },
+                  {
+                    "val": "OMIM:193300"
+                  },
+                  {
+                    "val": "Orphanet:892"
+                  },
+                  {
+                    "val": "SCTID:46659004"
+                  },
+                  {
+                    "val": "UMLS:C0019562"
+                  },
+                  {
+                    "val": "icd11.foundation:1985408165"
+                  }
+                ]
+              },
+              "type": "CLASS"
+            },
+            "MONDOID": "MONDO:0008667",
+            "name": "von Hippel-Lindau disease"
+          },
+          "entId": "MONDO:0008667",
+          "entIri": "http://purl.obolibrary.org/obo/MONDO_0008667",
+          "entType": "Disease",
+          "ldhId": "467878137",
+          "ldhIri": "https://cspec.genome.network/cspec/Disease/id/467878137",
+          "modified": "2025-10-07T16:12:47.449Z",
+          "modifier": "cspecAdministrator",
+          "rev": "_kZ7wVoS---"
+        }
+      ],
+      "Gene": [
+        {
+          "entContent": {
+            "HGNC": {
+              "_version_": 1704056967089094700,
+              "agr": "HGNC:12687",
+              "alias_symbol": [
+                "VHL1"
+              ],
+              "ccds_id": [
+                "CCDS2598",
+                "CCDS2597"
+              ],
+              "cosmic": "VHL",
+              "date_approved_reserved": "1986-01-01",
+              "date_modified": "2021-05-26",
+              "date_name_changed": "2016-03-02",
+              "ena": [
+                "L15409"
+              ],
+              "ensembl_gene_id": "ENSG00000134086",
+              "entrez_id": "7428",
+              "hgnc_id": "HGNC:12687",
+              "location": "3p25.3",
+              "location_sortable": "03p25.3",
+              "locus_group": "protein-coding gene",
+              "locus_type": "gene with protein product",
+              "lsdb": [
+                "UMD Locus Specific Databases|http://www.umd.be/",
+                "LRG_322|http://ftp.ebi.ac.uk/pub/databases/lrgex/LRG_322.xml"
+              ],
+              "mane_select": [
+                "ENST00000256474.3",
+                "NM_000551.4"
+              ],
+              "mgd_id": [
+                "MGI:103223"
+              ],
+              "name": "von Hippel-Lindau tumor suppressor",
+              "omim_id": [
+                "608537"
+              ],
+              "orphanet": 120467,
+              "prev_name": [
+                "von Hippel-Lindau syndrome",
+                "von Hippel-Lindau tumor suppressor, E3 ubiquitin protein ligase"
+              ],
+              "pubmed_id": [
+                9671762
+              ],
+              "refseq_accession": [
+                "NM_000551"
+              ],
+              "rgd_id": [
+                "RGD:3960"
+              ],
+              "status": "Approved",
+              "symbol": "VHL",
+              "symbol_report_tag": [
+                "Stable symbol"
+              ],
+              "ucsc_id": "uc003bvc.4",
+              "uniprot_ids": [
+                "P40337"
+              ],
+              "uuid": "095b54d6-0de0-4035-bc4f-1458f4cc32c2",
+              "vega_id": "OTTHUMG00000128668"
+            }
+          },
+          "entId": "VHL",
+          "entIri": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:12687",
+          "entType": "Gene",
+          "ldhId": "467863504",
+          "ldhIri": "https://cspec.genome.network/cspec/Gene/id/467863504",
+          "modified": "2021-10-14T11:37:15.094Z",
+          "modifier": "genbadmin",
+          "rev": "_inf5CN6--O"
+        }
+      ],
+      "RuleSet": [
+        {
+          "entContent": {
+            "_uniqueProp": "078_nuclear_VHL",
+            "geneType": "nuclear",
+            "genes": [
+              {
+                "diseases": [
+                  {
+                    "modesOfInheritance": [
+                      {
+                        "modeOfInheritance": "Autosomal dominant inheritance"
+                      }
+                    ],
+                    "preferredModeOfInheritance": "Autosomal dominant inheritance",
+                    "preferredMondoId": "MONDO:0008667",
+                    "preferredTitle": "von Hippel-Lindau disease"
+                  }
+                ],
+                "gene": "VHL",
+                "preferredTranscript": "NM_000551.4",
+                "transcripts": [
+                  "NM_000551.4"
+                ]
+              }
+            ],
+            "ns": "078",
+            "references": [
+              {
+                "auths": [
+                  "Ohh M",
+                  "Yauch RL",
+                  "et al."
+                ],
+                "doiStr": "10.1016/s1097-2765(00)80096-9",
+                "id": "9651579",
+                "iss": "(7)",
+                "namespace": "pmid",
+                "pages": "p. 959-68.",
+                "source": "Mol Cell",
+                "title": "The von Hippel-Lindau tumor suppressor protein is required for proper assembly of an extracellular fibronectin matrix.",
+                "vol": "1",
+                "year": "1998"
+              },
+              {
+                "auths": [
+                  "Clifford SC",
+                  "Cockman ME",
+                  "et al."
+                ],
+                "doiStr": "10.1093/hmg/10.10.1029",
+                "id": "11331613",
+                "iss": "(10)",
+                "namespace": "pmid",
+                "pages": "p. 1029-38.",
+                "source": "Hum Mol Genet",
+                "title": "Contrasting effects on HIF-1alpha regulation by disease-causing pVHL mutations correlate with patterns of tumourigenesis in von Hippel-Lindau disease.",
+                "vol": "10",
+                "year": "2001"
+              },
+              {
+                "auths": [
+                  "Kamada M",
+                  "Suzuki K",
+                  "et al."
+                ],
+                "doiStr": "",
+                "id": "11358843",
+                "iss": "(10)",
+                "namespace": "pmid",
+                "pages": "p. 4184-9.",
+                "source": "Cancer Res",
+                "title": "von Hippel-Lindau protein promotes the assembly of actin and vinculin and inhibits cell motility.",
+                "vol": "61",
+                "year": "2001"
+              },
+              {
+                "auths": [
+                  "Micale L",
+                  "Muscarella LA",
+                  "et al."
+                ],
+                "doiStr": "10.1155/2009/860761",
+                "id": "20145706",
+                "iss": "",
+                "namespace": "pmid",
+                "pages": "p. 860761.",
+                "source": "J Biomed Biotechnol",
+                "title": "VHL frameshift mutation as target of nonsense-mediated mRNA decay in Drosophila melanogaster and human HEK293 cell line.",
+                "vol": "2009",
+                "year": "2009"
+              },
+              {
+                "auths": [
+                  "Taylor C",
+                  "Craven RA",
+                  "et al."
+                ],
+                "doiStr": "10.3892/ijo.2012.1561",
+                "id": "22825683",
+                "iss": "(4)",
+                "namespace": "pmid",
+                "pages": "p. 1229-40.",
+                "source": "Int J Oncol",
+                "title": "Determination of the consequences of VHL mutations on VHL transcripts in renal cell carcinoma.",
+                "vol": "41",
+                "year": "2012"
+              },
+              {
+                "auths": [
+                  "Lenglet M",
+                  "Robriquet F",
+                  "et al."
+                ],
+                "doiStr": "10.1182/blood-2018-03-838235",
+                "id": "29891534",
+                "iss": "(5)",
+                "namespace": "pmid",
+                "pages": "p. 469-483.",
+                "source": "Blood",
+                "title": "Identification of a new VHL exon and complex splicing alterations in familial erythrocytosis or von Hippel-Lindau disease.",
+                "vol": "132",
+                "year": "2018"
+              },
+              {
+                "auths": [
+                  "Buffet A",
+                  "Calsina B",
+                  "et al."
+                ],
+                "doiStr": "10.1136/jmedgenet-2019-106519",
+                "id": "31996412",
+                "iss": "(11)",
+                "namespace": "pmid",
+                "pages": "p. 752-759.",
+                "source": "J Med Genet",
+                "title": "Germline mutations in the new E1' cryptic exon of the VHL gene in patients with tumours of von Hippel-Lindau disease spectrum or with paraganglioma.",
+                "vol": "57",
+                "year": "2020"
+              },
+              {
+                "auths": [
+                  "Caravita S",
+                  "Deboeck G",
+                  "et al."
+                ],
+                "doiStr": "10.1016/j.healun.2016.07.002",
+                "id": "27578599",
+                "iss": "(9)",
+                "namespace": "pmid",
+                "pages": "p. 1138-9.",
+                "source": "J Heart Lung Transplant",
+                "title": "Pulmonary arterial hypertension associated with a von Hippel-Lindau gene mutation.",
+                "vol": "35",
+                "year": "2016"
+              },
+              {
+                "auths": [
+                  "Bartels M",
+                  "van der Zalm MM",
+                  "et al."
+                ],
+                "doiStr": "10.1002/humu.22846",
+                "id": "26224408",
+                "iss": "(11)",
+                "namespace": "pmid",
+                "pages": "p. 1039-42.",
+                "source": "Hum Mutat",
+                "title": "Novel Homozygous Mutation of the Internal Translation Initiation Start Site of VHL is Exclusively Associated with Erythrocytosis: Indications for Distinct Functional Roles of von Hippel-Lindau Tumor Suppressor Isoforms.",
+                "vol": "36",
+                "year": "2015"
+              },
+              {
+                "auths": [
+                  "Brnich SE",
+                  "Abou Tayoun AN",
+                  "et al."
+                ],
+                "doiStr": "10.1186/s13073-019-0690-2",
+                "id": "31892348",
+                "iss": "(1)",
+                "namespace": "pmid",
+                "pages": "p. 3.",
+                "source": "Genome Med",
+                "title": "Recommendations for application of the functional evidence PS3/BS3 criterion using the ACMG/AMP sequence variant interpretation framework.",
+                "vol": "12",
+                "year": "2019"
+              },
+              {
+                "auths": [
+                  "Walsh MF",
+                  "Ritter DI",
+                  "et al."
+                ],
+                "doiStr": "10.1002/humu.23640",
+                "id": "30311369",
+                "iss": "(11)",
+                "namespace": "pmid",
+                "pages": "p. 1542-1552.",
+                "source": "Hum Mutat",
+                "title": "Integrating somatic variant data and biomarkers for germline variant classification in cancer predisposition genes.",
+                "vol": "39",
+                "year": "2018"
+              },
+              {
+                "auths": [
+                  "Chang MT",
+                  "Bhattarai TS",
+                  "et al."
+                ],
+                "doiStr": "10.1158/2159-8290.CD-17-0321",
+                "id": "29247016",
+                "iss": "(2)",
+                "namespace": "pmid",
+                "pages": "p. 174-183.",
+                "source": "Cancer Discov",
+                "title": "Accelerating Discovery of Functional Mutant Alleles in Cancer.",
+                "vol": "8",
+                "year": "2018"
+              },
+              {
+                "auths": [
+                  "Hwang S",
+                  "Ku CR",
+                  "et al."
+                ],
+                "doiStr": "10.1038/jhg.2014.61",
+                "id": "25078357",
+                "iss": "(9)",
+                "namespace": "pmid",
+                "pages": "p. 488-93.",
+                "source": "J Hum Genet",
+                "title": "Germline mutation of Glu70Lys is highly frequent in Korean patients with von Hippel-Lindau (VHL) disease.",
+                "vol": "59",
+                "year": "2014"
+              },
+              {
+                "auths": [
+                  "Hong B",
+                  "Ma K",
+                  "et al."
+                ],
+                "doiStr": "10.3389/fgene.2019.00867",
+                "id": "31620170",
+                "iss": "",
+                "namespace": "pmid",
+                "pages": "p. 867.",
+                "source": "Front Genet",
+                "title": "Frequent Mutations of VHL Gene and the Clinical Phenotypes in the Largest Chinese Cohort With Von Hippel-Lindau Disease.",
+                "vol": "10",
+                "year": "2019"
+              },
+              {
+                "auths": [
+                  "Sorrell AD",
+                  "Lee S",
+                  "et al."
+                ],
+                "doiStr": "10.1111/j.1399-0004.2010.01464.x",
+                "id": "20560986",
+                "iss": "(6)",
+                "namespace": "pmid",
+                "pages": "p. 539-45.",
+                "source": "Clin Genet",
+                "title": "Clinical and functional properties of novel VHL mutation (X214L) consistent with Type 2A phenotype and low risk of renal cell carcinoma.",
+                "vol": "79",
+                "year": "2011"
+              },
+              {
+                "auths": [
+                  "Grantham R"
+                ],
+                "doiStr": "10.1126/science.185.4154.862",
+                "id": "4843792",
+                "iss": "(4154)",
+                "namespace": "pmid",
+                "pages": "p. 862-4.",
+                "source": "Science",
+                "title": "Amino acid difference formula to help explain protein evolution.",
+                "vol": "185",
+                "year": "1974"
+              },
+              {
+                "auths": [
+                  "Bluyssen HA",
+                  "Lolkema MP",
+                  "et al."
+                ],
+                "doiStr": "10.1016/s0014-5793(03)01392-9",
+                "id": "14706840",
+                "iss": "(1-3)",
+                "namespace": "pmid",
+                "pages": "p. 137-42.",
+                "source": "FEBS Lett",
+                "title": "Fibronectin is a hypoxia-independent target of the tumor suppressor VHL.",
+                "vol": "556",
+                "year": "2004"
+              },
+              {
+                "auths": [
+                  "Louise M Binderup M",
+                  "Smerdel M",
+                  "et al."
+                ],
+                "doiStr": "10.1016/j.ejmg.2022.104538",
+                "id": "35709961",
+                "iss": "(8)",
+                "namespace": "pmid",
+                "pages": "p. 104538.",
+                "source": "Eur J Med Genet",
+                "title": "von Hippel-Lindau disease: Updated guideline for diagnosis and surveillance.",
+                "vol": "65",
+                "year": "2022"
+              }
+            ],
+            "rules": {
+              "mainRules": [
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PVS1",
+                        "PS2_Very Strong",
+                        "PS4_Very Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule1, Condition1",
+                      "partitionPath": "Pathogenic.Very Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": ">=1",
+                      "label": "Rule1, Condition2",
+                      "partitionPath": "Pathogenic.Strong"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule1"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PVS1",
+                        "PS2_Very Strong",
+                        "PS4_Very Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule2, Condition1",
+                      "partitionPath": "Pathogenic.Very Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule2, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule2"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PVS1",
+                        "PS2_Very Strong",
+                        "PS4_Very Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule3, Condition1",
+                      "partitionPath": "Pathogenic.Very Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule3, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule3, Condition3",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule3"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PVS1",
+                        "PS2_Very Strong",
+                        "PS4_Very Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule4, Condition1",
+                      "partitionPath": "Pathogenic.Very Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule4, Condition2",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule4"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule5, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule5"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule6, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": ">=3",
+                      "label": "Rule6, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule6"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule7, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==2",
+                      "label": "Rule7, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule7, Condition3",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule7"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule8, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule8, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": ">=4",
+                      "label": "Rule8, Condition3",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Pathogenic",
+                  "rule": "Rule8"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PVS1",
+                        "PS2_Very Strong",
+                        "PS4_Very Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule10, Condition1",
+                      "partitionPath": "Pathogenic.Very Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule10, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule10"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule11, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule11, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule11"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule12, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule12, Condition2",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule12"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": ">=3",
+                      "label": "Rule13, Condition1",
+                      "partitionPath": "Pathogenic.Moderate"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule13"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==2",
+                      "label": "Rule14, Condition1",
+                      "partitionPath": "Pathogenic.Moderate"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule14, Condition2",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule14"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule15, Condition1",
+                      "partitionPath": "Pathogenic.Moderate"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Supporting",
+                        "PS3_Supporting",
+                        "PS4_Supporting",
+                        "PM1_Supporting",
+                        "PM2_Supporting",
+                        "PP1",
+                        "PP3"
+                      ],
+                      "condition": ">=4",
+                      "label": "Rule15, Condition2",
+                      "partitionPath": "Pathogenic.Supporting"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule15"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS1",
+                        "PS2",
+                        "PS4",
+                        "PP1_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule20, Condition1",
+                      "partitionPath": "Pathogenic.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "PS2_Moderate",
+                        "PS4_Moderate",
+                        "PM1",
+                        "PM4",
+                        "PM5",
+                        "PM6",
+                        "PP1_Moderate"
+                      ],
+                      "condition": "==2",
+                      "label": "Rule20, Condition2",
+                      "partitionPath": "Pathogenic.Moderate"
+                    }
+                  ],
+                  "inference": "Likely Pathogenic",
+                  "rule": "Rule20"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "BS1",
+                        "BS2",
+                        "BS4",
+                        "BP2_Strong"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule16, Condition1",
+                      "partitionPath": "Benign.Strong"
+                    }
+                  ],
+                  "inference": "Benign",
+                  "rule": "Rule16"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "BA1"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule17, Condition1",
+                      "partitionPath": "Benign.Stand Alone"
+                    }
+                  ],
+                  "inference": "Benign",
+                  "rule": "Rule17"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "BS1",
+                        "BS2",
+                        "BS4",
+                        "BP2_Strong"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule18, Condition1",
+                      "partitionPath": "Benign.Strong"
+                    },
+                    {
+                      "applicableCriteriaCodes": [
+                        "BS2_Supporting",
+                        "BS3_Supporting",
+                        "BS4_Supporting",
+                        "BP2",
+                        "BP3",
+                        "BP4",
+                        "BP5",
+                        "BP7"
+                      ],
+                      "condition": "==1",
+                      "label": "Rule18, Condition2",
+                      "partitionPath": "Benign.Supporting"
+                    }
+                  ],
+                  "inference": "Likely Benign",
+                  "rule": "Rule18"
+                },
+                {
+                  "conditions": [
+                    {
+                      "applicableCriteriaCodes": [
+                        "BS2_Supporting",
+                        "BS3_Supporting",
+                        "BS4_Supporting",
+                        "BP2",
+                        "BP3",
+                        "BP4",
+                        "BP5",
+                        "BP7"
+                      ],
+                      "condition": ">=2",
+                      "label": "Rule19, Condition1",
+                      "partitionPath": "Benign.Supporting"
+                    }
+                  ],
+                  "inference": "Likely Benign",
+                  "rule": "Rule19"
+                }
+              ]
+            }
+          },
+          "entType": "RuleSet",
+          "ldhId": "1527855768",
+          "ldhIri": "https://cspec.genome.network/cspec/RuleSet/id/1527855768",
+          "modified": "2025-01-10T22:36:50.775Z",
+          "modifier": "dritter@bcm.edu",
+          "rev": "_jDHa6tm---"
+        }
+      ]
+    },
+    "ldFor": {
+      "Organization": [
+        {
+          "entContent": {
+            "abbreviation": "VHL",
+            "approval": {
+              "step1": {
+                "approvalDate": "2018-02-21T00:00:00.000Z",
+                "approved": true
+              },
+              "step2": {
+                "approvalDate": "2021-04-22T00:00:00.000Z",
+                "approved": true
+              },
+              "step3": {
+                "approvalDate": "2024-01-29T00:00:00.000Z",
+                "approved": true
+              },
+              "step4": {
+                "approvalDate": "2024-02-26T00:00:00.000Z",
+                "approved": true
+              }
+            },
+            "curationActivity": "Variant Pathogenicity",
+            "fullBaseName": "VHL",
+            "shortBaseName": "VHL",
+            "shortTitle": "VHL VCEP",
+            "title": "VHL Variant Curation Expert Panel",
+            "type": "Variant Curation Expert Panel"
+          },
+          "entId": "50036",
+          "entIri": "http://clinicalgenome.org/affiliation/50036",
+          "entType": "Organization",
+          "ldhId": "639508878",
+          "ldhIri": "https://cspec.genome.network/cspec/Organization/id/639508878",
+          "modified": "2024-02-27T18:56:14.518Z",
+          "modifier": "cspecAdministrator",
+          "rev": "_inf5B_G--f"
+        }
+      ],
+      "SequenceVariantInterpretation": [
+        {
+          "entContent": {
+            "approvedOn": "03-05-2015",
+            "description": "ACMG ISV guidelines 2015",
+            "namespace": "GN001",
+            "notes": "",
+            "references": [
+              {
+                "source": "PubMed",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/25741868"
+              }
+            ],
+            "shortTitle": "ACMG 2015-Guidelines",
+            "specificationSource": "https://www.acmg.net/docs/Standards_Guidelines_for_the_Interpretation_of_Sequence_Variants.pdf",
+            "tagNameSpaces": [
+              "001"
+            ],
+            "title": "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology",
+            "version": "1.0.0"
+          },
+          "entId": "GN001",
+          "entType": "SequenceVariantInterpretation",
+          "ldhId": "135637585",
+          "ldhIri": "https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/135637585",
+          "modified": "2022-08-18T15:51:43.074Z",
+          "modifier": "cspecAdministrator",
+          "rev": "_inf5BXe---"
+        }
+      ]
+    },
+    "ldhId": "1527855755",
+    "ldhIri": "https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/1527855755",
+    "modified": "2026-07-20T17:44:31.315Z",
+    "modifier": "cspecAdministrator",
+    "rev": "_l2AfGTy---"
+  },
+  "metadata": {
+    "rendered": {
+      "by": "https://cspec.genome.network/cspec/srvc",
+      "when": "2026-08-18T07:03:19.149Z"
+    }
+  },
+  "status": {
+    "code": 200,
+    "name": "OK"
+  }
+}

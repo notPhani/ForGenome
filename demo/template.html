@@ -1,0 +1,1580 @@
+<title>Forgenome Formation Console</title>
+<style>
+/* Light, flat, paper-toned instrument panel. Single committed theme (no dark variant):
+   the palette is tuned so that node fills sit at low opacity against a pale ground and
+   edge strokes stay legible at 1px, which only holds for one specific background value.
+   Every colour is painted explicitly, so the viewer's OS theme never shows through.
+
+   Typography: sans for chrome and labels, mono reserved for identifiers and numbers.
+   Using mono for everything reads as "terminal"; restricting it to data reads as an
+   instrument readout, which is the intent. */
+:root {
+  --ground: #f5f4f0;
+  --panel: #fbfaf7;
+  --panel-raised: #eeece6;
+  --panel-sunk: #e7e4dc;
+  --line: #e2ded4;
+  --line-bright: #cbc6b9;
+  --text: #2e2c27;
+  --text-dim: #6d685f;
+  --text-faint: #9a9489;
+
+  /* Matte, desaturated LAYER tones (persistence/provenance axis: where a node lives). */
+  --core-biology: #3f8a7d;
+  --operational: #b3812f;
+  --evidence: #b4553d;
+  --administrative: #6a7280;
+  --resident: #7b8b9c;
+
+  /* Identity resolution gets its own hue -- it is neither a layer nor an edge type, it's
+     an EVENT (a node from a new batch resolving onto one that already exists), so it
+     needs a colour that doesn't collide with either of those two legends. */
+  --identity: #8a5fae;
+
+  --ink: #2e2c27;
+  --danger: #b8362b;
+
+  --mono: "Cascadia Mono", Consolas, ui-monospace, "SF Mono", Menlo, monospace;
+  --sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--ground);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #d8e3de; color: var(--ink); }
+button:focus-visible, .speed-btn:focus-visible, .tab:focus-visible, input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+.console { display: grid; grid-template-rows: auto 1fr; height: 100vh; }
+
+/* Top bar */
+.topbar {
+  display: flex; align-items: center; gap: 18px;
+  padding: 11px 20px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line-bright);
+  flex-wrap: wrap;
+}
+.brand { display: flex; align-items: baseline; gap: 9px; margin-right: 2px; }
+.brand .mark { font-weight: 650; font-size: 15.5px; letter-spacing: -0.01em; color: var(--ink); }
+.brand .sub {
+  font-size: 10px; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 0.11em; font-weight: 600;
+}
+
+.transport { display: flex; align-items: center; gap: 6px; }
+.tbtn {
+  font-family: var(--sans); font-size: 12.5px; font-weight: 500;
+  background: #fff;
+  border: 1px solid var(--line-bright);
+  color: var(--text);
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.tbtn:hover { background: var(--panel-raised); border-color: #b6b0a2; }
+.tbtn.primary { background: var(--ink); border-color: var(--ink); color: #fbfaf7; }
+.tbtn.primary:hover { background: #444138; border-color: #444138; }
+
+.speedgroup {
+  display: flex; gap: 2px; background: var(--panel-sunk);
+  border: 1px solid var(--line-bright); border-radius: 5px; padding: 2px;
+}
+.speed-btn {
+  font-family: var(--mono); background: transparent; border: none; color: var(--text-dim);
+  padding: 4px 8px; font-size: 11.5px; border-radius: 3px; cursor: pointer;
+}
+.speed-btn:hover { color: var(--ink); }
+.speed-btn.active { background: #fff; color: var(--ink); font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,0.07); }
+
+.knob { display: flex; align-items: center; gap: 7px; }
+.knob label {
+  font-size: 9.5px; text-transform: uppercase; font-weight: 650;
+  letter-spacing: 0.09em; color: var(--text-faint); white-space: nowrap;
+}
+.knob input[type=range] {
+  -webkit-appearance: none; appearance: none;
+  width: 80px; height: 3px; border-radius: 2px;
+  background: var(--line-bright); outline: none; cursor: pointer;
+}
+.knob input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #fff; border: 1.5px solid var(--text-dim); cursor: pointer;
+}
+.knob input[type=range]::-moz-range-thumb {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #fff; border: 1.5px solid var(--text-dim); cursor: pointer;
+}
+.knob .val { font-family: var(--mono); font-size: 11px; color: var(--text-dim); font-variant-numeric: tabular-nums; width: 24px; }
+
+.progress-wrap { flex: 1; min-width: 130px; display: flex; align-items: center; gap: 10px; }
+.progress-track {
+  flex: 1; height: 5px; background: var(--panel-sunk);
+  border-radius: 3px; overflow: hidden; cursor: pointer; border: 1px solid var(--line);
+}
+.progress-fill { height: 100%; background: var(--text-dim); width: 0%; }
+.progress-label { font-family: var(--mono); font-size: 11px; color: var(--text-dim); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.wave-chip {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 650;
+  padding: 5px 10px; border-radius: 4px; border: 1px solid var(--line-bright);
+  background: #fff; color: var(--text-dim);
+  white-space: nowrap; max-width: 300px; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Main grid */
+.main { display: grid; grid-template-columns: 1fr 388px; min-height: 0; }
+.stage { position: relative; min-width: 0; background: var(--ground); }
+.stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.stage canvas:active { cursor: grabbing; }
+
+.panel {
+  position: absolute;
+  background: rgba(251, 250, 247, 0.95);
+  border: 1px solid var(--line-bright); border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(46, 44, 39, 0.06);
+}
+.legend {
+  left: 16px; top: 16px;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 12px;
+  max-height: calc(50% - 24px); overflow-y: auto;
+  width: 200px;
+}
+.feed-legend {
+  left: 16px; bottom: 16px;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 12px;
+  max-height: calc(56% - 24px); overflow-y: auto;
+  width: 240px;
+}
+.legend-title {
+  font-size: 9px; text-transform: uppercase; font-weight: 700;
+  letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 3px;
+  display: flex; align-items: center; gap: 6px;
+}
+.legend-title .clear-solo {
+  margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 600;
+  color: var(--identity); cursor: pointer; font-size: 10px;
+}
+.legend-title + .legend-title, .group-title + .group-title { margin-top: 9px; }
+.group-title {
+  font-size: 9.5px; font-weight: 700; color: var(--text-dim);
+  margin: 8px 0 2px; padding-top: 6px; border-top: 1px dashed var(--line);
+}
+.group-title:first-of-type { border-top: none; padding-top: 0; margin-top: 4px; }
+.legend-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; color: var(--text-dim);
+  cursor: pointer; user-select: none; padding: 2px 4px; border-radius: 3px;
+  transition: background 100ms ease;
+}
+.legend-row:hover { background: rgba(46,44,39,0.05); }
+.legend-row.off { opacity: 0.35; }
+.legend-row.solo { background: rgba(138,95,174,0.12); color: var(--ink); }
+.legend-row .nm { font-family: var(--mono); font-size: 10.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.legend-bar { width: 15px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+.legend-shape { width: 11px; height: 11px; flex-shrink: 0; background: var(--text-dim); }
+.legend-count { margin-left: auto; font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--text-faint); padding-left: 8px; font-size: 10.5px; }
+.legend-only {
+  flex-shrink: 0; font-size: 9px; font-weight: 700; color: var(--text-faint);
+  padding: 1px 5px; border-radius: 3px; opacity: 0; transition: opacity 100ms ease;
+}
+.legend-row:hover .legend-only { opacity: 1; }
+.legend-only:hover { color: var(--identity); background: rgba(138,95,174,0.14); }
+.legend-row.solo .legend-only { opacity: 1; color: var(--identity); }
+.legend-row.stub { opacity: 0.55; cursor: help; }
+.legend-row.idle { opacity: 0.65; }
+.legend-badge-stub {
+  font-size: 8px; font-weight: 700; color: #b45309; background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 3px; padding: 1px 4px; flex-shrink: 0;
+}
+.legend-badge-idle {
+  font-size: 8px; font-weight: 600; color: var(--text-faint); background: rgba(100, 116, 139, 0.12);
+  border-radius: 3px; padding: 1px 4px; flex-shrink: 0;
+}
+
+.hint {
+  position: absolute; right: 16px; bottom: 16px;
+  font-size: 10.5px; color: var(--text-faint); text-align: right; line-height: 1.6;
+}
+
+/* Node detail / connections card */
+.detail-card {
+  position: absolute; top: 14px; right: 14px;
+  width: 340px; max-width: calc(100% - 28px);
+  max-height: calc(100% - 28px);
+  background: rgba(251, 250, 247, 0.98);
+  border: 1px solid var(--line-bright);
+  border-radius: 7px;
+  padding: 13px 15px 11px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 18px rgba(46, 44, 39, 0.1);
+}
+.detail-card.show { display: flex; }
+.detail-card .role {
+  font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.09em; font-weight: 700;
+  padding: 3px 7px; border-radius: 3px; display: inline-block; margin-bottom: 8px; align-self: flex-start;
+}
+.detail-card .id { font-family: var(--mono); font-size: 12px; color: var(--ink); word-break: break-all; margin-bottom: 3px; }
+.detail-degree { font-size: 10.5px; color: var(--text-faint); margin-bottom: 9px; }
+.detail-identity {
+  font-size: 10.5px; color: var(--identity); background: rgba(138,95,174,0.1);
+  border: 1px solid rgba(138,95,174,0.3); border-radius: 4px;
+  padding: 5px 8px; margin-bottom: 9px; line-height: 1.5;
+}
+.detail-scroll { overflow-y: auto; min-height: 0; }
+.detail-section {
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.11em; font-weight: 700;
+  color: var(--text-faint); margin: 12px 0 6px; padding-bottom: 4px; border-bottom: 1px solid var(--line);
+}
+.detail-section:first-child { margin-top: 0; }
+.detail-attrs { font-family: var(--mono); font-size: 10.5px; color: var(--text-dim); display: flex; flex-direction: column; gap: 3px; }
+.detail-attrs .k { color: var(--text-faint); }
+.detail-close {
+  position: absolute; top: 8px; right: 10px; cursor: pointer; color: var(--text-faint);
+  background: none; border: none; font-size: 15px; line-height: 1; padding: 2px 4px;
+}
+.detail-close:hover { color: var(--ink); }
+
+.edge-group { margin-bottom: 9px; }
+.edge-group-head {
+  display: flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 700; margin-bottom: 3px;
+}
+.edge-group-head .swatch { width: 14px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+.edge-group-head .q { font-weight: 400; color: var(--text-faint); }
+.edge-group-head .n { margin-left: auto; color: var(--text-faint); font-variant-numeric: tabular-nums; font-weight: 400; }
+.neighbor {
+  display: flex; align-items: baseline; gap: 7px;
+  font-size: 11px; color: var(--text-dim);
+  padding: 2px 5px 2px 21px; border-radius: 3px; cursor: pointer;
+}
+.neighbor:hover { background: rgba(46,44,39,0.055); color: var(--ink); }
+.neighbor .dir { color: var(--text-faint); flex-shrink: 0; font-family: var(--mono); }
+.neighbor .st { flex-shrink: 0; font-weight: 600; }
+.neighbor .nm { color: var(--text-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--mono); font-size: 10px; }
+.neighbor-more { font-size: 10px; color: var(--text-faint); padding: 1px 5px 1px 21px; font-style: italic; }
+
+/* Right rail */
+.rail { display: grid; grid-template-rows: auto 1fr auto; border-left: 1px solid var(--line-bright); background: var(--panel); min-height: 0; }
+.tabs { display: flex; border-bottom: 1px solid var(--line-bright); }
+.tab {
+  flex: 1; background: none; border: none; cursor: pointer;
+  font-family: var(--sans); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;
+  color: var(--text-faint); padding: 11px 4px; border-bottom: 2px solid transparent;
+}
+.tab:hover { color: var(--text-dim); }
+.tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+.tab .badge {
+  display: inline-block; min-width: 15px; padding: 0 3px; margin-left: 3px;
+  background: var(--identity); color: #fff; border-radius: 7px; font-size: 9px; font-weight: 700;
+}
+
+.pane { overflow-y: auto; min-height: 0; display: none; }
+.pane.active { display: block; }
+
+.log { padding: 11px 14px; font-family: var(--mono); font-size: 11px; line-height: 1.6; }
+.log-line { display: flex; gap: 7px; padding: 1px 0; }
+.log-line .tag { flex-shrink: 0; width: 4px; border-radius: 2px; align-self: stretch; }
+.log-line .txt { color: var(--text-dim); word-break: break-word; }
+.log-line .txt b { color: var(--ink); font-weight: 700; }
+.log-line .txt .layer { color: var(--text-faint); }
+.log-line.edge .txt { color: var(--text-faint); }
+.log-line.identity { background: rgba(138,95,174,0.07); border-radius: 3px; }
+.log-line.identity .txt { color: var(--identity); font-weight: 600; }
+.log-line.identity .txt .meta { color: var(--text-faint); font-weight: 400; }
+
+.edgepane, .identitypane { padding: 13px 15px 18px; }
+.pane-note { font-size: 10.5px; color: var(--text-faint); line-height: 1.65; margin-bottom: 14px; }
+.pane-note b { color: var(--text-dim); }
+.estat { margin-bottom: 13px; }
+.estat-head { display: flex; align-items: baseline; gap: 8px; font-family: var(--mono); font-size: 11px; margin-bottom: 4px; }
+.estat-head .name { font-weight: 700; }
+.estat-head .pct { margin-left: auto; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+.estat-head .cnt { color: var(--text-faint); font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.estat-bar { height: 5px; border-radius: 3px; background: var(--panel-sunk); overflow: hidden; margin-bottom: 5px; }
+.estat-bar > div { height: 100%; border-radius: 3px; }
+.estat-driver { font-size: 10.5px; color: var(--text-faint); line-height: 1.6; }
+.estat-unused { font-size: 10.5px; color: var(--text-faint); line-height: 1.65; padding-top: 10px; border-top: 1px solid var(--line); }
+.estat-unused b { color: var(--text-dim); font-family: var(--mono); }
+
+.identity-summary {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px;
+  margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+.identity-summary .stat .n { color: var(--identity); }
+.identity-row {
+  display: flex; align-items: baseline; gap: 8px; font-family: var(--mono); font-size: 11px;
+  padding: 5px 0; border-bottom: 1px solid var(--line); cursor: pointer;
+}
+.identity-row:hover { background: rgba(46,44,39,0.04); }
+.identity-row .badge {
+  font-size: 9px; text-transform: uppercase; font-weight: 700; padding: 1px 5px; border-radius: 3px;
+  background: rgba(138,95,174,0.14); color: var(--identity); flex-shrink: 0;
+}
+.identity-row .id { color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.identity-row .sightings { margin-left: auto; color: var(--text-faint); font-size: 10px; flex-shrink: 0; }
+.identity-empty { font-size: 11px; color: var(--text-faint); font-style: italic; padding: 8px 0; }
+
+.tab .dirty-badge { background: #d97706; color: #fff; }
+.detail-dirty {
+  font-size: 10px; color: #b45309; background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 4px;
+  padding: 6px 9px; margin-bottom: 9px; line-height: 1.5;
+}
+.detail-dirty b { color: #92400e; }
+.dirtypane { padding: 13px 15px 18px; }
+.dirty-card {
+  border: 1px solid rgba(245,158,11,0.3); border-radius: 4px; background: rgba(245,158,11,0.05);
+  padding: 8px 10px; margin-bottom: 9px; cursor: pointer; font-size: 11px;
+}
+.dirty-card:hover { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.5); }
+.dirty-card .dh { display: flex; align-items: baseline; gap: 6px; font-weight: 700; margin-bottom: 2px; }
+.dirty-card .dh .dnode { font-family: var(--mono); color: var(--ink); font-size: 10.5px; }
+.dirty-card .dh .dconn { color: #b45309; font-size: 9.5px; text-transform: uppercase; margin-left: auto; }
+.dirty-card .dreason { color: var(--text-dim); font-size: 10px; line-height: 1.4; }
+
+.stats { border-top: 1px solid var(--line-bright); padding: 12px 15px 14px; display: flex; flex-direction: column; gap: 9px; background: var(--panel); }
+.stats-title { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--text-faint); }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+.stat { display: flex; flex-direction: column; gap: 1px; }
+.stat .n { font-family: var(--mono); font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink); letter-spacing: -0.02em; }
+.stat .l { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 600; color: var(--text-faint); }
+.footer-note { font-size: 10px; color: var(--text-faint); padding-top: 7px; border-top: 1px solid var(--line); line-height: 1.6; }
+
+.pane::-webkit-scrollbar, .detail-scroll::-webkit-scrollbar, .legend::-webkit-scrollbar, .feed-legend::-webkit-scrollbar { width: 8px; }
+.pane::-webkit-scrollbar-thumb, .detail-scroll::-webkit-scrollbar-thumb, .legend::-webkit-scrollbar-thumb, .feed-legend::-webkit-scrollbar-thumb { background: var(--line-bright); border-radius: 4px; }
+.pane::-webkit-scrollbar-track, .detail-scroll::-webkit-scrollbar-track, .legend::-webkit-scrollbar-track, .feed-legend::-webkit-scrollbar-track { background: transparent; }
+
+@media (max-width: 980px) {
+  .main { grid-template-columns: 1fr; grid-template-rows: 1fr 300px; }
+  .rail { border-left: none; border-top: 1px solid var(--line-bright); }
+  .detail-card { width: calc(100% - 28px); }
+  .legend, .feed-legend { width: 180px; }
+}
+</style>
+
+<div class="console">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">Forgenome</span>
+      <span class="sub">Graph Formation Console</span>
+    </div>
+
+    <div class="transport">
+      <button class="tbtn primary" id="btn-play">&#9654; Play</button>
+      <button class="tbtn" id="btn-step">Step</button>
+      <button class="tbtn" id="btn-reset">Reset</button>
+    </div>
+
+    <div class="speedgroup" id="speedgroup">
+      <button class="speed-btn" data-speed="0.5">0.5&#215;</button>
+      <button class="speed-btn active" data-speed="1">1&#215;</button>
+      <button class="speed-btn" data-speed="3">3&#215;</button>
+      <button class="speed-btn" data-speed="8">8&#215;</button>
+      <button class="speed-btn" data-speed="40">40&#215;</button>
+    </div>
+
+    <div class="knob">
+      <label for="repulsion">Spacing</label>
+      <input type="range" id="repulsion" min="0" max="90" value="62">
+      <span class="val" id="repulsion-val">62</span>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-track" id="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-label" id="progress-label">0 / 0 events</div>
+    </div>
+
+    <div class="wave-chip" id="wave-chip">&#8212;</div>
+  </div>
+
+  <div class="main">
+    <div class="stage">
+      <canvas id="canvas"></canvas>
+
+      <div class="panel legend" id="legend"></div>
+      <div class="panel feed-legend" id="feed-legend"></div>
+
+      <div class="detail-card" id="detail-card">
+        <button class="detail-close" id="detail-close">&#10005;</button>
+        <div class="role" id="detail-role"></div>
+        <div class="id" id="detail-id"></div>
+        <div class="detail-degree" id="detail-degree"></div>
+        <div class="detail-identity" id="detail-identity" style="display:none"></div>
+        <div class="detail-dirty" id="detail-dirty" style="display:none"></div>
+        <div class="detail-scroll">
+          <div class="detail-section">Connections by edge type</div>
+          <div id="detail-edges"></div>
+          <div class="detail-section">Attributes</div>
+          <div class="detail-attrs" id="detail-attrs"></div>
+        </div>
+      </div>
+
+      <div class="hint">drag to pan &#183; scroll to zoom &#183; click a node for detail</div>
+    </div>
+
+    <div class="rail">
+      <div class="tabs">
+        <button class="tab active" data-pane="pane-log">Log</button>
+        <button class="tab" data-pane="pane-edges">Edge types</button>
+        <button class="tab" data-pane="pane-identity">Identity <span class="badge" id="identity-badge">0</span></button>
+        <button class="tab" data-pane="pane-dirty">Dirty <span class="badge dirty-badge" id="dirty-badge">0</span></button>
+      </div>
+      <div class="pane active" id="pane-log"><div class="log" id="log"></div></div>
+      <div class="pane" id="pane-edges"><div class="edgepane" id="edgepane"></div></div>
+      <div class="pane" id="pane-identity"><div class="identitypane" id="identitypane"></div></div>
+      <div class="pane" id="pane-dirty"><div class="dirtypane" id="dirtypane"></div></div>
+      <div class="stats">
+        <div class="stats-title">Committed graph</div>
+        <div class="stat-grid" id="stat-grid"></div>
+        <div class="footer-note" id="footer-note"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const GRAPH_DATA = __GRAPH_DATA_JSON__;
+
+// Matte layer tones -- fill colour encodes STORAGE/PROVENANCE layer (where a node lives:
+// persistent Core Biology, persistent Operational, ephemeral Evidence, Administrative).
+const LAYER_COLOR = {
+  CORE_BIOLOGY: '#3f8a7d',
+  OPERATIONAL: '#b3812f',
+  EVIDENCE: '#b4553d',
+  ADMINISTRATIVE: '#6a7280',
+  RESIDENT: '#7b8b9c',
+};
+const LAYER_LABEL = {
+  CORE_BIOLOGY: 'Core Biology',
+  OPERATIONAL: 'Operational',
+  EVIDENCE: 'Evidence',
+  ADMINISTRATIVE: 'Administrative',
+};
+const NODE_FILL_ALPHA = 0.55;
+const NODE_STROKE_ALPHA = 0.9;
+
+// Node SHAPE encodes the ontology's 5 NodeRole values (forge_ir/core.py NodeRole) --
+// an orthogonal axis to layer. ENTITY is what exists (Gene/Variant/Disease/Submitter),
+// OBSERVATION is what was measured (frequencies, predictions, case observations), CLAIM
+// is an assertion about an entity (a ClinicalAssertion, an AggregateClassification), RULE
+// is operational logic (ACMGCriterion/Requirement), INVESTIGATION is MHLA's runtime
+// workspace (not populated by any connector yet, kept here so the shape legend states
+// all 5 roles the schema defines, not just the ones a run happens to produce).
+const ROLE_SHAPE = {
+  ENTITY: 'circle',
+  OBSERVATION: 'square',
+  CLAIM: 'diamond',
+  RULE: 'triangle',
+  INVESTIGATION: 'hexagon',
+};
+const ROLE_LABEL = {
+  ENTITY: 'Entity',
+  OBSERVATION: 'Observation',
+  CLAIM: 'Claim',
+  RULE: 'Rule',
+  INVESTIGATION: 'Investigation',
+};
+const ROLE_ORDER = ['ENTITY', 'OBSERVATION', 'CLAIM', 'RULE', 'INVESTIGATION'];
+
+// Edges are colour-coded by predicate -- the complete 11 EdgeType values from
+// forge_ir/core.py, listed in the order they're declared there.
+const EDGE_COLOR = {
+  RELATES_TO:   '#8a8272',
+  PART_OF:      '#42679c',
+  REPRESENTS:   '#96568a',
+  ASSERTS:      '#2f74a8',
+  OBSERVES:     '#7050a4',
+  SUPPORTS:     '#2f8257',
+  CONTRADICTS:  '#bc3427',
+  SOURCED_FROM: '#9a9489',
+  REQUIRES:     '#b3812f',
+  APPLIES_TO:   '#2f8378',
+  ACTIVATED_BY: '#c07c1f',
+};
+const EDGE_ORDER = Object.keys(EDGE_COLOR);
+const EDGE_BASE_ALPHA = 0.22;
+const EDGE_STRONG_ALPHA = 0.7;
+const IDENTITY_COLOR = '#8a5fae';
+
+const events = GRAPH_DATA.events;
+const runMeta = GRAPH_DATA.run || {};
+const edgeStatsData = (GRAPH_DATA.edge_stats && Array.isArray(GRAPH_DATA.edge_stats.predicates))
+  ? GRAPH_DATA.edge_stats : null;   // an in-progress run can carry an empty {} here
+const feedManifest = GRAPH_DATA.feeds || [];
+
+const GROUP_LABEL = { core_biology: 'Core Biology', operational: 'Operational', evidence: 'Evidence' };
+const GROUP_ORDER = ['core_biology', 'operational', 'evidence'];
+
+const WAVE_FALLBACK = {
+  core_biology: 'Wave 1 \u00b7 Core Biology (Ensembl, persistent)',
+  operational: 'Wave 2 \u00b7 Operational rules (ClinGen, persistent)',
+  evidence_v1: 'Wave 3 \u00b7 Evidence \u2014 VCV000002218 (clean)',
+  evidence_v2: 'Wave 4 \u00b7 Evidence \u2014 VCV004558169 (conflicting)',
+};
+const WAVE_LABEL = {};
+const WAVE_LAYER = {};
+for (const w of (GRAPH_DATA.waves || [])) { WAVE_LABEL[w.id] = w.label; WAVE_LAYER[w.id] = w.layer; }
+
+// ---------------------------------------------------------------- graph model
+const nodes = new Map();
+const edges = [];
+const edgeSet = new Set();
+const adjacency = new Map();       // node id -> [{edge, otherId, direction}]
+const identityLog = new Map();     // node id -> [{status, namespace, sightings, order}]
+let identityEventCount = 0;
+let cursor = 0;
+let playing = false;
+let eventsPerTick = 2;
+let hiddenLayers = new Set();
+let hiddenPredicates = new Set();
+let hiddenFeeds = new Set();
+let soloFeed = null;               // when set, only this feed's nodes/edges show
+let selectedNode = null;
+let repulsionStrength = 62;
+
+let panX = 0, panY = 0, zoom = 1;
+let dragging = false, dragLast = null, dragMoved = 0;
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+function resize() {
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width * devicePixelRatio;
+  canvas.height = rect.height * devicePixelRatio;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = rect.height + 'px';
+}
+window.addEventListener('resize', resize);
+resize();
+
+const waveSeedIndex = {};
+let evidenceWaveCount = 0;
+function seedPosition(wave) {
+  const w = canvas.width / devicePixelRatio, h = canvas.height / devicePixelRatio;
+  if (wave === 'core_biology') return jitter(w * 0.22, h * 0.24, 90);
+  if (wave === 'operational') return jitter(w * 0.78, h * 0.22, 90);
+  if (!(wave in waveSeedIndex)) waveSeedIndex[wave] = evidenceWaveCount++;
+  const i = waveSeedIndex[wave];
+  const total = Math.max(8, Object.keys(waveSeedIndex).length);
+  const angle = (i / total) * Math.PI * 2 + 0.6;
+  const radius = Math.min(w, h) * 0.36;
+  return jitter(w * 0.5 + Math.cos(angle) * radius, h * 0.56 + Math.sin(angle) * radius * 0.72, 70);
+}
+// Initial spread scales with the size of the run. Fixed ~90px blobs were fine for a
+// 300-node demo and pathological at 9,000: every node landed in one of EIGHT grid cells
+// (largest: 4,033 nodes), so the spatial grid degenerated into an all-pairs scan and a
+// single physics tick cost 1,352 ms. Spreading by sqrt(N) keeps average cell occupancy
+// roughly constant as the graph grows, which is the whole point of having a grid.
+function jitter(x, y, spread) {
+  return { x: x + (Math.random() - 0.5) * spread, y: y + (Math.random() - 0.5) * spread };
+}
+
+function addNode(ev) {
+  const pos = seedPosition(ev.wave);
+  nodes.set(ev.id, {
+    id: ev.id, role: ev.role, subtype: ev.subtype, layer: ev.layer, origin: ev.origin,
+    label: ev.label, wave: ev.wave, feed: ev.feed || null, attributes: ev.attributes,
+    dirty: Boolean(ev.dirty || (ev.attributes && ev.attributes.dirty)),
+    x: pos.x, y: pos.y, vx: 0, vy: 0,
+    r: nodeRadius(ev), bornAt: performance.now(), identityPulseAt: null,
+  });
+}
+function nodeRadius(ev) {
+  if (ev.subtype === 'Gene') return 9;
+  if (ev.subtype === 'ACMGCriterion') return 7;
+  if (ev.subtype === 'Disease' || ev.subtype === 'Submitter') return 6;
+  if (ev.subtype === 'Variant') return 5;
+  return 3.6;
+}
+function addEdge(ev) {
+  const key = ev.src + '|' + ev.predicate + '|' + (ev.qualifier || '') + '|' + ev.dst;
+  if (edgeSet.has(key)) return;
+  edgeSet.add(key);
+  const e = { src: ev.src, dst: ev.dst, predicate: ev.predicate, qualifier: ev.qualifier,
+              origin: ev.origin, wave: ev.wave, feed: ev.feed || null, bornAt: performance.now() };
+  edges.push(e);
+  index(ev.src, e, ev.dst, 'out');
+  index(ev.dst, e, ev.src, 'in');
+}
+function index(id, edge, otherId, direction) {
+  if (!adjacency.has(id)) adjacency.set(id, []);
+  adjacency.get(id).push({ edge, otherId, direction });
+}
+function addIdentity(ev) {
+  identityEventCount++;
+  if (!identityLog.has(ev.id)) identityLog.set(ev.id, []);
+  identityLog.get(ev.id).push({ status: ev.status, namespace: ev.namespace,
+                                 sightings: ev.sightings, order: ev.order });
+  const n = nodes.get(ev.id);
+  if (n) n.identityPulseAt = performance.now();
+}
+
+function revealNext(n) {
+  for (let i = 0; i < n && cursor < events.length; i++, cursor++) {
+    const ev = events[cursor];
+    if (ev.kind === 'node') { addNode(ev); logLine(ev); }
+    else if (ev.kind === 'edge') { addEdge(ev); if (Math.random() < 0.12) logLine(ev); }
+    else if (ev.kind === 'identity') { addIdentity(ev); logLine(ev); }
+  }
+  scrollLogToEnd();
+  updateProgress();
+}
+
+// ---------------------------------------------------------------- log
+function logLine(ev) {
+  const log = document.getElementById('log');
+  const div = document.createElement('div');
+  const txt = document.createElement('div');
+  txt.className = 'txt';
+  const tag = document.createElement('div');
+  tag.className = 'tag';
+
+  if (ev.kind === 'node') {
+    div.className = 'log-line';
+    tag.style.background = LAYER_COLOR[ev.layer] || '#9a9489';
+    txt.innerHTML = '<b>' + escapeHtml(ev.subtype) + '</b> ' + escapeHtml(ev.label) +
+      ' <span class="layer">' + ev.layer + (ev.feed ? ' \u00b7 ' + escapeHtml(ev.feed) : '') + '</span>';
+  } else if (ev.kind === 'edge') {
+    div.className = 'log-line edge';
+    tag.style.background = EDGE_COLOR[ev.predicate] || '#9a9489';
+    const q = ev.qualifier ? '[' + ev.qualifier + ']' : '';
+    txt.innerHTML = escapeHtml(short(ev.src)) + ' \u2014' + escapeHtml(ev.predicate) +
+      escapeHtml(q) + '\u2192 ' + escapeHtml(short(ev.dst));
+  } else {
+    div.className = 'log-line identity';
+    tag.style.background = IDENTITY_COLOR;
+    txt.innerHTML = 'IDENTITY ' + escapeHtml(ev.status) + ' <b>' + escapeHtml(short(ev.id)) + '</b> ' +
+      '<span class="meta">(' + escapeHtml(ev.namespace) + ', sighting #' + ev.sightings + ')</span>';
+  }
+  div.appendChild(tag); div.appendChild(txt);
+  log.appendChild(div);
+  while (log.children.length > 400) log.removeChild(log.children[0]);
+}
+// Scrolling is hoisted OUT of logLine: reading `scrollHeight` forces a synchronous layout,
+// and at 40x speed the replay appends ~80 lines per frame, so doing it per line meant ~80
+// forced reflows a frame. Once per batch is visually identical and costs one.
+function scrollLogToEnd() {
+  const pane = document.getElementById('pane-log');
+  pane.scrollTop = pane.scrollHeight;
+}
+function short(id) { return id.length > 34 ? id.slice(0, 16) + '\u2026' + id.slice(-14) : id; }
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function updateProgress() {
+  document.getElementById('progress-fill').style.width = (cursor / events.length) * 100 + '%';
+  document.getElementById('progress-label').textContent = cursor + ' / ' + events.length + ' events';
+  const ev = events[Math.min(cursor, events.length - 1)];
+  const chip = document.getElementById('wave-chip');
+  if (ev) {
+    chip.textContent = WAVE_LABEL[ev.wave] || WAVE_FALLBACK[ev.wave] || ev.wave || 'Formation complete';
+    const color = waveColor(ev.wave);
+    chip.style.borderColor = color;
+    chip.style.color = color;
+  }
+  if (cursor >= events.length) {
+    chip.textContent = 'Formation complete';
+    chip.style.borderColor = 'var(--ink)';
+    chip.style.color = 'var(--ink)';
+  }
+  document.getElementById('identity-badge').textContent = identityEventCount;
+  renderStats();
+  renderEdgePane();
+  renderIdentityPane();
+  renderDirtyPane();
+}
+function waveColor(wave) {
+  const layer = WAVE_LAYER[wave];
+  if (layer && LAYER_COLOR[layer]) return LAYER_COLOR[layer];
+  if (wave === 'core_biology') return LAYER_COLOR.CORE_BIOLOGY;
+  if (wave === 'operational') return LAYER_COLOR.OPERATIONAL;
+  return LAYER_COLOR.EVIDENCE;
+}
+
+// ---------------------------------------------------------------- stats panel
+function renderStats() {
+  const counts = { CORE_BIOLOGY: 0, OPERATIONAL: 0, EVIDENCE: 0, ADMINISTRATIVE: 0 };
+  let dirtyCount = 0;
+  for (const n of nodes.values()) {
+    if (n.layer in counts) counts[n.layer]++;
+    if (n.dirty || (n.attributes && n.attributes.dirty)) dirtyCount++;
+  }
+  const grid = document.getElementById('stat-grid');
+  grid.innerHTML = '';
+  const rows = [
+    ['Nodes formed', nodes.size],
+    ['Edges formed', edges.length],
+    ['Core Biology', counts.CORE_BIOLOGY],
+    ['Operational', counts.OPERATIONAL],
+    ['Evidence', counts.EVIDENCE],
+    ['Identity merges', identityEventCount],
+  ];
+  if (dirtyCount > 0) rows.push(['Dirty nodes', dirtyCount]);
+  for (const [label, n] of rows) {
+    const div = document.createElement('div');
+    div.className = 'stat';
+    div.innerHTML = '<div class="n">' + n.toLocaleString() + '</div><div class="l">' + label + '</div>';
+    grid.appendChild(div);
+  }
+  updateLegendCounts(counts);
+}
+
+function currentPredicateCounts() {
+  const counts = {};
+  for (const e of edges) counts[e.predicate] = (counts[e.predicate] || 0) + 1;
+  return counts;
+}
+
+const DRIVERS = {};
+if (edgeStatsData) for (const p of edgeStatsData.predicates) DRIVERS[p.predicate] = p;
+
+function renderEdgePane() {
+  const pane = document.getElementById('edgepane');
+  const counts = currentPredicateCounts();
+  const total = edges.length || 1;
+  const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+
+  pane.innerHTML = '';
+  const note = document.createElement('div');
+  note.className = 'pane-note';
+  note.innerHTML = 'Live distribution over the <b>' + edges.length.toLocaleString() +
+    '</b> edges formed so far, across the ontology\'s 11 predicates. Click a row to hide ' +
+    'that edge type. Driver lines are computed by the pipeline over the full committed graph.';
+  pane.appendChild(note);
+
+  for (const [predicate, count] of ranked) {
+    const pct = 100 * count / total;
+    const color = EDGE_COLOR[predicate] || '#8a8272';
+    const wrap = document.createElement('div');
+    wrap.className = 'estat';
+    wrap.style.cursor = 'pointer';
+    wrap.style.opacity = hiddenPredicates.has(predicate) ? '0.35' : '1';
+    const driver = DRIVERS[predicate];
+    wrap.innerHTML =
+      '<div class="estat-head"><span class="name" style="color:' + color + '">' + predicate + '</span>' +
+      '<span class="cnt">' + count.toLocaleString() + '</span>' +
+      '<span class="pct">' + pct.toFixed(1) + '%</span></div>' +
+      '<div class="estat-bar"><div style="width:' + Math.max(1.5, pct) + '%;background:' + color + '"></div></div>' +
+      (driver ? '<div class="estat-driver">' + escapeHtml(driver.driver) + '</div>' : '');
+    wrap.addEventListener('click', () => {
+      if (hiddenPredicates.has(predicate)) hiddenPredicates.delete(predicate);
+      else hiddenPredicates.add(predicate);
+      syncLegendPredicates();
+      renderEdgePane();
+    });
+    pane.appendChild(wrap);
+  }
+
+  if (edgeStatsData) {
+    const unused = edgeStatsData.unused_predicates || [];
+    const foot = document.createElement('div');
+    foot.className = 'estat-unused';
+    foot.innerHTML =
+      '<b>' + edgeStatsData.edges_per_node + '</b> edges/node &#183; ' +
+      '<b>' + edgeStatsData.cross_layer_edges.toLocaleString() + '</b> cross-layer &#183; ' +
+      '<b>' + edgeStatsData.derived_edges.toLocaleString() + '</b> DERIVED (computed by Forge, ' +
+      'not mirrored from a source)' +
+      (unused.length ? '<br><br>Ontology predicates with zero edges in this run: ' +
+        unused.join(', ') : '');
+    pane.appendChild(foot);
+  }
+}
+
+// ---------------------------------------------------------------- identity pane
+function renderIdentityPane() {
+  const pane = document.getElementById('identitypane');
+  pane.innerHTML = '';
+
+  const summary = document.createElement('div');
+  summary.className = 'identity-summary';
+  const byNamespace = {};
+  for (const events of identityLog.values()) for (const e of events) {
+    byNamespace[e.namespace] = (byNamespace[e.namespace] || 0) + 1;
+  }
+  const rows = [['Total merges', identityEventCount], ['Distinct nodes', identityLog.size]]
+    .concat(Object.entries(byNamespace).map(([ns, n]) => [ns, n]));
+  for (const [label, n] of rows.slice(0, 4)) {
+    const div = document.createElement('div');
+    div.className = 'stat';
+    div.innerHTML = '<div class="n">' + n.toLocaleString() + '</div><div class="l">' + label + '</div>';
+    summary.appendChild(div);
+  }
+  pane.appendChild(summary);
+
+  const note = document.createElement('div');
+  note.className = 'pane-note';
+  note.innerHTML = 'Every row here is a node from a LATER batch resolving onto one that ' +
+    'already exists in the persistent identity index (ingest/identity.py), rather than ' +
+    'being duplicated. Click a row to jump to that node.';
+  pane.appendChild(note);
+
+  if (identityLog.size === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'identity-empty';
+    empty.textContent = 'No cross-batch identity merges yet.';
+    pane.appendChild(empty);
+    return;
+  }
+
+  const flat = [];
+  for (const [id, list] of identityLog.entries()) {
+    for (const e of list) flat.push({ id, ...e });
+  }
+  flat.sort((a, b) => b.order - a.order);
+  for (const item of flat.slice(0, 200)) {
+    const row = document.createElement('div');
+    row.className = 'identity-row';
+    const n = nodes.get(item.id);
+    row.innerHTML =
+      '<span class="badge">' + escapeHtml(item.namespace) + '</span>' +
+      '<span class="id">' + escapeHtml(n ? n.label : short(item.id)) + '</span>' +
+      '<span class="sightings">#' + item.sightings + '</span>';
+    row.addEventListener('click', () => { if (n) showDetail(n); });
+    pane.appendChild(row);
+  }
+}
+
+// ---------------------------------------------------------------- dirty pane
+function renderDirtyPane() {
+  const pane = document.getElementById('dirtypane');
+  if (!pane) return;
+  pane.innerHTML = '';
+  const dirtyNodes = [...nodes.values()].filter(n => n.dirty || (n.attributes && n.attributes.dirty));
+  const dirtyBadge = document.getElementById('dirty-badge');
+  if (dirtyBadge) dirtyBadge.textContent = dirtyNodes.length;
+
+  const note = document.createElement('div');
+  note.className = 'pane-note';
+  note.innerHTML = 'Nodes marked <b>DIRTY</b> when an enrichment fetch was deferred or hit an upstream error. ' +
+    'Expected edge shapes are recorded in the retry ledger (ingest/dirty.py) for replay without fabricating placeholder data.';
+  pane.appendChild(note);
+
+  if (dirtyNodes.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'identity-empty';
+    empty.textContent = 'Zero dirty nodes in this run.';
+    pane.appendChild(empty);
+    return;
+  }
+
+  for (const n of dirtyNodes.slice(0, 150)) {
+    const card = document.createElement('div');
+    card.className = 'dirty-card';
+    const reasons = (n.attributes && n.attributes.dirty_reasons) || [];
+    const connLabel = reasons.map(r => r.connector).join(', ') || 'enrichment';
+    const detailText = reasons.map(r => (r.reason || '') + (r.detail ? ': ' + r.detail : '')).join('; ') || 'Enrichment deferred / pending';
+    card.innerHTML =
+      '<div class="dh"><span class="dnode">' + escapeHtml(n.label || short(n.id)) + '</span>' +
+      '<span class="dconn">' + escapeHtml(connLabel) + '</span></div>' +
+      '<div class="dreason">' + escapeHtml(detailText) + '</div>';
+    card.addEventListener('click', () => showDetail(n));
+    pane.appendChild(card);
+  }
+}
+
+// ---------------------------------------------------------------- legends
+function buildLegend() {
+  const legend = document.getElementById('legend');
+  legend.innerHTML = '';
+
+  const t1 = document.createElement('div');
+  t1.className = 'legend-title'; t1.textContent = 'Layers (fill colour)';
+  legend.appendChild(t1);
+  for (const layer of ['CORE_BIOLOGY', 'OPERATIONAL', 'EVIDENCE', 'ADMINISTRATIVE']) {
+    const row = document.createElement('div');
+    row.className = 'legend-row';
+    row.innerHTML = '<span class="legend-dot" style="background:' + hexA(LAYER_COLOR[layer], 0.7) +
+      ';border:1px solid ' + LAYER_COLOR[layer] + '"></span>' +
+      '<span>' + LAYER_LABEL[layer] + '</span>' +
+      '<span class="legend-count" id="lc-' + layer + '">0</span>';
+    row.addEventListener('click', () => {
+      if (hiddenLayers.has(layer)) hiddenLayers.delete(layer); else hiddenLayers.add(layer);
+      row.classList.toggle('off', hiddenLayers.has(layer));
+    });
+    legend.appendChild(row);
+  }
+
+  const t2 = document.createElement('div');
+  t2.className = 'legend-title'; t2.textContent = 'Node roles (shape) \u2014 5 total';
+  legend.appendChild(t2);
+  for (const role of ROLE_ORDER) {
+    const row = document.createElement('div');
+    row.className = 'legend-row';
+    const shape = document.createElement('span');
+    shape.className = 'legend-shape';
+    applyShapeClip(shape, ROLE_SHAPE[role]);
+    row.appendChild(shape);
+    const label = document.createElement('span');
+    label.textContent = ROLE_LABEL[role];
+    row.appendChild(label);
+    legend.appendChild(row);
+  }
+
+  const t3 = document.createElement('div');
+  t3.className = 'legend-title'; t3.textContent = 'Edge types (stroke) \u2014 11 total';
+  legend.appendChild(t3);
+  for (const predicate of EDGE_ORDER) {
+    const row = document.createElement('div');
+    row.className = 'legend-row';
+    row.dataset.predicate = predicate;
+    row.innerHTML = '<span class="legend-bar" style="background:' + EDGE_COLOR[predicate] + '"></span>' +
+      '<span class="nm">' + predicate + '</span>' +
+      '<span class="legend-count" id="ec-' + predicate + '">0</span>';
+    row.addEventListener('click', () => {
+      if (hiddenPredicates.has(predicate)) hiddenPredicates.delete(predicate);
+      else hiddenPredicates.add(predicate);
+      syncLegendPredicates();
+      renderEdgePane();
+    });
+    legend.appendChild(row);
+  }
+
+  const t4 = document.createElement('div');
+  t4.className = 'legend-title';
+  t4.innerHTML = '<span class="legend-dot" style="background:' + IDENTITY_COLOR + ';border:none"></span>Identity merge';
+  legend.appendChild(t4);
+}
+
+function applyShapeClip(el, shape) {
+  if (shape === 'circle') { el.style.borderRadius = '50%'; return; }
+  if (shape === 'square') { el.style.borderRadius = '2px'; return; }
+  if (shape === 'diamond') { el.style.clipPath = 'polygon(50% 0,100% 50%,50% 100%,0 50%)'; return; }
+  if (shape === 'triangle') { el.style.clipPath = 'polygon(50% 4%,96% 96%,4% 96%)'; return; }
+  if (shape === 'hexagon') { el.style.clipPath = 'polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0% 50%)'; return; }
+}
+
+const REGISTERED_CONNECTORS_FALLBACK = [
+  { name: 'ensembl_structure', feed: 'Ensembl gene structure', group: 'core_biology', implemented: true, description: 'Gene -> Transcript -> Exon -> Protein structure' },
+  { name: 'omim', feed: 'OMIM', group: 'core_biology', implemented: false, description: 'Mendelian gene-disease associations (requires API key)' },
+  { name: 'uniprot', feed: 'UniProt', group: 'core_biology', implemented: true, description: 'Protein annotation via REPRESENTS' },
+  { name: 'clingen', feed: 'ClinGen VCEP', group: 'operational', implemented: true, description: 'ACMG criteria + strength-tier Requirements' },
+  { name: 'clingen_gene_disease', feed: 'ClinGen Gene-Disease', group: 'operational', implemented: false, description: 'Gene-level validity/dosage curation (HTML only)' },
+  { name: 'clinvar', feed: 'ClinVar', group: 'evidence', implemented: true, description: 'VCV/RCV/SCV hierarchy' },
+  { name: 'cosmic', feed: 'COSMIC', group: 'evidence', implemented: false, description: 'Somatic cancer variant catalog (requires licensed account)' },
+  { name: 'dbnsfp', feed: 'dbNSFP', group: 'evidence', implemented: false, description: 'Aggregated in-silico predictors (tabix flat-file)' },
+  { name: 'dbsnp', feed: 'dbSNP', group: 'evidence', implemented: true, description: 'Cross-referenced rsID identity + sibling alleles' },
+  { name: 'ensembl_vep', feed: 'Ensembl VEP', group: 'evidence', implemented: true, description: 'Per-transcript VEP consequences, SIFT/PolyPhen' },
+  { name: 'gnomad', feed: 'gnomAD', group: 'evidence', implemented: true, description: 'Population frequency (faf95_popmax)' },
+  { name: 'mondo', feed: 'MONDO', group: 'evidence', implemented: false, description: 'Disease/phenotype ontology' },
+  { name: 'pharmgkb', feed: 'PharmGKB', group: 'evidence', implemented: false, description: 'Pharmacogenomic variant-drug-response annotations' },
+];
+
+function buildFeedLegend() {
+  const legend = document.getElementById('feed-legend');
+  legend.innerHTML = '';
+
+  const title = document.createElement('div');
+  title.className = 'legend-title';
+  title.innerHTML = 'Connector registry (13)' +
+    (soloFeed ? '<span class="clear-solo" id="clear-solo">show all</span>' : '');
+  legend.appendChild(title);
+  if (soloFeed) {
+    document.getElementById('clear-solo').addEventListener('click', () => {
+      soloFeed = null;
+      buildFeedLegend();
+    });
+  }
+
+  const manifest = (GRAPH_DATA.connectors && GRAPH_DATA.connectors.length)
+    ? GRAPH_DATA.connectors : REGISTERED_CONNECTORS_FALLBACK;
+  const feedCounts = {};
+  for (const f of feedManifest) feedCounts[f.feed] = (f.nodes || 0) + (f.edges || 0);
+
+  const byGroup = {};
+  for (const c of manifest) (byGroup[c.group] = byGroup[c.group] || []).push(c);
+
+  for (const group of GROUP_ORDER) {
+    const list = byGroup[group];
+    if (!list || list.length === 0) continue;
+    const gt = document.createElement('div');
+    gt.className = 'group-title';
+    gt.textContent = GROUP_LABEL[group];
+    legend.appendChild(gt);
+
+    for (const c of list) {
+      const feedName = c.feed || c.name;
+      const count = feedCounts[feedName] || 0;
+      const isLive = count > 0 || c.state === 'live';
+      const isStub = !c.implemented || c.state === 'stub';
+
+      const row = document.createElement('div');
+      row.className = 'legend-row';
+      if (isStub) row.classList.add('stub');
+      else if (!isLive) row.classList.add('idle');
+
+      if (soloFeed === feedName) row.classList.add('solo');
+      if (!soloFeed && hiddenFeeds.has(feedName)) row.classList.add('off');
+
+      const dotColor = isStub ? '#9a9489' : (isLive ? LAYER_COLOR[groupLayer(group)] : '#6b7280');
+      const dotBorder = isStub ? '1px dashed #9a9489' : ('1px solid ' + dotColor);
+
+      let badgeHtml = '';
+      if (isStub) {
+        badgeHtml = '<span class="legend-badge-stub" title="' + escapeHtml(c.description || 'Stub connector') + '">STUB</span>';
+      } else if (!isLive) {
+        badgeHtml = '<span class="legend-badge-idle">IDLE</span>';
+      }
+
+      row.innerHTML =
+        '<span class="legend-dot" style="background:' + hexA(dotColor, isLive ? 0.75 : 0.25) +
+        ';border:' + dotBorder + '"></span>' +
+        '<span class="nm" title="' + escapeHtml(c.description ? feedName + ' \u2014 ' + c.description : feedName) + '">' +
+          escapeHtml(feedName) + '</span>' +
+        badgeHtml +
+        (isLive ? '<span class="legend-only" data-feed="' + escapeHtml(feedName) + '">' +
+          (soloFeed === feedName ? 'ALL' : 'ONLY') + '</span>' : '') +
+        '<span class="legend-count">' + (isLive ? count.toLocaleString() : (isStub ? '\u2014' : '0')) + '</span>';
+
+      if (isLive) {
+        row.addEventListener('click', (e) => {
+          if (e.target.classList.contains('legend-only')) return;
+          if (soloFeed) return;
+          if (hiddenFeeds.has(feedName)) hiddenFeeds.delete(feedName); else hiddenFeeds.add(feedName);
+          buildFeedLegend();
+        });
+        const onlyBtn = row.querySelector('.legend-only');
+        if (onlyBtn) {
+          onlyBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            soloFeed = (soloFeed === feedName) ? null : feedName;
+            buildFeedLegend();
+          });
+        }
+      }
+      legend.appendChild(row);
+    }
+  }
+}
+function groupLayer(group) {
+  if (group === 'core_biology') return 'CORE_BIOLOGY';
+  if (group === 'operational') return 'OPERATIONAL';
+  return 'EVIDENCE';
+}
+
+function syncLegendPredicates() {
+  document.querySelectorAll('#legend .legend-row[data-predicate]').forEach(row => {
+    row.classList.toggle('off', hiddenPredicates.has(row.dataset.predicate));
+  });
+}
+function updateLegendCounts(counts) {
+  for (const layer of ['CORE_BIOLOGY', 'OPERATIONAL', 'EVIDENCE', 'ADMINISTRATIVE']) {
+    const el = document.getElementById('lc-' + layer);
+    if (el) el.textContent = counts[layer].toLocaleString();
+  }
+  const pc = currentPredicateCounts();
+  for (const predicate of EDGE_ORDER) {
+    const el = document.getElementById('ec-' + predicate);
+    if (el) el.textContent = (pc[predicate] || 0).toLocaleString();
+  }
+}
+
+// ---------------------------------------------------------------- physics
+// Heavily damped and widely spaced on purpose. The layout is meant to settle and stay
+// put so it can be read and pointed at: DAMPING removes most of each frame's velocity,
+// MAX_SPEED clamps any single node from being flung by a crowded cell, SPRING_LENGTH
+// pushes connected nodes to rest around 150px apart -- wide enough that labels and
+// distinct shapes don't collide even at the default zoom -- and SETTLED_MOBILITY
+// progressively freezes nodes once they're a few seconds old, so newly forming nodes
+// still animate in while the mass of the graph holds still.
+//
+// Repulsion is uniform-grid bucketed rather than all-pairs. At two-variant scale the
+// O(n^2) loop was fine; a whole-gene family run puts ~9,000 nodes on screen, where
+// all-pairs is ~40M distance checks per frame and the page simply stops. CELL is sized
+// so the 3x3 neighbourhood covers the new, wider spacing.
+const CELL = 90;
+const DAMPING = 0.45;
+const MAX_SPEED = 0.9;
+const SPRING = 0.006;
+const SPRING_LENGTH = 150;
+const CENTERING = 0.0016;
+const SETTLE_MS = 4500;
+const SETTLED_MOBILITY = 0.12;
+
+function tickPhysics() {
+  const arr = [...nodes.values()];
+  if (arr.length === 0) return;
+  const w = canvas.width / devicePixelRatio, h = canvas.height / devicePixelRatio;
+  const cx = w / 2, cy = h / 2;
+  const now = performance.now();
+
+  const grid = new Map();
+  for (const n of arr) {
+    const key = ((n.x / CELL) | 0) + ':' + ((n.y / CELL) | 0);
+    let cell = grid.get(key);
+    if (!cell) { cell = []; grid.set(key, cell); }
+    cell.push(n);
+  }
+
+  const k = repulsionStrength;
+  for (const a of arr) {
+    let fx = 0, fy = 0;
+    if (k > 0) {
+      const gx = (a.x / CELL) | 0, gy = (a.y / CELL) | 0;
+      for (let ox = -1; ox <= 1; ox++) {
+        for (let oy = -1; oy <= 1; oy++) {
+          const cell = grid.get((gx + ox) + ':' + (gy + oy));
+          if (!cell) continue;
+          for (const b of cell) {
+            if (a === b) continue;
+            let dx = a.x - b.x, dy = a.y - b.y;
+            let d2 = dx * dx + dy * dy;
+            if (d2 < 4) { dx = Math.random() - 0.5; dy = Math.random() - 0.5; d2 = 4; }
+            const d = Math.sqrt(d2);
+            const f = (k * 300) / d2;
+            fx += (dx / d) * f; fy += (dy / d) * f;
+          }
+        }
+      }
+    }
+    fx += (cx - a.x) * CENTERING;
+    fy += (cy - a.y) * CENTERING;
+    a.vx = (a.vx + fx) * DAMPING;
+    a.vy = (a.vy + fy) * DAMPING;
+  }
+
+  for (const e of edges) {
+    const a = nodes.get(e.src), b = nodes.get(e.dst);
+    if (!a || !b) continue;
+    // A hidden edge must not keep pulling. Hiding a predicate used to change only what was
+    // DRAWN while its spring still acted, so switching off SOURCED_FROM -- whose single
+    // SourceManifest node carries degree 917 here, nine times the next highest -- appeared
+    // to do nothing: the star was invisible but still collapsing the layout into a knot.
+    // Now the toggle means what it looks like it means.
+    if (!edgeVisible(e, a, b)) continue;
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const d = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
+    const f = (d - SPRING_LENGTH) * SPRING;
+    const ux = dx / d, uy = dy / d;
+    a.vx += ux * f; a.vy += uy * f;
+    b.vx -= ux * f; b.vy -= uy * f;
+  }
+
+  for (const a of arr) {
+    const speed = Math.hypot(a.vx, a.vy);
+    if (speed > MAX_SPEED) { a.vx = a.vx / speed * MAX_SPEED; a.vy = a.vy / speed * MAX_SPEED; }
+    const age = now - a.bornAt;
+    const mobility = age > SETTLE_MS ? SETTLED_MOBILITY
+      : 1 - (1 - SETTLED_MOBILITY) * (age / SETTLE_MS);
+    a.x += a.vx * mobility;
+    a.y += a.vy * mobility;
+  }
+}
+
+// ---------------------------------------------------------------- visibility
+function feedVisible(feed) {
+  if (!feed) return true;              // resident/unattributed nodes always show
+  if (soloFeed) return feed === soloFeed;
+  return !hiddenFeeds.has(feed);
+}
+function nodeVisible(n) {
+  return !hiddenLayers.has(n.layer) && feedVisible(n.feed);
+}
+function edgeVisible(e, a, b) {
+  if (hiddenPredicates.has(e.predicate)) return false;
+  if (!nodeVisible(a) || !nodeVisible(b)) return false;
+  return true;
+}
+
+// ---------------------------------------------------------------- shape drawing
+function traceShape(ctx, x, y, r, shape) {
+  ctx.beginPath();
+  if (shape === 'circle') { ctx.arc(x, y, r, 0, Math.PI * 2); return; }
+  if (shape === 'square') { ctx.rect(x - r, y - r, r * 2, r * 2); return; }
+  if (shape === 'diamond') {
+    ctx.moveTo(x, y - r); ctx.lineTo(x + r, y); ctx.lineTo(x, y + r); ctx.lineTo(x - r, y); ctx.closePath();
+    return;
+  }
+  if (shape === 'triangle') {
+    const h = r * 1.15;
+    ctx.moveTo(x, y - h); ctx.lineTo(x + h * 0.95, y + h * 0.8); ctx.lineTo(x - h * 0.95, y + h * 0.8); ctx.closePath();
+    return;
+  }
+  if (shape === 'hexagon') {
+    for (let i = 0; i < 6; i++) {
+      const a = Math.PI / 3 * i - Math.PI / 2;
+      const px = x + r * 1.05 * Math.cos(a), py = y + r * 1.05 * Math.sin(a);
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    return;
+  }
+  ctx.arc(x, y, r, 0, Math.PI * 2);   // fallback
+}
+
+// ---------------------------------------------------------------- render
+function render() {
+  const w = canvas.width / devicePixelRatio, h = canvas.height / devicePixelRatio;
+  ctx.save();
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+  ctx.clearRect(0, 0, w, h);
+  ctx.save();
+  ctx.translate(panX, panY);
+  ctx.scale(zoom, zoom);
+
+  const now = performance.now();
+  const neighborIds = selectedNode ? new Set((adjacency.get(selectedNode) || []).map(a => a.otherId)) : null;
+  const dim = selectedNode !== null;
+
+  for (const e of edges) {
+    const a = nodes.get(e.src), b = nodes.get(e.dst);
+    if (!a || !b || !edgeVisible(e, a, b)) continue;
+    const age = now - e.bornAt;
+    const fade = age < 400 ? age / 400 : 1;
+    const strong = e.predicate === 'CONTRADICTS';
+    let alpha = strong ? EDGE_STRONG_ALPHA : EDGE_BASE_ALPHA;
+    let width = strong ? 1.5 : 0.9;
+    if (dim) {
+      if (e.src === selectedNode || e.dst === selectedNode) { alpha = 0.95; width = 2.1; }
+      else alpha = 0.08;
+    }
+    ctx.strokeStyle = hexA(EDGE_COLOR[e.predicate] || '#8a8272', alpha * fade);
+    ctx.lineWidth = width;
+    ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+  }
+
+  for (const n of nodes.values()) {
+    if (!nodeVisible(n)) continue;
+    const age = now - n.bornAt;
+    const pop = age < 350 ? Math.min(1, age / 350) : 1;
+    const r = n.r * (0.5 + 0.5 * easeOutBack(pop));
+    const color = LAYER_COLOR[n.layer] || '#9a9489';
+    const shape = ROLE_SHAPE[n.role] || 'circle';
+    const isSelected = selectedNode === n.id;
+    const isNeighbor = neighborIds ? neighborIds.has(n.id) : false;
+    const faded = dim && !isSelected && !isNeighbor;
+
+    if (age < 800) {
+      const ring = 1 - age / 800;
+      traceShape(ctx, n.x, n.y, r + 4 + 7 * (1 - ring), shape);
+      ctx.strokeStyle = hexA(color, ring * 0.4);
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+
+    // Identity-merge pulse: an expanding violet ring, independent of the layer colour,
+    // decaying over ~1.4s -- long enough to catch by eye during normal playback speeds.
+    if (n.identityPulseAt !== null) {
+      const pulseAge = now - n.identityPulseAt;
+      if (pulseAge < 1400) {
+        const t = pulseAge / 1400;
+        traceShape(ctx, n.x, n.y, r + 3 + 16 * t, shape);
+        ctx.strokeStyle = hexA(IDENTITY_COLOR, (1 - t) * 0.75);
+        ctx.lineWidth = 1.8;
+        ctx.stroke();
+      }
+    }
+
+    traceShape(ctx, n.x, n.y, r, shape);
+    ctx.fillStyle = hexA(color, faded ? 0.1 : NODE_FILL_ALPHA);
+    ctx.fill();
+    ctx.strokeStyle = hexA(color, faded ? 0.16 : NODE_STROKE_ALPHA);
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    if (n.dirty || (n.attributes && n.attributes.dirty)) {
+      traceShape(ctx, n.x, n.y, r + 4.5, shape);
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 1.6;
+      ctx.setLineDash([3, 3]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    if (isSelected) {
+      traceShape(ctx, n.x, n.y, r + 6, shape);
+      ctx.strokeStyle = '#2e2c27'; ctx.lineWidth = 1.6; ctx.stroke();
+    } else if (isNeighbor) {
+      traceShape(ctx, n.x, n.y, r + 3.5, shape);
+      ctx.strokeStyle = hexA(color, 0.85); ctx.lineWidth = 1.2; ctx.stroke();
+    }
+  }
+
+  if (zoom > 0.55) {
+    ctx.font = '600 10px ' + getComputedStyle(document.body).getPropertyValue('--sans');
+    ctx.textAlign = 'center';
+    for (const n of nodes.values()) {
+      if (!nodeVisible(n)) continue;
+      const isSelected = selectedNode === n.id;
+      const isNeighbor = neighborIds ? neighborIds.has(n.id) : false;
+      // Labels appear as you zoom in, the way a map's place names do. Drawing every
+      // node of radius >= 6 was fine at ~1,000 nodes and became the single largest source
+      // of visual noise at panel scale: hundreds of Disease and Submitter names painted
+      // on top of each other until the graph underneath was unreadable. The threshold
+      // relaxes as the viewport tightens, so detail is available without being imposed.
+      const labelFloor = zoom >= 2.2 ? 5 : zoom >= 1.3 ? 6.5 : 8.5;
+      if (n.r < labelFloor && !isSelected && !isNeighbor) continue;
+      ctx.fillStyle = (dim && !isSelected && !isNeighbor) ? 'rgba(46,44,39,0.18)' : 'rgba(46,44,39,0.78)';
+      ctx.fillText(n.label, n.x, n.y - n.r - 6);
+    }
+  }
+
+  ctx.restore();
+  ctx.restore();
+}
+function hexA(hex, a) {
+  const n = parseInt(hex.slice(1), 16);
+  return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+}
+function easeOutBack(x) { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); }
+
+function loop() {
+  if (playing) revealNext(eventsPerTick);
+  tickPhysics();
+  render();
+  if (cursor >= events.length && playing) { playing = false; setPlayLabel(); }
+  requestAnimationFrame(loop);
+}
+
+// ---------------------------------------------------------------- controls
+function setPlayLabel() {
+  document.getElementById('btn-play').innerHTML = playing ? '\u23f8 Pause' : '\u25b6 Play';
+}
+document.getElementById('btn-play').addEventListener('click', () => {
+  if (cursor >= events.length) return;
+  playing = !playing; setPlayLabel();
+});
+document.getElementById('btn-step').addEventListener('click', () => { playing = false; setPlayLabel(); revealNext(1); });
+document.getElementById('btn-reset').addEventListener('click', () => resetTo(0));
+function resetTo(target) {
+  playing = false; setPlayLabel(); cursor = 0;
+  nodes.clear(); edges.length = 0; edgeSet.clear(); adjacency.clear();
+  identityLog.clear(); identityEventCount = 0;
+  hideDetail();
+  document.getElementById('log').innerHTML = '';
+  if (target > 0) revealNext(target); else updateProgress();
+}
+document.querySelectorAll('.speed-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    eventsPerTick = Math.max(1, Math.round(parseFloat(btn.dataset.speed) * 2));
+  });
+});
+document.getElementById('progress-track').addEventListener('click', (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const target = Math.floor(((e.clientX - rect.left) / rect.width) * events.length);
+  if (target > cursor) revealNext(target - cursor);
+  else resetTo(target);
+});
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.pane).classList.add('active');
+  });
+});
+const repulsionInput = document.getElementById('repulsion');
+repulsionInput.addEventListener('input', () => {
+  repulsionStrength = parseInt(repulsionInput.value, 10);
+  document.getElementById('repulsion-val').textContent = repulsionStrength;
+});
+repulsionStrength = parseInt(repulsionInput.value, 10);
+
+canvas.addEventListener('mousedown', (e) => { dragging = true; dragMoved = 0; dragLast = [e.clientX, e.clientY]; });
+window.addEventListener('mouseup', () => dragging = false);
+window.addEventListener('mousemove', (e) => {
+  if (!dragging) return;
+  const dx = e.clientX - dragLast[0], dy = e.clientY - dragLast[1];
+  dragMoved += Math.abs(dx) + Math.abs(dy);
+  panX += dx; panY += dy;
+  dragLast = [e.clientX, e.clientY];
+});
+canvas.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  zoom = Math.min(4, Math.max(0.2, zoom * (1 - e.deltaY * 0.001)));
+}, { passive: false });
+
+// ---------------------------------------------------------------- click to inspect
+canvas.addEventListener('click', (e) => {
+  if (dragMoved > 4) return;   // a pan gesture, not a selection
+  const rect = canvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left - panX) / zoom;
+  const my = (e.clientY - rect.top - panY) / zoom;
+  let closest = null, bestD = 16 / zoom;
+  for (const n of nodes.values()) {
+    if (!nodeVisible(n)) continue;
+    const d = Math.hypot(n.x - mx, n.y - my);
+    if (d < bestD) { bestD = d; closest = n; }
+  }
+  if (closest) showDetail(closest); else hideDetail();
+});
+
+const NEIGHBORS_PER_GROUP = 8;
+
+function showDetail(n) {
+  selectedNode = n.id;
+  document.getElementById('detail-card').classList.add('show');
+
+  const roleEl = document.getElementById('detail-role');
+  roleEl.textContent = n.role + ' \u00b7 ' + n.subtype + ' \u00b7 ' + n.layer;
+  const layerColor = LAYER_COLOR[n.layer] || '#9a9489';
+  roleEl.style.background = hexA(layerColor, 0.14);
+  roleEl.style.color = layerColor;
+  document.getElementById('detail-id').textContent = n.id;
+
+  const links = adjacency.get(n.id) || [];
+  const byPredicate = new Map();
+  for (const link of links) {
+    if (!byPredicate.has(link.edge.predicate)) byPredicate.set(link.edge.predicate, []);
+    byPredicate.get(link.edge.predicate).push(link);
+  }
+  const outCount = links.filter(l => l.direction === 'out').length;
+  document.getElementById('detail-degree').textContent =
+    links.length + ' edge' + (links.length === 1 ? '' : 's') + ' \u00b7 ' +
+    outCount + ' outgoing, ' + (links.length - outCount) + ' incoming \u00b7 ' +
+    byPredicate.size + ' edge type' + (byPredicate.size === 1 ? '' : 's') +
+    (n.feed ? ' \u00b7 via ' + n.feed : '');
+
+  const identityEl = document.getElementById('detail-identity');
+  const idHistory = identityLog.get(n.id);
+  if (idHistory && idHistory.length) {
+    const last = idHistory[idHistory.length - 1];
+    identityEl.style.display = 'block';
+    identityEl.textContent = 'Identity resolution: ' + idHistory.length + ' cross-batch merge' +
+      (idHistory.length === 1 ? '' : 's') + ' \u00b7 namespace ' + last.namespace +
+      ' \u00b7 latest status ' + last.status + ' \u00b7 sighting #' + last.sightings;
+  } else {
+    identityEl.style.display = 'none';
+  }
+
+  const dirtyEl = document.getElementById('detail-dirty');
+  const isDirty = n.dirty || (n.attributes && n.attributes.dirty);
+  if (isDirty) {
+    dirtyEl.style.display = 'block';
+    const reasons = (n.attributes && n.attributes.dirty_reasons) || [];
+    let dHtml = '<b>DIRTY NODE \u00b7 RETRY PENDING</b><br>';
+    if (reasons.length) {
+      dHtml += reasons.map(r => '<b>' + escapeHtml(r.connector) + '</b>: ' + escapeHtml(r.reason) + (r.detail ? ' <i>(' + escapeHtml(r.detail) + ')</i>' : '')).join('<br>');
+    } else {
+      dHtml += 'Enrichment fetch deferred or hit upstream error. Missing edge shapes recorded in retry ledger.';
+    }
+    dirtyEl.innerHTML = dHtml;
+  } else {
+    dirtyEl.style.display = 'none';
+  }
+
+  const edgesEl = document.getElementById('detail-edges');
+  edgesEl.innerHTML = '';
+  if (byPredicate.size === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'estat-driver';
+    empty.textContent = 'No edges revealed yet for this node.';
+    edgesEl.appendChild(empty);
+  }
+  for (const [predicate, group] of [...byPredicate.entries()].sort((a, b) => b[1].length - a[1].length)) {
+    const color = EDGE_COLOR[predicate] || '#8a8272';
+    const wrap = document.createElement('div');
+    wrap.className = 'edge-group';
+
+    const quals = [...new Set(group.map(l => l.edge.qualifier).filter(Boolean))];
+    const head = document.createElement('div');
+    head.className = 'edge-group-head';
+    head.innerHTML = '<span class="swatch" style="background:' + color + '"></span>' +
+      '<span style="color:' + color + '">' + predicate + '</span>' +
+      (quals.length ? '<span class="q">[' + escapeHtml(quals.join(', ')) + ']</span>' : '') +
+      '<span class="n">' + group.length + '</span>';
+    wrap.appendChild(head);
+
+    for (const link of group.slice(0, NEIGHBORS_PER_GROUP)) {
+      const other = nodes.get(link.otherId);
+      const row = document.createElement('div');
+      row.className = 'neighbor';
+      const otherColor = other ? (LAYER_COLOR[other.layer] || '#9a9489') : LAYER_COLOR.RESIDENT;
+      const subtype = other ? other.subtype : 'resident (persistent layer)';
+      row.innerHTML = '<span class="dir">' + (link.direction === 'out' ? '\u2192' : '\u2190') + '</span>' +
+        '<span class="st" style="color:' + otherColor + '">' + escapeHtml(subtype) + '</span>' +
+        '<span class="nm">' + escapeHtml(other ? other.label : link.otherId) + '</span>';
+      if (other) row.addEventListener('click', () => showDetail(other));
+      else row.style.cursor = 'default';
+      wrap.appendChild(row);
+    }
+    if (group.length > NEIGHBORS_PER_GROUP) {
+      const more = document.createElement('div');
+      more.className = 'neighbor-more';
+      more.textContent = '+ ' + (group.length - NEIGHBORS_PER_GROUP) + ' more';
+      wrap.appendChild(more);
+    }
+    edgesEl.appendChild(wrap);
+  }
+
+  const attrsEl = document.getElementById('detail-attrs');
+  attrsEl.innerHTML = '';
+  const entries = Object.entries(n.attributes || {}).slice(0, 16);
+  if (entries.length === 0) {
+    const row = document.createElement('div');
+    row.textContent = '(no attributes captured)';
+    attrsEl.appendChild(row);
+  }
+  for (const [k, v] of entries) {
+    const row = document.createElement('div');
+    row.innerHTML = '<span class="k">' + escapeHtml(k) + ':</span> ' + escapeHtml(String(v));
+    attrsEl.appendChild(row);
+  }
+}
+function hideDetail() { selectedNode = null; document.getElementById('detail-card').classList.remove('show'); }
+document.getElementById('detail-close').addEventListener('click', hideDetail);
+window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideDetail(); });
+
+// ---------------------------------------------------------------- boot
+buildLegend();
+buildFeedLegend();
+(function footer() {
+  const s = GRAPH_DATA.stats || {};
+  let parts = [];
+  parts.push(runMeta.mode ? 'mode=' + runMeta.mode : 'demo run');
+  if (runMeta.gene) parts.push(runMeta.gene);
+  if (runMeta.sample_pct !== undefined && runMeta.sample_pct < 100) {
+    parts.push(runMeta.sample_pct + '% sample (seed ' + runMeta.seed + ')');
+  }
+  if (s.variants_ingested) {
+    parts.push(s.variants_ingested.toLocaleString() + '/' +
+               (s.variants_requested || 0).toLocaleString() + ' variants');
+  }
+  if (runMeta.connectors && runMeta.connectors.length) parts.push(runMeta.connectors.join(' + '));
+  // filter blanks: an in-progress run has no summary.json yet, so some fields are empty
+  parts = parts.filter(part => part && String(part).trim());
+  let text = 'Run ' + (GRAPH_DATA.verified ? 'verified' : 'UNVERIFIED') + ' \u00b7 ' + parts.join(' \u00b7 ');
+  if (s.total_nodes) {
+    text += ' \u00b7 committed ' + s.total_nodes.toLocaleString() + ' nodes / ' +
+            (s.total_edges || 0).toLocaleString() + ' edges';
+  }
+  if (s.identity_merges) text += ' \u00b7 ' + s.identity_merges.toLocaleString() + ' identity merges';
+  if (s.dirty_nodes || (GRAPH_DATA.dirty && GRAPH_DATA.dirty.open)) {
+    const dcount = s.dirty_nodes || (GRAPH_DATA.dirty ? GRAPH_DATA.dirty.open : 0);
+    text += ' \u00b7 ' + dcount.toLocaleString() + ' dirty';
+  }
+  if (GRAPH_DATA.downsample) {
+    const ds = GRAPH_DATA.downsample;
+    text += ' \u00b7 Density-sampled: ' + ds.kept_nodes.toLocaleString() + ' of ' +
+            ds.total_nodes.toLocaleString() + ' nodes (' + (100 * ds.node_ratio).toFixed(1) +
+            '%) \u00b7 Gaussian filter (\u03c3=' + ds.sigma + ', hops=' + ds.hops + ')';
+  }
+  if (s.quarantined) text += ' \u00b7 ' + s.quarantined + ' quarantined';
+  if (s.events_truncated) text += ' \u00b7 replay truncated to ' + events.length.toLocaleString() + ' events for display';
+  document.getElementById('footer-note').textContent = text;
+})();
+updateProgress();
+setPlayLabel();
+requestAnimationFrame(loop);
+</script>

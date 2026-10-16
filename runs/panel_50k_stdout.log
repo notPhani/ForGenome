@@ -1,0 +1,160 @@
+[14:42:34] ============================================================================================
+[14:42:34] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[14:42:34]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[14:42:34]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[14:42:34]   enrichment  1 in 8 variants
+[14:42:34]   output      D:\ForgePOC\runs/panel_50k
+[14:42:34] ============================================================================================
+[14:42:35] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[14:42:35] [LDLR] 645 variants allocated of 4935 in family · resuming at 300
+[14:43:53]   ! batch REJECTED (clinvar:VCV000237860): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:44:03]   ! batch REJECTED (clinvar:VCV000237868): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:44:29]   ! batch REJECTED (clinvar:VCV000250930): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:44:45]   ! batch REJECTED (clinvar:VCV000250946): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:45:02]   ! batch REJECTED (clinvar:VCV000250954): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:45:43]   ! batch REJECTED (clinvar:VCV000250970): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:45:56]   ! batch REJECTED (clinvar:VCV000250978): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:46:29]   ! batch REJECTED (clinvar:VCV000251010): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:46:37]   ! batch REJECTED (clinvar:VCV000251018): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:47:29]   ! batch REJECTED (clinvar:VCV000251034): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:48:14]   ! batch REJECTED (clinvar:VCV000251050): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:48:30]   ! batch REJECTED (clinvar:VCV000251074): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:48:48]   ! batch REJECTED (clinvar:VCV000251082): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:27]   ! batch REJECTED (clinvar:VCV000251098): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:35]   ! batch REJECTED (clinvar:VCV000251106): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:42]   ! batch REJECTED (clinvar:VCV000251114): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:49:43]   … 3750 variants · 2467 nodes · 6449 edges · 9695 dirty tickets
+[14:49:50]   ! batch REJECTED (clinvar:VCV000251122): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:02]   ! batch REJECTED (clinvar:VCV000251130): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:13]   ! batch REJECTED (clinvar:VCV000251138): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:16]   ! batch REJECTED (clinvar:VCV000251154): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:21]   ! batch REJECTED (clinvar:VCV000251162): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:37]   ! batch REJECTED (clinvar:VCV000251178): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:50:49]   ! batch REJECTED (clinvar:VCV000251186): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:03]   ! batch REJECTED (clinvar:VCV000251194): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:26]   ! batch REJECTED (clinvar:VCV000251202): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:29]   ! batch REJECTED (clinvar:VCV000251210): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:51:46]   ! batch REJECTED (clinvar:VCV000251218): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:52:03]   ! batch REJECTED (clinvar:VCV000251226): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:52:17]   ! batch REJECTED (clinvar:VCV000251234): verification failed: ["edge dst 'Ensembl:ENST00000252444' does not resolve to any known node", "edge dst 'Ensembl:ENST00000455727' does not resolve to any known node", "edge dst 'Ensembl:ENST00000535915' does not resolve to any known node"]
+[14:52:37] [BRCA2] 645 variants allocated of 22021 in family
+[14:53:39]   ! batch REJECTED (clinvar:VCV000037718): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[14:54:17]   ! batch REJECTED (clinvar:VCV000037734): verification failed: ["edge dst 'Ensembl:ENST00000533490' does not resolve to any known node"]
+[14:54:53]   ! batch REJECTED (clinvar:VCV000037758): verification failed: ["edge dst 'Ensembl:ENST00000533490' does not resolve to any known node"]
+[14:56:27]   … 4000 variants · 9225 nodes · 24988 edges · 10330 dirty tickets
+[15:04:18]   … 4250 variants · 19521 nodes · 54172 edges · 10981 dirty tickets
+[15:09:58]   ! batch REJECTED (clinvar:VCV000038256): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:10:02]   ! batch REJECTED (clinvar:VCV000038264): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:11:44]   ! batch REJECTED (clinvar:VCV000051038): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:11:59]   ! batch REJECTED (clinvar:VCV000051046): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:12:21]   ! batch REJECTED (clinvar:VCV000051054): verification failed: ["edge dst 'Ensembl:ENST00000380130' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380133' does not resolve to any known node", "edge dst 'Ensembl:ENST00000380139' does not resolve to any known node"]
+[15:12:32]   … 4500 variants · 29905 nodes · 83612 edges · 11632 dirty tickets
+[15:13:17] [MYBPC3] 645 variants allocated of 4747 in family
+[15:13:32]   ! batch REJECTED (clinvar:VCV000008621): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:19:06]   ! batch REJECTED (clinvar:VCV000042672): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:19:46]   ! batch REJECTED (clinvar:VCV000042680): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:19]   ! batch REJECTED (clinvar:VCV000042688): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:34]   ! batch REJECTED (clinvar:VCV000042696): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:34]   … 4750 variants · 36502 nodes · 103290 edges · 12289 dirty tickets
+[15:20:46]   ! batch REJECTED (clinvar:VCV000042704): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:20:55]   ! batch REJECTED (clinvar:VCV000042712): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:21:07]   ! batch REJECTED (clinvar:VCV000042720): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:21:23]   ! batch REJECTED (clinvar:VCV000042728): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:21:48]   ! batch REJECTED (clinvar:VCV000042736): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:22:00]   ! batch REJECTED (clinvar:VCV000042744): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:22:32]   ! batch REJECTED (clinvar:VCV000042752): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node"]
+[15:22:38]   ! batch REJECTED (clinvar:VCV000042760): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node"]
+[15:22:46]   ! batch REJECTED (clinvar:VCV000042768): verification failed: ["edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713543' does not resolve to any known node"]
+[15:24:44]   ! batch REJECTED (clinvar:VCV000155808): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:25:56]   ! batch REJECTED (clinvar:VCV000164053): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:28:11]   ! batch REJECTED (clinvar:VCV000164149): verification failed: ["edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713543' does not resolve to any known node"]
+[15:28:17]   ! batch REJECTED (clinvar:VCV000177638): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:28:31]   ! batch REJECTED (clinvar:VCV000177675): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:28:53]   ! batch REJECTED (clinvar:VCV000177780): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:28:53]   … 5000 variants · 42138 nodes · 120440 edges · 12930 dirty tickets
+[15:29:27]   ! batch REJECTED (clinvar:VCV000178872): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:29:39]   ! batch REJECTED (clinvar:VCV000179554): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:29:47]   ! batch REJECTED (clinvar:VCV000179989): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node"]
+[15:30:05]   ! batch REJECTED (clinvar:VCV000180413): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:30:17]   ! batch REJECTED (clinvar:VCV000180923): verification failed: ["edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713542' does not resolve to any known node", "edge dst 'Ensembl:ENST00000713543' does not resolve to any known node"]
+[15:31:30]   ! batch REJECTED (clinvar:VCV000180981): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:31:36]   ! batch REJECTED (clinvar:VCV000180989): verification failed: ["edge dst 'Ensembl:ENST00000227163' does not resolve to any known node", "edge dst 'Ensembl:ENST00000378538' does not resolve to any known node", "edge dst 'Ensembl:ENST00000533030' does not resolve to any known node"]
+[15:31:45]   ! batch REJECTED (clinvar:VCV000180997): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:31:57]   ! batch REJECTED (clinvar:VCV000181005): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:32:07]   ! batch REJECTED (clinvar:VCV000181013): verification failed: ["edge dst 'Ensembl:ENST00000311027' does not resolve to any known node", "edge dst 'Ensembl:ENST00000342922' does not resolve to any known node", "edge dst 'Ensembl:ENST00000349238' does not resolve to any known node"]
+[15:32:21] [KCNH2] 645 variants allocated of 3922 in family
+[15:34:32]   … 5250 variants · 45726 nodes · 130885 edges · 13557 dirty tickets
+[15:38:35]   … 5500 variants · 49075 nodes · 140429 edges · 14214 dirty tickets
+[15:41:57]   … 5750 variants · 52605 nodes · 150820 edges · 14817 dirty tickets
+[15:43:57] 
+[15:43:57] ============================================================================================
+[15:43:57] HARVEST SUMMARY  ·  1.02h  ·  9/79 genes completed
+[15:43:57] ============================================================================================
+[15:43:57]   variants allocated   49,957
+[15:43:57]   variants ingested    5,478
+[15:43:57]   committed graph      53,146 nodes / 152,391 edges
+[15:43:57]   micro-batches        2,123 committed / 67 rejected
+[15:43:57]   identity merges      8,866
+[15:43:57]   dirty nodes          5,000 (14,962 open retry tickets of 14,962 filed)
+[15:43:57]   STOPPED EARLY        deadline reached before TGFBR1
+[15:43:57]   retry tickets by connector:
+[15:43:57]       dbsnp            deferred_budget=4,981, not_applicable=1
+[15:43:57]       ensembl_vep      deferred_budget=4,981, fetch_failed=18
+[15:43:57]       gnomad           deferred_budget=4,981
+[15:43:57]   connector feeds:
+[15:43:57]       core_biology  Ensembl gene structure        122 nodes
+[15:43:57]       core_biology  UniProt                         3 nodes
+[15:43:57]       evidence      ClinVar                    51,010 nodes
+[15:43:57]       evidence      Ensembl VEP                 1,639 nodes
+[15:43:57]       evidence      dbSNP                         189 nodes
+[15:43:57]       evidence      gnomAD                        183 nodes
+[15:43:57]   quarantined          467
+[15:43:57]           293  6547 (variant overlaps a neighbouring gene)
+[15:43:57]            96  not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/
+[15:43:57]            29  ENST00000535915' does not resolve to any known node"]
+[15:43:57]            18  ENST00000349238' does not resolve to any known node"]
+[15:43:57]             6  ENST00000380139' does not resolve to any known node"]
+[15:43:57]             6  ENST00000533030' does not resolve to any known node"]
+[15:43:57] ============================================================================================
+[15:43:57] 
+========================================================================================
+EDGE TYPE STATISTICS  ·  152391 edges over 53146 nodes (2.87 edges/node)
+========================================================================================
+PREDICATE        COUNT   SHARE  DOMINANT SHAPE / DRIVER
+----------------------------------------------------------------------------------------
+RELATES_TO       47331   31.1%  ██████████
+                                39.3% of them are ClinicalAssertion —RELATES_TO[submitted_by]→ Submitter — breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each
+                  9194    6.0%    · AggregateClassification —RELATES_TO[for_condition]→ Disease  (1.0/src)
+
+ASSERTS          29900   19.6%  ███████
+                                62.2% of them are ClinicalAssertion —ASSERTS→ Variant — breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each
+                 11311    7.4%    · AggregateClassification —ASSERTS→ Variant  (1.0/src)
+
+SOURCED_FROM     29900   19.6%  ███████
+                                62.2% of them are ClinicalAssertion —SOURCED_FROM→ SourceManifest — breadth: 18583 distinct ClinicalAssertion nodes emit ~1 each
+                 11311    7.4%    · AggregateClassification —SOURCED_FROM→ SourceManifest  (1.0/src)
+
+OBSERVES         20405   13.4%  ████
+                                91.1% of them are CaseObservation —OBSERVES→ Variant — breadth: 18583 distinct CaseObservation nodes emit ~1 each
+                  1639    1.1%    · ComputationalPrediction —OBSERVES→ Variant  (1.0/src)
+
+SUPPORTS         18583   12.2%  ████
+                                100.0% of them are CaseObservation —SUPPORTS[corroborates]→ ClinicalAssertion — breadth: 18583 distinct CaseObservation nodes emit ~1 each
+
+CONTRADICTS       6153    4.0%  █
+                                100.0% of them are ClinicalAssertion —CONTRADICTS→ ClinicalAssertion — fan-out: each ClinicalAssertion emits 2.52 on average
+
+PART_OF            116    0.1%  █
+                                66.4% of them are Exon —PART_OF→ Transcript — breadth: 77 distinct Exon nodes emit ~1 each
+                    39    0.0%    · Transcript —PART_OF→ Gene  (1.0/src)
+
+REPRESENTS           3    0.0%  █
+                                100.0% of them are Protein —REPRESENTS→ Protein — breadth: 3 distinct Protein nodes emit ~1 each
+
+Ontology predicates with zero edges in this run: REQUIRES, APPLIES_TO, ACTIVATED_BY
+Cross-layer edges: 107982 (70.9%)  ·  DERIVED-origin edges: 6153
+========================================================================================
+[15:43:58] Wrote D:\ForgePOC\runs/panel_50k\summary.json
+[15:43:58] Graph dump → D:\ForgePOC\runs/panel_50k\graph.jsonl.gz
+[15:43:58] Dirty ledger → D:\ForgePOC\runs/panel_50k\dirty_ledger.jsonl
+[15:43:58] Total wall clock: 1.02h

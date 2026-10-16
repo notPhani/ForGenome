@@ -1,0 +1,314 @@
+"""Ensembl connector -- Core Biology (structure/annotation, never variant clinical
+truth). Real payload shapes confirmed against fixtures/ensembl_gene_VHL.json,
+ensembl_variation_rs5030820.json, ensembl_vep_c499CT.json.
+
+LOD discipline (connector-research.md §3): only the canonical transcript gets full
+Exon/Translation structure; the other 14 (confirmed real count for VHL) become
+lightweight stubs. `clinical_significance` on the variation endpoint is dropped --
+it mirrors ClinVar and isn't authoritative here (forge-pipeline-v1.md §14).
+"""
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from typing import Iterator
+
+from connectors import http
+
+from forge_ir.core import (
+    EdgeType, NodeRole, Origin, gene_canonical_id, spdi_position_to_1based, transcript_canonical_id,
+)
+from forge_ir.graph import ForgeEdge, ForgeNode
+from forge_ir.provenance import SourceProvenance
+from ingest.mapping import EscapeHatch, MappingSpec, apply_mapping_spec
+from ingest.source_objects import SourceObjectBase
+from orchestration.connector_registry import ConnectorDescriptor, Emission, register_connector
+
+BASE_URL = "https://rest.ensembl.org"
+
+_HGNC_RE = re.compile(r"HGNC:(\d+)")
+
+
+@dataclass
+class EnsemblGene(SourceObjectBase):
+    ensembl_gene_id: str
+    symbol: str
+    biotype: str
+    hgnc_id: str | None
+    transcripts: list[dict] = field(default_factory=list)  # raw transcript dicts, canonical flagged
+
+
+@dataclass
+class EnsemblVepConsequence(SourceObjectBase):
+    variant_hgvs: str
+    transcript_id: str
+    gene_id: str
+    consequence_terms: list[str]
+    impact: str
+    hgvsc: str | None
+    hgvsp: str | None
+    amino_acids: str | None
+    protein_start: int | None
+    sift_prediction: str | None
+    sift_score: float | None
+    polyphen_prediction: str | None
+    polyphen_score: float | None
+
+
+class EnsemblAdapter:
+    """SourceAdapter -- real HTTP calls. Tests use EnsemblParser directly against the
+    saved fixtures instead of calling this, so the test suite doesn't depend on network."""
+
+    def fetch(self, query: dict) -> Iterator[dict]:
+        kind = query["kind"]
+        if kind == "gene":
+            resp = http.get(
+                f"{BASE_URL}/lookup/symbol/homo_sapiens/{query['symbol']}",
+                params={"expand": 1, "content-type": "application/json"},
+            )
+        elif kind == "vep":
+            resp = http.get(
+                f"{BASE_URL}/vep/human/hgvs/{query['hgvs']}",
+                params={"content-type": "application/json", "hgvs": 1, "canonical": 1},
+            )
+        elif kind == "vep_region":
+            # SPDI-driven path. ClinVar hands us a canonical SPDI, never an HGVS
+            # expression, so a whole-family run has no HGVS to feed the endpoint above --
+            # region notation is derivable from SPDI alone (1-based start = SPDI pos + 1).
+            resp = http.get(
+                f"{BASE_URL}/vep/human/region/{query['region']}/{query['alt']}",
+                params={"content-type": "application/json", "hgvs": 1, "canonical": 1},
+            )
+        else:
+            raise ValueError(f"unknown Ensembl query kind: {kind!r}")
+        yield resp.json()
+
+    def capabilities(self) -> dict:
+        return {
+            "scopes": ["variant", "gene"],
+            "provides": ["Gene", "Transcript", "Exon", "Protein", "Variant", "ComputationalPrediction"],
+            "bulk": False, "live_query": True, "batch": False,
+            "hydration_lods": [1, 2, 3],
+            "identity_types": ["HGNC", "Ensembl", "SPDI"],
+        }
+
+    def manifest(self) -> dict:
+        return {"source": "Ensembl", "dataset": "REST API", "schema_version": "1"}
+
+
+class EnsemblParser:
+    """SourceRecord (raw JSON) -> SourceObject."""
+
+    def parse_gene(self, raw: dict, snapshot_ref: str = "") -> EnsemblGene:
+        hgnc_match = _HGNC_RE.search(raw.get("description", "") or "")
+        payload_hash = str(hash(str(raw)))
+        return EnsemblGene(
+            source="Ensembl", record_type="Gene", source_record_id=raw["id"],
+            source_version=str(raw.get("version")), snapshot_ref=snapshot_ref, payload_hash=payload_hash,
+            ensembl_gene_id=raw["id"], symbol=raw["display_name"], biotype=raw["biotype"],
+            hgnc_id=hgnc_match.group(1) if hgnc_match else None,
+            transcripts=raw.get("Transcript", []),
+        )
+
+    def parse_vep(self, raw: list[dict], snapshot_ref: str = "") -> Iterator[EnsemblVepConsequence]:
+        result = raw[0]
+        variant_hgvs = result["id"]
+        for tc in result.get("transcript_consequences", []):
+            if "hgvsc" not in tc and tc.get("biotype") != "protein_coding":
+                continue  # skip non-coding-transcript noise for this pass
+            yield EnsemblVepConsequence(
+                source="Ensembl", record_type="VEPConsequence", source_record_id=tc["transcript_id"],
+                source_version=None, snapshot_ref=snapshot_ref, payload_hash=str(hash(str(tc))),
+                variant_hgvs=variant_hgvs, transcript_id=tc["transcript_id"], gene_id=tc.get("gene_id", ""),
+                consequence_terms=tc.get("consequence_terms", []), impact=tc.get("impact", ""),
+                hgvsc=tc.get("hgvsc"), hgvsp=tc.get("hgvsp"), amino_acids=tc.get("amino_acids"),
+                protein_start=tc.get("protein_start"), sift_prediction=tc.get("sift_prediction"),
+                sift_score=tc.get("sift_score"), polyphen_prediction=tc.get("polyphen_prediction"),
+                polyphen_score=tc.get("polyphen_score"),
+            )
+
+
+def _gene_escape_hatch(obj: EnsemblGene) -> list[ForgeNode | ForgeEdge]:
+    """Handles the Gene -> Transcript(canonical full / others stub) -> Exon/Protein
+    hierarchy -- a rule-based iteration over MappingRule alone can't express "expand
+    fully for exactly one flagged transcript, stub the rest," so this is a named,
+    documented escape hatch rather than forcing it into declarative rules."""
+    now = datetime.now(timezone.utc)
+    results: list[ForgeNode | ForgeEdge] = []
+
+    gene_id = gene_canonical_id(obj.hgnc_id) if obj.hgnc_id else f"Ensembl:{obj.ensembl_gene_id}"
+    gene_prov = [SourceProvenance("Ensembl", obj.ensembl_gene_id, obj.source_version, now)]
+    results.append(ForgeNode(
+        id=gene_id, role=NodeRole.ENTITY, subtype="Gene",
+        attributes={"symbol": obj.symbol, "biotype": obj.biotype, "ensembl_gene_id": obj.ensembl_gene_id},
+        provenance=gene_prov, origin=Origin.SOURCE, lod=1,
+    ))
+
+    for t in obj.transcripts:
+        is_canonical = bool(t.get("is_canonical"))
+        t_id = transcript_canonical_id(t["id"])
+        t_prov = [SourceProvenance("Ensembl", t["id"], str(t.get("version")), now)]
+        results.append(ForgeNode(
+            id=t_id, role=NodeRole.ENTITY, subtype="Transcript",
+            attributes={"gene_id": gene_id, "is_canonical": is_canonical, "biotype": t.get("biotype"),
+                        "display_name": t.get("display_name")},
+            provenance=t_prov, origin=Origin.SOURCE, lod=(2 if is_canonical else 0),
+        ))
+        results.append(ForgeEdge(
+            src=t_id, predicate=EdgeType.PART_OF, dst=gene_id, qualifier=None,
+            attributes={}, provenance=t_prov, origin=Origin.SOURCE,
+        ))
+
+        if not is_canonical:
+            continue  # stub only -- full Exon/Translation structure deferred to hydration
+
+        for exon in t.get("Exon", []):
+            e_id = f"Ensembl:{exon['id']}"
+            e_prov = [SourceProvenance("Ensembl", exon["id"], str(exon.get("version")), now)]
+            results.append(ForgeNode(
+                id=e_id, role=NodeRole.ENTITY, subtype="Exon",
+                attributes={"transcript_id": t_id, "start": exon["start"], "end": exon["end"]},
+                provenance=e_prov, origin=Origin.SOURCE, lod=1,
+            ))
+            results.append(ForgeEdge(
+                src=e_id, predicate=EdgeType.PART_OF, dst=t_id, qualifier=None,
+                attributes={}, provenance=e_prov, origin=Origin.SOURCE,
+            ))
+
+        translation = t.get("Translation")
+        if translation:
+            p_id = f"Ensembl:{translation['id']}"
+            p_prov = [SourceProvenance("Ensembl", translation["id"], str(translation.get("version")), now)]
+            results.append(ForgeNode(
+                id=p_id, role=NodeRole.ENTITY, subtype="Protein",
+                attributes={"length": translation.get("length")},
+                provenance=p_prov, origin=Origin.SOURCE, lod=1,
+            ))
+            results.append(ForgeEdge(
+                src=t_id, predicate=EdgeType.RELATES_TO, dst=p_id, qualifier="encodes",
+                attributes={}, provenance=t_prov, origin=Origin.SOURCE,
+            ))
+
+    return results
+
+
+GENE_MAPPING_SPEC = MappingSpec(
+    source="Ensembl", record_type="Gene", rules=[],
+    escape_hatches=[EscapeHatch(
+        name="ensembl_gene_transcript_hierarchy", version="v1",
+        description="Gene -> Transcript (canonical fully expanded, others stubbed) -> Exon/Protein",
+        fn=_gene_escape_hatch,
+    )],
+)
+
+
+def vep_consequence_to_ir(obj: EnsemblVepConsequence, variant_id: str) -> list[ForgeNode | ForgeEdge]:
+    """VEP consequences are transcript-scoped by design -- one edge per transcript,
+    never collapsed into a single "the" consequence (confirmed real: the VHL test
+    variant has 9 different transcript consequences, 2 with different amino-acid
+    outcomes for the same genomic change)."""
+    now = datetime.now(timezone.utc)
+    transcript_id = transcript_canonical_id(obj.transcript_id)
+    prov = [SourceProvenance("Ensembl", obj.transcript_id, None, now)]
+    results: list[ForgeNode | ForgeEdge] = [ForgeEdge(
+        src=variant_id, predicate=EdgeType.RELATES_TO, dst=transcript_id, qualifier="has_consequence",
+        attributes={
+            "consequence_terms": obj.consequence_terms, "impact": obj.impact,
+            "hgvsc": obj.hgvsc, "hgvsp": obj.hgvsp, "amino_acids": obj.amino_acids,
+            "protein_start": obj.protein_start,
+        },
+        provenance=prov, origin=Origin.SOURCE,
+    )]
+
+    if obj.sift_prediction is not None:
+        sift_id = f"SIFT:{obj.variant_hgvs}:{obj.transcript_id}"
+        results.append(ForgeNode(
+            id=sift_id, role=NodeRole.OBSERVATION, subtype="ComputationalPrediction",
+            attributes={"tool": "SIFT", "score": obj.sift_score, "prediction": obj.sift_prediction},
+            provenance=prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeEdge(
+            src=sift_id, predicate=EdgeType.OBSERVES, dst=variant_id, qualifier=None,
+            attributes={}, provenance=prov, origin=Origin.SOURCE,
+        ))
+
+    if obj.polyphen_prediction is not None:
+        pp_id = f"PolyPhen2:{obj.variant_hgvs}:{obj.transcript_id}"
+        results.append(ForgeNode(
+            id=pp_id, role=NodeRole.OBSERVATION, subtype="ComputationalPrediction",
+            attributes={"tool": "PolyPhen2", "score": obj.polyphen_score, "prediction": obj.polyphen_prediction},
+            provenance=prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeEdge(
+            src=pp_id, predicate=EdgeType.OBSERVES, dst=variant_id, qualifier=None,
+            attributes={}, provenance=prov, origin=Origin.SOURCE,
+        ))
+
+    return results
+
+
+# clinical_significance on the /variation endpoint is intentionally never mapped --
+# see forge-pipeline-v1.md §14: it mirrors ClinVar and isn't authoritative here.
+# There's no MappingRule for it at all because we never parse it into a SourceObject
+# field in the first place, which is the DROP directive made structural rather than
+# something that could be silently reintroduced by a future field_map edit.
+
+
+# ---------------------------------------------------------------------------
+# Connector registry -- Ensembl serves TWO feeds from one adapter (gene structure
+# into Core Biology, VEP consequences into Evidence), so it registers as two
+# descriptors sharing one EnsemblAdapter instance. See orchestration/connector_registry.py.
+# ---------------------------------------------------------------------------
+
+def _structure_build_query(scope: str, anchor: str, context: dict) -> dict | None:
+    if scope != "gene":
+        return None
+    return {"kind": "gene", "symbol": anchor}
+
+
+def _structure_build_emission(raw: dict, context: dict) -> Emission:
+    gene = EnsemblParser().parse_gene(raw)
+    results = apply_mapping_spec(gene, GENE_MAPPING_SPEC, primary_node_id=None, source="Ensembl",
+                                  source_record_id=gene.ensembl_gene_id,
+                                  source_version=gene.source_version, retrieved_at=context["now"],
+                                  coverage=context.get("coverage"))
+    emission = Emission()
+    emission.add("Ensembl gene structure", results)
+    return emission
+
+
+def _vep_build_query(scope: str, anchor: str, context: dict) -> dict | None:
+    if scope == "variant":
+        return {"kind": "vep", "hgvs": anchor}   # DAG-planning path (tests/test_orchestration.py)
+    if scope == "coordinates":
+        start = spdi_position_to_1based(context["pos"])
+        end = start + max(len(context["ref"]), 1) - 1
+        return {"kind": "vep_region", "region": f"{context['chrom']}:{start}-{end}", "alt": context["alt"]}
+    return None   # gene scope: nothing to fetch ahead of time -- the whole-family runner
+                   # drives VEP per-variant directly from ClinVar's own resolved SPDI instead
+
+
+def _vep_build_emission(raw: list[dict], context: dict) -> Emission:
+    results: list[ForgeNode | ForgeEdge] = []
+    for consequence in EnsemblParser().parse_vep(raw):
+        results.extend(vep_consequence_to_ir(consequence, context["variant_id"]))
+    emission = Emission()
+    emission.add("Ensembl VEP", results)
+    return emission
+
+
+_shared_adapter = EnsemblAdapter()
+
+register_connector(ConnectorDescriptor(
+    name="ensembl_structure", group="core_biology", cadence="persistent",
+    adapter=_shared_adapter, build_query=_structure_build_query, build_emission=_structure_build_emission,
+    feed_label="Ensembl gene structure",
+    description="Gene -> Transcript -> Exon -> Protein structure (GET /lookup/symbol)",
+))
+register_connector(ConnectorDescriptor(
+    name="ensembl_vep", group="evidence", cadence="ephemeral",
+    adapter=_shared_adapter, build_query=_vep_build_query, build_emission=_vep_build_emission,
+    feed_label="Ensembl VEP", requires=("clinvar",),
+    description="Per-transcript VEP consequences, SIFT/PolyPhen (GET /vep/human/region)",
+))

@@ -1,0 +1,380 @@
+{
+ "total_edges": 27156,
+ "total_nodes": 9728,
+ "edges_per_node": 2.79,
+ "cross_layer_edges": 18839,
+ "derived_edges": 500,
+ "node_subtypes": {
+  "AggregateClassification": 3170,
+  "ClinicalAssertion": 2584,
+  "CaseObservation": 2584,
+  "Variant": 1053,
+  "Requirement": 140,
+  "Submitter": 98,
+  "Disease": 41,
+  "ACMGCriterion": 28,
+  "Transcript": 15,
+  "ClinicalImpactClassification": 9,
+  "Exon": 3,
+  "Gene": 1,
+  "Protein": 1,
+  "SourceManifest": 1
+ },
+ "unused_predicates": [
+  "REPRESENTS",
+  "ACTIVATED_BY"
+ ],
+ "predicates": [
+  {
+   "predicate": "RELATES_TO",
+   "count": 9776,
+   "share_pct": 36.0,
+   "qualifiers": {
+    "submitted_by": 2584,
+    "for_condition": 2117,
+    "aggregates_into": 2117,
+    "contributes_to": 1906,
+    "in_gene": 1051,
+    "encodes": 1
+   },
+   "origins": {
+    "SOURCE": 9776
+   },
+   "layer_pairs": {
+    "EVIDENCE\u2192EVIDENCE": 4023,
+    "EVIDENCE\u2192ADMINISTRATIVE": 2584,
+    "EVIDENCE\u2192CORE_BIOLOGY": 2117,
+    "CORE_BIOLOGY\u2192CORE_BIOLOGY": 1052
+   },
+   "driver": "26.4% of them are ClinicalAssertion \u2014RELATES_TO[submitted_by]\u2192 Submitter \u2014 breadth: 2584 distinct ClinicalAssertion nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "ClinicalAssertion \u2014RELATES_TO[submitted_by]\u2192 Submitter",
+     "src_subtype": "ClinicalAssertion",
+     "predicate": "RELATES_TO",
+     "qualifier": "submitted_by",
+     "dst_subtype": "Submitter",
+     "count": 2584,
+     "distinct_src_nodes": 2584,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "AggregateClassification \u2014RELATES_TO[for_condition]\u2192 Disease",
+     "src_subtype": "AggregateClassification",
+     "predicate": "RELATES_TO",
+     "qualifier": "for_condition",
+     "dst_subtype": "Disease",
+     "count": 2117,
+     "distinct_src_nodes": 2117,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "AggregateClassification \u2014RELATES_TO[aggregates_into]\u2192 AggregateClassification",
+     "src_subtype": "AggregateClassification",
+     "predicate": "RELATES_TO",
+     "qualifier": "aggregates_into",
+     "dst_subtype": "AggregateClassification",
+     "count": 2117,
+     "distinct_src_nodes": 2117,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "ClinicalAssertion \u2014RELATES_TO[contributes_to]\u2192 AggregateClassification",
+     "src_subtype": "ClinicalAssertion",
+     "predicate": "RELATES_TO",
+     "qualifier": "contributes_to",
+     "dst_subtype": "AggregateClassification",
+     "count": 1906,
+     "distinct_src_nodes": 1906,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "Variant \u2014RELATES_TO[in_gene]\u2192 Gene",
+     "src_subtype": "Variant",
+     "predicate": "RELATES_TO",
+     "qualifier": "in_gene",
+     "dst_subtype": "Gene",
+     "count": 1051,
+     "distinct_src_nodes": 1051,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "Transcript \u2014RELATES_TO[encodes]\u2192 Protein",
+     "src_subtype": "Transcript",
+     "predicate": "RELATES_TO",
+     "qualifier": "encodes",
+     "dst_subtype": "Protein",
+     "count": 1,
+     "distinct_src_nodes": 1,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  },
+  {
+   "predicate": "ASSERTS",
+   "count": 5763,
+   "share_pct": 21.2,
+   "qualifiers": {
+    "\u2014": 5763
+   },
+   "origins": {
+    "SOURCE": 5763
+   },
+   "layer_pairs": {
+    "EVIDENCE\u2192CORE_BIOLOGY": 5763
+   },
+   "driver": "55.0% of them are AggregateClassification \u2014ASSERTS\u2192 Variant \u2014 breadth: 3170 distinct AggregateClassification nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "AggregateClassification \u2014ASSERTS\u2192 Variant",
+     "src_subtype": "AggregateClassification",
+     "predicate": "ASSERTS",
+     "qualifier": null,
+     "dst_subtype": "Variant",
+     "count": 3170,
+     "distinct_src_nodes": 3170,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "ClinicalAssertion \u2014ASSERTS\u2192 Variant",
+     "src_subtype": "ClinicalAssertion",
+     "predicate": "ASSERTS",
+     "qualifier": null,
+     "dst_subtype": "Variant",
+     "count": 2584,
+     "distinct_src_nodes": 2584,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "ClinicalImpactClassification \u2014ASSERTS\u2192 Variant",
+     "src_subtype": "ClinicalImpactClassification",
+     "predicate": "ASSERTS",
+     "qualifier": null,
+     "dst_subtype": "Variant",
+     "count": 9,
+     "distinct_src_nodes": 9,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  },
+  {
+   "predicate": "SOURCED_FROM",
+   "count": 5763,
+   "share_pct": 21.2,
+   "qualifiers": {
+    "\u2014": 5763
+   },
+   "origins": {
+    "SOURCE": 5763
+   },
+   "layer_pairs": {
+    "EVIDENCE\u2192ADMINISTRATIVE": 5763
+   },
+   "driver": "55.0% of them are AggregateClassification \u2014SOURCED_FROM\u2192 SourceManifest \u2014 breadth: 3170 distinct AggregateClassification nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "AggregateClassification \u2014SOURCED_FROM\u2192 SourceManifest",
+     "src_subtype": "AggregateClassification",
+     "predicate": "SOURCED_FROM",
+     "qualifier": null,
+     "dst_subtype": "SourceManifest",
+     "count": 3170,
+     "distinct_src_nodes": 3170,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "ClinicalAssertion \u2014SOURCED_FROM\u2192 SourceManifest",
+     "src_subtype": "ClinicalAssertion",
+     "predicate": "SOURCED_FROM",
+     "qualifier": null,
+     "dst_subtype": "SourceManifest",
+     "count": 2584,
+     "distinct_src_nodes": 2584,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "ClinicalImpactClassification \u2014SOURCED_FROM\u2192 SourceManifest",
+     "src_subtype": "ClinicalImpactClassification",
+     "predicate": "SOURCED_FROM",
+     "qualifier": null,
+     "dst_subtype": "SourceManifest",
+     "count": 9,
+     "distinct_src_nodes": 9,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  },
+  {
+   "predicate": "OBSERVES",
+   "count": 2584,
+   "share_pct": 9.5,
+   "qualifiers": {
+    "\u2014": 2584
+   },
+   "origins": {
+    "SOURCE": 2584
+   },
+   "layer_pairs": {
+    "EVIDENCE\u2192CORE_BIOLOGY": 2584
+   },
+   "driver": "100.0% of them are CaseObservation \u2014OBSERVES\u2192 Variant \u2014 breadth: 2584 distinct CaseObservation nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "CaseObservation \u2014OBSERVES\u2192 Variant",
+     "src_subtype": "CaseObservation",
+     "predicate": "OBSERVES",
+     "qualifier": null,
+     "dst_subtype": "Variant",
+     "count": 2584,
+     "distinct_src_nodes": 2584,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  },
+  {
+   "predicate": "SUPPORTS",
+   "count": 2584,
+   "share_pct": 9.5,
+   "qualifiers": {
+    "corroborates": 2584
+   },
+   "origins": {
+    "SOURCE": 2584
+   },
+   "layer_pairs": {
+    "EVIDENCE\u2192EVIDENCE": 2584
+   },
+   "driver": "100.0% of them are CaseObservation \u2014SUPPORTS[corroborates]\u2192 ClinicalAssertion \u2014 breadth: 2584 distinct CaseObservation nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "CaseObservation \u2014SUPPORTS[corroborates]\u2192 ClinicalAssertion",
+     "src_subtype": "CaseObservation",
+     "predicate": "SUPPORTS",
+     "qualifier": "corroborates",
+     "dst_subtype": "ClinicalAssertion",
+     "count": 2584,
+     "distinct_src_nodes": 2584,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  },
+  {
+   "predicate": "CONTRADICTS",
+   "count": 500,
+   "share_pct": 1.8,
+   "qualifiers": {
+    "\u2014": 500
+   },
+   "origins": {
+    "DERIVED": 500
+   },
+   "layer_pairs": {
+    "EVIDENCE\u2192EVIDENCE": 500
+   },
+   "driver": "100.0% of them are ClinicalAssertion \u2014CONTRADICTS\u2192 ClinicalAssertion \u2014 breadth: 317 distinct ClinicalAssertion nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "ClinicalAssertion \u2014CONTRADICTS\u2192 ClinicalAssertion",
+     "src_subtype": "ClinicalAssertion",
+     "predicate": "CONTRADICTS",
+     "qualifier": null,
+     "dst_subtype": "ClinicalAssertion",
+     "count": 500,
+     "distinct_src_nodes": 317,
+     "edges_per_source_node": 1.58
+    }
+   ]
+  },
+  {
+   "predicate": "REQUIRES",
+   "count": 140,
+   "share_pct": 0.5,
+   "qualifiers": {
+    "\u2014": 140
+   },
+   "origins": {
+    "SOURCE": 140
+   },
+   "layer_pairs": {
+    "OPERATIONAL\u2192OPERATIONAL": 140
+   },
+   "driver": "100.0% of them are ACMGCriterion \u2014REQUIRES\u2192 Requirement \u2014 fan-out: each ACMGCriterion emits 5.0 on average",
+   "shapes": [
+    {
+     "label": "ACMGCriterion \u2014REQUIRES\u2192 Requirement",
+     "src_subtype": "ACMGCriterion",
+     "predicate": "REQUIRES",
+     "qualifier": null,
+     "dst_subtype": "Requirement",
+     "count": 140,
+     "distinct_src_nodes": 28,
+     "edges_per_source_node": 5.0
+    }
+   ]
+  },
+  {
+   "predicate": "APPLIES_TO",
+   "count": 28,
+   "share_pct": 0.1,
+   "qualifiers": {
+    "\u2014": 28
+   },
+   "origins": {
+    "SOURCE": 28
+   },
+   "layer_pairs": {
+    "OPERATIONAL\u2192CORE_BIOLOGY": 28
+   },
+   "driver": "100.0% of them are ACMGCriterion \u2014APPLIES_TO\u2192 Gene \u2014 breadth: 28 distinct ACMGCriterion nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "ACMGCriterion \u2014APPLIES_TO\u2192 Gene",
+     "src_subtype": "ACMGCriterion",
+     "predicate": "APPLIES_TO",
+     "qualifier": null,
+     "dst_subtype": "Gene",
+     "count": 28,
+     "distinct_src_nodes": 28,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  },
+  {
+   "predicate": "PART_OF",
+   "count": 18,
+   "share_pct": 0.1,
+   "qualifiers": {
+    "\u2014": 18
+   },
+   "origins": {
+    "SOURCE": 18
+   },
+   "layer_pairs": {
+    "CORE_BIOLOGY\u2192CORE_BIOLOGY": 18
+   },
+   "driver": "83.3% of them are Transcript \u2014PART_OF\u2192 Gene \u2014 breadth: 15 distinct Transcript nodes emit ~1 each",
+   "shapes": [
+    {
+     "label": "Transcript \u2014PART_OF\u2192 Gene",
+     "src_subtype": "Transcript",
+     "predicate": "PART_OF",
+     "qualifier": null,
+     "dst_subtype": "Gene",
+     "count": 15,
+     "distinct_src_nodes": 15,
+     "edges_per_source_node": 1.0
+    },
+    {
+     "label": "Exon \u2014PART_OF\u2192 Transcript",
+     "src_subtype": "Exon",
+     "predicate": "PART_OF",
+     "qualifier": null,
+     "dst_subtype": "Transcript",
+     "count": 3,
+     "distinct_src_nodes": 3,
+     "edges_per_source_node": 1.0
+    }
+   ]
+  }
+ ]
+}

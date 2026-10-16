@@ -1,0 +1,167 @@
+"""Two-phase staging compiler -- forge-pipeline-v1.md §8-11.
+
+Phase A (stage): accept nodes/edges as they're produced by mapping -- our connectors
+build canonical IDs directly (via forge_ir.core's ID-scheme functions), so there's no
+literal "temporary ID" to rewrite, but identity resolution against the PERSISTENT index
+still has to run before commit (a node with the same canonical id from two different
+sources needs its provenance merged and the index updated, not silently duplicated).
+Phase B (commit): dedupe, resolve identity, verify, commit atomically -- or reject the
+whole batch, nothing partially committed.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+
+from forge_ir.core import NodeRole
+from forge_ir.graph import ForgeEdge, ForgeNode
+from forge_ir.provenance import DerivedProvenance, RuntimeProvenance, SourceProvenance
+from forge_ir.verify import VerificationReport, verify
+from ingest.hashing import compute_structural_hash
+from ingest.identity import IdentityIndex, resolve_identity
+
+# Node (role, subtype) pairs with a deterministic, cross-source canonical ID scheme --
+# these get run through the persistent identity index. Everything else is already
+# uniquely keyed by a stable source accession (SCV/RCV/ENST/...), so exact-id dedup
+# alone is correct for it; forcing it through fuzzy resolution would just be overhead.
+_IDENTITY_RESOLVABLE: dict[tuple[NodeRole, str], str] = {
+    (NodeRole.ENTITY, "Gene"): "HGNC",
+    (NodeRole.ENTITY, "Variant"): "SPDI",
+    (NodeRole.ENTITY, "Disease"): "MedGen",
+}
+
+
+@dataclass
+class CoverageReport:
+    source: str
+    records_read: int = 0
+    records_parsed: int = 0
+    records_emitted: int = 0
+    records_quarantined: int = 0
+    records_rejected_batches: int = 0
+    field_coverage: dict[str, float] = field(default_factory=dict)
+    edge_coverage: dict[str, float] = field(default_factory=dict)
+    declarative_node_count: int = 0
+    escape_hatch_node_count: int = 0
+
+    def mapping_origin_summary(self) -> dict[str, float]:
+        total = self.declarative_node_count + self.escape_hatch_node_count
+        if total == 0:
+            return {"declarative": 0.0, "escape_hatch": 0.0}
+        return {
+            "declarative": round(100 * self.declarative_node_count / total, 1),
+            "escape_hatch": round(100 * self.escape_hatch_node_count / total, 1),
+        }
+
+
+@dataclass
+class CommitResult:
+    committed: bool
+    nodes: list[ForgeNode] = field(default_factory=list)
+    edges: list[ForgeEdge] = field(default_factory=list)
+    rejected: bool = False
+    rejection_reason: str | None = None
+    verification: VerificationReport | None = None
+    edge_ledger: list[dict] = field(default_factory=list)
+    identity_resolutions: list[dict] = field(default_factory=list)
+    structural_hash: str | None = None   # forge-pipeline-v1.md §6 -- None on a rejected batch
+
+
+class StagingCompiler:
+    def __init__(self, identity_index: IdentityIndex, run_id: str, resolver_version: str = "v1"):
+        self.identity_index = identity_index
+        self.run_id = run_id
+        self.resolver_version = resolver_version
+        self._staged_nodes: list[ForgeNode] = []
+        self._staged_edges: list[ForgeEdge] = []
+
+    def stage(self, nodes: list[ForgeNode], edges: list[ForgeEdge]) -> None:
+        self._staged_nodes.extend(nodes)
+        self._staged_edges.extend(edges)
+
+    def commit(self, known_node_ids: set[str] | None = None) -> CommitResult:
+        deduped_nodes = self._dedupe_nodes(self._staged_nodes)
+        deduped_edges = self._dedupe_edges(self._staged_edges)
+
+        report = verify(deduped_nodes, deduped_edges, known_node_ids=known_node_ids)
+        if not report.valid:
+            # Batch-level REJECT: an edge endpoint missing, a bad type combo, etc. --
+            # a pipeline-integrity problem, not a single bad record. Nothing partially
+            # committed (forge-pipeline-v1.md §8's QUARANTINE-vs-REJECT distinction) --
+            # which includes the identity index: resolution must not run until AFTER
+            # verification passes, or a rejected batch would still pollute the
+            # persistent index with entries from a commit that never happened.
+            return CommitResult(
+                committed=False, rejected=True,
+                rejection_reason=f"verification failed: {report.all_errors()[:3]}",
+                verification=report,
+            )
+
+        identity_log = self._resolve_identities(deduped_nodes)
+
+        ledger = [
+            {
+                "src": e.src, "predicate": e.predicate.value, "qualifier": e.qualifier, "dst": e.dst,
+                "source": self._provenance_source_label(e.provenance),
+                "origin": e.origin.value,
+            }
+            for e in deduped_edges
+        ]
+
+        self._staged_nodes.clear()
+        self._staged_edges.clear()
+        return CommitResult(
+            committed=True, nodes=deduped_nodes, edges=deduped_edges,
+            verification=report, edge_ledger=ledger, identity_resolutions=identity_log,
+            structural_hash=compute_structural_hash(deduped_nodes, deduped_edges),
+        )
+
+    def _dedupe_nodes(self, nodes: list[ForgeNode]) -> list[ForgeNode]:
+        by_id: dict[str, ForgeNode] = {}
+        for node in nodes:
+            if node.id in by_id:
+                by_id[node.id].provenance.extend(node.provenance)
+            else:
+                by_id[node.id] = node
+        return list(by_id.values())
+
+    def _dedupe_edges(self, edges: list[ForgeEdge]) -> list[ForgeEdge]:
+        by_key: dict[tuple, ForgeEdge] = {}
+        for edge in edges:
+            key = (edge.src, edge.predicate, edge.qualifier, edge.dst)
+            if key in by_key:
+                by_key[key].provenance.extend(edge.provenance)
+            else:
+                by_key[key] = edge
+        return list(by_key.values())
+
+    def _provenance_source_label(self, provenance: list) -> str | None:
+        """Real bug this fixes: SourceProvenance has `.source`, but DerivedProvenance
+        (e.g. CONTRADICTS edges Forge computes itself) and RuntimeProvenance don't --
+        assuming every edge's provenance[0].source exists crashed the first time the
+        ledger was built from a batch containing a real DERIVED edge. Never exercised
+        by the E2E test alone since its "clean" variant has zero CONTRADICTS edges by
+        design; caught by the demo-data generator running a second, conflicting variant."""
+        if not provenance:
+            return None
+        p = provenance[0]
+        if isinstance(p, SourceProvenance):
+            return p.source
+        if isinstance(p, DerivedProvenance):
+            return f"derived:{p.derivation_rule}"
+        if isinstance(p, RuntimeProvenance):
+            return f"runtime:{p.investigation_id}"
+        return None
+
+    def _resolve_identities(self, nodes: list[ForgeNode]) -> list[dict]:
+        log = []
+        for node in nodes:
+            namespace = _IDENTITY_RESOLVABLE.get((node.role, node.subtype))
+            if namespace is None:
+                continue  # already uniquely keyed by a stable source accession -- see module docstring
+            resolution = resolve_identity(
+                self.identity_index, namespace=namespace, normalized_key=node.id,
+                candidate_canonical_id=node.id, match_method="exact_canonical_id",
+                confidence=1.0, resolver_version=self.resolver_version, run_id=self.run_id,
+            )
+            log.append({"node_id": node.id, "namespace": namespace, "status": resolution.status})
+        return log

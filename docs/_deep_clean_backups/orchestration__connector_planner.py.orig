@@ -1,0 +1,104 @@
+"""ConnectorPlanner -- forge-pipeline-v1.md §9, §13.
+
+Turns a ResolutionPlan into concrete FetchTasks with a DAG of HARD/SOFT dependencies.
+Originally hardcoded to the 4 connectors that existed when this was written ("ensembl"/
+"clinvar"/"clingen"/"gnomad" as literal strings); now reads from
+orchestration.connector_registry instead, so a newly registered connector is scheduled
+correctly without editing this file -- each descriptor supplies its own `build_query`
+(what to ask for, or None if not applicable to this scope) and `requires` (which other
+connectors it HARD-depends on, e.g. gnomAD needing ClinVar's variant identity first).
+
+Also implements the layering rule from forge-pipeline-v1.md §13: the planner decides
+*what to fetch and how deep* (lod_ceiling); it never decides what a fetched record
+*means* -- that's the mapper's job, downstream.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta
+from typing import Literal
+
+import connectors  # noqa: F401 -- registers every connector as an import side effect,
+                     # so `list_connectors()` below always sees the full registry
+                     # regardless of what the caller happened to import first
+from orchestration.connector_registry import list_connectors
+from orchestration.ratelimit import RatePolicy
+from orchestration.scope_resolver import ResolutionPlan
+
+
+@dataclass(frozen=True)
+class Policy:
+    name: str
+    lod_ceiling: int
+    clinvar_efetch_filter: str | None = None  # None = all variants; else an ESummary review_status filter
+    clingen_spec_id: str | None = None        # ClinGen VCEP specs are keyed by spec id (e.g. "GN078"
+                                                # for VHL), not derivable from the gene symbol alone
+
+
+# forge-pipeline-v1.md §4.4 -- policy presets over the LOD tiers, not a parallel concept.
+INDEX_ONLY_POLICY = Policy(name="index_only", lod_ceiling=1)
+STANDARD_POLICY = Policy(name="standard", lod_ceiling=2, clinvar_efetch_filter="review_status != no_assertion")
+CLINICAL_POLICY = Policy(name="clinical", lod_ceiling=2, clinvar_efetch_filter=None)
+EVIDENCE_HEAVY_POLICY = Policy(name="evidence_heavy", lod_ceiling=3, clinvar_efetch_filter=None)
+
+
+@dataclass(frozen=True)
+class FetchTask:
+    task_id: str
+    connector: str
+    query: dict
+    lod_ceiling: int
+    reason: Literal["not_resident", "stale", "gap_fill"]
+    estimated_cost: float | None = None
+    estimated_records: int | None = None
+
+
+class ConnectorPlanner:
+    def __init__(self, identity_index, rate_policies: dict[str, RatePolicy]):
+        self.identity_index = identity_index
+        self.rate_policies = rate_policies
+
+    def check_residency(self, namespace: str, normalized_key: str) -> bool:
+        return self.identity_index.lookup(namespace, normalized_key) is not None
+
+    def check_freshness(self, retrieved_at: datetime, threshold: timedelta) -> bool:
+        return (datetime.now(retrieved_at.tzinfo) - retrieved_at) <= threshold
+
+    def plan(self, resolution: ResolutionPlan, policy: Policy) -> list[FetchTask]:
+        """Asks every registered connector, in turn, whether it has anything to fetch
+        for this anchor/scope -- `build_query` returns None when it doesn't (e.g. gnomAD
+        has nothing to say about `gene` scope; it's per-variant). This is what makes a
+        newly registered connector show up in plans automatically: nothing here names a
+        connector, it only iterates whatever orchestration.connector_registry knows about."""
+        tasks: list[FetchTask] = []
+        query_context = {"clingen_spec_id": policy.clingen_spec_id}
+        for anchor in resolution.canonical_anchors:
+            reason = "gap_fill" if anchor in resolution.gap_fill_required else "not_resident"
+            for descriptor in list_connectors():
+                if not descriptor.implemented:
+                    continue
+                query = descriptor.build_query(resolution.scope, anchor, query_context)
+                if query is None:
+                    continue
+                tasks.append(FetchTask(f"{descriptor.name}:{anchor}", descriptor.name, query,
+                                        policy.lod_ceiling, reason,
+                                        estimated_records=None if descriptor.cadence == "ephemeral" else None))
+        return tasks
+
+    def dependencies(self, tasks: list[FetchTask]) -> list[tuple[str, str, Literal["HARD", "SOFT"]]]:
+        """(task_id, depends_on_task_id, dependency_type). Reads each descriptor's own
+        declared `requires` instead of a hardcoded gnomAD-specific special case -- any
+        connector registered with `requires=(...)` gets the same HARD-dependency
+        treatment gnomAD (needing ClinVar's variant identity first) already had."""
+        from orchestration.connector_registry import get_connector
+        deps: list[tuple[str, str, Literal["HARD", "SOFT"]]] = []
+        by_connector: dict[str, list[FetchTask]] = {}
+        for t in tasks:
+            by_connector.setdefault(t.connector, []).append(t)
+        for connector_name, connector_tasks in by_connector.items():
+            descriptor = get_connector(connector_name)
+            for required_name in descriptor.requires:
+                for dependent_task in connector_tasks:
+                    for required_task in by_connector.get(required_name, []):
+                        deps.append((dependent_task.task_id, required_task.task_id, "HARD"))
+        return deps

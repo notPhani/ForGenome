@@ -1,0 +1,136 @@
+[persistent] CORE_BIOLOGY — Ensembl gene structure for VHL
+[persistent] OPERATIONAL — ClinGen VCEP for VHL
+[evidence] ESearch: 'VHL[gene]'
+[evidence] family size: 2267 ClinVar records
+[evidence] selected 1134 variants (sample_pct=50.0, limit=None, seed=62)
+[evidence] fetching batch 1 (50 variants)…
+[evidence] fetching batch 2 (50 variants)…
+[evidence] fetching batch 3 (50 variants)…
+[evidence] fetching batch 4 (50 variants)…
+[evidence] fetching batch 5 (50 variants)…
+[evidence] fetching batch 6 (50 variants)…
+[evidence] fetching batch 7 (50 variants)…
+[evidence] fetching batch 8 (50 variants)…
+[evidence] fetching batch 9 (50 variants)…
+[evidence] fetching batch 10 (50 variants)…
+[evidence] fetching batch 11 (50 variants)…
+[evidence] fetching batch 12 (50 variants)…
+[evidence] fetching batch 13 (50 variants)…
+[evidence] fetching batch 14 (50 variants)…
+[evidence] fetching batch 15 (50 variants)…
+[evidence] fetching batch 16 (50 variants)…
+[evidence] fetching batch 17 (50 variants)…
+[evidence] fetching batch 18 (50 variants)…
+[evidence] fetching batch 19 (50 variants)…
+[evidence] fetching batch 20 (50 variants)…
+[evidence] fetching batch 21 (50 variants)…
+[evidence] fetching batch 22 (50 variants)…
+[evidence] fetching batch 23 (34 variants)…
+[evidence] fetched 1134 archives
+  … 100/1134 variants · 714 nodes · 1488 edges
+  … 200/1134 variants · 1255 nodes · 2924 edges
+  … 300/1134 variants · 1831 nodes · 4501 edges
+  … 400/1134 variants · 2462 nodes · 6239 edges
+  … 500/1134 variants · 3120 nodes · 8066 edges
+  … 600/1134 variants · 3803 nodes · 9956 edges
+  … 700/1134 variants · 4377 nodes · 11555 edges
+  … 800/1134 variants · 5279 nodes · 14197 edges
+  … 900/1134 variants · 6313 nodes · 17251 edges
+  … 1000/1134 variants · 7458 nodes · 20704 edges
+  … 1100/1134 variants · 8838 nodes · 24720 edges
+
+========================================================================================
+RUN SUMMARY  ·  mode=full  ·  gene=VHL  ·  LIVE  ·  113.8s
+========================================================================================
+  connectors           Ensembl gene structure, ClinGen VCEP, ClinVar
+  variants requested   1134
+  variants ingested    1053
+  micro-batches        1055 committed / 0 rejected
+  quarantined records  81
+  committed graph      9728 nodes / 27156 edges
+  identity merges      1973 (cross-batch: a Gene/Variant/Disease resolved onto an existing node)
+  structural hash      041add33e2ec451a2139cff929c85af199998eab17f644ec0be4147c1b25f0de (same source data -> same hash, regardless of fetch order or wall-clock time)
+  mapping coverage (forge-pipeline-v1.md §11):
+      clingen            0.0% declarative / 100.0% escape-hatch (28 records parsed, 336 nodes/edges emitted)
+      clinvar            0.0% declarative / 100.0% escape-hatch (1053 records parsed, 34256 nodes/edges emitted)
+      ensembl_structure   0.0% declarative / 100.0% escape-hatch (1 records parsed, 39 nodes/edges emitted)
+  connector feeds:
+      core_biology  Ensembl gene structure       20 nodes      19 edges
+      operational   ClinGen VCEP                168 nodes     168 edges
+      evidence      ClinVar                    9540 nodes   26969 edges
+  quarantine reasons:
+         81  not a SimpleAllele with a CanonicalSPDI (haplotype/genotype/
+          2  3585 (variant overlaps a neighbouring gene)
+========================================================================================
+
+========================================================================================
+EDGE TYPE STATISTICS  ·  27156 edges over 9728 nodes (2.79 edges/node)
+========================================================================================
+PREDICATE        COUNT   SHARE  DOMINANT SHAPE / DRIVER
+----------------------------------------------------------------------------------------
+RELATES_TO        9776   36.0%  ████████████
+                                26.4% of them are ClinicalAssertion —RELATES_TO[submitted_by]→ Submitter — breadth: 2584 distinct ClinicalAssertion nodes emit ~1 each
+                  2117    7.8%    · AggregateClassification —RELATES_TO[for_condition]→ Disease  (1.0/src)
+                  2117    7.8%    · AggregateClassification —RELATES_TO[aggregates_into]→ AggregateClassification  (1.0/src)
+
+ASSERTS           5763   21.2%  ███████
+                                55.0% of them are AggregateClassification —ASSERTS→ Variant — breadth: 3170 distinct AggregateClassification nodes emit ~1 each
+                  2584    9.5%    · ClinicalAssertion —ASSERTS→ Variant  (1.0/src)
+                     9    0.0%    · ClinicalImpactClassification —ASSERTS→ Variant  (1.0/src)
+
+SOURCED_FROM      5763   21.2%  ███████
+                                55.0% of them are AggregateClassification —SOURCED_FROM→ SourceManifest — breadth: 3170 distinct AggregateClassification nodes emit ~1 each
+                  2584    9.5%    · ClinicalAssertion —SOURCED_FROM→ SourceManifest  (1.0/src)
+                     9    0.0%    · ClinicalImpactClassification —SOURCED_FROM→ SourceManifest  (1.0/src)
+
+OBSERVES          2584    9.5%  ███
+                                100.0% of them are CaseObservation —OBSERVES→ Variant — breadth: 2584 distinct CaseObservation nodes emit ~1 each
+
+SUPPORTS          2584    9.5%  ███
+                                100.0% of them are CaseObservation —SUPPORTS[corroborates]→ ClinicalAssertion — breadth: 2584 distinct CaseObservation nodes emit ~1 each
+
+CONTRADICTS        500    1.8%  █
+                                100.0% of them are ClinicalAssertion —CONTRADICTS→ ClinicalAssertion — breadth: 317 distinct ClinicalAssertion nodes emit ~1 each
+
+REQUIRES           140    0.5%  █
+                                100.0% of them are ACMGCriterion —REQUIRES→ Requirement — fan-out: each ACMGCriterion emits 5.0 on average
+
+APPLIES_TO          28    0.1%  █
+                                100.0% of them are ACMGCriterion —APPLIES_TO→ Gene — breadth: 28 distinct ACMGCriterion nodes emit ~1 each
+
+PART_OF             18    0.1%  █
+                                83.3% of them are Transcript —PART_OF→ Gene — breadth: 15 distinct Transcript nodes emit ~1 each
+                     3    0.0%    · Exon —PART_OF→ Transcript  (1.0/src)
+
+Ontology predicates with zero edges in this run: REPRESENTS, ACTIVATED_BY
+Cross-layer edges: 18839 (69.4%)  ·  DERIVED-origin edges: 500
+========================================================================================
+
+========================================================================================
+GRAPH COMPLETENESS (advisory -- forge_ir/verify.py's 9 checks are the real gate)
+========================================================================================
+Node subtypes populated:  14/22 (63.6%)
+Edge combinations used:   15/21 (71.4%)  [4 more reserved for MHLA, not counted against this]
+Unpopulated subtypes: Association, ComputationalPrediction, ExpertPanelClassification, FunctionalResult, PopulationFrequency, Query, RequirementState, SegregationResult
+----------------------------------------------------------------------------------------
+ensembl_structure     83.3%  (5/6 declared subtypes present)
+                       missing: ComputationalPrediction
+omim                 100.0%  (1/1 declared subtypes present)  [STUB -- not yet implemented]
+uniprot              100.0%  (1/1 declared subtypes present)
+clingen              100.0%  (2/2 declared subtypes present)
+clingen_gene_disease   0.0%  (0/1 declared subtypes present)  [STUB -- not yet implemented]
+                       missing: Association
+clinvar              100.0%  (6/6 declared subtypes present)
+cosmic               100.0%  (1/1 declared subtypes present)  [STUB -- not yet implemented]
+dbnsfp                 0.0%  (0/1 declared subtypes present)  [STUB -- not yet implemented]
+                       missing: ComputationalPrediction
+dbsnp                100.0%  (1/1 declared subtypes present)
+ensembl_vep           83.3%  (5/6 declared subtypes present)
+                       missing: ComputationalPrediction
+gnomad                 0.0%  (0/1 declared subtypes present)
+                       missing: PopulationFrequency
+mondo                100.0%  (1/1 declared subtypes present)  [STUB -- not yet implemented]
+pharmgkb               0.0%  (0/0 declared subtypes present)  [STUB -- not yet implemented]
+========================================================================================
+Event log → demo/graph_data.json (38857 events)
+Edge statistics → runs/vhl_50pct_edge_stats.json

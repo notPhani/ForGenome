@@ -1,0 +1,3337 @@
+{
+ "refsnp_id": "5030820",
+ "create_date": "2003-03-31T15:56Z",
+ "last_update_date": "2024-10-31T03:19Z",
+ "last_update_build_id": "157",
+ "dbsnp1_merges": [],
+ "citations": [
+  7660122,
+  7784063,
+  8270255,
+  8592333,
+  8956040,
+  9156047,
+  12000816,
+  25157968
+ ],
+ "lost_obs_movements": [],
+ "present_obs_movements": [
+  {
+   "component_ids": [
+    {
+     "type": "frequency",
+     "value": "ExAC.1:6780620"
+    },
+    {
+     "type": "subsnp",
+     "value": "1686866543"
+    },
+    {
+     "type": "subsnp",
+     "value": "1958536322"
+    },
+    {
+     "type": "subsnp",
+     "value": "2733537300"
+    },
+    {
+     "type": "subsnp",
+     "value": "3022210640"
+    },
+    {
+     "type": "subsnp",
+     "value": "3652676646"
+    }
+   ],
+   "observation": {
+    "seq_id": "NC_000003.11",
+    "position": 10191505,
+    "deleted_sequence": "C",
+    "inserted_sequence": "C"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "C"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "C"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "frequency",
+     "value": "GnomAD_genomes.4:105675552"
+    },
+    {
+     "type": "subsnp",
+     "value": "244238336"
+    },
+    {
+     "type": "subsnp",
+     "value": "244238337"
+    },
+    {
+     "type": "subsnp",
+     "value": "253284451"
+    },
+    {
+     "type": "subsnp",
+     "value": "253284456"
+    },
+    {
+     "type": "subsnp",
+     "value": "6579177991"
+    }
+   ],
+   "observation": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "C"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "C"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "C"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "subsnp",
+     "value": "7985985"
+    }
+   ],
+   "observation": {
+    "seq_id": "NT_022517.18",
+    "position": 10131505,
+    "deleted_sequence": "C",
+    "inserted_sequence": "C"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "C"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "C"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "subsnp",
+     "value": "1958536322"
+    },
+    {
+     "type": "subsnp",
+     "value": "3022210640"
+    },
+    {
+     "type": "subsnp",
+     "value": "3652676646"
+    }
+   ],
+   "observation": {
+    "seq_id": "NC_000003.11",
+    "position": 10191505,
+    "deleted_sequence": "C",
+    "inserted_sequence": "G"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "G"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "G"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "clinvar",
+     "value": "RCV000002304.2"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000466046.9"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV002336073.2"
+    },
+    {
+     "type": "subsnp",
+     "value": "244238337"
+    },
+    {
+     "type": "subsnp",
+     "value": "253284456"
+    }
+   ],
+   "observation": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "G"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "G"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "G"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "frequency",
+     "value": "ExAC.1:6780620"
+    },
+    {
+     "type": "subsnp",
+     "value": "1686866543"
+    },
+    {
+     "type": "subsnp",
+     "value": "2733537300"
+    }
+   ],
+   "observation": {
+    "seq_id": "NC_000003.11",
+    "position": 10191505,
+    "deleted_sequence": "C",
+    "inserted_sequence": "T"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "T"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "T"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "clinvar",
+     "value": "RCV000002302.19"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000002303.12"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000132159.17"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000213079.23"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000435817.9"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000627746.16"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV000763092.11"
+    },
+    {
+     "type": "clinvar",
+     "value": "RCV003992144.1"
+    },
+    {
+     "type": "frequency",
+     "value": "GnomAD_genomes.4:105675552"
+    },
+    {
+     "type": "subsnp",
+     "value": "244238336"
+    },
+    {
+     "type": "subsnp",
+     "value": "253284451"
+    },
+    {
+     "type": "subsnp",
+     "value": "6579177991"
+    }
+   ],
+   "observation": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "T"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "T"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "T"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  },
+  {
+   "component_ids": [
+    {
+     "type": "subsnp",
+     "value": "7985985"
+    }
+   ],
+   "observation": {
+    "seq_id": "NT_022517.18",
+    "position": 10131505,
+    "deleted_sequence": "C",
+    "inserted_sequence": "T"
+   },
+   "allele_in_cur_release": {
+    "seq_id": "NC_000003.12",
+    "position": 10149821,
+    "deleted_sequence": "C",
+    "inserted_sequence": "T"
+   },
+   "other_rsids_in_cur_release": [],
+   "previous_release": {
+    "allele": {
+     "seq_id": "NC_000003.12",
+     "position": 10149821,
+     "deleted_sequence": "C",
+     "inserted_sequence": "T"
+    },
+    "rsids": [
+     "5030820"
+    ]
+   },
+   "last_added_to_this_rs": "151"
+  }
+ ],
+ "primary_snapshot_data": {
+  "placements_with_allele": [
+   {
+    "seq_id": "NC_000003.12",
+    "is_ptlp": true,
+    "placement_annot": {
+     "seq_type": "refseq_chromosome",
+     "mol_type": "genomic",
+     "seq_id_traits_by_assembly": [
+      {
+       "assembly_name": "GRCh38.p14",
+       "assembly_accession": "GCF_000001405.40",
+       "is_top_level": true,
+       "is_alt": false,
+       "is_patch": false,
+       "is_chromosome": true
+      }
+     ],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NC_000003.12",
+        "position": 10149821,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NC_000003.12:g.10149822="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NC_000003.12",
+        "position": 10149821,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NC_000003.12:g.10149822C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NC_000003.12",
+        "position": 10149821,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NC_000003.12:g.10149822C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NC_000003.11",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_chromosome",
+     "mol_type": "genomic",
+     "seq_id_traits_by_assembly": [
+      {
+       "assembly_name": "GRCh37.p13",
+       "assembly_accession": "GCF_000001405.25",
+       "is_top_level": true,
+       "is_alt": false,
+       "is_patch": false,
+       "is_chromosome": true
+      }
+     ],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NC_000003.11",
+        "position": 10191505,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NC_000003.11:g.10191506="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NC_000003.11",
+        "position": 10191505,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NC_000003.11:g.10191506C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NC_000003.11",
+        "position": 10191505,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NC_000003.11:g.10191506C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NG_008212.3",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_genomic",
+     "mol_type": "genomic",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NG_008212.3",
+        "position": 13187,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NG_008212.3:g.13188="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NG_008212.3",
+        "position": 13187,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NG_008212.3:g.13188C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NG_008212.3",
+        "position": 13187,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NG_008212.3:g.13188C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NM_000551.4",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_mrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_000551.4",
+        "position": 568,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NM_000551.4:c.499="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_000551.4",
+        "position": 568,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NM_000551.4:c.499C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_000551.4",
+        "position": 568,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NM_000551.4:c.499C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NM_000551.3",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_mrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_000551.3",
+        "position": 711,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NM_000551.3:c.499="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_000551.3",
+        "position": 711,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NM_000551.3:c.499C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_000551.3",
+        "position": 711,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NM_000551.3:c.499C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NM_198156.3",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_mrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_198156.3",
+        "position": 445,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NM_198156.3:c.376="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_198156.3",
+        "position": 445,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NM_198156.3:c.376C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_198156.3",
+        "position": 445,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NM_198156.3:c.376C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NM_198156.2",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_mrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_198156.2",
+        "position": 588,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NM_198156.2:c.376="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_198156.2",
+        "position": 588,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NM_198156.2:c.376C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_198156.2",
+        "position": 588,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NM_198156.2:c.376C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NM_001354723.2",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_mrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_001354723.2",
+        "position": 704,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NM_001354723.2:c.*53="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_001354723.2",
+        "position": 704,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NM_001354723.2:c.*53C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_001354723.2",
+        "position": 704,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NM_001354723.2:c.*53C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NM_001354723.1",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_mrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_001354723.1",
+        "position": 847,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NM_001354723.1:c.*53="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_001354723.1",
+        "position": 847,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NM_001354723.1:c.*53C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NM_001354723.1",
+        "position": 847,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NM_001354723.1:c.*53C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NR_176335.1",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_ncrna",
+     "mol_type": "rna",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NR_176335.1",
+        "position": 827,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NR_176335.1:n.828="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NR_176335.1",
+        "position": 827,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NR_176335.1:n.828C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NR_176335.1",
+        "position": 827,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NR_176335.1:n.828C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NG_046756.1",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_genomic",
+     "mol_type": "genomic",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NG_046756.1",
+        "position": 7583,
+        "deleted_sequence": "C",
+        "inserted_sequence": "C"
+       }
+      },
+      "hgvs": "NG_046756.1:g.7584="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NG_046756.1",
+        "position": 7583,
+        "deleted_sequence": "C",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NG_046756.1:g.7584C>G"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NG_046756.1",
+        "position": 7583,
+        "deleted_sequence": "C",
+        "inserted_sequence": "T"
+       }
+      },
+      "hgvs": "NG_046756.1:g.7584C>T"
+     }
+    ]
+   },
+   {
+    "seq_id": "NP_000542.1",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_prot",
+     "mol_type": "protein",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NP_000542.1",
+        "position": 166,
+        "deleted_sequence": "R",
+        "inserted_sequence": "R"
+       }
+      },
+      "hgvs": "NP_000542.1:p.Arg167="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NP_000542.1",
+        "position": 166,
+        "deleted_sequence": "R",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NP_000542.1:p.Arg167Gly"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NP_000542.1",
+        "position": 166,
+        "deleted_sequence": "R",
+        "inserted_sequence": "W"
+       }
+      },
+      "hgvs": "NP_000542.1:p.Arg167Trp"
+     }
+    ]
+   },
+   {
+    "seq_id": "NP_937799.1",
+    "is_ptlp": false,
+    "placement_annot": {
+     "seq_type": "refseq_prot",
+     "mol_type": "protein",
+     "seq_id_traits_by_assembly": [],
+     "is_aln_opposite_orientation": false,
+     "is_mismatch": false
+    },
+    "alleles": [
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NP_937799.1",
+        "position": 125,
+        "deleted_sequence": "R",
+        "inserted_sequence": "R"
+       }
+      },
+      "hgvs": "NP_937799.1:p.Arg126="
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NP_937799.1",
+        "position": 125,
+        "deleted_sequence": "R",
+        "inserted_sequence": "G"
+       }
+      },
+      "hgvs": "NP_937799.1:p.Arg126Gly"
+     },
+     {
+      "allele": {
+       "spdi": {
+        "seq_id": "NP_937799.1",
+        "position": 125,
+        "deleted_sequence": "R",
+        "inserted_sequence": "W"
+       }
+      },
+      "hgvs": "NP_937799.1:p.Arg126Trp"
+     }
+    ]
+   }
+  ],
+  "allele_annotations": [
+   {
+    "frequency": [
+     {
+      "study_name": "ExAC",
+      "study_version": 1,
+      "local_row_id": 6780620,
+      "observation": {
+       "seq_id": "NC_000003.11",
+       "position": 10191505,
+       "deleted_sequence": "C",
+       "inserted_sequence": "C"
+      },
+      "allele_count": 121113,
+      "total_count": 121114
+     },
+     {
+      "study_name": "GnomAD_genomes",
+      "study_version": 4,
+      "local_row_id": 105675552,
+      "observation": {
+       "seq_id": "NC_000003.12",
+       "position": 10149821,
+       "deleted_sequence": "C",
+       "inserted_sequence": "C"
+      },
+      "allele_count": 149141,
+      "total_count": 149142
+     }
+    ],
+    "clinical": [],
+    "submissions": [
+     "7985985",
+     "244238336",
+     "244238337",
+     "253284451",
+     "253284456",
+     "1686866543",
+     "1958536322",
+     "2733537300",
+     "3022210640",
+     "3652676646",
+     "6579177991"
+    ],
+    "assembly_annotation": [
+     {
+      "seq_id": "NC_000003.12",
+      "annotation_release": "Homo sapiens Annotation Release 110",
+      "genes": [
+       {
+        "name": "von Hippel-Lindau tumor suppressor",
+        "id": 7428,
+        "locus": "VHL",
+        "is_pseudo": false,
+        "orientation": "plus",
+        "sequence_ontology": [],
+        "rnas": [
+         {
+          "id": "NM_000551.4",
+          "codon_aligned_transcript_change": {
+           "seq_id": "NM_000551.4",
+           "position": 568,
+           "deleted_sequence": "CGG",
+           "inserted_sequence": "CGG"
+          },
+          "sequence_ontology": [
+           {
+            "name": "coding_sequence_variant",
+            "accession": "SO:0001580"
+           }
+          ],
+          "product_id": "NP_000542.1",
+          "protein": {
+           "variant": {
+            "spdi": {
+             "seq_id": "NP_000542.1",
+             "position": 166,
+             "deleted_sequence": "R",
+             "inserted_sequence": "R"
+            }
+           },
+           "sequence_ontology": []
+          },
+          "hgvs": "NM_000551.4:c.499="
+         },
+         {
+          "id": "NM_001354723.2",
+          "sequence_ontology": [
+           {
+            "name": "3_prime_UTR_variant",
+            "accession": "SO:0001624"
+           }
+          ],
+          "product_id": "NP_001341652.1",
+          "hgvs": "NM_001354723.2:c.*53="
+         },
+         {
+          "id": "NM_198156.3",
+          "codon_aligned_transcript_change": {
+           "seq_id": "NM_198156.3",
+           "position": 445,
+           "deleted_sequence": "CGG",
+           "inserted_sequence": "CGG"
+          },
+          "sequence_ontology": [
+           {
+            "name": "coding_sequence_variant",
+            "accession": "SO:0001580"
+           }
+          ],
+          "product_id": "NP_937799.1",
+          "protein": {
+           "variant": {
+            "spdi": {
+             "seq_id": "NP_937799.1",
+             "position": 125,
+             "deleted_sequence": "R",
+             "inserted_sequence": "R"
+            }
+           },
+           "sequence_ontology": []
+          },
+          "hgvs": "NM_198156.3:c.376="
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "frequency": [],
+    "clinical": [
+     {
+      "accession_version": "RCV000002304.2",
+      "allele_id": 17258,
+      "measure_set_id": 2219,
+      "variant_identifiers": [
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005760"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0004"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2013-04-4T00:00Z",
+      "update_date": "2024-06-23T00:00Z",
+      "last_evaluated_date": "2018-08-1T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Von Hippel-Lindau syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1463"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000314230"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000528276"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000530028"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552165"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552183"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552245"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553527"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553528"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000562500"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569525"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569658"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000570011"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000592450"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000595970"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "7855"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008667"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0019562"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "892"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "193300"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing",
+       "literature-only"
+      ],
+      "citations": [
+       7784063,
+       8270255
+      ],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000466046.9",
+      "allele_id": 17258,
+      "measure_set_id": 2219,
+      "variant_identifiers": [
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005760"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0004"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2017-04-17T00:00Z",
+      "update_date": "2024-06-23T00:00Z",
+      "last_evaluated_date": "2022-06-26T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Chuvash polycythemia",
+       "Von Hippel-Lindau syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "17176"
+       },
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1463"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000314230"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000528276"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000530028"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552165"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552183"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552245"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553527"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553528"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000562500"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569525"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569658"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000570011"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000592450"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000595970"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "7855"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0009892"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C1837915"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "238557"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "263400"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008667"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0019562"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "892"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "193300"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV002336073.2",
+      "allele_id": 17258,
+      "measure_set_id": 2219,
+      "variant_identifiers": [
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005760"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0004"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2022-11-29T00:00Z",
+      "update_date": "2024-06-23T00:00Z",
+      "last_evaluated_date": "2021-10-26T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Hereditary cancer-predisposing syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "19921"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0015356"
+       },
+       {
+        "organization": "MeSH",
+        "accession": "D009386"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0027672"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     }
+    ],
+    "submissions": [
+     "244238337",
+     "253284456",
+     "1958536322",
+     "3022210640",
+     "3652676646"
+    ],
+    "assembly_annotation": [
+     {
+      "seq_id": "NC_000003.12",
+      "annotation_release": "Homo sapiens Annotation Release 110",
+      "genes": [
+       {
+        "name": "von Hippel-Lindau tumor suppressor",
+        "id": 7428,
+        "locus": "VHL",
+        "is_pseudo": false,
+        "orientation": "plus",
+        "sequence_ontology": [],
+        "rnas": [
+         {
+          "id": "NM_000551.4",
+          "codon_aligned_transcript_change": {
+           "seq_id": "NM_000551.4",
+           "position": 568,
+           "deleted_sequence": "CGG",
+           "inserted_sequence": "GGG"
+          },
+          "sequence_ontology": [
+           {
+            "name": "coding_sequence_variant",
+            "accession": "SO:0001580"
+           }
+          ],
+          "product_id": "NP_000542.1",
+          "protein": {
+           "variant": {
+            "spdi": {
+             "seq_id": "NP_000542.1",
+             "position": 166,
+             "deleted_sequence": "R",
+             "inserted_sequence": "G"
+            }
+           },
+           "sequence_ontology": [
+            {
+             "name": "missense_variant",
+             "accession": "SO:0001583"
+            }
+           ]
+          },
+          "hgvs": "NM_000551.4:c.499C>G"
+         },
+         {
+          "id": "NM_001354723.2",
+          "sequence_ontology": [
+           {
+            "name": "3_prime_UTR_variant",
+            "accession": "SO:0001624"
+           }
+          ],
+          "product_id": "NP_001341652.1",
+          "hgvs": "NM_001354723.2:c.*53C>G"
+         },
+         {
+          "id": "NM_198156.3",
+          "codon_aligned_transcript_change": {
+           "seq_id": "NM_198156.3",
+           "position": 445,
+           "deleted_sequence": "CGG",
+           "inserted_sequence": "GGG"
+          },
+          "sequence_ontology": [
+           {
+            "name": "coding_sequence_variant",
+            "accession": "SO:0001580"
+           }
+          ],
+          "product_id": "NP_937799.1",
+          "protein": {
+           "variant": {
+            "spdi": {
+             "seq_id": "NP_937799.1",
+             "position": 125,
+             "deleted_sequence": "R",
+             "inserted_sequence": "G"
+            }
+           },
+           "sequence_ontology": [
+            {
+             "name": "missense_variant",
+             "accession": "SO:0001583"
+            }
+           ]
+          },
+          "hgvs": "NM_198156.3:c.376C>G"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "frequency": [
+     {
+      "study_name": "ExAC",
+      "study_version": 1,
+      "local_row_id": 6780620,
+      "observation": {
+       "seq_id": "NC_000003.11",
+       "position": 10191505,
+       "deleted_sequence": "C",
+       "inserted_sequence": "T"
+      },
+      "allele_count": 1,
+      "total_count": 121114
+     },
+     {
+      "study_name": "GnomAD_genomes",
+      "study_version": 4,
+      "local_row_id": 105675552,
+      "observation": {
+       "seq_id": "NC_000003.12",
+       "position": 10149821,
+       "deleted_sequence": "C",
+       "inserted_sequence": "T"
+      },
+      "allele_count": 1,
+      "total_count": 149142
+     }
+    ],
+    "clinical": [
+     {
+      "accession_version": "RCV000002302.19",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2013-04-4T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2023-05-21T00:00Z",
+      "review_status": "criteria_provided_multiple_submitters_no_conflicts",
+      "disease_names": [
+       "Von Hippel-Lindau syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1463"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000314230"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000528276"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000530028"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552165"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552183"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552245"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553527"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553528"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000562500"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569525"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569658"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000570011"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000592450"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000595970"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "7855"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008667"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0019562"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "892"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "193300"
+       }
+      ],
+      "origins": [
+       "unknown",
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing",
+       "literature-only",
+       "research"
+      ],
+      "citations": [
+       7784063,
+       8270255,
+       8592333,
+       8956040,
+       9156047,
+       12000816
+      ],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000002303.12",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2013-04-4T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2002-05-9T00:00Z",
+      "review_status": "no_assertion_criteria_provided",
+      "disease_names": [
+       "Pheochromocytoma"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1548"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "15105"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008233"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0031511"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "29072"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "171300"
+       },
+       {
+        "organization": "Human Phenotype Ontology",
+        "accession": "HP:0002666"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "literature-only"
+      ],
+      "citations": [
+       7784063,
+       8270255,
+       8592333,
+       8956040,
+       9156047,
+       12000816
+      ],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000132159.17",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2014-08-6T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2022-06-15T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Hereditary cancer-predisposing syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "19921"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0015356"
+       },
+       {
+        "organization": "MeSH",
+        "accession": "D009386"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0027672"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000213079.23",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2016-06-3T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2022-05-25T00:00Z",
+      "review_status": "criteria_provided_multiple_submitters_no_conflicts",
+      "disease_names": [
+       "not provided"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "MedGen",
+        "accession": "C3661900"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000435817.9",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2017-03-8T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2015-07-14T00:00Z",
+      "review_status": "no_assertion_criteria_provided",
+      "disease_names": [
+       "Papillary renal cell carcinoma type 1"
+      ],
+      "clinical_significances": [
+       "likely-pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "13215"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C1336839"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "47044"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "605074"
+       },
+       {
+        "organization": "Human Phenotype Ontology",
+        "accession": "HP:0011797"
+       }
+      ],
+      "origins": [
+       "somatic"
+      ],
+      "collection_method": [
+       "literature-only"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000627746.16",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2018-05-26T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2023-12-6T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Chuvash polycythemia",
+       "Von Hippel-Lindau syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "17176"
+       },
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1463"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000314230"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000528276"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000530028"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552165"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552183"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552245"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553527"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553528"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000562500"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569525"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569658"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000570011"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000592450"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000595970"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "7855"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0009892"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C1837915"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "238557"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "263400"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008667"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0019562"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "892"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "193300"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV000763092.11",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2019-03-31T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2021-10-1T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Chuvash polycythemia",
+       "Nonpapillary renal cell carcinoma",
+       "Pheochromocytoma",
+       "Von Hippel-Lindau syndrome"
+      ],
+      "clinical_significances": [
+       "pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "17176"
+       },
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1548"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "15105"
+       },
+       {
+        "organization": "GeneReviews",
+        "accession": "NBK1463"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000314230"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000528276"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000530028"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552165"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552183"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000552245"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553527"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000553528"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000562500"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569525"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000569658"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000570011"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000592450"
+       },
+       {
+        "organization": "Genetic Testing Registry (GTR)",
+        "accession": "GTR000595970"
+       },
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "7855"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0009892"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C1837915"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "238557"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "263400"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008233"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0031511"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "29072"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "171300"
+       },
+       {
+        "organization": "Human Phenotype Ontology",
+        "accession": "HP:0002666"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0008667"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C0019562"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "892"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "193300"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0007763"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "CN074294"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "422526"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "144700"
+       }
+      ],
+      "origins": [
+       "unknown"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     },
+     {
+      "accession_version": "RCV003992144.1",
+      "allele_id": 17257,
+      "measure_set_id": 2218,
+      "variant_identifiers": [
+       {
+        "organization": "ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories",
+        "accession": "12924"
+       },
+       {
+        "organization": "UniProtKB",
+        "accession": "P40337#VAR_005762"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "608537.0003"
+       }
+      ],
+      "refsnp_id": "5030820",
+      "create_date": "2024-04-15T00:00Z",
+      "update_date": "2024-07-29T00:00Z",
+      "last_evaluated_date": "2024-04-4T00:00Z",
+      "review_status": "criteria_provided_single_submitter",
+      "disease_names": [
+       "Chuvash polycythemia"
+      ],
+      "clinical_significances": [
+       "likely-pathogenic"
+      ],
+      "disease_ids": [
+       {
+        "organization": "Office of Rare Diseases",
+        "accession": "17176"
+       },
+       {
+        "organization": "MONDO",
+        "accession": "MONDO:0009892"
+       },
+       {
+        "organization": "MedGen",
+        "accession": "C1837915"
+       },
+       {
+        "organization": "Orphanet",
+        "accession": "238557"
+       },
+       {
+        "organization": "OMIM",
+        "accession": "263400"
+       }
+      ],
+      "origins": [
+       "germline"
+      ],
+      "collection_method": [
+       "clinical-testing"
+      ],
+      "citations": [],
+      "gene_ids": [
+       "7428",
+       "107303340"
+      ]
+     }
+    ],
+    "submissions": [
+     "7985985",
+     "244238336",
+     "253284451",
+     "1686866543",
+     "2733537300",
+     "6579177991"
+    ],
+    "assembly_annotation": [
+     {
+      "seq_id": "NC_000003.12",
+      "annotation_release": "Homo sapiens Annotation Release 110",
+      "genes": [
+       {
+        "name": "von Hippel-Lindau tumor suppressor",
+        "id": 7428,
+        "locus": "VHL",
+        "is_pseudo": false,
+        "orientation": "plus",
+        "sequence_ontology": [],
+        "rnas": [
+         {
+          "id": "NM_000551.4",
+          "codon_aligned_transcript_change": {
+           "seq_id": "NM_000551.4",
+           "position": 568,
+           "deleted_sequence": "CGG",
+           "inserted_sequence": "TGG"
+          },
+          "sequence_ontology": [
+           {
+            "name": "coding_sequence_variant",
+            "accession": "SO:0001580"
+           }
+          ],
+          "product_id": "NP_000542.1",
+          "protein": {
+           "variant": {
+            "spdi": {
+             "seq_id": "NP_000542.1",
+             "position": 166,
+             "deleted_sequence": "R",
+             "inserted_sequence": "W"
+            }
+           },
+           "sequence_ontology": [
+            {
+             "name": "missense_variant",
+             "accession": "SO:0001583"
+            }
+           ]
+          },
+          "hgvs": "NM_000551.4:c.499C>T"
+         },
+         {
+          "id": "NM_001354723.2",
+          "sequence_ontology": [
+           {
+            "name": "3_prime_UTR_variant",
+            "accession": "SO:0001624"
+           }
+          ],
+          "product_id": "NP_001341652.1",
+          "hgvs": "NM_001354723.2:c.*53C>T"
+         },
+         {
+          "id": "NM_198156.3",
+          "codon_aligned_transcript_change": {
+           "seq_id": "NM_198156.3",
+           "position": 445,
+           "deleted_sequence": "CGG",
+           "inserted_sequence": "TGG"
+          },
+          "sequence_ontology": [
+           {
+            "name": "coding_sequence_variant",
+            "accession": "SO:0001580"
+           }
+          ],
+          "product_id": "NP_937799.1",
+          "protein": {
+           "variant": {
+            "spdi": {
+             "seq_id": "NP_937799.1",
+             "position": 125,
+             "deleted_sequence": "R",
+             "inserted_sequence": "W"
+            }
+           },
+           "sequence_ontology": [
+            {
+             "name": "missense_variant",
+             "accession": "SO:0001583"
+            }
+           ]
+          },
+          "hgvs": "NM_198156.3:c.376C>T"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "support": [
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss7985985"
+    },
+    "revision_added": "113",
+    "create_date": "2003-03-31T15:56Z",
+    "submitter_handle": "HGBASE"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss244238336"
+    },
+    "revision_added": "132",
+    "create_date": "2010-05-27T17:37Z",
+    "submitter_handle": "OMICIA"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss244238337"
+    },
+    "revision_added": "132",
+    "create_date": "2010-05-27T17:37Z",
+    "submitter_handle": "OMICIA"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss253284451"
+    },
+    "revision_added": "132",
+    "create_date": "2010-08-18T16:49Z",
+    "submitter_handle": "OMIM-CURATED-RECORDS"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss253284456"
+    },
+    "revision_added": "132",
+    "create_date": "2010-08-18T16:49Z",
+    "submitter_handle": "OMIM-CURATED-RECORDS"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss1686866543"
+    },
+    "revision_added": "144",
+    "create_date": "2015-04-1T10:43Z",
+    "submitter_handle": "EVA_EXAC"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss1958536322"
+    },
+    "revision_added": "147",
+    "create_date": "2016-02-12T12:05Z",
+    "submitter_handle": "ILLUMINA"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss2733537300"
+    },
+    "revision_added": "151",
+    "create_date": "2017-11-8T11:52Z",
+    "submitter_handle": "GNOMAD"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss3022210640"
+    },
+    "revision_added": "151",
+    "create_date": "2017-11-8T11:52Z",
+    "submitter_handle": "ILLUMINA"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss3652676646"
+    },
+    "revision_added": "152",
+    "create_date": "2018-10-12T03:57Z",
+    "submitter_handle": "ILLUMINA"
+   },
+   {
+    "id": {
+     "type": "subsnp",
+     "value": "ss6579177991"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": "GNOMAD"
+   },
+   {
+    "id": {
+     "type": "frequency",
+     "value": "ExAC.1:6780620"
+    },
+    "revision_added": "152",
+    "create_date": "2018-10-12T03:57Z",
+    "submitter_handle": "ExAC"
+   },
+   {
+    "id": {
+     "type": "frequency",
+     "value": "GnomAD_genomes.4:105675552"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": "GnomAD_genomes"
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000002302.19"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000002303.12"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000002304.2"
+    },
+    "revision_added": "152",
+    "create_date": "2018-10-12T03:57Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000132159.17"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000213079.23"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000435817.9"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000466046.9"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000627746.16"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV000763092.11"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV002336073.2"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   },
+   {
+    "id": {
+     "type": "clinvar",
+     "value": "RCV003992144.1"
+    },
+    "revision_added": "157",
+    "create_date": "2024-10-31T03:19Z",
+    "submitter_handle": ""
+   }
+  ],
+  "anchor": "NC_000003.12:0010149821:1:snv",
+  "variant_type": "snv",
+  "ga4gh": {
+   "NC_000003.11:10191505:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 10191505,
+      "end": 10191506
+     },
+     "sequence_id": "refseq:NC_000003.11"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NC_000003.11:10191505:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 10191505,
+      "end": 10191506
+     },
+     "sequence_id": "refseq:NC_000003.11"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NC_000003.11:10191505:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 10191505,
+      "end": 10191506
+     },
+     "sequence_id": "refseq:NC_000003.11"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NC_000003.12:10149821:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 10149821,
+      "end": 10149822
+     },
+     "sequence_id": "refseq:NC_000003.12"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NC_000003.12:10149821:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 10149821,
+      "end": 10149822
+     },
+     "sequence_id": "refseq:NC_000003.12"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NC_000003.12:10149821:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 10149821,
+      "end": 10149822
+     },
+     "sequence_id": "refseq:NC_000003.12"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NG_008212.3:13187:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 13187,
+      "end": 13188
+     },
+     "sequence_id": "refseq:NG_008212.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NG_008212.3:13187:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 13187,
+      "end": 13188
+     },
+     "sequence_id": "refseq:NG_008212.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NG_008212.3:13187:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 13187,
+      "end": 13188
+     },
+     "sequence_id": "refseq:NG_008212.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NG_046756.1:7583:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 7583,
+      "end": 7584
+     },
+     "sequence_id": "refseq:NG_046756.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NG_046756.1:7583:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 7583,
+      "end": 7584
+     },
+     "sequence_id": "refseq:NG_046756.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NG_046756.1:7583:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 7583,
+      "end": 7584
+     },
+     "sequence_id": "refseq:NG_046756.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NM_000551.3:711:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 711,
+      "end": 712
+     },
+     "sequence_id": "refseq:NM_000551.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NM_000551.3:711:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 711,
+      "end": 712
+     },
+     "sequence_id": "refseq:NM_000551.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NM_000551.3:711:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 711,
+      "end": 712
+     },
+     "sequence_id": "refseq:NM_000551.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NM_000551.4:568:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 568,
+      "end": 569
+     },
+     "sequence_id": "refseq:NM_000551.4"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NM_000551.4:568:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 568,
+      "end": 569
+     },
+     "sequence_id": "refseq:NM_000551.4"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NM_000551.4:568:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 568,
+      "end": 569
+     },
+     "sequence_id": "refseq:NM_000551.4"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NM_001354723.1:847:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 847,
+      "end": 848
+     },
+     "sequence_id": "refseq:NM_001354723.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NM_001354723.1:847:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 847,
+      "end": 848
+     },
+     "sequence_id": "refseq:NM_001354723.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NM_001354723.1:847:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 847,
+      "end": 848
+     },
+     "sequence_id": "refseq:NM_001354723.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NM_001354723.2:704:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 704,
+      "end": 705
+     },
+     "sequence_id": "refseq:NM_001354723.2"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NM_001354723.2:704:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 704,
+      "end": 705
+     },
+     "sequence_id": "refseq:NM_001354723.2"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NM_001354723.2:704:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 704,
+      "end": 705
+     },
+     "sequence_id": "refseq:NM_001354723.2"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NM_198156.2:588:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 588,
+      "end": 589
+     },
+     "sequence_id": "refseq:NM_198156.2"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NM_198156.2:588:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 588,
+      "end": 589
+     },
+     "sequence_id": "refseq:NM_198156.2"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NM_198156.2:588:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 588,
+      "end": 589
+     },
+     "sequence_id": "refseq:NM_198156.2"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NM_198156.3:445:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 445,
+      "end": 446
+     },
+     "sequence_id": "refseq:NM_198156.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NM_198156.3:445:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 445,
+      "end": 446
+     },
+     "sequence_id": "refseq:NM_198156.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NM_198156.3:445:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 445,
+      "end": 446
+     },
+     "sequence_id": "refseq:NM_198156.3"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   },
+   "NP_000542.1:166:R:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 166,
+      "end": 167
+     },
+     "sequence_id": "refseq:NP_000542.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NP_000542.1:166:R:R": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 166,
+      "end": 167
+     },
+     "sequence_id": "refseq:NP_000542.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "R"
+    },
+    "type": "Allele"
+   },
+   "NP_000542.1:166:R:W": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 166,
+      "end": 167
+     },
+     "sequence_id": "refseq:NP_000542.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "W"
+    },
+    "type": "Allele"
+   },
+   "NP_937799.1:125:R:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 125,
+      "end": 126
+     },
+     "sequence_id": "refseq:NP_937799.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NP_937799.1:125:R:R": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 125,
+      "end": 126
+     },
+     "sequence_id": "refseq:NP_937799.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "R"
+    },
+    "type": "Allele"
+   },
+   "NP_937799.1:125:R:W": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 125,
+      "end": 126
+     },
+     "sequence_id": "refseq:NP_937799.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "W"
+    },
+    "type": "Allele"
+   },
+   "NR_176335.1:827:C:C": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 827,
+      "end": 828
+     },
+     "sequence_id": "refseq:NR_176335.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "C"
+    },
+    "type": "Allele"
+   },
+   "NR_176335.1:827:C:G": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 827,
+      "end": 828
+     },
+     "sequence_id": "refseq:NR_176335.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "G"
+    },
+    "type": "Allele"
+   },
+   "NR_176335.1:827:C:T": {
+    "location": {
+     "type": "SequenceLocation",
+     "interval": {
+      "type": "SimpleInterval",
+      "start": 827,
+      "end": 828
+     },
+     "sequence_id": "refseq:NR_176335.1"
+    },
+    "state": {
+     "type": "SequenceState",
+     "sequence": "T"
+    },
+    "type": "Allele"
+   }
+  }
+ },
+ "mane_select_ids": [
+  "NM_000551.4"
+ ]
+}

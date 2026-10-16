@@ -1,0 +1,575 @@
+"""ClinVar connector -- Evidence (clinical assertions). Real payload shapes confirmed
+against fixtures/clinvar_efetch_VCV2218.xml (clean, no conflicts, 1 VCV / 7 RCV / 22 SCV)
+and fixtures/clinvar_efetch_VCV4558169_conflicting.xml (2 SCVs genuinely disagreeing).
+
+Never "one record -> one Claim": VCV, RCV, and SCV are three distinct real structures
+with different fields, mapped as three distinct CLAIM subtypes linked by
+RELATES_TO[contributes_to]/[aggregates_into] -- never PART_OF (forge-ir-v3-schema.md §4).
+
+SCV<->RCV linkage is a REAL, confirmed data problem, not a hypothetical one: matching
+an SCV's own submitted trait XRef directly against an RCV's MedGen-keyed condition only
+resolves 3 of 22 real SCVs (most submitters use OMIM, not MedGen). ESummary's richer
+per-condition trait_xrefs (which include OMIM/Orphanet/MONDO alongside MedGen) build a
+crosswalk that resolves 14 of 22 by condition match -- both fixtures are needed
+together, EFetch alone isn't enough -- and 12 of those 14 actually get a
+`contributes_to` edge, since 2 have `ContributesToAggregateClassification=false` and
+correctly don't (that predicate name means what it says). The remaining unmatched SCVs
+still get fully emitted as CLAIM nodes with their own ASSERTS/submitted_by edges; only
+the RCV-linkage is skipped for them (quarantining the specific relationship, not the
+record).
+
+CONTRADICTS is compared by ClinVar's own pathogenicity-concordance groups (P/LP
+concordant, VUS its own group, B/LB concordant), not raw string equality -- a first
+pass using string inequality produced 47 false conflicts on a variant ClinVar itself
+reports as "no conflicts," because real contributing SCVs mix "Pathogenic" and "Likely
+pathogenic" text for the same verdict. See `_pathogenicity_group`.
+"""
+from __future__ import annotations
+
+import time
+import xml.etree.ElementTree as ET
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from typing import Iterator
+
+import requests
+from connectors import http
+
+from forge_ir.core import EdgeType, NodeRole, Origin, disease_canonical_id, gene_canonical_id, \
+    submitter_canonical_id, variant_canonical_id
+from forge_ir.graph import ForgeEdge, ForgeNode
+from forge_ir.provenance import DerivedProvenance, SourceProvenance
+from ingest.mapping import EscapeHatch, MappingSpec, apply_mapping_spec
+from ingest.source_objects import SourceObjectBase
+from orchestration.connector_registry import ConnectorDescriptor, Emission, register_connector
+from connectors.common import build_variant_entity
+
+ESEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
+ESUMMARY_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi"
+EFETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
+
+
+class UnsupportedClinVarRecord(ValueError):
+    """Record-level QUARANTINE signal (forge-pipeline-v1.md §8): this one ClinVar archive
+    can't be mapped, the batch around it is still fine. Never a batch-level REJECT."""
+
+
+@dataclass
+class ClinVarSCV(SourceObjectBase):
+    accession: str
+    version: int
+    variation_id: str
+    classification: str
+    review_status: str
+    comment: str
+    contributes_to_aggregate: bool
+    submitter_name: str
+    submitter_org_id: str
+    submitter_org_category: str
+    origin: str
+    method_type: str
+    trait_xrefs: list[tuple[str, str]]  # [(DB, ID), ...]
+
+
+@dataclass
+class ClinVarRCV(SourceObjectBase):
+    accession: str
+    condition_db: str
+    condition_id: str
+    condition_name: str
+    germline_description: str | None
+    germline_review_status: str | None
+    somatic_impact_description: str | None
+    somatic_impact_tier: str | None
+
+
+@dataclass
+class ClinVarVCV(SourceObjectBase):
+    variation_id: str
+    accession: str
+    version: str
+    canonical_spdi: str
+    gene_symbol: str
+    hgnc_id: str | None
+    top_classification: str | None
+    top_review_status: str | None
+    # A variant can be submitted against SEVERAL genes: VCV000265138 is
+    # NM_001018115.3(FANCD2):c.2605+1G>A and carries submitted Gene elements for BOTH
+    # FANCD2 (HGNC:3585) and VHL (HGNC:12687), because the two are neighbours on 3p25.3
+    # and it overlaps them. `gene_symbol`/`hgnc_id` above are the first submitted gene,
+    # kept for single-gene callers; this is the honest full list.
+    submitted_genes: list[tuple[str, str]] = field(default_factory=list)   # [(symbol, hgnc_id), ...]
+    dbsnp_rsid: str | None = None   # SimpleAllele/XRefList/XRef[@DB='dbSNP'][@Type='rs'] --
+                                     # real, confirmed present on the VHL fixture; drives
+                                     # connectors/dbsnp.py's per-variant lookup
+
+
+class ClinVarAdapter:
+    def fetch(self, query: dict) -> Iterator[dict]:
+        # ESearch -> ESummary -> EFetch, per connector-research.md §2.2. Returns raw
+        # {esummary, efetch_xml} pairs; parsing lives in ClinVarParser.
+        uid = query.get("uid")
+        if uid is None:
+            resp = http.request_with_retry("GET", ESEARCH_URL, params={"db": "clinvar", "term": query["term"], "retmode": "json"})
+            uid = resp.json()["esearchresult"]["idlist"][0]
+        esummary = http.request_with_retry("GET", ESUMMARY_URL, params={"db": "clinvar", "id": uid, "retmode": "json"})
+        efetch = http.request_with_retry("GET", EFETCH_URL, params={"db": "clinvar", "id": uid, "rettype": "vcv",
+                                                                     "is_variationid": "true"})
+        yield {"esummary": esummary.json(), "efetch_xml": efetch.text}
+
+    def search_variation_ids(self, term: str, retmax: int = 100_000) -> list[str]:
+        """Whole-family ESearch: every ClinVar VariationID matching `term` (e.g. "VHL[gene]").
+        ClinVar's db=clinvar UIDs *are* VariationIDs, which is why the single-record fetch
+        above can hand an ESearch uid straight to EFetch with is_variationid=true."""
+        resp = http.request_with_retry("GET", ESEARCH_URL, params={
+            "db": "clinvar", "term": term, "retmode": "json", "retmax": str(retmax),
+        }, timeout=60)
+        return list(resp.json()["esearchresult"]["idlist"])
+
+    def fetch_many(self, uids: list[str], batch_size: int = 50,
+                    pause_seconds: float = 0.34) -> Iterator[dict]:
+        """Batched ESummary+EFetch, then re-split into one payload per variant.
+
+        Why batching and not a loop over `fetch()`: NCBI's unauthenticated rate limit is
+        3 requests/second, so 1,134 variants x 2 requests would take >12 minutes of pure
+        waiting. E-utilities accepts comma-separated id lists, so the same run becomes
+        ~46 requests. The re-split below is what keeps the per-variant parsers (already
+        tested against single-record fixtures) completely unchanged."""
+        for start in range(0, len(uids), batch_size):
+            chunk = uids[start:start + batch_size]
+            ids = ",".join(chunk)
+            esummary = http.request_with_retry("GET", ESUMMARY_URL, params={"db": "clinvar", "id": ids, "retmode": "json"},
+                                                timeout=120)
+            time.sleep(pause_seconds)
+            efetch = http.request_with_retry("GET", EFETCH_URL, params={"db": "clinvar", "id": ids, "rettype": "vcv",
+                                                                        "is_variationid": "true"}, timeout=300)
+            time.sleep(pause_seconds)
+
+            per_uid_summary = split_esummary(esummary.json())
+            for variation_id, archive_xml in split_archives(efetch.text):
+                summary = per_uid_summary.get(variation_id)
+                if summary is None:
+                    continue  # ESummary and EFetch disagreed on membership -- skip, don't guess
+                yield {"uid": variation_id, "esummary": summary, "efetch_xml": archive_xml}
+
+    def capabilities(self) -> dict:
+        return {
+            "scopes": ["variant", "gene"],
+            "provides": ["ClinicalAssertion", "AggregateClassification", "ClinicalImpactClassification",
+                         "CaseObservation", "Disease", "Submitter"],
+            "bulk": True, "live_query": True, "batch": True,
+            "hydration_lods": [1, 2], "identity_types": ["SPDI", "HGVS", "rsID", "VCV"],
+        }
+
+    def manifest(self) -> dict:
+        return {"source": "ClinVar", "dataset": "E-utilities", "schema_version": "1"}
+
+
+# ClinVar's own concordance model, not naive string equality: "Pathogenic" and "Likely
+# pathogenic" are CONCORDANT, not conflicting -- confirmed real and necessary, not a
+# hypothetical nuance. A first pass using exact-string inequality produced 47 false
+# CONTRADICTS edges on VCV000002218, a variant ClinVar itself reports as "no conflicts"
+# (review_status: "criteria provided, multiple submitters, no conflicts"), specifically
+# because real contributing SCVs mix "Pathogenic" and "Likely pathogenic" text for the
+# same underlying verdict. Grouped by the standard ACMG/ClinVar 3-tier concordance model.
+_PATHOGENICITY_GROUPS: dict[str, str] = {
+    "pathogenic": "P", "likely pathogenic": "P", "pathogenic/likely pathogenic": "P",
+    "uncertain significance": "VUS",
+    "benign": "B", "likely benign": "B", "benign/likely benign": "B",
+}
+
+
+def _pathogenicity_group(classification: str | None) -> str | None:
+    if not classification:
+        return None
+    return _PATHOGENICITY_GROUPS.get(classification.strip().lower(), classification.strip().lower())
+
+
+def split_archives(raw_xml: str) -> Iterator[tuple[str, str]]:
+    """Splits a multi-record EFetch response into (VariationID, single-record XML) pairs.
+
+    Each piece is re-wrapped in a <ClinVarResult-Set> envelope so the existing parsers'
+    `.//VariationArchive` XPaths keep matching -- ElementTree's `.//` never matches the
+    root element itself, so handing them a bare <VariationArchive> root would silently
+    parse nothing rather than fail loudly."""
+    root = ET.fromstring(raw_xml)
+    for archive in root.findall(".//VariationArchive"):
+        variation_id = archive.attrib.get("VariationID")
+        if not variation_id:
+            continue
+        inner = ET.tostring(archive, encoding="unicode")
+        yield variation_id, f"<ClinVarResult-Set>{inner}</ClinVarResult-Set>"
+
+
+def split_esummary(esummary: dict) -> dict[str, dict]:
+    """Splits a multi-uid ESummary into per-uid ESummary-shaped dicts, so
+    _build_trait_crosswalk (which reads `result.uids[0]`) needs no change at all."""
+    result = esummary.get("result", {})
+    out: dict[str, dict] = {}
+    for uid in result.get("uids", []):
+        if uid in result:
+            out[uid] = {"result": {"uids": [uid], uid: result[uid]}}
+    return out
+
+
+def _build_trait_crosswalk(esummary: dict) -> dict[tuple[str, str], str]:
+    """Every xref of every trait in ESummary's germline_classification.trait_set,
+    mapped to that trait's own MedGen CUI -- this is what closes the 3/22 -> 14/22
+    gap described in the module docstring."""
+    result: dict[tuple[str, str], str] = {}
+    uid = next(iter(esummary["result"]["uids"]))
+    traits = esummary["result"][uid].get("germline_classification", {}).get("trait_set", [])
+    for t in traits:
+        medgen = next((x["db_id"] for x in t["trait_xrefs"] if x["db_source"] == "MedGen"), None)
+        if not medgen:
+            continue
+        for x in t["trait_xrefs"]:
+            result[(x["db_source"], x["db_id"])] = medgen
+    return result
+
+
+class ClinVarParser:
+    """Each parse_* method accepts either the raw XML string or an already-parsed root.
+
+    Passing the root matters: profiling the per-variant ingest path showed
+    `ElementTree.XML` being called three times per record -- once each by parse_vcv,
+    parse_rcvs and parse_scvs -- for the same document, and that single line accounted for
+    over half of all parse time. One document, one parse."""
+
+    @staticmethod
+    def _root(raw_xml: "str | ET.Element") -> ET.Element:
+        return raw_xml if isinstance(raw_xml, ET.Element) else ET.fromstring(raw_xml)
+
+    def parse_vcv(self, raw_xml, snapshot_ref: str = "") -> ClinVarVCV:
+        root = self._root(raw_xml)
+        va = root.find(".//VariationArchive")
+        cr = va.find("ClassifiedRecord")
+        if cr is None:
+            # IncludedRecord-only archives (a variant that exists solely as a component of
+            # a haplotype/genotype). Real and common at whole-gene scale: 0 of our 2
+            # single-variant fixtures, but hundreds across the VHL family.
+            raise UnsupportedClinVarRecord(f"{va.attrib.get('Accession')}: no ClassifiedRecord")
+        sa = cr.find("SimpleAllele")
+        if sa is None or sa.find("CanonicalSPDI") is None:
+            raise UnsupportedClinVarRecord(
+                f"{va.attrib.get('Accession')}: not a SimpleAllele with a CanonicalSPDI "
+                f"(haplotype/genotype/CNV -- no single canonical SPDI to key a Variant on)")
+        submitted = [g for g in sa.findall(".//Gene[@Source='submitted']") if g.attrib.get("HGNC_ID")]
+        gene = submitted[0] if submitted else None
+        top = cr.find(".//RCVClassifications/GermlineClassification") if cr.find("RCVList") is not None else None
+        dbsnp_xref = sa.find(".//XRefList/XRef[@DB='dbSNP'][@Type='rs']")
+        return ClinVarVCV(
+            source="ClinVar", record_type="VCV", source_record_id=va.attrib["Accession"],
+            source_version=va.attrib["Version"], snapshot_ref=snapshot_ref, payload_hash=str(hash(raw_xml)),
+            variation_id=va.attrib["VariationID"], accession=va.attrib["Accession"], version=va.attrib["Version"],
+            canonical_spdi=sa.find("CanonicalSPDI").text,
+            gene_symbol=gene.attrib["Symbol"] if gene is not None else "",
+            hgnc_id=gene.attrib.get("HGNC_ID") if gene is not None else None,
+            top_classification=None, top_review_status=None,
+            submitted_genes=[(g.attrib.get("Symbol", ""), g.attrib["HGNC_ID"]) for g in submitted],
+            dbsnp_rsid=dbsnp_xref.attrib["ID"] if dbsnp_xref is not None else None,
+        )
+
+    def parse_rcvs(self, raw_xml, snapshot_ref: str = "") -> Iterator[ClinVarRCV]:
+        root = self._root(raw_xml)
+        for r in root.findall(".//RCVAccession"):
+            cond = r.find(".//ClassifiedCondition")
+            germline = r.find(".//GermlineClassification")
+            somatic = r.find(".//SomaticClinicalImpact")
+            yield ClinVarRCV(
+                source="ClinVar", record_type="RCV", source_record_id=r.attrib["Accession"],
+                source_version=r.attrib["Version"], snapshot_ref=snapshot_ref, payload_hash=str(hash(str(r.attrib))),
+                accession=r.attrib["Accession"],
+                # Real at whole-gene scale: a ClassifiedCondition can carry no DB/ID at all
+                # ("See cases", "VHL-related disorder" -- free text a submitter typed, with
+                # no vocabulary mapping). Indexing attrib directly cost 41 of 1,134 VHL
+                # variants their ENTIRE record, including the 4 perfectly mapped RCVs
+                # sitting beside the unmapped one. See _unmapped_disease_id.
+                condition_db=cond.attrib.get("DB", ""), condition_id=cond.attrib.get("ID", ""),
+                condition_name=cond.text,
+                germline_description=germline.find("Description").text if germline is not None else None,
+                germline_review_status=germline.find("ReviewStatus").text if germline is not None else None,
+                somatic_impact_description=somatic.find("Description").text if somatic is not None else None,
+                somatic_impact_tier=somatic.find("Description").text if somatic is not None else None,
+            )
+
+    def parse_scvs(self, raw_xml, snapshot_ref: str = "") -> Iterator[ClinVarSCV]:
+        root = self._root(raw_xml)
+        for s in root.findall(".//ClinicalAssertion"):
+            acc = s.find("ClinVarAccession")
+            cls = s.find("Classification")
+            comment = cls.find("Comment")
+            observed_in = s.find(".//ObservedIn")
+            trait_xrefs = [
+                (x.attrib.get("DB", ""), x.attrib.get("ID", ""))
+                for x in s.findall(".//TraitSet//XRef")
+            ]
+            yield ClinVarSCV(
+                source="ClinVar", record_type="ClinicalAssertion", source_record_id=acc.attrib["Accession"],
+                source_version=acc.attrib["Version"], snapshot_ref=snapshot_ref, payload_hash=str(hash(str(s.attrib))),
+                accession=acc.attrib["Accession"], version=int(acc.attrib["Version"]),
+                variation_id=root.find(".//VariationArchive").attrib["VariationID"],
+                classification=cls.find("GermlineClassification").text if cls.find("GermlineClassification") is not None else "",
+                review_status=cls.find("ReviewStatus").text,
+                comment=comment.text if comment is not None and comment.text else "",
+                contributes_to_aggregate=s.attrib.get("ContributesToAggregateClassification") == "true",
+                submitter_name=acc.attrib.get("SubmitterName", ""), submitter_org_id=acc.attrib.get("OrgID", ""),
+                submitter_org_category=acc.attrib.get("OrganizationCategory", ""),
+                origin=(observed_in.find("Sample/Origin").text if observed_in is not None
+                        and observed_in.find("Sample/Origin") is not None else ""),
+                method_type=(observed_in.find("Method/MethodType").text if observed_in is not None
+                             and observed_in.find("Method/MethodType") is not None else ""),
+                trait_xrefs=trait_xrefs,
+            )
+
+
+def _unmapped_disease_id(name: str | None) -> str:
+    """Disease id for a ClinVar condition with no vocabulary mapping at all.
+
+    Deliberately namespaced under ClinVar rather than faked into MedGen: the identifier
+    is a normalised label, not a curated concept, and merging it with a real MedGen CUI
+    would be an identity claim nothing in the payload supports. `identifier_mapped: False`
+    on the node keeps that visible downstream instead of burying it in the id scheme."""
+    slug = "-".join((name or "unspecified").lower().split())[:80]
+    return f"ClinVar:condition:{slug}"
+
+
+def _clinvar_hierarchy_escape_hatch(
+    vcv: ClinVarVCV, rcvs: list[ClinVarRCV], scvs: list[ClinVarSCV], crosswalk: dict[tuple[str, str], str],
+) -> list[ForgeNode | ForgeEdge]:
+    """The real hierarchy: VCV (variant-wide rollup) -- RELATES_TO[aggregates_into] --
+    RCV (per-condition rollup) -- RELATES_TO[contributes_to] -- SCV (individual submission).
+    Never PART_OF. Also handles: SomaticClinicalImpact as a distinct CLAIM subtype (not
+    merged into the germline classification), CaseObservations, Submitters, and
+    CONTRADICTS between sibling SCVs under the same RCV with differing classifications."""
+    now = datetime.now(timezone.utc)
+    results: list[ForgeNode | ForgeEdge] = []
+
+    variant_id = variant_canonical_id(vcv.canonical_spdi.split(":")[0],
+                                       int(vcv.canonical_spdi.split(":")[1]),
+                                       *vcv.canonical_spdi.split(":")[2:4])
+    gene_id = gene_canonical_id(vcv.hgnc_id) if vcv.hgnc_id else None
+    vcv_prov = [SourceProvenance("ClinVar", vcv.accession, vcv.version, now)]
+
+    vcv_claim_id = f"ClinVar:{vcv.accession}"
+    results.append(ForgeNode(
+        id=vcv_claim_id, role=NodeRole.CLAIM, subtype="AggregateClassification",
+        attributes={"scope": "variant", "review_status": None, "description": None},
+        provenance=vcv_prov, origin=Origin.SOURCE,
+    ))
+    results.append(ForgeEdge(
+        src=vcv_claim_id, predicate=EdgeType.ASSERTS, dst=variant_id, qualifier=None,
+        attributes={}, provenance=vcv_prov, origin=Origin.SOURCE,
+    ))
+    # One in_gene edge per submitted gene, not just the first. Suppressing the others
+    # would silently assert a variant sits in one gene when ClinVar says it sits in two.
+    for _symbol, hgnc in (vcv.submitted_genes or ([("", vcv.hgnc_id)] if vcv.hgnc_id else [])):
+        results.append(ForgeEdge(
+            src=variant_id, predicate=EdgeType.RELATES_TO, dst=gene_canonical_id(hgnc),
+            qualifier="in_gene", attributes={}, provenance=vcv_prov, origin=Origin.SOURCE,
+        ))
+
+    rcv_condition_to_id: dict[str, str] = {}   # normalized MedGen CUI -> RCV claim id
+    for rcv in rcvs:
+        rcv_prov = [SourceProvenance("ClinVar", rcv.accession, vcv.version, now)]
+        rcv_claim_id = f"ClinVar:{rcv.accession}"
+        if rcv.condition_db == "MedGen":
+            disease_id, mapped = disease_canonical_id(rcv.condition_id), True
+        elif rcv.condition_db and rcv.condition_id:
+            disease_id, mapped = f"{rcv.condition_db}:{rcv.condition_id}", True
+        else:
+            disease_id, mapped = _unmapped_disease_id(rcv.condition_name), False
+
+        results.append(ForgeNode(
+            id=disease_id, role=NodeRole.ENTITY, subtype="Disease",
+            attributes={"name": rcv.condition_name, "identifier_mapped": mapped},
+            provenance=rcv_prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeNode(
+            id=rcv_claim_id, role=NodeRole.CLAIM, subtype="AggregateClassification",
+            attributes={"scope": "condition", "description": rcv.germline_description,
+                        "review_status": rcv.germline_review_status},
+            provenance=rcv_prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeEdge(
+            src=rcv_claim_id, predicate=EdgeType.ASSERTS, dst=variant_id, qualifier=None,
+            attributes={}, provenance=rcv_prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeEdge(
+            src=rcv_claim_id, predicate=EdgeType.RELATES_TO, dst=disease_id, qualifier="for_condition",
+            attributes={}, provenance=rcv_prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeEdge(
+            src=rcv_claim_id, predicate=EdgeType.RELATES_TO, dst=vcv_claim_id, qualifier="aggregates_into",
+            attributes={}, provenance=rcv_prov, origin=Origin.SOURCE,
+        ))
+
+        if rcv.somatic_impact_description is not None:
+            impact_id = f"ClinVar:{rcv.accession}:impact"
+            results.append(ForgeNode(
+                id=impact_id, role=NodeRole.CLAIM, subtype="ClinicalImpactClassification",
+                attributes={"tier": rcv.somatic_impact_tier}, provenance=rcv_prov, origin=Origin.SOURCE,
+            ))
+            results.append(ForgeEdge(
+                src=impact_id, predicate=EdgeType.ASSERTS, dst=variant_id, qualifier=None,
+                attributes={}, provenance=rcv_prov, origin=Origin.SOURCE,
+            ))
+
+        if rcv.condition_db == "MedGen":
+            rcv_condition_to_id[rcv.condition_id] = rcv_claim_id
+
+    aggregate_contributors: list[tuple[str, str]] = []  # [(scv_claim_id, classification)] -- flat, NOT
+                                                          # scoped per-RCV. Real finding (see the conflicting
+                                                          # fixture, VCV004558169): ClinVar's own "conflicting
+                                                          # classifications" concept is variant-wide, spanning
+                                                          # potentially different conditions/RCVs per submitter,
+                                                          # not restricted to same-condition disagreement --
+                                                          # confirmed by its own review_status text
+                                                          # ("criteria provided, conflicting classifications")
+                                                          # applying even though the two real SCVs there
+                                                          # contribute to two DIFFERENT RCVs.
+    for scv in scvs:
+        scv_prov = [SourceProvenance("ClinVar", scv.accession, str(scv.version), now)]
+        scv_claim_id = f"ClinVar:{scv.accession}"
+        submitter_id = submitter_canonical_id(scv.submitter_org_id) if scv.submitter_org_id else None
+
+        results.append(ForgeNode(
+            id=scv_claim_id, role=NodeRole.CLAIM, subtype="ClinicalAssertion",
+            attributes={"review_status": scv.review_status, "classification": scv.classification,
+                        "comment": scv.comment},
+            provenance=scv_prov, origin=Origin.SOURCE,
+        ))
+        results.append(ForgeEdge(
+            src=scv_claim_id, predicate=EdgeType.ASSERTS, dst=variant_id, qualifier=None,
+            attributes={}, provenance=scv_prov, origin=Origin.SOURCE,
+        ))
+
+        if submitter_id:
+            results.append(ForgeNode(
+                id=submitter_id, role=NodeRole.ENTITY, subtype="Submitter",
+                attributes={"name": scv.submitter_name, "organization_category": scv.submitter_org_category},
+                provenance=scv_prov, origin=Origin.SOURCE,
+            ))
+            results.append(ForgeEdge(
+                src=scv_claim_id, predicate=EdgeType.RELATES_TO, dst=submitter_id, qualifier="submitted_by",
+                attributes={}, provenance=scv_prov, origin=Origin.SOURCE,
+            ))
+
+        if scv.origin or scv.method_type:
+            obs_id = f"{scv.accession}:observed_in:0"
+            results.append(ForgeNode(
+                id=obs_id, role=NodeRole.OBSERVATION, subtype="CaseObservation",
+                attributes={"origin": scv.origin, "method_type": scv.method_type},
+                provenance=scv_prov, origin=Origin.SOURCE,
+            ))
+            results.append(ForgeEdge(
+                src=obs_id, predicate=EdgeType.OBSERVES, dst=variant_id, qualifier=None,
+                attributes={}, provenance=scv_prov, origin=Origin.SOURCE,
+            ))
+            results.append(ForgeEdge(
+                src=obs_id, predicate=EdgeType.SUPPORTS, dst=scv_claim_id, qualifier="corroborates",
+                attributes={}, provenance=scv_prov, origin=Origin.SOURCE,
+            ))
+
+        # RCV linkage via the crosswalk -- real, confirmed ~64% coverage (see module
+        # docstring). Unmatched SCVs still get everything above; only this one edge
+        # is skipped, quarantining the relationship, not the record.
+        if scv.contributes_to_aggregate:
+            matched_rcv = None
+            for db, xid in scv.trait_xrefs:
+                medgen = crosswalk.get((db, xid))
+                if medgen and medgen in rcv_condition_to_id:
+                    matched_rcv = rcv_condition_to_id[medgen]
+                    break
+            if matched_rcv:
+                results.append(ForgeEdge(
+                    src=scv_claim_id, predicate=EdgeType.RELATES_TO, dst=matched_rcv, qualifier="contributes_to",
+                    attributes={}, provenance=scv_prov, origin=Origin.SOURCE,
+                ))
+            aggregate_contributors.append((scv_claim_id, scv.classification))
+
+    # CONTRADICTS is never literally present in ClinVar's own data -- it's a fact Forge
+    # computes by comparing contributing SCVs' classification values, so it's DERIVED,
+    # not a source-mirrored edge (origin=SOURCE would falsely claim ClinVar handed us this).
+    # Compared by pathogenicity GROUP (see _pathogenicity_group), not raw string equality --
+    # "Pathogenic" vs "Likely pathogenic" is concordant, not a conflict.
+    for i in range(len(aggregate_contributors)):
+        for j in range(i + 1, len(aggregate_contributors)):
+            id_a, cls_a = aggregate_contributors[i]
+            id_b, cls_b = aggregate_contributors[j]
+            group_a, group_b = _pathogenicity_group(cls_a), _pathogenicity_group(cls_b)
+            if group_a is not None and group_b is not None and group_a != group_b:
+                results.append(ForgeEdge(
+                    src=id_a, predicate=EdgeType.CONTRADICTS, dst=id_b, qualifier=None,
+                    attributes={"classification_a": cls_a, "classification_b": cls_b},
+                    provenance=[DerivedProvenance(
+                        derivation_rule="clinvar_contributor_classification_diff", input_node_ids=(id_a, id_b),
+                        input_edge_ids=(), compiler_version="v1", derived_at=now,
+                    )],
+                    origin=Origin.DERIVED,
+                ))
+
+    return results
+
+
+def build_mapping_spec(vcv: ClinVarVCV, rcvs: list[ClinVarRCV], scvs: list[ClinVarSCV],
+                        crosswalk: dict[tuple[str, str], str]) -> MappingSpec:
+    return MappingSpec(
+        source="ClinVar", record_type="VCV", rules=[],
+        escape_hatches=[EscapeHatch(
+            name="clinvar_scv_rcv_linking", version="v1",
+            description="VCV/RCV/SCV hierarchy via RELATES_TO[contributes_to/aggregates_into], "
+                        "SCV<->RCV linked via an ESummary-trait-xref crosswalk, CONTRADICTS between "
+                        "disagreeing sibling SCVs",
+            fn=lambda _: _clinvar_hierarchy_escape_hatch(vcv, rcvs, scvs, crosswalk),
+        )],
+    )
+
+
+# ---------------------------------------------------------------------------
+# Connector registry -- see orchestration/connector_registry.py
+#
+# build_emission does NOT catch UnsupportedClinVarRecord or other parse failures --
+# that stays the caller's job (runner.py's per-variant loop), which turns a raised
+# exception into a record-level QUARANTINE entry without taking the batch down.
+# ---------------------------------------------------------------------------
+
+def _build_query(scope: str, anchor: str, context: dict) -> dict | None:
+    if scope == "gene":
+        return {"term": f"{anchor}[gene]"}
+    if scope == "variant":
+        return {"term": anchor}
+    return None
+
+
+def _build_emission(payload: dict, context: dict) -> Emission:
+    """`payload` is one variant's {"uid", "esummary", "efetch_xml"} -- exactly what
+    ClinVarAdapter.fetch()/fetch_many() yield, one dict per real ClinVar record."""
+    parser = ClinVarParser()
+    xml, esummary = payload["efetch_xml"], payload["esummary"]
+    root = ET.fromstring(xml)          # parsed ONCE, shared by all three parsers
+    vcv = parser.parse_vcv(root)
+    rcvs, scvs = list(parser.parse_rcvs(root)), list(parser.parse_scvs(root))
+    crosswalk = _build_trait_crosswalk(esummary)
+
+    seq, pos, ref, alt = vcv.canonical_spdi.split(":")[:4]
+    variant = build_variant_entity(seq, int(pos), ref, alt, "GRCh38", "ClinVar",
+                                    vcv.accession, vcv.version, context["now"])
+    context["variant_id"] = variant.id   # downstream connectors (gnomAD, VEP) read this back
+    context["dbsnp_rsid"] = vcv.dbsnp_rsid   # downstream: connectors/dbsnp.py's per-variant lookup
+
+    spec = build_mapping_spec(vcv, rcvs, scvs, crosswalk)
+    results = apply_mapping_spec(vcv, spec, primary_node_id=None, source="ClinVar",
+                                  source_record_id=vcv.accession, source_version=vcv.version,
+                                  retrieved_at=context["now"], coverage=context.get("coverage"))
+    emission = Emission()
+    emission.add("ClinVar", [variant] + results)
+    return emission
+
+
+register_connector(ConnectorDescriptor(
+    name="clinvar", group="evidence", cadence="ephemeral",
+    adapter=ClinVarAdapter(), build_query=_build_query, build_emission=_build_emission,
+    feed_label="ClinVar",
+    description="VCV/RCV/SCV hierarchy, ESearch -> ESummary -> EFetch",
+))

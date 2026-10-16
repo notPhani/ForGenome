@@ -1,0 +1,50 @@
+{
+  "name": "forge-actionable-panel-v1",
+  "description": "The gene panel the overnight harvest walks. Curated for this project and informed by the ACMG Secondary Findings v3.2 medically-actionable gene list, plus VHL, which is the gene every earlier Forge run was validated against and is kept first so the harvest's output stays directly comparable to the existing baseline.",
+  "provenance_note": "This file is a CURATED panel, not a verbatim reproduction of any published list, and must not be cited as one. It is a selection of well-characterised, clinically-actionable genes chosen to give the graph broad disease coverage across hereditary cancer, cardiovascular, and metabolic phenotypes. Every symbol is resolved against ClinVar's own ESearch at harvest time: a symbol ClinVar does not recognise returns a family size of 0 and is reported in the run log as unresolved, never silently skipped and never substituted.",
+  "selection_note": "Order within this file is the harvest's tie-break order, not a priority ranking. Per-gene variant budgets are computed by max-min fair allocation against each gene's REAL ClinVar family size (see orchestration/harvest.py::allocate_budget), so small families are covered completely and large ones get an equal share of what is left. Within a gene, variants are taken in ascending ClinVar VariationID -- deterministic and reproducible, and it favours longer-established records, which carry more submissions and deeper review history than the newest ones. This is the deliberate alternative to random sampling.",
+  "groups": [
+    {
+      "id": "forge_baseline",
+      "label": "Forge baseline",
+      "genes": ["VHL"]
+    },
+    {
+      "id": "hereditary_cancer",
+      "label": "Hereditary cancer",
+      "genes": [
+        "BRCA1", "BRCA2", "PALB2", "TP53", "STK11", "PTEN", "CDH1",
+        "MLH1", "MSH2", "MSH6", "PMS2", "APC", "MUTYH", "BMPR1A", "SMAD4",
+        "RB1", "RET", "MEN1", "TSC1", "TSC2", "WT1", "NF2", "BAP1",
+        "SDHB", "SDHC", "SDHD", "SDHAF2", "MAX", "TMEM127", "FH"
+      ]
+    },
+    {
+      "id": "cardiomyopathy",
+      "label": "Cardiomyopathy",
+      "genes": [
+        "MYH7", "MYBPC3", "TNNT2", "TNNI3", "TPM1", "MYL2", "MYL3", "ACTC1",
+        "PRKAG2", "GLA", "LMNA", "FLNC", "TTN", "BAG3", "PLN",
+        "DSP", "PKP2", "DSG2", "DSC2", "TMEM43"
+      ]
+    },
+    {
+      "id": "arrhythmia",
+      "label": "Arrhythmia and channelopathy",
+      "genes": ["KCNQ1", "KCNH2", "SCN5A", "RYR2", "CASQ2", "TRDN", "RYR1", "CACNA1S"]
+    },
+    {
+      "id": "aortopathy",
+      "label": "Aortopathy and connective tissue",
+      "genes": ["FBN1", "TGFBR1", "TGFBR2", "SMAD3", "ACTA2", "MYH11", "COL3A1"]
+    },
+    {
+      "id": "metabolic_other",
+      "label": "Metabolic, lipid and other",
+      "genes": [
+        "LDLR", "APOB", "PCSK9", "OTC", "BTD", "GAA", "ATP7B",
+        "RPE65", "TTR", "HNF1A", "ACVRL1", "ENG", "HFE"
+      ]
+    }
+  ]
+}

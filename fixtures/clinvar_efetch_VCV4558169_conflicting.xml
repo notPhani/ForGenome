@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+                        
+<ClinVarResult-Set><VariationArchive VariationID="4558169" VariationName="NM_000551.4(VHL):c.241C&gt;A (p.Pro81Thr)" VariationType="single nucleotide variant" Accession="VCV004558169" Version="2" RecordType="classified" NumberOfSubmissions="2" NumberOfSubmitters="2" DateLastUpdated="2026-04-13" DateCreated="2026-01-11" MostRecentSubmission="2026-02-23">
+  <RecordStatus>current</RecordStatus>
+  <Species>Homo sapiens</Species>
+  <ClassifiedRecord>
+    <SimpleAllele AlleleID="4667931" VariationID="4558169">
+      <GeneList>
+        <Gene Symbol="VHL" FullName="von Hippel-Lindau tumor suppressor" GeneID="7428" HGNC_ID="HGNC:12687" Source="submitted" RelationshipType="within single gene">
+          <Location>
+            <CytogeneticLocation>3p25.3</CytogeneticLocation>
+            <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" AssemblyStatus="current" Chr="3" Accession="NC_000003.12" start="10141778" stop="10153667" display_start="10141778" display_stop="10153667" Strand="+"/>
+            <SequenceLocation Assembly="GRCh37" AssemblyAccessionVersion="GCF_000001405.25" AssemblyStatus="previous" Chr="3" Accession="NC_000003.11" start="10183318" stop="10195353" display_start="10183318" display_stop="10195353" Strand="+"/>
+          </Location>
+          <OMIM>608537</OMIM>
+          <Haploinsufficiency last_evaluated="2022-05-11" ClinGen="https://www.ncbi.nlm.nih.gov/projects/dbvar/ISCA/isca_gene.cgi?sym=VHL">Sufficient evidence for dosage pathogenicity</Haploinsufficiency>
+          <Triplosensitivity last_evaluated="2022-05-11" ClinGen="https://www.ncbi.nlm.nih.gov/projects/dbvar/ISCA/isca_gene.cgi?sym=VHL">No evidence available</Triplosensitivity>
+          <Property>gene_acmg_incidental_2013</Property>
+          <Property>gene_acmg_incidental_2016</Property>
+          <Property>gene_acmg_incidental_2021</Property>
+          <Property>gene_acmg_incidental_2022</Property>
+        </Gene>
+      </GeneList>
+      <Name>NM_000551.4(VHL):c.241C&gt;A (p.Pro81Thr)</Name>
+      <CanonicalSPDI>NC_000003.12:10142087:C:A</CanonicalSPDI>
+      <VariantType>single nucleotide variant</VariantType>
+      <Location>
+        <CytogeneticLocation>3p25.3</CytogeneticLocation>
+        <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" forDisplay="true" AssemblyStatus="current" Chr="3" Accession="NC_000003.12" start="10142088" stop="10142088" display_start="10142088" display_stop="10142088" variantLength="1" positionVCF="10142088" referenceAlleleVCF="C" alternateAlleleVCF="A"/>
+        <SequenceLocation Assembly="GRCh37" AssemblyAccessionVersion="GCF_000001405.25" AssemblyStatus="previous" Chr="3" Accession="NC_000003.11" start="10183772" stop="10183772" display_start="10183772" display_stop="10183772" variantLength="1" positionVCF="10183772" referenceAlleleVCF="C" alternateAlleleVCF="A"/>
+      </Location>
+      <ProteinChange>P81T</ProteinChange>
+      <HGVSlist>
+        <HGVS Assembly="GRCh37" Type="genomic, top-level">
+          <NucleotideExpression sequenceAccessionVersion="NC_000003.11" sequenceAccession="NC_000003" sequenceVersion="11" change="g.10183772C&gt;A" Assembly="GRCh37">
+            <Expression>NC_000003.11:g.10183772C&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Assembly="GRCh38" Type="genomic, top-level">
+          <NucleotideExpression sequenceAccessionVersion="NC_000003.12" sequenceAccession="NC_000003" sequenceVersion="12" change="g.10142088C&gt;A" Assembly="GRCh38">
+            <Expression>NC_000003.12:g.10142088C&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="NG_008212.3" sequenceAccession="NG_008212" sequenceVersion="3" change="g.5454C&gt;A">
+            <Expression>NG_008212.3:g.5454C&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_000551.4" sequenceAccession="NM_000551" sequenceVersion="4" change="c.241C&gt;A" MANESelect="true">
+            <Expression>NM_000551.4:c.241C&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_000542.1" sequenceAccession="NP_000542" sequenceVersion="1" change="p.Pro81Thr" singleLetterProteinChange="P81T">
+            <Expression>NP_000542.1:p.Pro81Thr</Expression>
+          </ProteinExpression>
+          <MolecularConsequence ID="SO:0001583" Type="missense variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_001354723.2" sequenceAccession="NM_001354723" sequenceVersion="2" change="c.241C&gt;A">
+            <Expression>NM_001354723.2:c.241C&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_001341652.1" sequenceAccession="NP_001341652" sequenceVersion="1" change="p.Pro81Thr" singleLetterProteinChange="P81T">
+            <Expression>NP_001341652.1:p.Pro81Thr</Expression>
+          </ProteinExpression>
+          <MolecularConsequence ID="SO:0001583" Type="missense variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_198156.3" sequenceAccession="NM_198156" sequenceVersion="3" change="c.241C&gt;A">
+            <Expression>NM_198156.3:c.241C&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_937799.1" sequenceAccession="NP_937799" sequenceVersion="1" change="p.Pro81Thr" singleLetterProteinChange="P81T">
+            <Expression>NP_937799.1:p.Pro81Thr</Expression>
+          </ProteinExpression>
+          <MolecularConsequence ID="SO:0001583" Type="missense variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="non-coding">
+          <NucleotideExpression sequenceAccessionVersion="NR_176335.1" sequenceAccession="NR_176335" sequenceVersion="1" change="n.311C&gt;A">
+            <Expression>NR_176335.1:n.311C&gt;A</Expression>
+          </NucleotideExpression>
+          <MolecularConsequence ID="SO:0001619" Type="non-coding transcript variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="LRG_322" sequenceAccession="LRG_322">
+            <Expression>LRG_322:g.5454C&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="LRG_322t1" sequenceAccession="LRG_322t1">
+            <Expression>LRG_322t1:c.241C&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="LRG_322p1" sequenceAccession="LRG_322p1" change="p.Pro81Thr">
+            <Expression>LRG_322p1:p.Pro81Thr</Expression>
+          </ProteinExpression>
+        </HGVS>
+      </HGVSlist>
+    </SimpleAllele>
+    <RCVList>
+      <RCVAccession Title="NM_000551.4(VHL):c.241C&gt;A (p.Pro81Thr) AND Hereditary cancer-predisposing syndrome" Accession="RCV006296029" Version="1">
+        <ClassifiedConditionList TraitSetID="13598">
+          <ClassifiedCondition DB="MedGen" ID="C0027672">Hereditary cancer-predisposing syndrome</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description DateLastEvaluated="2025-11-07" SubmissionCount="1">Uncertain significance</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+      <RCVAccession Title="NM_000551.4(VHL):c.241C&gt;A (p.Pro81Thr) AND multiple conditions" Accession="RCV006569433" Version="1">
+        <ClassifiedConditionList TraitSetID="23764">
+          <ClassifiedCondition DB="MedGen" ID="C1837915">Chuvash polycythemia</ClassifiedCondition>
+          <ClassifiedCondition DB="MedGen" ID="C0019562">Von Hippel-Lindau syndrome</ClassifiedCondition>
+        </ClassifiedConditionList>
+        <RCVClassifications>
+          <GermlineClassification>
+            <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+            <Description DateLastEvaluated="2025-03-21" SubmissionCount="1">Likely pathogenic</Description>
+          </GermlineClassification>
+        </RCVClassifications>
+      </RCVAccession>
+    </RCVList>
+    <Classifications>
+      <GermlineClassification DateLastEvaluated="2025-11-07" NumberOfSubmissions="2" NumberOfSubmitters="2" DateCreated="2026-01-11" MostRecentSubmission="2026-02-23">
+        <ReviewStatus>criteria provided, conflicting classifications</ReviewStatus>
+        <Description>Conflicting classifications of pathogenicity</Description>
+        <Explanation DataSource="ClinVar" Type="public">Likely pathogenic (1); Uncertain significance (1)</Explanation>
+        <Citation Type="general">
+          <ID Source="PubMed">17102082</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">21389259</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">22241717</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">24134185</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">27730413</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">38969834</ID>
+        </Citation>
+        <Comment DataSource="ClinVar" Type="public">Likely pathogenic(1); Uncertain significance(1)</Comment>
+        <DescriptionHistory Dated="2026-02-21">
+          <Description>Uncertain significance</Description>
+        </DescriptionHistory>
+        <ConditionList>
+          <TraitSet ID="23764" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="6116" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Von Hippel-Lindau syndrome</ElementValue>
+                <XRef ID="46659004" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">VHL syndrome</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Von Hippel-Lindau</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">von Hippel–Lindau syndrome</ElementValue>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">VHLS</ElementValue>
+                <XRef Type="MIM" ID="193300" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="public definition">Von Hippel-Lindau syndrome (VHL) is characterized by hemangioblastomas of the brain, spinal cord, and retina; renal cysts and clear cell renal cell carcinoma; pheochromocytoma and paraganglioma; pancreatic cysts and neuroendocrine tumors; endolymphatic sac tumors; and epididymal and broad ligament cystadenomas. Retinal hemangioblastomas may be the initial manifestation of VHL and can cause vision loss. Cerebellar hemangioblastomas may be associated with headache, vomiting, gait disturbances, or ataxia. Spinal hemangioblastomas and related syrinx usually present with pain. Sensory and motor loss may develop with cord compression. Renal cell carcinoma occurs in about 70% of individuals with VHL and is the leading cause of mortality. Pheochromocytomas can be asymptomatic but may cause sustained or episodic hypertension. Pancreatic lesions often remain asymptomatic and rarely cause endocrine or exocrine insufficiency. Endolymphatic sac tumors can cause hearing loss of varying severity, which can be a presenting symptom. Cystadenomas of the epididymis are relatively common. They rarely cause problems, unless bilateral, in which case they may result in infertility.</Attribute>
+                <XRef ID="NBK1463" DB="GeneReviews"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="7855"/>
+                <XRef ID="7855" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="273">loss of function</Attribute>
+                <XRef ID="GTR000314230" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552245" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000528276" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000592450" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552165" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301636</ID>
+                <ID Source="BookShelf">NBK1463</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NSGC, 2004">
+                <ID Source="PubMed">15604628</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2013">
+                <ID Source="PubMed">23788249</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ES, 2014">
+                <ID Source="PubMed">24893135</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="NANETS, 2010">
+                <ID Source="PubMed">20664475</ID>
+                <ID Source="pmc">3419007</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="KCRNC, 2013">
+                <ID Source="PubMed">24319509</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2015">
+                <ID Source="PubMed">25356965</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG, 2016">
+                <ID Source="PubMed">27854360</ID>
+                <ID Source="DOI">10.1038/gim.2016.190</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Renal cell carcinoma genetics">
+                <ID Source="PubMed">26389510</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Von Hippel-Lindau">
+                <URL>https://www.cancer.gov/types/kidney/hp/renal-cell-carcinoma-genetics/vhl-syndrome</URL>
+                <CitationText>PDQ® Cancer Genetics Editorial Board. PDQ Von Hippel-Lindau Disease. Bethesda, MD: National Cancer Institute. Updated &lt;03/08/2021&gt;. Accessed &lt;05/05/2021&gt;.</CitationText>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="NCI PDQ, Cancer Genetics Counseling">
+                <ID Source="PubMed">26389258</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.0, 2021">
+                <ID Source="PubMed">34012068</ID>
+                <ID Source="DOI">10.1038/s41436-021-01172-3</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG SF v3.1, 2022">
+                <ID Source="PubMed">35802134</ID>
+                <ID Source="DOI">10.1016/j.gim.2022.04.006</ID>
+              </Citation>
+              <XRef ID="892" DB="Orphanet"/>
+              <XRef ID="C0019562" DB="MedGen"/>
+              <XRef ID="MONDO:0008667" DB="MONDO"/>
+              <XRef Type="MIM" ID="193300" DB="OMIM"/>
+            </Trait>
+            <Trait ID="1779" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Chuvash polycythemia</ElementValue>
+                <XRef ID="MONDO:0009892" DB="MONDO"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">POLYCYTHEMIA, VHL-DEPENDENT</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Alternate">CP</ElementValue>
+              </Symbol>
+              <Symbol>
+                <ElementValue Type="Alternate">ECYT2</ElementValue>
+                <XRef Type="MIM" ID="263400" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="17176"/>
+                <XRef ID="17176" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <Citation Type="Translational/Evidence-based" Abbrev="EuroGenetest, 2012">
+                <ID Source="PubMed">22274579</ID>
+              </Citation>
+              <XRef ID="238557" DB="Orphanet"/>
+              <XRef ID="C1837915" DB="MedGen"/>
+              <XRef ID="MONDO:0009892" DB="MONDO"/>
+              <XRef Type="MIM" ID="263400" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="13598" Type="Disease" ContributesToAggregateClassification="true">
+            <Trait ID="18746" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">Tumor predisposition</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Hereditary Cancer Syndrome</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Neoplastic Syndromes, Hereditary</ElementValue>
+                <XRef ID="D009386" DB="MeSH"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Hereditary neoplastic syndrome</ElementValue>
+                <XRef ID="MONDO:0015356" DB="MONDO"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+                <XRef ID="699346009" DB="SNOMED CT"/>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="GARD id" integerValue="19921"/>
+                <XRef ID="19921" DB="Office of Rare Diseases"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <Citation Type="general" Abbrev="IARC, 2008">
+                <ID Source="pmc">3075918</ID>
+              </Citation>
+              <Citation Type="general" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <XRef ID="140162" DB="Orphanet"/>
+              <XRef ID="C0027672" DB="MedGen"/>
+              <XRef ID="D009386" DB="MeSH"/>
+              <XRef ID="MONDO:0015356" DB="MONDO"/>
+            </Trait>
+          </TraitSet>
+        </ConditionList>
+      </GermlineClassification>
+    </Classifications>
+    <ClinicalAssertionList>
+      <ClinicalAssertion ID="13640532" SubmissionDate="2025-12-19" ContributesToAggregateClassification="true" DateLastUpdated="2026-01-11" DateCreated="2026-01-11">
+        <ClinVarSubmissionID localKey="a8017161|MedGen:C0027672" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV007155876" DateUpdated="2026-01-11" DateCreated="2026-01-11" Type="SCV" Version="1" SubmitterName="Ambry Genetics" OrgID="61756" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2025-11-07">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Uncertain significance</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">38969834</ID>
+          </Citation>
+          <Comment Type="public">The p.P81T variant (also known as c.241C&gt;A), located in coding exon 1 of the VHL gene, results from a C to A substitution at nucleotide position 241. The proline at codon 81 is replaced by threonine, an amino acid with highly similar properties. This variant was determined to be functionally neutral in one saturation genome editing assay (Buckley M et al. Nat Genet, 2024 Jul;56:1446-1455). This amino acid position is well conserved in available vertebrate species. In addition, the in silico prediction for this alteration is inconclusive. Based on the available evidence, the clinical significance of this variant remains unclear.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Ambry Variant Classification Scheme 2023</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/api/2.0/files/i9igeqse/ambry_variant_classification_scheme_2023.pdf/?format=attachment</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000551.3:c.241C&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C0027672" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>FinalClinVarSubmissionFile_20250915to20251215</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="14250401" SubmissionDate="2026-02-10" ContributesToAggregateClassification="true" DateLastUpdated="2026-02-23" DateCreated="2026-02-23">
+        <ClinVarSubmissionID localKey="32476876|MedGen:C0019562;C1837915" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV007485152" DateUpdated="2026-02-23" DateCreated="2026-02-23" Type="SCV" Version="1" SubmitterName="Labcorp Genetics (formerly Invitae), Labcorp" OrgID="500031" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <Classification DateLastEvaluated="2025-03-21">
+          <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+          <GermlineClassification>Likely pathogenic</GermlineClassification>
+          <Citation>
+            <ID Source="PubMed">17102082</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">21389259</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22241717</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24134185</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27730413</ID>
+          </Citation>
+          <Comment Type="public">This sequence change replaces proline, which is neutral and non-polar, with threonine, which is neutral and polar, at codon 81 of the VHL protein (p.Pro81Thr). This variant is not present in population databases (gnomAD no frequency). This variant has not been reported in the literature in individuals affected with VHL-related conditions. Invitae Evidence Modeling of protein sequence and biophysical properties (such as structural, functional, and spatial information, amino acid conservation, physicochemical variation, residue mobility, and thermodynamic stability) indicates that this missense variant is expected to disrupt VHL protein function with a positive predictive value of 95%. This variant disrupts the p.Pro81 amino acid residue in VHL. Other variant(s) that disrupt this residue have been determined to be pathogenic (PMID: 17102082, 21389259, 22241717, 24134185, 27730413; internal data). This suggests that this residue is clinically significant, and that variants that disrupt this residue are likely to be disease-causing. In summary, the currently available evidence indicates that the variant is pathogenic, but additional data are needed to prove that conclusively. Therefore, this variant has been classified as Likely Pathogenic.</Comment>
+        </Classification>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Invitae Variant Classification Sherloc (09022015)</Attribute>
+          <Citation>
+            <ID Source="PubMed">28492532</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="VHL"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NC_000003.11:g.10183772C&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease" multipleConditionExplanation="Uncertain">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C0019562" Type="CUI"/>
+          </Trait>
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C1837915" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB15998985</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+    </ClinicalAssertionList>
+    <TraitMappingList>
+      <TraitMapping ClinicalAssertionID="13640532" TraitType="Disease" MappingType="XRef" MappingValue="C0027672" MappingRef="MedGen">
+        <MedGen CUI="C0027672" Name="Hereditary cancer-predisposing syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="14250401" TraitType="Disease" MappingType="XRef" MappingValue="C0019562" MappingRef="MedGen">
+        <MedGen CUI="C0019562" Name="Von Hippel-Lindau syndrome"/>
+      </TraitMapping>
+      <TraitMapping ClinicalAssertionID="14250401" TraitType="Disease" MappingType="XRef" MappingValue="C1837915" MappingRef="MedGen">
+        <MedGen CUI="C1837915" Name="Chuvash polycythemia"/>
+      </TraitMapping>
+    </TraitMappingList>
+  </ClassifiedRecord>
+</VariationArchive>
+</ClinVarResult-Set>

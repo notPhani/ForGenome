@@ -1,0 +1,819 @@
+<title>Forgenome Architecture</title>
+<style>
+/* Single committed light theme. Every colour is painted explicitly, so a viewer whose OS
+   is set to dark never gets this document's ink on their ground. Deliberate: the layer
+   colours below are the product's own semantic palette and are tuned against white. */
+:root {
+  --ground: #FFFFFF;
+  --ground-sunk: #F7F8FA;
+  --ink: #16181D;
+  --ink-mid: #4A4F58;
+  --ink-dim: #767C87;
+  --rule: #D4D8DE;
+  --rule-hair: #E7EAEE;
+
+  /* Semantic only -- these three are the graph's layer taxonomy, carried from the
+     Forgenome console. They are categories, not decoration, and appear nowhere that
+     is not naming a layer. */
+  --core: #2F7A6D;
+  --oper: #9A6D1C;
+  --evid: #A8452D;
+  --off:  #6B7280;
+
+  --mono: "Cascadia Mono", Consolas, "SF Mono", Menlo, "DejaVu Sans Mono", monospace;
+  --sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.62;
+  margin: 0;
+  padding: 0 28px 140px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+.prose { max-width: 70ch; }
+p { margin: 0 0 14px; }
+a { color: inherit; }
+
+/* ---------------- spec header ---------------- */
+.spec { border: 1px solid var(--ink); margin: 46px 0 0; }
+.spec-title { padding: 26px 26px 22px; border-bottom: 1px solid var(--ink); }
+.spec-title h1 {
+  font-family: var(--sans);
+  font-size: 40px; font-weight: 700; letter-spacing: -0.025em;
+  line-height: 1.04; margin: 0 0 12px;
+}
+.spec-title .sub {
+  font-size: 16.5px; color: var(--ink-mid); max-width: 64ch; margin: 0; line-height: 1.5;
+}
+.spec-meta {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  font-family: var(--mono); font-size: 11.5px;
+}
+.spec-meta > div { padding: 12px 16px 13px; border-right: 1px solid var(--rule); }
+.spec-meta > div:last-child { border-right: none; }
+.spec-meta .k {
+  color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.09em;
+  font-size: 10px; display: block; margin-bottom: 4px;
+}
+.spec-meta .v { color: var(--ink); }
+@media (max-width: 780px) {
+  .spec-meta { grid-template-columns: repeat(2, 1fr); }
+  .spec-meta > div { border-bottom: 1px solid var(--rule); }
+  .spec-title h1 { font-size: 31px; }
+}
+
+.keybar {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11.5px; color: var(--ink-mid);
+  padding: 14px 2px 0;
+}
+.keybar span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 10px; height: 10px; display: inline-block; }
+.swd { width: 20px; border-top: 2px dashed var(--off); display: inline-block; }
+
+/* ---------------- sections ---------------- */
+section { border-top: 1px solid var(--ink); margin-top: 52px; padding-top: 22px; }
+.clause {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-dim); margin: 0 0 10px;
+}
+h2 {
+  font-family: var(--sans); font-size: 27px; font-weight: 700; letter-spacing: -0.018em;
+  line-height: 1.15; margin: 0 0 16px;
+}
+h2 .num {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; font-weight: 400;
+  text-transform: uppercase; color: var(--ink-dim); display: block; margin-bottom: 9px;
+}
+h3 {
+  font-family: var(--mono); font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  margin: 32px 0 9px; color: var(--ink);
+}
+h3 .num { color: var(--ink-dim); font-weight: 400; margin-right: 9px; }
+.lede { font-size: 16.5px; color: var(--ink-mid); }
+
+code {
+  font-family: var(--mono); font-size: .88em;
+  background: var(--ground-sunk); border: 1px solid var(--rule-hair);
+  padding: 0 4px; color: var(--ink);
+}
+
+/* ---------------- tokens ---------------- */
+.tag {
+  display: inline-block; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.11em; text-transform: uppercase; padding: 2px 6px;
+  border: 1px solid currentColor; vertical-align: 2px; white-space: nowrap;
+}
+.t-core, .built { color: var(--core); }
+.t-oper { color: var(--oper); }
+.t-evid { color: var(--evid); }
+.t-run, .designed { color: var(--off); }
+
+/* ---------------- boxes ---------------- */
+.grid { display: grid; gap: 0; border: 1px solid var(--rule); margin: 24px 0; }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.g2 { grid-template-columns: repeat(2, 1fr); }
+.grid > .card { border-right: 1px solid var(--rule); }
+.grid > .card:last-child { border-right: none; }
+@media (max-width: 860px) {
+  .g2, .g3 { grid-template-columns: 1fr; }
+  .grid > .card { border-right: none; border-bottom: 1px solid var(--rule); }
+  .grid > .card:last-child { border-bottom: none; }
+}
+.card { padding: 18px 20px 20px; }
+.card h4 {
+  margin: 0 0 9px; font-size: 11px; font-family: var(--mono);
+  letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;
+}
+.card p { font-size: 14px; line-height: 1.58; margin-bottom: 0; }
+
+.note { border: 1px solid var(--ink); padding: 0; margin: 26px 0; }
+.note .lbl {
+  display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ground); background: var(--ink);
+  padding: 6px 16px;
+}
+.note p { font-size: 14.5px; margin: 0; padding: 14px 18px 0; }
+.note p:last-child { padding-bottom: 16px; }
+
+/* ---------------- figures ---------------- */
+figure { margin: 30px 0 32px; border: 1px solid var(--rule); }
+figure svg { width: 100%; max-width: 100%; height: auto; display: block; padding: 20px 20px 6px; }
+figcaption {
+  font-size: 13px; color: var(--ink-mid); line-height: 1.55;
+  padding: 14px 20px 16px; border-top: 1px solid var(--rule-hair);
+  background: var(--ground-sunk);
+}
+figcaption b { color: var(--ink); font-weight: 600; }
+
+/* ---------------- stats ---------------- */
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--rule); margin: 26px 0;
+}
+.stats .stat { padding: 18px 18px 20px; border-right: 1px solid var(--rule); }
+.stats .stat:last-child { border-right: none; }
+@media (max-width: 860px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stats .stat:nth-child(2) { border-right: none; }
+  .stats .stat:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+}
+.stat .n {
+  font-family: var(--mono); font-size: 30px; font-weight: 700; line-height: 1;
+  font-variant-numeric: tabular-nums; letter-spacing: -0.03em;
+}
+.stat .l { font-size: 12px; color: var(--ink-mid); margin-top: 9px; line-height: 1.45; }
+
+/* ---------------- tables ---------------- */
+.tablewrap { overflow-x: auto; margin: 24px 0; border: 1px solid var(--rule); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 660px; }
+th, td { text-align: left; padding: 10px 14px; vertical-align: top; }
+thead th {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--ink-dim); font-weight: 400; white-space: nowrap;
+  border-bottom: 1px solid var(--ink); background: var(--ground-sunk);
+}
+tbody tr { border-bottom: 1px solid var(--rule-hair); }
+tbody tr:last-child { border-bottom: none; }
+.yes { color: var(--core); font-weight: 600; }
+.no  { color: var(--evid); font-weight: 600; }
+.part { color: var(--oper); font-weight: 600; }
+
+ul, ol { margin: 0 0 14px; padding-left: 20px; }
+li { margin-bottom: 6px; }
+hr { display: none; }
+</style>
+
+<div class="wrap">
+
+<div class="spec">
+  <div class="spec-title">
+    <h1>Forgenome architecture &amp; data flow</h1>
+    <p class="sub">A knowledge compiler and reasoning runtime for genomic variant
+    interpretation — and why retrieval driven by an investigation's open requirements is a
+    different machine from retrieval driven by similarity.</p>
+  </div>
+  <div class="spec-meta">
+    <div><span class="k">Scope</span><span class="v">Layers 01–06</span></div>
+    <div><span class="k">Implemented</span><span class="v">01–03 · 263 tests</span></div>
+    <div><span class="k">Specified only</span><span class="v">04–06</span></div>
+    <div><span class="k">Basis</span><span class="v">measured, 1 h panel run</span></div>
+  </div>
+</div>
+
+<div class="keybar">
+  <span><i class="sw" style="background:var(--core)"></i> Core Biology</span>
+  <span><i class="sw" style="background:var(--oper)"></i> Operational rules</span>
+  <span><i class="sw" style="background:var(--evid)"></i> Evidence</span>
+  <span><i class="swd"></i> designed, not built</span>
+</div>
+
+<!-- ============================================================ 1 -->
+<section id="problem">
+  <h2><span class="num">01</span>The problem the architecture answers</h2>
+  <div class="prose">
+    <p class="lede">Variant interpretation is not short of data or of models. It is short of
+    a layer that can hold nine sources' worth of disagreeing records as one coherent,
+    auditable world — and then decide what to look at next.</p>
+
+    <p>Three assumptions in the standard stack turn out to be false against real payloads,
+    and each one produced a specific defect we had to fix:</p>
+  </div>
+
+  <div class="grid g3" style="margin-top:24px">
+    <div class="card">
+      <h4 class="t-core">Same reality, different records</h4>
+      <p>gnomAD calls a base <code>10149822</code>; ClinVar's canonical SPDI calls the same
+      base <code>10149821</code>. One is 1-based. Nothing in either payload says so.</p>
+    </div>
+    <div class="card">
+      <h4 class="t-oper">Relevance ≠ sufficiency</h4>
+      <p>“Does PM2 apply?” is not a document-similarity question. It depends on which clause
+      of the rule is live, which depends on what the evidence turned out to be.</p>
+    </div>
+    <div class="card">
+      <h4 class="t-evid">Domain logic in the weights</h4>
+      <p>Push identity, provenance and rule state into the model and every knowledge update
+      becomes a retraining problem, and every model swap a migration.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="lbl">What the data actually did to us</span>
+    <p>Comparing ClinVar classifications as strings produced <b>47 false <code>CONTRADICTS</code>
+    edges</b> on a variant ClinVar itself labels “no conflicts” — because <i>Pathogenic</i> and
+    <i>Likely pathogenic</i> are the same verdict under ClinVar's own concordance model.
+    Linking submissions to conditions from <code>EFetch</code> alone resolved <b>3 of 22</b>;
+    an ESummary trait-xref crosswalk took it to 14. And identity resolution originally ran
+    <i>before</i> verification, so a rejected batch still polluted the persistent index.</p>
+    <p>None of these are visible from a schema. They are only visible from the payloads.</p>
+  </div>
+</section>
+
+<!-- ============================================================ 2 -->
+<section id="flow">
+  <h2><span class="num">02</span>The whole flow, end to end</h2>
+  <div class="prose">
+    <p>Six layers. The first three exist and are exercised by 263 tests and a live panel
+    harvest; the last three are specified and deliberately unbuilt. The boundary is drawn
+    where it actually falls, not where it would be flattering.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 980 700" role="img" aria-label="Six-layer Forgenome data flow: sources feed connectors, which pass through a staging compiler with identity resolution and verification into a committed knowledge graph; the graph then feeds an attention layer, a context builder and finally a swappable model, the last three of which are designed but not built.">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+        <marker id="arDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#6A7280"/>
+        </marker>
+      </defs>
+
+      <!-- LAYER 1 : SOURCES -->
+      <text x="0" y="16" font-family="monospace" font-size="11" fill="currentColor" opacity=".55" letter-spacing="1.4">01 · SOURCES</text>
+      <g font-family="sans-serif" font-size="11.5" text-anchor="middle">
+        <rect x="0"   y="28" width="128" height="34" rx="5" fill="none" stroke="#3F8A7D" stroke-width="1.4"/>
+        <text x="64"  y="49" fill="#3F8A7D">Ensembl</text>
+        <rect x="138" y="28" width="128" height="34" rx="5" fill="none" stroke="#3F8A7D" stroke-width="1.4"/>
+        <text x="202" y="49" fill="#3F8A7D">UniProt</text>
+        <rect x="276" y="28" width="128" height="34" rx="5" fill="none" stroke="#B3812F" stroke-width="1.4"/>
+        <text x="340" y="49" fill="#B3812F">ClinGen VCEP</text>
+        <rect x="414" y="28" width="128" height="34" rx="5" fill="none" stroke="#B4553D" stroke-width="1.4"/>
+        <text x="478" y="49" fill="#B4553D">ClinVar</text>
+        <rect x="552" y="28" width="128" height="34" rx="5" fill="none" stroke="#B4553D" stroke-width="1.4"/>
+        <text x="616" y="49" fill="#B4553D">gnomAD</text>
+        <rect x="690" y="28" width="128" height="34" rx="5" fill="none" stroke="#B4553D" stroke-width="1.4"/>
+        <text x="754" y="49" fill="#B4553D">dbSNP · VEP</text>
+        <rect x="828" y="28" width="152" height="34" rx="5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" opacity=".45"/>
+        <text x="904" y="49" fill="currentColor" opacity=".6">+ 6 declared stubs</text>
+      </g>
+
+      <line x1="490" y1="62" x2="490" y2="92" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+      <!-- LAYER 2 : COMPILER -->
+      <text x="0" y="86" font-family="monospace" font-size="11" fill="currentColor" opacity=".55" letter-spacing="1.4">02 · COMPILER</text>
+      <rect x="0" y="96" width="980" height="150" rx="8" fill="none" stroke="currentColor" stroke-width="1" opacity=".28"/>
+      <g font-family="sans-serif" font-size="11" text-anchor="middle" fill="currentColor">
+        <rect x="18"  y="120" width="120" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <text x="78" y="140">Adapter</text><text x="78" y="155" opacity=".6" font-size="10">fetch()</text>
+
+        <rect x="164" y="120" width="120" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <text x="224" y="140">SourceObject</text><text x="224" y="155" opacity=".6" font-size="10">typed, per source</text>
+
+        <rect x="310" y="120" width="120" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <text x="370" y="140">Mapping</text><text x="370" y="155" opacity=".6" font-size="10">rules + hatches</text>
+
+        <rect x="456" y="120" width="120" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <text x="516" y="140">Stage</text><text x="516" y="155" opacity=".6" font-size="10">phase A</text>
+
+        <rect x="602" y="120" width="120" height="46" rx="5" fill="none" stroke="#B4553D" stroke-width="1.8"/>
+        <text x="662" y="140" fill="#B4553D">Verify</text><text x="662" y="155" fill="#B4553D" opacity=".75" font-size="10">9 checks</text>
+
+        <rect x="748" y="120" width="106" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <text x="801" y="140">Identity</text><text x="801" y="155" opacity=".6" font-size="10">SQLite index</text>
+
+        <rect x="880" y="120" width="86" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+        <text x="923" y="140">Commit</text><text x="923" y="155" opacity=".6" font-size="10">atomic</text>
+      </g>
+      <g stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)">
+        <line x1="138" y1="143" x2="160" y2="143"/>
+        <line x1="284" y1="143" x2="306" y2="143"/>
+        <line x1="430" y1="143" x2="452" y2="143"/>
+        <line x1="576" y1="143" x2="598" y2="143"/>
+        <line x1="722" y1="143" x2="744" y2="143"/>
+        <line x1="854" y1="143" x2="876" y2="143"/>
+      </g>
+      <!-- reject path -->
+      <path d="M662,166 L662,206 L300,206" fill="none" stroke="#B4553D" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#ar)" color="#B4553D"/>
+      <text x="310" y="202" font-family="monospace" font-size="10.5" fill="#B4553D">REJECT — nothing commits, index untouched</text>
+
+      <line x1="490" y1="246" x2="490" y2="276" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar)"/>
+
+      <!-- LAYER 3 : GRAPH -->
+      <text x="0" y="270" font-family="monospace" font-size="11" fill="currentColor" opacity=".55" letter-spacing="1.4">03 · KNOWLEDGE GRAPH</text>
+      <rect x="0" y="280" width="980" height="96" rx="8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <g font-family="sans-serif" font-size="12" text-anchor="middle">
+        <rect x="24"  y="302" width="216" height="52" rx="5" fill="none" stroke="#3F8A7D" stroke-width="1.4"/>
+        <text x="132" y="323" fill="#3F8A7D">Core Biology</text>
+        <text x="132" y="340" fill="#3F8A7D" opacity=".7" font-size="10.5">Gene · Transcript · Exon · Protein · Variant</text>
+
+        <rect x="258" y="302" width="216" height="52" rx="5" fill="none" stroke="#B3812F" stroke-width="1.4"/>
+        <text x="366" y="323" fill="#B3812F">Operational</text>
+        <text x="366" y="340" fill="#B3812F" opacity=".7" font-size="10.5">ACMGCriterion · Requirement</text>
+
+        <rect x="492" y="302" width="216" height="52" rx="5" fill="none" stroke="#B4553D" stroke-width="1.4"/>
+        <text x="600" y="323" fill="#B4553D">Evidence</text>
+        <text x="600" y="340" fill="#B4553D" opacity=".7" font-size="10.5">Assertions · Frequencies · Predictions</text>
+
+        <rect x="726" y="302" width="230" height="52" rx="5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+        <text x="841" y="323" fill="currentColor" opacity=".75">Provenance</text>
+        <text x="841" y="340" fill="currentColor" opacity=".55" font-size="10.5">SourceManifest · edge ledger</text>
+      </g>
+
+      <line x1="490" y1="376" x2="490" y2="410" stroke="#6A7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arDim)"/>
+
+      <!-- LAYER 4 : ATTENTION (unbuilt) -->
+      <text x="0" y="404" font-family="monospace" font-size="11" fill="#6A7280" letter-spacing="1.4">04 · ATTENTION — DESIGNED</text>
+      <rect x="0" y="414" width="980" height="96" rx="8" fill="none" stroke="#6A7280" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <g font-family="sans-serif" font-size="11.5" text-anchor="middle" fill="#6A7280">
+        <rect x="40"  y="436" width="180" height="52" rx="5" fill="none" stroke="#6A7280" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="130" y="457">RequirementState</text><text x="130" y="474" font-size="10.5" opacity=".8">what is still open</text>
+
+        <rect x="270" y="436" width="180" height="52" rx="5" fill="none" stroke="#6A7280" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="360" y="457">Candidate transitions</text><text x="360" y="474" font-size="10.5" opacity=".8">legal next hops</text>
+
+        <rect x="500" y="436" width="180" height="52" rx="5" fill="none" stroke="#6A7280" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="590" y="457">MHLA scoring</text><text x="590" y="474" font-size="10.5" opacity=".8">transition utility</text>
+
+        <rect x="730" y="436" width="210" height="52" rx="5" fill="none" stroke="#6A7280" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="835" y="457">Subgraph expansion</text><text x="835" y="474" font-size="10.5" opacity=".8">smallest sufficient</text>
+      </g>
+      <g stroke="#6A7280" stroke-width="1.1" marker-end="url(#arDim)">
+        <line x1="220" y1="462" x2="266" y2="462"/>
+        <line x1="450" y1="462" x2="496" y2="462"/>
+        <line x1="680" y1="462" x2="726" y2="462"/>
+      </g>
+      <path d="M835,488 L835,500 L130,500 L130,488" fill="none" stroke="#6A7280" stroke-width="1.1" stroke-dasharray="4 3" marker-end="url(#arDim)"/>
+      <text x="482" y="497" font-family="monospace" font-size="10" fill="#6A7280" text-anchor="middle">evaluate → update state → loop</text>
+
+      <line x1="490" y1="510" x2="490" y2="544" stroke="#6A7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arDim)"/>
+
+      <!-- LAYER 5 : CONTEXT (unbuilt) -->
+      <text x="0" y="538" font-family="monospace" font-size="11" fill="#6A7280" letter-spacing="1.4">05 · CONTEXT BUILDER — DESIGNED</text>
+      <rect x="0" y="548" width="980" height="62" rx="8" fill="none" stroke="#6A7280" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <g font-family="sans-serif" font-size="11" text-anchor="middle" fill="#6A7280">
+        <text x="98"  y="575">evidence</text>
+        <text x="238" y="575">active requirements</text>
+        <text x="392" y="575">evaluation state</text>
+        <text x="530" y="575">provenance</text>
+        <text x="670" y="575">contradictions</text>
+        <text x="838" y="575">what is still unresolved</text>
+        <text x="490" y="597" font-size="10.5" opacity=".8">a protocol, not a dump of the activated subgraph</text>
+      </g>
+
+      <line x1="490" y1="610" x2="490" y2="644" stroke="#6A7280" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arDim)"/>
+
+      <!-- LAYER 6 : MODEL -->
+      <text x="0" y="638" font-family="monospace" font-size="11" fill="#6A7280" letter-spacing="1.4">06 · MODEL — BYOM</text>
+      <rect x="0" y="648" width="980" height="46" rx="8" fill="none" stroke="#6A7280" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <text x="490" y="676" font-family="sans-serif" font-size="12.5" text-anchor="middle" fill="#6A7280">GPT · Qwen · Llama · a local or institutional model — synthesis and explanation only</text>
+    </svg>
+    <figcaption><b>The model is last, and it is the only swappable part that owns no domain
+    logic.</b> Identity, provenance, rule state and retrieval all live below it. The red path
+    is the one most pipelines lack: verification sits between staging and commit, so a batch
+    that fails writes nothing — not the graph, not the identity index. In the one-hour panel
+    harvest, 25 of 2,182 batches took that path.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ 3 -->
+<section id="compiler">
+  <h2><span class="num">03</span>Layer 2 — the compiler <span class="tag built" style="font-size:10px">BUILT</span></h2>
+  <div class="prose">
+    <p class="lede">This is the layer that earns the word “compiler” rather than “ETL”. It
+    has a staging phase, a resolution phase, a verification gate, and transactional commit.</p>
+
+    <h3><span class="num">3.1</span>Connectors are a registry, not a switch statement</h3>
+    <p>A source joins the system by calling <code>register_connector()</code> once at import
+    time with a <code>ConnectorDescriptor</code>. Nothing in the runner, the planner or the
+    CLI names a connector. Adding one touches its own module and one import line.</p>
+    <p>The descriptor carries: an adapter (<code>fetch/capabilities/manifest</code>), a
+    <code>build_query(scope, anchor)</code> that returns <code>None</code> when the connector
+    has nothing to say about that scope, a <code>build_emission(raw, ctx)</code> that produces
+    tagged nodes and edges, and <code>requires</code> — the other connectors it hard-depends
+    on. gnomAD declares <code>requires=("clinvar",)</code> because a frequency needs a variant
+    identity to attach to; that single field is what makes the load plan a DAG instead of a
+    sequence.</p>
+
+    <h3><span class="num">3.2</span>Source truth, Forge mapping, runtime interpretation</h3>
+    <p>Three boundaries that must not blur, enforced by keeping them in different modules:</p>
+    <ul>
+      <li><b>Source truth</b> — what the payload literally says, parsed into a typed
+      <code>SourceObject</code> per source. No Forge semantics here at all.</li>
+      <li><b>Forge mapping</b> — how that becomes nodes and edges. Simple fields use
+      declarative <code>MappingRule</code>s; genuinely branching structure uses a named
+      <code>EscapeHatch</code>, because ClinVar's VCV/RCV/SCV hierarchy is not expressible
+      as flat field mapping and pretending otherwise produces a worse graph.</li>
+      <li><b>Runtime interpretation</b> — what a rule concludes from it. dbNSFP emits
+      <i>scores</i>; it must never emit “PP3 satisfied”. That inference belongs to the
+      Operational layer, which can be versioned and audited separately.</li>
+    </ul>
+
+    <h3><span class="num">3.3</span>Identity is resolved centrally, once</h3>
+    <p>No connector canonicalises its own identifiers. Every candidate node goes through one
+    resolver against a persistent SQLite index, which returns <code>MERGED</code>,
+    <code>REPRESENTS</code> (weak cross-source equivalence, never a silent merge), or
+    <code>UNRESOLVED</code>. The 1-based/0-based coordinate fix lives in exactly one function.
+    The one-hour harvest recorded <b>8,287 cross-batch merges</b> — the same Disease, Gene or
+    Submitter arriving from different variants and landing on one node.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 900 300" role="img" aria-label="Two-phase commit: staging, then verification, and only after verification passes does identity persistence and commit occur. A failed verification discards everything including the identity index write.">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+        <marker id="ar2r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#B4553D"/>
+        </marker>
+      </defs>
+
+      <text x="0" y="14" font-family="monospace" font-size="11" fill="currentColor" opacity=".55" letter-spacing="1.2">THE ORDER THAT MATTERS</text>
+
+      <g font-family="sans-serif" font-size="12" text-anchor="middle" fill="currentColor">
+        <rect x="0"   y="40" width="150" height="56" rx="6" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <text x="75"  y="65">Phase A · stage</text>
+        <text x="75"  y="83" font-size="10.5" opacity=".6">nodes + edges, unresolved</text>
+
+        <rect x="192" y="40" width="150" height="56" rx="6" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <text x="267" y="65">dedupe</text>
+        <text x="267" y="83" font-size="10.5" opacity=".6">within the batch</text>
+
+        <rect x="384" y="40" width="150" height="56" rx="6" fill="none" stroke="#B4553D" stroke-width="2"/>
+        <text x="459" y="65" fill="#B4553D">verify</text>
+        <text x="459" y="83" font-size="10.5" fill="#B4553D" opacity=".8">9 checks</text>
+
+        <rect x="576" y="40" width="150" height="56" rx="6" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <text x="651" y="65">resolve identity</text>
+        <text x="651" y="83" font-size="10.5" opacity=".6">writes SQLite index</text>
+
+        <rect x="768" y="40" width="132" height="56" rx="6" fill="none" stroke="#3F8A7D" stroke-width="1.8"/>
+        <text x="834" y="65" fill="#3F8A7D">commit</text>
+        <text x="834" y="83" font-size="10.5" fill="#3F8A7D" opacity=".8">atomic</text>
+      </g>
+      <g stroke="currentColor" stroke-width="1.3" marker-end="url(#ar2)">
+        <line x1="150" y1="68" x2="188" y2="68"/>
+        <line x1="342" y1="68" x2="380" y2="68"/>
+        <line x1="534" y1="68" x2="572" y2="68"/>
+        <line x1="726" y1="68" x2="764" y2="68"/>
+      </g>
+
+      <path d="M459,96 L459,150 L75,150 L75,120" fill="none" stroke="#B4553D" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#ar2r)"/>
+      <text x="470" y="146" font-family="monospace" font-size="11" fill="#B4553D">fails → discard batch, index never written</text>
+
+      <rect x="0" y="196" width="900" height="86" rx="6" fill="none" stroke="currentColor" stroke-width="1" opacity=".3"/>
+      <text x="20" y="222" font-family="monospace" font-size="11" fill="#B4553D" letter-spacing="1.1">THE BUG THIS ORDER FIXES</text>
+      <text x="20" y="246" font-family="sans-serif" font-size="12.5" fill="currentColor">Identity resolution originally ran <tspan font-style="italic">before</tspan> verification. A batch that failed its checks was discarded from the graph —</text>
+      <text x="20" y="266" font-family="sans-serif" font-size="12.5" fill="currentColor">but its identity entries were already committed to the persistent index, permanently, from a commit that never happened.</text>
+    </svg>
+    <figcaption><b>Transactional ingestion means the identity index is inside the
+    transaction.</b> Swapping two stages is the entire fix, and it is only findable by running
+    real batches that actually fail.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ 4 -->
+<section id="graph">
+  <h2><span class="num">04</span>Layer 3 — the graph <span class="tag built" style="font-size:10px">BUILT</span></h2>
+  <div class="prose">
+    <p>It is a knowledge graph. That is not the novel part, and claiming otherwise would be
+    the fastest way to lose a technical audience. What matters is that the vocabulary is
+    small and frozen, so that meaning lives in the ontology rather than in each connector's
+    private conventions.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Axis</th><th>Values</th><th>What it decides</th></tr></thead>
+      <tbody>
+        <tr><td><b>Role</b></td><td><code>ENTITY</code> · <code>OBSERVATION</code> · <code>CLAIM</code> · <code>RULE</code> · <code>INVESTIGATION</code></td><td>What kind of thing it is. <code>INVESTIGATION</code> is runtime-only and no connector may emit one.</td></tr>
+        <tr><td><b>Layer</b></td><td><span class="t-core">Core Biology</span> · <span class="t-oper">Operational</span> · <span class="t-evid">Evidence</span> · Administrative</td><td>Where it lives and how often it changes. Derived from (role, subtype) — never set by a connector.</td></tr>
+        <tr><td><b>Origin</b></td><td><code>SOURCE</code> · <code>DERIVED</code> · <code>RUNTIME</code></td><td>Whether a source said it, Forge computed it, or an investigation created it. <code>CONTRADICTS</code> is <code>DERIVED</code> — ClinVar never hands us that edge.</td></tr>
+        <tr><td><b>Storage scope</b></td><td><code>PERSISTENT</code> · <code>RUNTIME_ONLY</code></td><td>Enforced at construction: runtime state cannot leak into the persistent graph.</td></tr>
+        <tr><td><b>Predicates</b></td><td>11, frozen, qualifier-carried</td><td><code>PART_OF</code> means true containment only. The ClinVar rollup hierarchy uses qualified <code>RELATES_TO</code>, because it is aggregation, not part-whole.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <span class="lbl">Two distinctions the vocabulary is protecting</span>
+    <p><b>A submitter is not a source.</b> <code>Claim —RELATES_TO[submitted_by]→ Submitter</code>,
+    never <code>SOURCED_FROM</code>. <code>SOURCED_FROM</code> points at a
+    <code>SourceManifest</code> — the actual dataset and version a claim was compiled from.</p>
+    <p><b>Support is qualified.</b> <code>SUPPORTS[corroborates]</code> between an observation and
+    a claim is a different assertion from <code>SUPPORTS[satisfies_requirement]</code> between an
+    observation and a rule. One generic predicate for both would make the graph unqueryable for
+    exactly the question the runtime needs to ask.</p>
+  </div>
+</section>
+
+<!-- ============================================================ 5 -->
+<section id="loop">
+  <h2><span class="num">05</span>Layers 4–5 — attention and context <span class="tag designed" style="font-size:10px">DESIGNED</span></h2>
+  <div class="prose">
+    <p class="lede">This is the part that is specified and not implemented. Stating that
+    plainly is worth more than a demo that implies otherwise.</p>
+    <p>The design objective is precise: <b>not</b> “which nodes are relevant to this query”,
+    but “given what this investigation still has open, which graph transition is worth
+    taking next”. Those are different functions with different inputs.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 900 340" role="img" aria-label="The investigation loop: an open requirement determines which transitions are candidates, attention scores them, evidence is acquired and evaluated, and the resulting state changes which requirement is open next.">
+      <defs>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#6A7280"/>
+        </marker>
+      </defs>
+      <g font-family="sans-serif" font-size="12" text-anchor="middle" fill="#6A7280">
+        <rect x="330" y="14"  width="240" height="52" rx="26" fill="none" stroke="#B3812F" stroke-width="1.6"/>
+        <text x="450" y="36" fill="#B3812F">Open requirement</text>
+        <text x="450" y="54" fill="#B3812F" font-size="10.5" opacity=".8">“PM2 — not evaluated”</text>
+
+        <rect x="672" y="112" width="212" height="52" rx="6" fill="none" stroke="#6A7280" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="778" y="134">Candidate transitions</text>
+        <text x="778" y="152" font-size="10.5" opacity=".8">legal hops from here</text>
+
+        <rect x="672" y="212" width="212" height="52" rx="6" fill="none" stroke="#6A7280" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="778" y="234">Score by utility</text>
+        <text x="778" y="252" font-size="10.5" opacity=".8">conditioned on state</text>
+
+        <rect x="330" y="276" width="240" height="52" rx="6" fill="none" stroke="#B4553D" stroke-width="1.6"/>
+        <text x="450" y="298" fill="#B4553D">Acquire + evaluate</text>
+        <text x="450" y="316" fill="#B4553D" font-size="10.5" opacity=".8">gnomAD faf95_popmax → null</text>
+
+        <rect x="16"  y="212" width="212" height="52" rx="6" fill="none" stroke="#6A7280" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="122" y="234">RequirementState</text>
+        <text x="122" y="252" font-size="10.5" opacity=".8">satisfied via fallback</text>
+
+        <rect x="16"  y="112" width="212" height="52" rx="6" fill="none" stroke="#6A7280" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="122" y="134">Next open requirement</text>
+        <text x="122" y="152" font-size="10.5" opacity=".8">or: sufficient, stop</text>
+      </g>
+      <g stroke="#6A7280" stroke-width="1.4" fill="none" marker-end="url(#ar3)">
+        <path d="M570,44 L778,44 L778,108"/>
+        <path d="M778,164 L778,208"/>
+        <path d="M778,264 L778,302 L574,302"/>
+        <path d="M330,302 L122,302 L122,268"/>
+        <path d="M122,212 L122,168"/>
+        <path d="M122,112 L122,44 L326,44"/>
+      </g>
+      <text x="450" y="196" font-family="monospace" font-size="11" fill="#6A7280" text-anchor="middle" opacity=".85">the loop terminates on sufficiency, not on top-k</text>
+    </svg>
+    <figcaption><b>What is retrieved depends on what is unresolved, and what is unresolved
+    changes as evidence arrives.</b> That circularity is why a single similarity ranking
+    computed once at query time cannot stand in for it.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h3><span class="num">5.1</span>Why this is not a GNN</h3>
+    <p>A GNN learns a node representation from local structure. That is a genuinely useful
+    thing and may end up inside this layer. But it answers a different question: a GNN
+    embedding of a <code>PopulationFrequency</code> node is the same embedding whether the
+    live question is “is this variant rare?” or “could it disrupt the protein?”. The
+    retrieval objective here is <i>transition utility conditioned on investigation state</i>,
+    which has the state on the input side.</p>
+    <p>There is also a blunt practical reason it is not built yet: there is no corpus of
+    labelled investigation traces to train on. A rule-and-state formulation is what you build
+    when you have the rules and not the labels.</p>
+  </div>
+</section>
+
+<!-- ============================================================ 6 -->
+<section id="pm2">
+  <h2><span class="num">06</span>One question, two architectures</h2>
+  <div class="prose">
+    <p class="lede">The clearest way to see the difference is to trace a single real question
+    through both. This example is not hypothetical — it is the end-to-end test that gates
+    the build, and it forced a change to the evaluator.</p>
+    <p><b>“Does ACMG criterion PM2 apply to VHL c.499C&gt;T?”</b> PM2 asks whether a variant is
+    absent or at extremely low frequency in population databases.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 960 430" role="img" aria-label="Side-by-side trace of the PM2 question. The retrieval-first path reads a plausible frequency field and answers confidently but by the wrong route. The Forgenome path resolves the rule's actual metric, finds it null, applies the specification's own fallback clause, and records which clause fired.">
+      <defs>
+        <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+
+      <line x1="480" y1="34" x2="480" y2="420" stroke="currentColor" stroke-width="1" opacity=".2"/>
+
+      <text x="0"   y="16" font-family="monospace" font-size="11.5" fill="currentColor" opacity=".6" letter-spacing="1.3">RETRIEVAL-FIRST</text>
+      <text x="516" y="16" font-family="monospace" font-size="11.5" fill="#3F8A7D" letter-spacing="1.3">FORGENOME</text>
+
+      <!-- LEFT -->
+      <g font-family="sans-serif" font-size="12" fill="currentColor">
+        <rect x="0" y="34" width="440" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".75"/>
+        <text x="16" y="53">embed the question, rank the corpus</text>
+        <text x="16" y="70" font-size="10.5" opacity=".6">ClinGen PM2 page + gnomAD variant page score highest</text>
+
+        <rect x="0" y="96" width="440" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".75"/>
+        <text x="16" y="115">model reads “allele frequency”</text>
+        <text x="16" y="132" font-size="10.5" opacity=".6">finds af = 0.0000066 on the retrieved page</text>
+
+        <rect x="0" y="158" width="440" height="46" rx="5" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".75"/>
+        <text x="16" y="177">that is extremely low → PM2 applies</text>
+        <text x="16" y="194" font-size="10.5" opacity=".6">fluent, confident, no dangling references</text>
+
+        <rect x="0" y="222" width="440" height="80" rx="5" fill="none" stroke="#B4553D" stroke-width="1.6"/>
+        <text x="16" y="245" fill="#B4553D" font-size="12.5">Right answer. Wrong route.</text>
+        <text x="16" y="266" font-size="11" fill="#B4553D" opacity=".9">PM2's metric is not af — it is grouped filtering AF.</text>
+        <text x="16" y="284" font-size="11" fill="#B4553D" opacity=".9">Nothing in the output distinguishes the two.</text>
+      </g>
+
+      <!-- RIGHT -->
+      <g font-family="sans-serif" font-size="12" fill="currentColor">
+        <rect x="516" y="34" width="444" height="46" rx="5" fill="none" stroke="#B3812F" stroke-width="1.3"/>
+        <text x="532" y="53" fill="#B3812F">resolve the requirement from the graph</text>
+        <text x="532" y="70" font-size="10.5" fill="#B3812F" opacity=".8">PM2 → Requirement → metric: faf95_popmax</text>
+
+        <rect x="516" y="96" width="444" height="46" rx="5" fill="none" stroke="#B4553D" stroke-width="1.3"/>
+        <text x="532" y="115" fill="#B4553D">fetch that exact field</text>
+        <text x="532" y="132" font-size="10.5" fill="#B4553D" opacity=".8">gnomAD faf95_popmax = null — the variant is a singleton</text>
+
+        <rect x="516" y="158" width="444" height="46" rx="5" fill="none" stroke="#B3812F" stroke-width="1.3"/>
+        <text x="532" y="177" fill="#B3812F">the specification has a clause for that</text>
+        <text x="532" y="194" font-size="10.5" fill="#B3812F" opacity=".8">fallback_if_unavailable → evaluate on the alternative</text>
+
+        <rect x="516" y="222" width="444" height="80" rx="5" fill="none" stroke="#3F8A7D" stroke-width="1.8"/>
+        <text x="532" y="245" fill="#3F8A7D" font-size="12.5">PM2 — Supporting, via the fallback clause</text>
+        <text x="532" y="266" font-size="11" fill="#3F8A7D" opacity=".9">RequirementState records which clause fired, on what</text>
+        <text x="532" y="284" font-size="11" fill="#3F8A7D" opacity=".9">observation, from which source record and version.</text>
+      </g>
+
+      <rect x="0" y="332" width="960" height="88" rx="6" fill="none" stroke="currentColor" stroke-width="1" opacity=".3"/>
+      <text x="20" y="358" font-family="monospace" font-size="11" fill="currentColor" opacity=".6" letter-spacing="1.2">THE DIFFERENCE THAT MATTERS</text>
+      <text x="20" y="382" font-family="sans-serif" font-size="13" fill="currentColor">Both say “PM2 applies”. Only one can tell you <tspan font-style="italic">why</tspan>, on which field, under which clause of which version of the rule —</text>
+      <text x="20" y="404" font-family="sans-serif" font-size="13" fill="currentColor">and only one would have said “unresolved” instead of guessing, had the fallback clause not existed.</text>
+    </svg>
+    <figcaption><b>The failure mode of retrieval-first is not hallucination.</b> It is a
+    correct-looking answer reached by a route nobody can inspect — which in a clinical setting
+    is the more dangerous of the two.</figcaption>
+  </figure>
+</section>
+
+<!-- ============================================================ 7 -->
+<section id="compare">
+  <h2><span class="num">07</span>Against the alternatives</h2>
+  <div class="prose">
+    <p>Honest comparison, including where the alternatives are genuinely better. Forgenome is
+    slower to stand up and heavier to maintain; it buys auditability and rule state.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Classic RAG</th>
+          <th>GraphRAG</th>
+          <th>KG + query</th>
+          <th>GNN</th>
+          <th>Fine-tuned LLM</th>
+          <th>Forgenome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Cross-source identity</b><br><span style="color:var(--ink-dim);font-size:12px">same variant, 9 conventions</span></td>
+          <td class="no">no</td><td class="part">partial</td><td class="yes">yes</td>
+          <td class="part">implicit</td><td class="no">learned, unverifiable</td><td class="yes">central resolver + index</td>
+        </tr>
+        <tr>
+          <td><b>Rejects its own bad output</b></td>
+          <td class="no">no</td><td class="no">no</td><td class="part">constraints only</td>
+          <td class="no">no</td><td class="no">no</td><td class="yes">9 checks, batch discarded</td>
+        </tr>
+        <tr>
+          <td><b>Provenance to source record</b></td>
+          <td class="part">chunk citation</td><td class="part">chunk citation</td><td class="part">varies</td>
+          <td class="no">no</td><td class="no">no</td><td class="yes">edge ledger + manifest</td>
+        </tr>
+        <tr>
+          <td><b>Retrieval driven by open state</b></td>
+          <td class="no">similarity</td><td class="no">similarity + structure</td><td class="no">author writes the query</td>
+          <td class="no">learned relevance</td><td class="no">n/a</td><td class="part">designed, unbuilt</td>
+        </tr>
+        <tr>
+          <td><b>Versioned rules</b><br><span style="color:var(--ink-dim);font-size:12px">“why did this change?”</span></td>
+          <td class="no">no</td><td class="no">no</td><td class="part">possible</td>
+          <td class="no">no</td><td class="no">retrain</td><td class="yes">rule node per version</td>
+        </tr>
+        <tr>
+          <td><b>Knows what it is missing</b></td>
+          <td class="no">returns what it found</td><td class="no">returns what it found</td><td class="no">empty result</td>
+          <td class="no">no</td><td class="no">no</td><td class="yes">dirty ledger, replayable</td>
+        </tr>
+        <tr>
+          <td><b>Swap the model</b></td>
+          <td class="yes">yes</td><td class="yes">yes</td><td class="yes">n/a</td>
+          <td class="part">retrain head</td><td class="no">rebuild</td><td class="yes">model owns no domain logic</td>
+        </tr>
+        <tr>
+          <td><b>Time to first answer</b></td>
+          <td class="yes">hours</td><td class="part">days</td><td class="part">weeks</td>
+          <td class="no">needs labels</td><td class="no">needs labels + compute</td><td class="no">weeks of compiler work</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid g2" style="margin-top:6px">
+    <div class="card">
+      <h4 class="t-core">Where the alternatives win</h4>
+      <p>If the question is open-ended literature synthesis, RAG is the right tool and this
+      architecture is overhead. Forgenome pays off only where an answer must be defensible —
+      where someone will ask which record, which version, which clause.</p>
+    </div>
+    <div class="card">
+      <h4 class="t-evid">What this costs</h4>
+      <p>A connector is not a scraper. Each one needs its payload understood well enough to
+      know that <code>faf95_popmax</code> and <code>af</code> are not interchangeable. That is
+      the real price, and it is why six of thirteen connectors are still honest stubs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 8 -->
+<section id="status">
+  <h2><span class="num">08</span>Built, and not built</h2>
+
+  <div class="stats">
+    <div class="stat"><div class="n" style="color:var(--core)">56,511</div><div class="l">nodes committed in a one-hour panel harvest, with 158,313 edges</div></div>
+    <div class="stat"><div class="n" style="color:var(--core)">8,287</div><div class="l">cross-batch identity merges — the disjointness problem, counted</div></div>
+    <div class="stat"><div class="n" style="color:var(--evid)">25</div><div class="l">batches the verifier rejected and refused to commit</div></div>
+    <div class="stat"><div class="n" style="color:var(--oper)">9,215</div><div class="l">retry tickets — every deferred enrichment, with its exact query</div></div>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Component</th><th>Status</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td>Connector registry, 13 registered</td><td class="yes">built</td><td>7 live and conformance-checked, 6 stubs that raise rather than fabricate</td></tr>
+        <tr><td>SourceObject → mapping → IR</td><td class="yes">built</td><td>declarative rules plus named escape hatches, coverage reported per run</td></tr>
+        <tr><td>Central identity resolution</td><td class="yes">built</td><td>persistent SQLite index, survives process boundaries</td></tr>
+        <tr><td>Verification, 9 checks</td><td class="yes">built</td><td>written against deliberately broken fixtures before any real data</td></tr>
+        <tr><td>Two-phase transactional commit</td><td class="yes">built</td><td>verify precedes identity persistence; a failed batch writes nothing</td></tr>
+        <tr><td>Provenance + edge ledger</td><td class="yes">built</td><td>SourceManifest nodes, <code>SOURCED_FROM</code> from every claim</td></tr>
+        <tr><td>Requirement evaluation</td><td class="part">built for PM2</td><td>real <code>RequirementState</code> computed from the committed graph, not asserted</td></tr>
+        <tr><td>Panel harvest at scale</td><td class="yes">built</td><td>checkpointed, resumable — survived three interruptions with no lost or refetched work</td></tr>
+        <tr><td>MHLA attention / subgraph retrieval</td><td class="no">not built</td><td>specified in §05; no labelled traces exist to train on</td></tr>
+        <tr><td>Context-building protocol</td><td class="no">not built</td><td>ingredients enumerated, protocol not fixed</td></tr>
+        <tr><td>CLI + model integration</td><td class="no">not built</td><td>BYOM is an architectural consequence, not yet an interface</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p style="font-size:17px;line-height:1.55;color:var(--ink);margin-top:30px;max-width:74ch">
+    The claim Phase 1 supports is narrow and checkable: real heterogeneous genomic sources can
+    be compiled into one verified graph whose entities resolve centrally, whose every edge is
+    auditable to a source record, and whose operational rules can be evaluated against the
+    committed result rather than against the parser output.</p>
+    <p style="font-family:var(--mono);color:var(--ink-dim);font-size:11.5px">263 tests, no mocked connector or
+    end-to-end data. Every number on this page was measured, not estimated.</p>
+  </div>
+</section>
+
+</div>

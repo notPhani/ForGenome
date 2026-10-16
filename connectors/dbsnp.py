@@ -1,0 +1,111 @@
+"""dbSNP connector -- Evidence (cross-referenced variant identity). Real payload shape
+confirmed against fixtures/dbsnp_refsnp_5030820.json (live-fetched from
+https://api.ncbi.nlm.nih.gov/variation/v0/refsnp/5030820, the VHL test case's real rsID,
+cross-referenced out of ClinVar's own VCV XML -- see connectors/clinvar.py's
+`dbsnp_rsid` field).
+
+Real, confirmed shape: `primary_snapshot_data.placements_with_allele` is a list of
+assembly placements (13 for this real rsID -- alternate haplotypes/patches included);
+exactly one carries `is_ptlp: true` ("is placement top-level placement", the primary
+GRCh38 chromosome placement -- the only one worth mapping). Its `alleles[]` includes the
+reference "no-change" allele (`deleted_sequence == inserted_sequence`, HGVS suffix "=")
+alongside every real alternate allele at that position -- confirmed real for rs5030820:
+2 alternates (C>G, C>T), only one of which (C>T) is the VHL pathogenic variant this
+project's fixtures otherwise discuss. The other (C>G) is real information dbSNP alone
+contributes: a cataloged variant at the same locus with no ClinVar clinical assertion.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from typing import Iterator
+
+from connectors import http
+
+from connectors.common import build_variant_entity
+from ingest.source_objects import SourceObjectBase
+from orchestration.connector_registry import ConnectorDescriptor, Emission, register_connector
+
+REFSNP_URL = "https://api.ncbi.nlm.nih.gov/variation/v0/refsnp"
+
+
+@dataclass
+class DbSnpAllele(SourceObjectBase):
+    rsid: str
+    seq_accession: str
+    spdi_position: int   # already 0-based -- dbSNP's own SPDI convention matches ours
+    ref: str
+    alt: str
+    is_reference_allele: bool   # True for the "no-change" allele (deleted == inserted)
+
+
+class DbSnpAdapter:
+    def fetch(self, query: dict) -> Iterator[dict]:
+        rsid = query["rsid"].removeprefix("rs")
+        resp = http.get(f"{REFSNP_URL}/{rsid}", timeout=30)
+        resp.raise_for_status()
+        yield resp.json()
+
+    def capabilities(self) -> dict:
+        return {
+            "scopes": ["variant"],
+            "provides": ["Variant"],
+            "bulk": False, "live_query": True, "batch": False,
+            "hydration_lods": [1], "identity_types": ["rsID", "SPDI"],
+        }
+
+    def manifest(self) -> dict:
+        return {"source": "dbSNP", "dataset": "Variation Services REST API", "schema_version": "v0"}
+
+
+class DbSnpParser:
+    def parse(self, raw: dict, snapshot_ref: str = "") -> Iterator[DbSnpAllele]:
+        rsid = raw["refsnp_id"]
+        placements = raw.get("primary_snapshot_data", {}).get("placements_with_allele", [])
+        top_level = next((p for p in placements if p.get("is_ptlp")), None)
+        if top_level is None:
+            return   # no primary chromosome placement -- nothing mappable to a real SPDI
+        for entry in top_level.get("alleles", []):
+            spdi = entry["allele"]["spdi"]
+            yield DbSnpAllele(
+                source="dbSNP", record_type="Allele", source_record_id=f"rs{rsid}",
+                source_version=None, snapshot_ref=snapshot_ref, payload_hash=str(hash(str(spdi))),
+                rsid=rsid, seq_accession=spdi["seq_id"], spdi_position=spdi["position"],
+                ref=spdi["deleted_sequence"], alt=spdi["inserted_sequence"],
+                is_reference_allele=spdi["deleted_sequence"] == spdi["inserted_sequence"],
+            )
+
+
+def allele_to_ir(obj: DbSnpAllele) -> list:
+    """Skips the reference "no-change" allele -- it isn't a variant. Every real
+    alternate becomes (or confirms, via id-based dedup) a canonical Variant ENTITY."""
+    if obj.is_reference_allele:
+        return []
+    now = datetime.now(timezone.utc)
+    variant = build_variant_entity(obj.seq_accession, obj.spdi_position, obj.ref, obj.alt,
+                                    "GRCh38", "dbSNP", f"rs{obj.rsid}", obj.source_version, now)
+    return [variant]
+
+
+def _build_query(scope: str, anchor: str, context: dict) -> dict | None:
+    if scope == "coordinates":
+        rsid = context.get("rsid")
+        return {"rsid": rsid} if rsid else None   # not every variant has a known rsID
+    if scope == "variant" and anchor and anchor.lower().startswith("rs"):
+        return {"rsid": anchor}
+    return None   # gene scope: dbSNP's real gene-level search isn't wired up in this pass
+
+
+def _build_emission(raw: dict, context: dict) -> Emission:
+    emission = Emission()
+    for allele in DbSnpParser().parse(raw):
+        emission.add("dbSNP", allele_to_ir(allele))
+    return emission
+
+
+register_connector(ConnectorDescriptor(
+    name="dbsnp", group="evidence", cadence="ephemeral",
+    adapter=DbSnpAdapter(), build_query=_build_query, build_emission=_build_emission,
+    feed_label="dbSNP", requires=("clinvar",),
+    description="Cross-referenced rsID identity + sibling alleles at the same locus (REST /refsnp)",
+))
