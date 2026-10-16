@@ -292,6 +292,31 @@ button:focus-visible, .speed-btn:focus-visible, .tab:focus-visible, input:focus-
 .pane { overflow-y: auto; min-height: 0; display: none; }
 .pane.active { display: block; }
 
+/* Gemma 4 evidence guide. These cards are deterministic demo answers: the
+   model footprint is shown so the eventual LLM adapter has a visible contract,
+   while the current content remains explicitly hardcoded and auditable. */
+.guidepane { padding: 13px 15px 20px; }
+.gemma-banner {
+  border: 1px solid rgba(63,138,125,0.35); border-radius: 5px;
+  background: rgba(63,138,125,0.07); padding: 9px 10px; margin-bottom: 12px;
+}
+.gemma-banner .model { color: var(--core-biology); font-size: 10px; text-transform: uppercase;
+  letter-spacing: .09em; font-weight: 750; }
+.gemma-banner .status { color: var(--text-dim); font-size: 10.5px; line-height: 1.45; margin-top: 3px; }
+.guide-card { border: 1px solid var(--line); border-radius: 5px; background: #fff; padding: 10px; margin-bottom: 10px; }
+.guide-card.active { border-color: var(--core-biology); box-shadow: 0 0 0 2px rgba(63,138,125,.10); }
+.guide-title { font-size: 12px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; }
+.guide-question { color: var(--text-dim); font-size: 10.5px; line-height: 1.45; margin-bottom: 7px; }
+.guide-answer { font-size: 11px; line-height: 1.55; margin-bottom: 7px; }
+.guide-plain { color: var(--text-dim); background: var(--panel-raised); border-radius: 3px; padding: 6px 7px; font-size: 10.5px; line-height: 1.45; margin-bottom: 7px; }
+.guide-limit { color: #8b5e22; font-size: 10px; line-height: 1.45; margin-bottom: 7px; }
+.guide-evidence { display: flex; flex-wrap: wrap; gap: 4px; margin: 7px 0 9px; }
+.guide-edge { font-family: var(--mono); font-size: 9px; color: var(--text-dim); background: var(--panel-sunk); border-radius: 3px; padding: 3px 5px; }
+.guide-actions { display: flex; gap: 6px; }
+.guide-btn { border: 1px solid var(--line-bright); background: var(--panel); color: var(--text-dim); border-radius: 4px; padding: 5px 7px; font-size: 10px; cursor: pointer; }
+.guide-btn:hover { background: var(--panel-raised); color: var(--ink); border-color: var(--core-biology); }
+.guide-footnote { color: var(--text-faint); font-size: 9.5px; line-height: 1.5; border-top: 1px solid var(--line); padding-top: 9px; margin-top: 12px; }
+
 .log { padding: 11px 14px; font-family: var(--mono); font-size: 11px; line-height: 1.6; }
 .log-line { display: flex; gap: 7px; padding: 1px 0; }
 .log-line .tag { flex-shrink: 0; width: 4px; border-radius: 2px; align-self: stretch; }
@@ -435,12 +460,14 @@ button:focus-visible, .speed-btn:focus-visible, .tab:focus-visible, input:focus-
 
     <div class="rail">
       <div class="tabs">
-        <button class="tab active" data-pane="pane-log">Log</button>
+        <button class="tab active" data-pane="pane-guide">Gemma 4</button>
+        <button class="tab" data-pane="pane-log">Log</button>
         <button class="tab" data-pane="pane-edges">Edge types</button>
         <button class="tab" data-pane="pane-identity">Identity <span class="badge" id="identity-badge">0</span></button>
         <button class="tab" data-pane="pane-dirty">Dirty <span class="badge dirty-badge" id="dirty-badge">0</span></button>
       </div>
-      <div class="pane active" id="pane-log"><div class="log" id="log"></div></div>
+      <div class="pane active" id="pane-guide"><div class="guidepane" id="guidepane"></div></div>
+      <div class="pane" id="pane-log"><div class="log" id="log"></div></div>
       <div class="pane" id="pane-edges"><div class="edgepane" id="edgepane"></div></div>
       <div class="pane" id="pane-identity"><div class="identitypane" id="identitypane"></div></div>
       <div class="pane" id="pane-dirty"><div class="dirtypane" id="dirtypane"></div></div>
@@ -455,6 +482,7 @@ button:focus-visible, .speed-btn:focus-visible, .tab:focus-visible, input:focus-
 
 <script>
 const GRAPH_DATA = __GRAPH_DATA_JSON__;
+const GEMMA_GUIDES = __GEMMA_GUIDES_JSON__;
 
 // Matte layer tones -- fill colour encodes STORAGE/PROVENANCE layer (where a node lives:
 // persistent Core Biology, persistent Operational, ephemeral Evidence, Administrative).
@@ -551,6 +579,9 @@ let hiddenPredicates = new Set();
 let hiddenFeeds = new Set();
 let soloFeed = null;               // when set, only this feed's nodes/edges show
 let selectedNode = null;
+let guidedNodeIds = new Set();
+let guidedEdgeOrders = new Set();
+let activeGuideId = null;
 let repulsionStrength = 62;
 
 let panX = 0, panY = 0, zoom = 1;
@@ -612,7 +643,8 @@ function addEdge(ev) {
   if (edgeSet.has(key)) return;
   edgeSet.add(key);
   const e = { src: ev.src, dst: ev.dst, predicate: ev.predicate, qualifier: ev.qualifier,
-              origin: ev.origin, wave: ev.wave, feed: ev.feed || null, bornAt: performance.now() };
+              origin: ev.origin, wave: ev.wave, feed: ev.feed || null, order: ev.order,
+              bornAt: performance.now() };
   edges.push(e);
   index(ev.src, e, ev.dst, 'out');
   index(ev.dst, e, ev.src, 'in');
@@ -709,6 +741,75 @@ function waveColor(wave) {
   if (wave === 'core_biology') return LAYER_COLOR.CORE_BIOLOGY;
   if (wave === 'operational') return LAYER_COLOR.OPERATIONAL;
   return LAYER_COLOR.EVIDENCE;
+}
+
+// ---------------------------------------------------------------- Gemma 4 guided evidence cards
+function demoEdgeId(eventOrder) { return 'DEMO-E' + String(eventOrder); }
+function guideEvent(edgeSpec) {
+  return events.find(ev => ev.kind === 'edge' && ev.order === edgeSpec.event_order) || null;
+}
+function guideNodeIds(guide) {
+  return new Set((guide.nodes || []).filter(id => nodes.has(id)));
+}
+function showGuide(guide) {
+  // The cards refer to the full demo graph, so make the selected subgraph
+  // available even when the formation replay is paused halfway through.
+  if (cursor < events.length) revealNext(events.length - cursor);
+  activeGuideId = guide.id;
+  guidedNodeIds = guideNodeIds(guide);
+  guidedEdgeOrders = new Set((guide.edges || []).map(edge => edge.event_order));
+  const first = (guide.nodes || []).find(id => nodes.has(id));
+  if (first) showDetail(nodes.get(first));
+  renderGuidePane();
+}
+function clearGuide() {
+  guidedNodeIds = new Set();
+  guidedEdgeOrders = new Set();
+  activeGuideId = null;
+  renderGuidePane();
+}
+function renderGuidePane() {
+  const pane = document.getElementById('guidepane');
+  if (!pane) return;
+  const guides = GEMMA_GUIDES.guides || [];
+  let html = '<div class="gemma-banner">' +
+    '<div class="model">' + escapeHtml(GEMMA_GUIDES.model || 'Gemma 4') + ' · evidence assistant</div>' +
+    '<div class="status">' + escapeHtml(GEMMA_GUIDES.mode || 'hardcoded demonstration') +
+    '. Answers use only the visible demo graph and are not a clinical diagnosis.</div></div>';
+  html += guides.map(guide => {
+    const active = guide.id === activeGuideId ? ' active' : '';
+    const evidence = (guide.edges || []).map(edge =>
+      '<span class="guide-edge">' + escapeHtml(demoEdgeId(edge.event_order)) +
+      ' · ' + escapeHtml(edge.label) + '</span>').join('');
+    const nodeButtons = (guide.nodes || []).map(id =>
+      '<button class="guide-btn" data-guide-node="' + escapeHtml(id) + '">' +
+      escapeHtml(nodes.get(id)?.label || id) + '</button>').join('');
+    return '<article class="guide-card' + active + '" data-guide-card="' + escapeHtml(guide.id) + '">' +
+      '<div class="guide-title">' + escapeHtml(guide.title) + '</div>' +
+      '<div class="guide-question"><b>Question:</b> ' + escapeHtml(guide.question) + '</div>' +
+      '<div class="guide-answer">' + escapeHtml(guide.answer) + '</div>' +
+      '<div class="guide-plain"><b>In simpler terms:</b> ' + escapeHtml(guide.plain_language) + '</div>' +
+      '<div class="guide-limit"><b>Limit:</b> ' + escapeHtml(guide.limitations) + '</div>' +
+      '<div class="guide-evidence">' + evidence + '</div>' +
+      '<div class="guide-actions"><button class="guide-btn" data-guide-show="' + escapeHtml(guide.id) + '">Show subgraph</button>' + nodeButtons + '</div>' +
+      '</article>';
+  }).join('');
+  html += '<div class="guide-footnote"><b>Gemma 4 contract:</b> ' +
+    escapeHtml(GEMMA_GUIDES.system_contract || 'Use only supplied nodes and edges.') +
+    ' The current cards are hardcoded so their wording and evidence references can be reviewed before connecting a live model.</div>';
+  pane.innerHTML = html;
+  pane.querySelectorAll('[data-guide-show]').forEach(button => {
+    button.addEventListener('click', () => {
+      const guide = guides.find(item => item.id === button.dataset.guideShow);
+      if (guide) showGuide(guide);
+    });
+  });
+  pane.querySelectorAll('[data-guide-node]').forEach(button => {
+    button.addEventListener('click', () => {
+      const node = nodes.get(button.dataset.guideNode);
+      if (node) { guidedNodeIds.add(node.id); showDetail(node); }
+    });
+  });
 }
 
 // ---------------------------------------------------------------- stats panel
@@ -1243,9 +1344,14 @@ function render() {
     const strong = e.predicate === 'CONTRADICTS';
     let alpha = strong ? EDGE_STRONG_ALPHA : EDGE_BASE_ALPHA;
     let width = strong ? 1.5 : 0.9;
+    const isGuidedEdge = guidedEdgeOrders.has(e.order);
     if (dim) {
       if (e.src === selectedNode || e.dst === selectedNode) { alpha = 0.95; width = 2.1; }
       else alpha = 0.08;
+    }
+    if (guidedNodeIds.size) {
+      if (isGuidedEdge) { alpha = 1; width = 2.6; }
+      else if (!dim) alpha = 0.06;
     }
     ctx.strokeStyle = hexA(EDGE_COLOR[e.predicate] || '#8a8272', alpha * fade);
     ctx.lineWidth = width;
@@ -1261,6 +1367,7 @@ function render() {
     const shape = ROLE_SHAPE[n.role] || 'circle';
     const isSelected = selectedNode === n.id;
     const isNeighbor = neighborIds ? neighborIds.has(n.id) : false;
+    const isGuided = guidedNodeIds.has(n.id);
     const faded = dim && !isSelected && !isNeighbor;
 
     if (age < 800) {
@@ -1306,6 +1413,9 @@ function render() {
     } else if (isNeighbor) {
       traceShape(ctx, n.x, n.y, r + 3.5, shape);
       ctx.strokeStyle = hexA(color, 0.85); ctx.lineWidth = 1.2; ctx.stroke();
+    } else if (isGuided) {
+      traceShape(ctx, n.x, n.y, r + 5, shape);
+      ctx.strokeStyle = '#2e8b78'; ctx.lineWidth = 1.8; ctx.stroke();
     }
   }
 
@@ -1359,9 +1469,11 @@ function resetTo(target) {
   playing = false; setPlayLabel(); cursor = 0;
   nodes.clear(); edges.length = 0; edgeSet.clear(); adjacency.clear();
   identityLog.clear(); identityEventCount = 0;
+  guidedNodeIds = new Set(); guidedEdgeOrders = new Set(); activeGuideId = null;
   hideDetail();
   document.getElementById('log').innerHTML = '';
   if (target > 0) revealNext(target); else updateProgress();
+  renderGuidePane();
 }
 document.querySelectorAll('.speed-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -1539,6 +1651,7 @@ window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideDetail()
 // ---------------------------------------------------------------- boot
 buildLegend();
 buildFeedLegend();
+renderGuidePane();
 (function footer() {
   const s = GRAPH_DATA.stats || {};
   let parts = [];

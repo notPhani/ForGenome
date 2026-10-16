@@ -1,0 +1,61 @@
+{
+  "model": "Gemma 4",
+  "model_id": "gemma-4",
+  "mode": "hardcoded evidence-grounded demonstration",
+  "system_contract": "Use only the listed nodes and edges. Do not infer causation, pathogenicity, or treatment response beyond the source assertion.",
+  "guides": [
+    {
+      "id": "vhl-core-structure",
+      "title": "Core biology: what is VHL connected to?",
+      "question": "What does the graph show about the VHL gene, its transcript, and its protein?",
+      "answer": "The graph connects the VHL gene to the Ensembl VHL-201 transcript through a PART_OF relationship (the transcript is part of the gene). It also records that this transcript encodes the VHL protein. This describes the graph's structure; it is not, by itself, a claim about disease risk or protein function.",
+      "plain_language": "A gene can have transcripts, which are working copies used to make proteins. Here the graph shows one VHL transcript and the protein record linked to it.",
+      "limitations": "The displayed subgraph shows identity and encoding relationships only. It does not prove that a variant changes protein function.",
+      "nodes": [
+        "HGNC:12687",
+        "Ensembl:ENST00000256474",
+        "Ensembl:ENSP00000256474"
+      ],
+      "edges": [
+        {"event_order": 20, "label": "Transcript PART_OF Gene"},
+        {"event_order": 24, "label": "Transcript RELATES_TO Protein [encodes]"}
+      ]
+    },
+    {
+      "id": "vhl-pm2-rule",
+      "title": "ACMG rule: what is PM2 in this graph?",
+      "question": "What does the graph say about the PM2 rule for VHL?",
+      "answer": "The ClinGen GN078 PM2 criterion is linked to VHL with APPLIES_TO, and the criterion has a REQUIRES link to a PM2 requirement record. The requirement record in this demo says ‘Not Applicable for this VCEP.’ Therefore this subgraph documents the rule and its configuration; it does not say that the selected variant satisfies PM2.",
+      "plain_language": "PM2 is a population-evidence rule. This graph shows that the VHL expert-panel rule exists, plus a configuration note about whether it applies. A rule definition is not the same thing as evidence that a particular variant passes the rule.",
+      "limitations": "No population-frequency observation is used in this hardcoded answer, and the answer does not classify a variant.",
+      "nodes": [
+        "HGNC:12687",
+        "ClinGen:GN078:PM2:1.1",
+        "ClinGen:GN078:PM2:1.1:req:01"
+      ],
+      "edges": [
+        {"event_order": 249, "label": "PM2 APPLIES_TO VHL"},
+        {"event_order": 250, "label": "PM2 REQUIRES PM2 requirement"}
+      ]
+    },
+    {
+      "id": "vhl-variant-condition",
+      "title": "Variant evidence: c.499C>T and VHL syndrome",
+      "question": "How is the demo variant connected to VHL and Von Hippel-Lindau syndrome?",
+      "answer": "The demo variant SPDI:NC_000003.12:10149821:C:T is connected to VHL with the qualifier in_gene. A ClinVar condition-level record, RCV000002302, asserts the variant and links it to Von Hippel-Lindau syndrome with for_condition. That record's captured description is Pathogenic and its review status says criteria provided, multiple submitters, no conflicts. This is a source assertion reproduced from the graph, not an independent diagnosis.",
+      "plain_language": "The graph has a variant record, a gene record, and a disease record. ClinVar is the source that connects the variant to the disease in this example. The words ‘Pathogenic’ and ‘multiple submitters’ come from that source record.",
+      "limitations": "This hardcoded demo answer does not evaluate the patient's phenotype, zygosity, family history, or all ACMG evidence. It should not be used as a clinical interpretation.",
+      "nodes": [
+        "SPDI:NC_000003.12:10149821:C:T",
+        "HGNC:12687",
+        "ClinVar:RCV000002302",
+        "MedGen:C0019562"
+      ],
+      "edges": [
+        {"event_order": 457, "label": "Variant RELATES_TO VHL [in_gene]"},
+        {"event_order": 458, "label": "RCV ASSERTS Variant"},
+        {"event_order": 459, "label": "RCV RELATES_TO Disease [for_condition]"}
+      ]
+    }
+  ]
+}

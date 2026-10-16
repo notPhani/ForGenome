@@ -229,12 +229,20 @@ Open `demo/index.html` in any modern web browser to interactively explore the ge
 - Filter nodes by Layer (`CORE_BIOLOGY`, `OPERATIONAL`, `EVIDENCE`) or Role (`ENTITY`, `CLAIM`, `OBSERVATION`, `RULE`).
 - Inspect node details, connected edges, and complete provenance metadata.
 - View real-time edge type statistics and graph connectivity.
+- Open the **Gemma 4** tab for three hardcoded VHL questions, evidence-grounded answers, plain-language explanations, and highlighted subgraphs drawn from the same demo graph.
+
+The Gemma 4 tab is a reviewable model footprint, not a live API call: the
+questions and answers are stored in `demo/gemma_guides.json`, and each guide
+references exact node IDs and event-order edge IDs from `demo/graph_data.json`.
+This keeps the demo reproducible while the live model adapter is being
+evaluated. The cards explicitly distinguish source assertions from conclusions
+and include limitations so they are not presented as clinical diagnoses.
 
 ---
 
 ## Running the Test Suite
 
-Forge includes a comprehensive suite of 263 unit, integration, and E2E tests:
+Forge includes a comprehensive suite of 266 unit, integration, and E2E tests:
 
 ```bash
 python -m pytest
@@ -248,6 +256,36 @@ The test suite covers:
 - Deterministic sampling and structural graph hashing (`test_reproducibility.py`, `test_hashing.py`)
 - End-to-end evaluation of ACMG PM2 evidence on VHL (`tests/e2e/test_vhl_pm2.py`)
 - Conformance and capability checks for all connectors (`tests/test_connectors/`)
+- Constrained graph retrieval, claim auditing, and report summaries (`tests/test_graph_rag.py`)
+
+## Genome graph matching and plain-language reports
+
+Forge also includes an offline, evidence-grounded Graph RAG baseline for
+exploring a gene or variant in a large graph. It applies typed metapath
+constraints before ranking evidence, uses transparent rarity/functional/
+clinical relevance heads with attention-biased random walk with restart, and
+keeps the selected subgraph within a configurable detail budget. It does not
+claim pathogenicity or treatment efficacy and it does not require an LLM API
+key.
+
+```bash
+python scripts/analyze_genome.py \
+  --graph demo/graph_data.json \
+  --gene VHL \
+  --lod 2 \
+  --out-html runs/vhl_graph_report.html \
+  --out-json runs/vhl_graph_report.json
+```
+
+The command writes a portable HTML/SVG plot with a plain-language explanation
+and machine-readable evidence containing compact typed triples, stable
+`Edge ID`s, provenance, scores, paths and budget status. Structured generated
+claims can be checked with `analysis.graph_rag.ClaimAuditor` before any prose
+is shown to a user. Unknown edges, reversed relations, disconnected paths,
+invalid clinical metapaths and overstated causal wording are rejected. The
+current graph event format does not always include explicit edge IDs, so the
+analyzer assigns deterministic one-based IDs (`E000001`, ... ) within the
+loaded graph snapshot.
 
 ---
 
