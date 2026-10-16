@@ -20,10 +20,11 @@
   "LDLR": 645,
   "BRCA2": 645,
   "MYBPC3": 645,
-  "KCNH2": 645
+  "KCNH2": 645,
+  "TGFBR1": 300
  },
- "variants_ingested": 5478,
- "variants_attempted": 5805,
+ "variants_ingested": 5751,
+ "variants_attempted": 6105,
  "allocation": {
   "VHL": 645,
   "BRCA1": 645,
@@ -186,5 +187,5 @@
   "TMEM127": 1256,
   "FH": 2651
  },
- "last_updated": "2026-08-19T10:13:57.800036+00:00"
+ "last_updated": "2026-10-16T10:06:09.412647+00:00"
 }

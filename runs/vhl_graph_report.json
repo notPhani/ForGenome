@@ -1,0 +1,2224 @@
+{
+  "snapshot_id": "graph_data.json",
+  "query": [
+    "VHL"
+  ],
+  "summary": "The report selected 75 records around VHL and kept 73 relates to relationship(s), 28 applies to relationship(s). No complete rule-valid clinical path was found. The requested detail was larger than the configured budget, so some evidence was left out. This is an evidence map, not a diagnosis or a prediction that a treatment will work.",
+  "lod": 2,
+  "grammar": "forge-clinical-default",
+  "seeds": [
+    "SPDI:NC_000003.12:10149785:G:A",
+    "SPDI:NC_000003.12:10142180:T:A",
+    "SPDI:NC_000003.12:10142181:ACCGAGGTACG:",
+    "ClinGen:GN078:PM6:1.1",
+    "SPDI:NC_000003.12:10142079:A:G",
+    "SPDI:NC_000003.12:10142155:T:",
+    "SPDI:NC_000003.12:10142060:T:C",
+    "SPDI:NC_000003.12:10142008:GG:GGG",
+    "SPDI:NC_000003.12:10149807:G:T",
+    "SPDI:NC_000003.12:10146559:G:T",
+    "SPDI:NC_000003.12:10142027:C:G",
+    "SPDI:NC_000003.12:10150787:G:A",
+    "SPDI:NC_000003.12:10142180:T:C",
+    "Ensembl:ENST00000713812",
+    "SPDI:NC_000003.12:10149821:C:T",
+    "SPDI:NC_000003.12:10146624:T:G",
+    "SPDI:NC_000003.12:10150987:G:A",
+    "SPDI:NC_000003.12:10145340:C:T",
+    "SPDI:NC_000003.12:10146620:AA:A",
+    "SPDI:NC_000003.12:10142115:A:T",
+    "ClinGen:GN078:PP5:1.1",
+    "SPDI:NC_000003.12:10142073:T:C",
+    "Ensembl:ENST00000713982",
+    "SPDI:NC_000003.12:10142087:C:T",
+    "SPDI:NC_000003.12:10146630:T:A",
+    "SPDI:NC_000003.12:10142153:C:G",
+    "SPDI:NC_000003.12:10149963:G:T",
+    "SPDI:NC_000003.12:10146617:G:T",
+    "SPDI:NC_000003.12:10146547:C:T",
+    "SPDI:NC_000003.12:10142065:GG:",
+    "SPDI:NC_000003.12:10146587:TCTCTC:TCTC",
+    "ClinGen:GN078:PVS1:1.1",
+    "SPDI:NC_000003.12:10142038:C:",
+    "SPDI:NC_000003.12:10149923:C:T",
+    "SPDI:NC_000003.12:10142063:C:T",
+    "SPDI:NC_000003.12:10146534:A:G",
+    "SPDI:NC_000003.12:10146635:G:A",
+    "SPDI:NC_000003.12:10149906:AGAAAGA:AGAAAGAAAGA",
+    "SPDI:NC_000003.12:10150953:C:T",
+    "SPDI:NC_000003.12:10142120:G:T",
+    "SPDI:NC_000003.12:10141770:C:T",
+    "SPDI:NC_000003.12:10150258:G:A",
+    "SPDI:NC_000003.12:10149961:T:C",
+    "SPDI:NC_000003.12:10142000:G:A",
+    "SPDI:NC_000003.12:10149822:G:A",
+    "SPDI:NC_000003.12:10142123:G:C",
+    "SPDI:NC_000003.12:10142112:T:C",
+    "SPDI:NC_000003.12:10149784:A:G",
+    "SPDI:NC_000003.12:10146560:G:C",
+    "SPDI:NC_000003.12:10150561:G:A",
+    "SPDI:NC_000003.12:10142037:G:C",
+    "SPDI:NC_000003.12:10146511:A:G",
+    "SPDI:NC_000003.12:10150599:G:A",
+    "SPDI:NC_000003.12:10141996:C:A",
+    "SPDI:NC_000003.12:10146607:G:C",
+    "SPDI:NC_000003.12:10149824::TTGTCCGT",
+    "SPDI:NC_000003.12:10149807:G:A",
+    "SPDI:NC_000003.12:10141920:C:T",
+    "ClinGen:GN078:BA1:1.1",
+    "SPDI:NC_000003.12:10149793:T:TT",
+    "SPDI:NC_000003.12:10142102:CCC:CC",
+    "SPDI:NC_000003.12:10146573:AA:A",
+    "SPDI:NC_000003.12:10149829:A:C",
+    "SPDI:NC_000003.12:10150784:A:G",
+    "SPDI:NC_000003.12:10149951:G:A",
+    "SPDI:NC_000003.12:10151292:C:A",
+    "HGNC:12687",
+    "SPDI:NC_000003.12:10149866:A:G",
+    "SPDI:NC_000003.12:10146578:TTT:TT",
+    "SPDI:NC_000003.12:10146667:GTTGTTGT:GTTGT",
+    "ClinGen:GN078:BS1:1.1",
+    "SPDI:NC_000003.12:10142102:C:G",
+    "SPDI:NC_000003.12:10142115:A:G",
+    "SPDI:NC_000003.12:10146580:T:G",
+    "SPDI:NC_000003.12:10142139:A:AA",
+    "SPDI:NC_000003.12:10149847:C:G",
+    "SPDI:NC_000003.12:10141849:G:T",
+    "SPDI:NC_000003.12:10149876:A:G",
+    "Ensembl:ENST00000713813",
+    "ClinGen:GN078:PP3:1.1",
+    "SPDI:NC_000003.12:10150780:G:C",
+    "ClinGen:GN078:PM2:1.1",
+    "SPDI:NC_000003.12:10146626:ACACTGCCAGGTACTGACGTTTTACTT:",
+    "SPDI:NC_000003.12:10146548:G:A",
+    "SPDI:NC_000003.12:10142166:G:A",
+    "ClinGen:GN078:BP3:1.1",
+    "ClinGen:GN078:BS3:1.1",
+    "SPDI:NC_000003.12:10142084:A:G",
+    "SPDI:NC_000003.12:10149663:TTTTTTT:TTTTTT",
+    "SPDI:NC_000003.12:10142049:C:A",
+    "ClinGen:GN078:BP2:1.1",
+    "SPDI:NC_000003.12:10142165:C:G",
+    "SPDI:NC_000003.12:10149803:C:T",
+    "SPDI:NC_000003.12:10142104:C:G",
+    "SPDI:NC_000003.12:10149934:GCGC:GC",
+    "SPDI:NC_000003.12:10142121:A:T",
+    "SPDI:NC_000003.12:10142014:C:G",
+    "SPDI:NC_000003.12:10142187:G:A",
+    "SPDI:NC_000003.12:10141783:C:T",
+    "SPDI:NC_000003.12:10149878:G:A",
+    "SPDI:NC_000003.12:10142103:C:G",
+    "Ensembl:ENST00001104678",
+    "SPDI:NC_000003.12:10141787:CCCGCGTCCGACCCGCGGATCCCGCG:CCCGCGTCCGACCCGCGGATCCCGCGTCCGACCCGCGGATCCCGCG",
+    "SPDI:NC_000003.12:10149867:G:A",
+    "SPDI:NC_000003.12:10142021:C:T",
+    "SPDI:NC_000003.12:10149801:A:T",
+    "Ensembl:ENST00000696153",
+    "ClinGen:GN078:PP2:1.1",
+    "SPDI:NC_000003.12:10149896:C:T",
+    "SPDI:NC_000003.12:10141851:C:T",
+    "Ensembl:ENST00000345392",
+    "SPDI:NC_000003.12:10141769:GCGCGCACGCAGCTCCGCCCCGCG:GCG",
+    "SPDI:NC_000003.12:10146525::A",
+    "SPDI:NC_000003.12:10146602:G:T",
+    "Ensembl:ENST00000696142",
+    "SPDI:NC_000003.12:10142035:GCGC:",
+    "SPDI:NC_000003.12:10150356:G:A",
+    "ClinGen:GN078:PM4:1.1",
+    "SPDI:NC_000003.12:10146588:C:G",
+    "SPDI:NC_000003.12:10151024:C:T",
+    "SPDI:NC_000003.12:10142029:C:G",
+    "SPDI:NC_000003.12:10142166:G:C",
+    "SPDI:NC_000003.12:10149893:C:G",
+    "SPDI:NC_000003.12:10142191:G:C",
+    "SPDI:NC_000003.12:10142040:C:T",
+    "SPDI:NC_000003.12:10141893:A:C",
+    "ClinGen:GN078:PP4:1.1",
+    "SPDI:NC_000003.12:10149877:C:T",
+    "SPDI:NC_000003.12:10141875:A:T",
+    "SPDI:NC_000003.12:10142101:G:A",
+    "SPDI:NC_000003.12:10142140:CCC:CCCC",
+    "SPDI:NC_000003.12:10142079:A:C",
+    "SPDI:NC_000003.12:10149900:A:G",
+    "SPDI:NC_000003.12:10150538:T:C",
+    "SPDI:NC_000003.12:10146522:GG:G",
+    "SPDI:NC_000003.12:10149894:A:C",
+    "SPDI:NC_000003.12:10149862:CGTC:",
+    "SPDI:NC_000003.12:10142078:A:T",
+    "SPDI:NC_000003.12:10149915:T:C",
+    "SPDI:NC_000003.12:10146542:ACACAC:ACAC",
+    "SPDI:NC_000003.12:10146586:A:G",
+    "ClinGen:GN078:BS2:1.1",
+    "SPDI:NC_000003.12:10146588:C:T",
+    "SPDI:NC_000003.12:10149812:C:T",
+    "SPDI:NC_000003.12:10151136:C:T",
+    "SPDI:NC_000003.12:10149920:C:T",
+    "SPDI:NC_000003.12:10141980:C:G",
+    "ClinGen:GN078:PM1:1.1",
+    "SPDI:NC_000003.12:10142054:G:A",
+    "SPDI:NC_000003.12:10142013:C:T",
+    "SPDI:NC_000003.12:10150244:A:G",
+    "SPDI:NC_000003.12:10146636:G:C",
+    "Ensembl:ENST00000713811",
+    "Ensembl:ENST00000713815",
+    "SPDI:NC_000003.12:10141849:G:A",
+    "SPDI:NC_000003.12:10142206:G:A",
+    "SPDI:NC_000003.12:10149880:A:C",
+    "SPDI:NC_000003.12:10149789:A:G",
+    "SPDI:NC_000003.12:10146599:G:C",
+    "SPDI:NC_000003.12:10142088:C:T",
+    "SPDI:NC_000003.12:10146523:G:T",
+    "SPDI:NC_000003.12:10141871:G:A",
+    "SPDI:NC_000003.12:10146548:G:T",
+    "SPDI:NC_000003.12:10141941:A:G",
+    "SPDI:NC_000003.12:10146553:GC:TT",
+    "SPDI:NC_000003.12:10149870:C:A",
+    "SPDI:NC_000003.12:10146577:A:C",
+    "SPDI:NC_000003.12:10141860:C:T",
+    "SPDI:NC_000003.12:10142172:T:A",
+    "SPDI:NC_000003.12:10149870:C:G",
+    "SPDI:NC_000003.12:10142070:TCTTCT:TCT",
+    "SPDI:NC_000003.12:10149817:TGTCCGGAGCCT:T",
+    "SPDI:NC_000003.12:10142103:C:T",
+    "SPDI:NC_000003.12:10149907:G:C",
+    "SPDI:NC_000003.12:10149908:A:T",
+    "SPDI:NC_000003.12:10149950:C:T",
+    "SPDI:NC_000003.12:10142067:T:",
+    "SPDI:NC_000003.12:10149874:C:T",
+    "ClinGen:GN078:BP1:1.1",
+    "SPDI:NC_000003.12:10141857:G:T",
+    "SPDI:NC_000003.12:10149831:T:C",
+    "SPDI:NC_000003.12:10142179:C:G",
+    "SPDI:NC_000003.12:10151294:A:G",
+    "SPDI:NC_000003.12:10149821:C:G",
+    "SPDI:NC_000003.12:10149863:G:A",
+    "SPDI:NC_000003.12:10141996:C:G",
+    "SPDI:NC_000003.12:10149785:G:C",
+    "SPDI:NC_000003.12:10142059:C:T",
+    "Ensembl:ENST00000477538",
+    "ClinGen:GN078:PM5:1.1",
+    "SPDI:NC_000003.12:10146612:TTTTT:TTTT",
+    "SPDI:NC_000003.12:10141835:ATCGCGGAGGGAAT:ATCGCGGAGGGAATATCGCGGAGGGAAT",
+    "SPDI:NC_000003.12:10072981:G:A",
+    "SPDI:NC_000003.12:10149813:A:G",
+    "SPDI:NC_000003.12:10142000:G:T",
+    "SPDI:NC_000003.12:10142081:C:T",
+    "SPDI:NC_000003.12:10141950:C:A",
+    "SPDI:NC_000003.12:10142167:C:T",
+    "SPDI:NC_000003.12:10146637:T:G",
+    "SPDI:NC_000003.12:10142110:G:T",
+    "SPDI:NC_000003.12:10142109:G:A",
+    "SPDI:NC_000003.12:10149792:C:T",
+    "ClinGen:GN078:PS2:1.1",
+    "SPDI:NC_000003.12:10149797:AAA:AA",
+    "SPDI:NC_000003.12:10146492:AACCT:",
+    "SPDI:NC_000003.12:10145380:C:T",
+    "SPDI:NC_000003.12:10141960:C:T",
+    "SPDI:NC_000003.12:10151383:A:G",
+    "SPDI:NC_000003.12:10141917:G:A",
+    "SPDI:NC_000003.12:10142034:T:C",
+    "SPDI:NC_000003.12:10151213:G:A",
+    "SPDI:NC_000003.12:10146543:C:T",
+    "Ensembl:ENST00000256474",
+    "SPDI:NC_000003.12:10151171:G:A",
+    "SPDI:NC_000003.12:10142079:A:T",
+    "SPDI:NC_000003.12:10142123:G:A",
+    "SPDI:NC_000003.12:10146643:C:T",
+    "SPDI:NC_000003.12:10142025:GG:G",
+    "SPDI:NC_000003.12:10149908:AAA:AAAA",
+    "SPDI:NC_000003.12:10142146:G:GG",
+    "ClinGen:GN078:BS4:1.1",
+    "SPDI:NC_000003.12:10141955:GAGTCCGGCCCGGAAGAGTCCGGCCCGGA:GAGTCCGGCCCGGA",
+    "SPDI:NC_000003.12:10141932:GC:TT",
+    "ClinGen:GN078:PP1:1.1",
+    "SPDI:NC_000003.12:10149846:A:G",
+    "SPDI:NC_000003.12:10141975:C:T",
+    "SPDI:NC_000003.12:10149871:G:A",
+    "SPDI:NC_000003.12:10149810:T:C",
+    "SPDI:NC_000003.12:10149808:C:A",
+    "ClinGen:GN078:PS4:1.1",
+    "SPDI:NC_000003.12:10141812:G:A",
+    "ClinGen:GN078:PM3:1.1",
+    "SPDI:NC_000003.12:10142067:TCATC:TC",
+    "SPDI:NC_000003.12:10141981:G:A",
+    "SPDI:NC_000003.12:10146623:A:C",
+    "SPDI:NC_000003.12:10142135:C:T",
+    "SPDI:NC_000003.12:10142156:GGCACGGGCCGCCGCATCCACAGCTACCGAGGTACGGGCCCGGCGCTTAGG:G",
+    "SPDI:NC_000003.12:10141853:C:T",
+    "SPDI:NC_000003.12:10141837:CGCGGAGGGAATGCC:CGCGGAGGGAATGCCGCGGAGGGAATGCC",
+    "SPDI:NC_000003.12:10142008:GGAGGCCGGG:GGAGGCCGGGAGGCCGGG",
+    "SPDI:NC_000003.12:10141652:G:A",
+    "SPDI:NC_000003.12:10142139:A:G",
+    "SPDI:NC_000003.12:10142018:C:T",
+    "SPDI:NC_000003.12:10149877:C:G",
+    "SPDI:NC_000003.12:10142109:G:C",
+    "SPDI:NC_000003.12:10146519:T:G",
+    "ClinGen:GN078:BP7:1.1",
+    "SPDI:NC_000003.12:10142039:T:G",
+    "SPDI:NC_000003.12:10149819:T:C",
+    "SPDI:NC_000003.12:10142193:G:C",
+    "ClinGen:GN078:BP6:1.1",
+    "ClinGen:GN078:PS3:1.1",
+    "SPDI:NC_000003.12:10142096:G:T",
+    "SPDI:NC_000003.12:10145378:T:C",
+    "SPDI:NC_000003.12:10141856:A:T",
+    "SPDI:NC_000003.12:10141640:C:T",
+    "SPDI:NC_000003.12:10141681:C:T",
+    "SPDI:NC_000003.12:10141842:A:C",
+    "SPDI:NC_000003.12:10142102:C:T",
+    "SPDI:NC_000003.12:10149795:T:C",
+    "SPDI:NC_000003.12:10142123:G:T",
+    "SPDI:NC_000003.12:10142157:G:T",
+    "Ensembl:ENST00001142295",
+    "SPDI:NC_000003.12:10142091:G:C",
+    "ClinGen:GN078:BP4:1.1",
+    "SPDI:NC_000003.12:10149808:C:G",
+    "SPDI:NC_000003.12:10149818:G:T",
+    "SPDI:NC_000003.12:10142040:C:G",
+    "SPDI:NC_000003.12:10142114:AA:A",
+    "SPDI:NC_000003.12:10142181:A:G",
+    "SPDI:NC_000003.12:10142126:G:A",
+    "SPDI:NC_000003.12:10149953:A:C",
+    "SPDI:NC_000003.12:10146512:GG:G",
+    "SPDI:NC_000003.12:10146517:C:T",
+    "SPDI:NC_000003.12:10142037:G:A",
+    "SPDI:NC_000003.12:10146602:GG:G",
+    "SPDI:NC_000003.12:10150688:T:G",
+    "SPDI:NC_000003.12:10149884:C:G",
+    "SPDI:NC_000003.12:10142178:G:T",
+    "SPDI:NC_000003.12:10151335:A:G",
+    "SPDI:NC_000003.12:10149871:G:T",
+    "SPDI:NC_000003.12:10142178:G:A",
+    "Ensembl:ENST00000713814",
+    "Ensembl:ENST00000713816",
+    "ClinGen:GN078:PS1:1.1",
+    "SPDI:NC_000003.12:10146617:G:A",
+    "SPDI:NC_000003.12:10142139:A:C",
+    "SPDI:NC_000003.12:10146530:A:G",
+    "SPDI:NC_000003.12:10146606:A:T",
+    "SPDI:NC_000003.12:10142055:A:G",
+    "SPDI:NC_000003.12:10146607:GC:",
+    "SPDI:NC_000003.12:10142186:G:C",
+    "ClinGen:GN078:BP5:1.1",
+    "Ensembl:ENST00000696143",
+    "SPDI:NC_000003.12:10146617:G:C"
+  ],
+  "nodes": [
+    {
+      "id": "ClinGen:GN078:PS1:1.1",
+      "label": "PS1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "HGNC:12687",
+      "label": "VHL",
+      "subtype": "Gene",
+      "role": "ENTITY",
+      "rwr_score": 0.6910595343128715,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PS2:1.1",
+      "label": "PS2",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PM3:1.1",
+      "label": "PM3",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PM6:1.1",
+      "label": "PM6",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PP3:1.1",
+      "label": "PP3",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PVS1:1.1",
+      "label": "PVS1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PS4:1.1",
+      "label": "PS4",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PM1:1.1",
+      "label": "PM1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PM4:1.1",
+      "label": "PM4",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PM5:1.1",
+      "label": "PM5",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP2:1.1",
+      "label": "BP2",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP5:1.1",
+      "label": "BP5",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PP5:1.1",
+      "label": "PP5",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BS1:1.1",
+      "label": "BS1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP6:1.1",
+      "label": "BP6",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PS3:1.1",
+      "label": "PS3",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PP1:1.1",
+      "label": "PP1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PP4:1.1",
+      "label": "PP4",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP1:1.1",
+      "label": "BP1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP3:1.1",
+      "label": "BP3",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PM2:1.1",
+      "label": "PM2",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:PP2:1.1",
+      "label": "PP2",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BA1:1.1",
+      "label": "BA1",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BS2:1.1",
+      "label": "BS2",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BS3:1.1",
+      "label": "BS3",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BS4:1.1",
+      "label": "BS4",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP4:1.1",
+      "label": "BP4",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "ClinGen:GN078:BP7:1.1",
+      "label": "BP7",
+      "subtype": "ACMGCriterion",
+      "role": "RULE",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.38
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000256474",
+      "label": "Ensembl:ENST00000256474",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENSP00000256474",
+      "label": "Ensembl:ENSP00000256474",
+      "subtype": "Protein",
+      "role": "ENTITY",
+      "rwr_score": 0.0017343385016967718,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10142084:A:G",
+      "label": "SPDI:NC_000003.12:10142084:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00001142295",
+      "label": "Ensembl:ENST00001142295",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00001104678",
+      "label": "Ensembl:ENST00001104678",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713982",
+      "label": "Ensembl:ENST00000713982",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713816",
+      "label": "Ensembl:ENST00000713816",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713815",
+      "label": "Ensembl:ENST00000713815",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713814",
+      "label": "Ensembl:ENST00000713814",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713813",
+      "label": "Ensembl:ENST00000713813",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713812",
+      "label": "Ensembl:ENST00000713812",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000713811",
+      "label": "Ensembl:ENST00000713811",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000696153",
+      "label": "Ensembl:ENST00000696153",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000696143",
+      "label": "Ensembl:ENST00000696143",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000696142",
+      "label": "Ensembl:ENST00000696142",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000477538",
+      "label": "Ensembl:ENST00000477538",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "Ensembl:ENST00000345392",
+      "label": "Ensembl:ENST00000345392",
+      "subtype": "Transcript",
+      "role": "ENTITY",
+      "rwr_score": 0.0009669241277128791,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.45,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10149789:A:G",
+      "label": "SPDI:NC_000003.12:10149789:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10146630:T:A",
+      "label": "SPDI:NC_000003.12:10146630:T:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151383:A:G",
+      "label": "SPDI:NC_000003.12:10151383:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151335:A:G",
+      "label": "SPDI:NC_000003.12:10151335:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151294:A:G",
+      "label": "SPDI:NC_000003.12:10151294:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151292:C:A",
+      "label": "SPDI:NC_000003.12:10151292:C:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151213:G:A",
+      "label": "SPDI:NC_000003.12:10151213:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151171:G:A",
+      "label": "SPDI:NC_000003.12:10151171:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151136:C:T",
+      "label": "SPDI:NC_000003.12:10151136:C:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10151024:C:T",
+      "label": "SPDI:NC_000003.12:10151024:C:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150987:G:A",
+      "label": "SPDI:NC_000003.12:10150987:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150953:C:T",
+      "label": "SPDI:NC_000003.12:10150953:C:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150787:G:A",
+      "label": "SPDI:NC_000003.12:10150787:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150784:A:G",
+      "label": "SPDI:NC_000003.12:10150784:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150780:G:C",
+      "label": "SPDI:NC_000003.12:10150780:G:C",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150688:T:G",
+      "label": "SPDI:NC_000003.12:10150688:T:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150599:G:A",
+      "label": "SPDI:NC_000003.12:10150599:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150561:G:A",
+      "label": "SPDI:NC_000003.12:10150561:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150538:T:C",
+      "label": "SPDI:NC_000003.12:10150538:T:C",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150356:G:A",
+      "label": "SPDI:NC_000003.12:10150356:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150258:G:A",
+      "label": "SPDI:NC_000003.12:10150258:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10150244:A:G",
+      "label": "SPDI:NC_000003.12:10150244:A:G",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10149961:T:C",
+      "label": "SPDI:NC_000003.12:10149961:T:C",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10141857:G:T",
+      "label": "SPDI:NC_000003.12:10141857:G:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10141856:A:T",
+      "label": "SPDI:NC_000003.12:10141856:A:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10141783:C:T",
+      "label": "SPDI:NC_000003.12:10141783:C:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10141681:C:T",
+      "label": "SPDI:NC_000003.12:10141681:C:T",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10141652:G:A",
+      "label": "SPDI:NC_000003.12:10141652:G:A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    },
+    {
+      "id": "SPDI:NC_000003.12:10146525::A",
+      "label": "SPDI:NC_000003.12:10146525::A",
+      "subtype": "Variant",
+      "role": "ENTITY",
+      "rwr_score": 0.000847457627118644,
+      "head_scores": {
+        "rarity": 0.2,
+        "functional": 0.25,
+        "clinical": 0.2
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "E000289",
+      "src": "ClinGen:GN078:PS1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000283",
+      "src": "ClinGen:GN078:PS2:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000277",
+      "src": "ClinGen:GN078:PM3:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000271",
+      "src": "ClinGen:GN078:PM6:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000265",
+      "src": "ClinGen:GN078:PP3:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000259",
+      "src": "ClinGen:GN078:PVS1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000253",
+      "src": "ClinGen:GN078:PS4:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000247",
+      "src": "ClinGen:GN078:PM1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000241",
+      "src": "ClinGen:GN078:PM4:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000235",
+      "src": "ClinGen:GN078:PM5:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000229",
+      "src": "ClinGen:GN078:BP2:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000223",
+      "src": "ClinGen:GN078:BP5:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000217",
+      "src": "ClinGen:GN078:PP5:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000210",
+      "src": "ClinGen:GN078:BS1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000204",
+      "src": "ClinGen:GN078:BP6:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000198",
+      "src": "ClinGen:GN078:PS3:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000192",
+      "src": "ClinGen:GN078:PP1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000186",
+      "src": "ClinGen:GN078:PP4:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000180",
+      "src": "ClinGen:GN078:BP1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000174",
+      "src": "ClinGen:GN078:BP3:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000168",
+      "src": "ClinGen:GN078:PM2:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000162",
+      "src": "ClinGen:GN078:PP2:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000156",
+      "src": "ClinGen:GN078:BA1:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000150",
+      "src": "ClinGen:GN078:BS2:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000144",
+      "src": "ClinGen:GN078:BS3:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000138",
+      "src": "ClinGen:GN078:BS4:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000132",
+      "src": "ClinGen:GN078:BP4:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000126",
+      "src": "ClinGen:GN078:BP7:1.1",
+      "predicate": "APPLIES_TO",
+      "qualifier": null,
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinGen VCEP"
+      ]
+    },
+    {
+      "edge_id": "E000005",
+      "src": "Ensembl:ENST00000256474",
+      "predicate": "RELATES_TO",
+      "qualifier": "encodes",
+      "dst": "Ensembl:ENSP00000256474",
+      "source_ids": [
+        "Ensembl gene structure"
+      ]
+    },
+    {
+      "edge_id": "E000810",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00001142295",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000809",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00001104678",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000807",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713982",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000806",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713816",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000805",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713815",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000804",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713814",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000803",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713813",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000802",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713812",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000801",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713811",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000800",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696153",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000799",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696143",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000798",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696142",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000797",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000477538",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000795",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000345392",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000794",
+      "src": "SPDI:NC_000003.12:10142084:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000256474",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000622",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00001142295",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000621",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00001104678",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000620",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713982",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000619",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713816",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000618",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713815",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000617",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713814",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000616",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713813",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000615",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713812",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000614",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713811",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000613",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696153",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000612",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696143",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000611",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696142",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000610",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000477538",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000608",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000345392",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000607",
+      "src": "SPDI:NC_000003.12:10149789:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000256474",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000555",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00001142295",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000553",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00001104678",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000552",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713982",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000550",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713816",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000548",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713815",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000547",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713814",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000545",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713813",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000542",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713812",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000540",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000713811",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000538",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696153",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000537",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696143",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000535",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000696142",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000534",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000477538",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000533",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000345392",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E000530",
+      "src": "SPDI:NC_000003.12:10146630:T:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "has_consequence",
+      "dst": "Ensembl:ENST00000256474",
+      "source_ids": [
+        "Ensembl VEP"
+      ]
+    },
+    {
+      "edge_id": "E001367",
+      "src": "SPDI:NC_000003.12:10151383:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001366",
+      "src": "SPDI:NC_000003.12:10151335:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001365",
+      "src": "SPDI:NC_000003.12:10151294:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001364",
+      "src": "SPDI:NC_000003.12:10151292:C:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001363",
+      "src": "SPDI:NC_000003.12:10151213:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001362",
+      "src": "SPDI:NC_000003.12:10151171:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001361",
+      "src": "SPDI:NC_000003.12:10151136:C:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001360",
+      "src": "SPDI:NC_000003.12:10151024:C:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001359",
+      "src": "SPDI:NC_000003.12:10150987:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001358",
+      "src": "SPDI:NC_000003.12:10150953:C:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001357",
+      "src": "SPDI:NC_000003.12:10150787:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001356",
+      "src": "SPDI:NC_000003.12:10150784:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001355",
+      "src": "SPDI:NC_000003.12:10150780:G:C",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001353",
+      "src": "SPDI:NC_000003.12:10150688:T:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001350",
+      "src": "SPDI:NC_000003.12:10150599:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001349",
+      "src": "SPDI:NC_000003.12:10150561:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001348",
+      "src": "SPDI:NC_000003.12:10150538:T:C",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001347",
+      "src": "SPDI:NC_000003.12:10150356:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001332",
+      "src": "SPDI:NC_000003.12:10150258:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001317",
+      "src": "SPDI:NC_000003.12:10150244:A:G",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001283",
+      "src": "SPDI:NC_000003.12:10149961:T:C",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001275",
+      "src": "SPDI:NC_000003.12:10141857:G:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001273",
+      "src": "SPDI:NC_000003.12:10141856:A:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001272",
+      "src": "SPDI:NC_000003.12:10141783:C:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001271",
+      "src": "SPDI:NC_000003.12:10141681:C:T",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001270",
+      "src": "SPDI:NC_000003.12:10141652:G:A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    },
+    {
+      "edge_id": "E001049",
+      "src": "SPDI:NC_000003.12:10146525::A",
+      "predicate": "RELATES_TO",
+      "qualifier": "in_gene",
+      "dst": "HGNC:12687",
+      "source_ids": [
+        "ClinVar"
+      ]
+    }
+  ],
+  "paths": [],
+  "budget_exhausted": true,
+  "compact_context": "Q:VHL\nSNAPSHOT:graph_data.json\nLOD:2\nSEEDS:SPDI:NC_000003.12:10149785:G:A,SPDI:NC_000003.12:10142180:T:A,SPDI:NC_000003.12:10142181:ACCGAGGTACG:,ClinGen:GN078:PM6:1.1,SPDI:NC_000003.12:10142079:A:G,SPDI:NC_000003.12:10142155:T:,SPDI:NC_000003.12:10142060:T:C,SPDI:NC_000003.12:10142008:GG:GGG,SPDI:NC_000003.12:10149807:G:T,SPDI:NC_000003.12:10146559:G:T,SPDI:NC_000003.12:10142027:C:G,SPDI:NC_000003.12:10150787:G:A,SPDI:NC_000003.12:10142180:T:C,Ensembl:ENST00000713812,SPDI:NC_000003.12:10149821:C:T,SPDI:NC_000003.12:10146624:T:G,SPDI:NC_000003.12:10150987:G:A,SPDI:NC_000003.12:10145340:C:T,SPDI:NC_000003.12:10146620:AA:A,SPDI:NC_000003.12:10142115:A:T,ClinGen:GN078:PP5:1.1,SPDI:NC_000003.12:10142073:T:C,Ensembl:ENST00000713982,SPDI:NC_000003.12:10142087:C:T,SPDI:NC_000003.12:10146630:T:A,SPDI:NC_000003.12:10142153:C:G,SPDI:NC_000003.12:10149963:G:T,SPDI:NC_000003.12:10146617:G:T,SPDI:NC_000003.12:10146547:C:T,SPDI:NC_000003.12:10142065:GG:,SPDI:NC_000003.12:10146587:TCTCTC:TCTC,ClinGen:GN078:PVS1:1.1,SPDI:NC_000003.12:10142038:C:,SPDI:NC_000003.12:10149923:C:T,SPDI:NC_000003.12:10142063:C:T,SPDI:NC_000003.12:10146534:A:G,SPDI:NC_000003.12:10146635:G:A,SPDI:NC_000003.12:10149906:AGAAAGA:AGAAAGAAAGA,SPDI:NC_000003.12:10150953:C:T,SPDI:NC_000003.12:10142120:G:T,SPDI:NC_000003.12:10141770:C:T,SPDI:NC_000003.12:10150258:G:A,SPDI:NC_000003.12:10149961:T:C,SPDI:NC_000003.12:10142000:G:A,SPDI:NC_000003.12:10149822:G:A,SPDI:NC_000003.12:10142123:G:C,SPDI:NC_000003.12:10142112:T:C,SPDI:NC_000003.12:10149784:A:G,SPDI:NC_000003.12:10146560:G:C,SPDI:NC_000003.12:10150561:G:A,SPDI:NC_000003.12:10142037:G:C,SPDI:NC_000003.12:10146511:A:G,SPDI:NC_000003.12:10150599:G:A,SPDI:NC_000003.12:10141996:C:A,SPDI:NC_000003.12:10146607:G:C,SPDI:NC_000003.12:10149824::TTGTCCGT,SPDI:NC_000003.12:10149807:G:A,SPDI:NC_000003.12:10141920:C:T,ClinGen:GN078:BA1:1.1,SPDI:NC_000003.12:10149793:T:TT,SPDI:NC_000003.12:10142102:CCC:CC,SPDI:NC_000003.12:10146573:AA:A,SPDI:NC_000003.12:10149829:A:C,SPDI:NC_000003.12:10150784:A:G,SPDI:NC_000003.12:10149951:G:A,SPDI:NC_000003.12:10151292:C:A,HGNC:12687,SPDI:NC_000003.12:10149866:A:G,SPDI:NC_000003.12:10146578:TTT:TT,SPDI:NC_000003.12:10146667:GTTGTTGT:GTTGT,ClinGen:GN078:BS1:1.1,SPDI:NC_000003.12:10142102:C:G,SPDI:NC_000003.12:10142115:A:G,SPDI:NC_000003.12:10146580:T:G,SPDI:NC_000003.12:10142139:A:AA,SPDI:NC_000003.12:10149847:C:G,SPDI:NC_000003.12:10141849:G:T,SPDI:NC_000003.12:10149876:A:G,Ensembl:ENST00000713813,ClinGen:GN078:PP3:1.1,SPDI:NC_000003.12:10150780:G:C,ClinGen:GN078:PM2:1.1,SPDI:NC_000003.12:10146626:ACACTGCCAGGTACTGACGTTTTACTT:,SPDI:NC_000003.12:10146548:G:A,SPDI:NC_000003.12:10142166:G:A,ClinGen:GN078:BP3:1.1,ClinGen:GN078:BS3:1.1,SPDI:NC_000003.12:10142084:A:G,SPDI:NC_000003.12:10149663:TTTTTTT:TTTTTT,SPDI:NC_000003.12:10142049:C:A,ClinGen:GN078:BP2:1.1,SPDI:NC_000003.12:10142165:C:G,SPDI:NC_000003.12:10149803:C:T,SPDI:NC_000003.12:10142104:C:G,SPDI:NC_000003.12:10149934:GCGC:GC,SPDI:NC_000003.12:10142121:A:T,SPDI:NC_000003.12:10142014:C:G,SPDI:NC_000003.12:10142187:G:A,SPDI:NC_000003.12:10141783:C:T,SPDI:NC_000003.12:10149878:G:A,SPDI:NC_000003.12:10142103:C:G,Ensembl:ENST00001104678,SPDI:NC_000003.12:10141787:CCCGCGTCCGACCCGCGGATCCCGCG:CCCGCGTCCGACCCGCGGATCCCGCGTCCGACCCGCGGATCCCGCG,SPDI:NC_000003.12:10149867:G:A,SPDI:NC_000003.12:10142021:C:T,SPDI:NC_000003.12:10149801:A:T,Ensembl:ENST00000696153,ClinGen:GN078:PP2:1.1,SPDI:NC_000003.12:10149896:C:T,SPDI:NC_000003.12:10141851:C:T,Ensembl:ENST00000345392,SPDI:NC_000003.12:10141769:GCGCGCACGCAGCTCCGCCCCGCG:GCG,SPDI:NC_000003.12:10146525::A,SPDI:NC_000003.12:10146602:G:T,Ensembl:ENST00000696142,SPDI:NC_000003.12:10142035:GCGC:,SPDI:NC_000003.12:10150356:G:A,ClinGen:GN078:PM4:1.1,SPDI:NC_000003.12:10146588:C:G,SPDI:NC_000003.12:10151024:C:T,SPDI:NC_000003.12:10142029:C:G,SPDI:NC_000003.12:10142166:G:C,SPDI:NC_000003.12:10149893:C:G,SPDI:NC_000003.12:10142191:G:C,SPDI:NC_000003.12:10142040:C:T,SPDI:NC_000003.12:10141893:A:C,ClinGen:GN078:PP4:1.1,SPDI:NC_000003.12:10149877:C:T,SPDI:NC_000003.12:10141875:A:T,SPDI:NC_000003.12:10142101:G:A,SPDI:NC_000003.12:10142140:CCC:CCCC,SPDI:NC_000003.12:10142079:A:C,SPDI:NC_000003.12:10149900:A:G,SPDI:NC_000003.12:10150538:T:C,SPDI:NC_000003.12:10146522:GG:G,SPDI:NC_000003.12:10149894:A:C,SPDI:NC_000003.12:10149862:CGTC:,SPDI:NC_000003.12:10142078:A:T,SPDI:NC_000003.12:10149915:T:C,SPDI:NC_000003.12:10146542:ACACAC:ACAC,SPDI:NC_000003.12:10146586:A:G,ClinGen:GN078:BS2:1.1,SPDI:NC_000003.12:10146588:C:T,SPDI:NC_000003.12:10149812:C:T,SPDI:NC_000003.12:10151136:C:T,SPDI:NC_000003.12:10149920:C:T,SPDI:NC_000003.12:10141980:C:G,ClinGen:GN078:PM1:1.1,SPDI:NC_000003.12:10142054:G:A,SPDI:NC_000003.12:10142013:C:T,SPDI:NC_000003.12:10150244:A:G,SPDI:NC_000003.12:10146636:G:C,Ensembl:ENST00000713811,Ensembl:ENST00000713815,SPDI:NC_000003.12:10141849:G:A,SPDI:NC_000003.12:10142206:G:A,SPDI:NC_000003.12:10149880:A:C,SPDI:NC_000003.12:10149789:A:G,SPDI:NC_000003.12:10146599:G:C,SPDI:NC_000003.12:10142088:C:T,SPDI:NC_000003.12:10146523:G:T,SPDI:NC_000003.12:10141871:G:A,SPDI:NC_000003.12:10146548:G:T,SPDI:NC_000003.12:10141941:A:G,SPDI:NC_000003.12:10146553:GC:TT,SPDI:NC_000003.12:10149870:C:A,SPDI:NC_000003.12:10146577:A:C,SPDI:NC_000003.12:10141860:C:T,SPDI:NC_000003.12:10142172:T:A,SPDI:NC_000003.12:10149870:C:G,SPDI:NC_000003.12:10142070:TCTTCT:TCT,SPDI:NC_000003.12:10149817:TGTCCGGAGCCT:T,SPDI:NC_000003.12:10142103:C:T,SPDI:NC_000003.12:10149907:G:C,SPDI:NC_000003.12:10149908:A:T,SPDI:NC_000003.12:10149950:C:T,SPDI:NC_000003.12:10142067:T:,SPDI:NC_000003.12:10149874:C:T,ClinGen:GN078:BP1:1.1,SPDI:NC_000003.12:10141857:G:T,SPDI:NC_000003.12:10149831:T:C,SPDI:NC_000003.12:10142179:C:G,SPDI:NC_000003.12:10151294:A:G,SPDI:NC_000003.12:10149821:C:G,SPDI:NC_000003.12:10149863:G:A,SPDI:NC_000003.12:10141996:C:G,SPDI:NC_000003.12:10149785:G:C,SPDI:NC_000003.12:10142059:C:T,Ensembl:ENST00000477538,ClinGen:GN078:PM5:1.1,SPDI:NC_000003.12:10146612:TTTTT:TTTT,SPDI:NC_000003.12:10141835:ATCGCGGAGGGAAT:ATCGCGGAGGGAATATCGCGGAGGGAAT,SPDI:NC_000003.12:10072981:G:A,SPDI:NC_000003.12:10149813:A:G,SPDI:NC_000003.12:10142000:G:T,SPDI:NC_000003.12:10142081:C:T,SPDI:NC_000003.12:10141950:C:A,SPDI:NC_000003.12:10142167:C:T,SPDI:NC_000003.12:10146637:T:G,SPDI:NC_000003.12:10142110:G:T,SPDI:NC_000003.12:10142109:G:A,SPDI:NC_000003.12:10149792:C:T,ClinGen:GN078:PS2:1.1,SPDI:NC_000003.12:10149797:AAA:AA,SPDI:NC_000003.12:10146492:AACCT:,SPDI:NC_000003.12:10145380:C:T,SPDI:NC_000003.12:10141960:C:T,SPDI:NC_000003.12:10151383:A:G,SPDI:NC_000003.12:10141917:G:A,SPDI:NC_000003.12:10142034:T:C,SPDI:NC_000003.12:10151213:G:A,SPDI:NC_000003.12:10146543:C:T,Ensembl:ENST00000256474,SPDI:NC_000003.12:10151171:G:A,SPDI:NC_000003.12:10142079:A:T,SPDI:NC_000003.12:10142123:G:A,SPDI:NC_000003.12:10146643:C:T,SPDI:NC_000003.12:10142025:GG:G,SPDI:NC_000003.12:10149908:AAA:AAAA,SPDI:NC_000003.12:10142146:G:GG,ClinGen:GN078:BS4:1.1,SPDI:NC_000003.12:10141955:GAGTCCGGCCCGGAAGAGTCCGGCCCGGA:GAGTCCGGCCCGGA,SPDI:NC_000003.12:10141932:GC:TT,ClinGen:GN078:PP1:1.1,SPDI:NC_000003.12:10149846:A:G,SPDI:NC_000003.12:10141975:C:T,SPDI:NC_000003.12:10149871:G:A,SPDI:NC_000003.12:10149810:T:C,SPDI:NC_000003.12:10149808:C:A,ClinGen:GN078:PS4:1.1,SPDI:NC_000003.12:10141812:G:A,ClinGen:GN078:PM3:1.1,SPDI:NC_000003.12:10142067:TCATC:TC,SPDI:NC_000003.12:10141981:G:A,SPDI:NC_000003.12:10146623:A:C,SPDI:NC_000003.12:10142135:C:T,SPDI:NC_000003.12:10142156:GGCACGGGCCGCCGCATCCACAGCTACCGAGGTACGGGCCCGGCGCTTAGG:G,SPDI:NC_000003.12:10141853:C:T,SPDI:NC_000003.12:10141837:CGCGGAGGGAATGCC:CGCGGAGGGAATGCCGCGGAGGGAATGCC,SPDI:NC_000003.12:10142008:GGAGGCCGGG:GGAGGCCGGGAGGCCGGG,SPDI:NC_000003.12:10141652:G:A,SPDI:NC_000003.12:10142139:A:G,SPDI:NC_000003.12:10142018:C:T,SPDI:NC_000003.12:10149877:C:G,SPDI:NC_000003.12:10142109:G:C,SPDI:NC_000003.12:10146519:T:G,ClinGen:GN078:BP7:1.1,SPDI:NC_000003.12:10142039:T:G,SPDI:NC_000003.12:10149819:T:C,SPDI:NC_000003.12:10142193:G:C,ClinGen:GN078:BP6:1.1,ClinGen:GN078:PS3:1.1,SPDI:NC_000003.12:10142096:G:T,SPDI:NC_000003.12:10145378:T:C,SPDI:NC_000003.12:10141856:A:T,SPDI:NC_000003.12:10141640:C:T,SPDI:NC_000003.12:10141681:C:T,SPDI:NC_000003.12:10141842:A:C,SPDI:NC_000003.12:10142102:C:T,SPDI:NC_000003.12:10149795:T:C,SPDI:NC_000003.12:10142123:G:T,SPDI:NC_000003.12:10142157:G:T,Ensembl:ENST00001142295,SPDI:NC_000003.12:10142091:G:C,ClinGen:GN078:BP4:1.1,SPDI:NC_000003.12:10149808:C:G,SPDI:NC_000003.12:10149818:G:T,SPDI:NC_000003.12:10142040:C:G,SPDI:NC_000003.12:10142114:AA:A,SPDI:NC_000003.12:10142181:A:G,SPDI:NC_000003.12:10142126:G:A,SPDI:NC_000003.12:10149953:A:C,SPDI:NC_000003.12:10146512:GG:G,SPDI:NC_000003.12:10146517:C:T,SPDI:NC_000003.12:10142037:G:A,SPDI:NC_000003.12:10146602:GG:G,SPDI:NC_000003.12:10150688:T:G,SPDI:NC_000003.12:10149884:C:G,SPDI:NC_000003.12:10142178:G:T,SPDI:NC_000003.12:10151335:A:G,SPDI:NC_000003.12:10149871:G:T,SPDI:NC_000003.12:10142178:G:A,Ensembl:ENST00000713814,Ensembl:ENST00000713816,ClinGen:GN078:PS1:1.1,SPDI:NC_000003.12:10146617:G:A,SPDI:NC_000003.12:10142139:A:C,SPDI:NC_000003.12:10146530:A:G,SPDI:NC_000003.12:10146606:A:T,SPDI:NC_000003.12:10142055:A:G,SPDI:NC_000003.12:10146607:GC:,SPDI:NC_000003.12:10142186:G:C,ClinGen:GN078:BP5:1.1,Ensembl:ENST00000696143,SPDI:NC_000003.12:10146617:G:C\nNODES:\nClinGen:GN078:PS1:1.1|ACMGCriterion|PS1\nHGNC:12687|Gene|VHL\nClinGen:GN078:PS2:1.1|ACMGCriterion|PS2\nClinGen:GN078:PM3:1.1|ACMGCriterion|PM3\nClinGen:GN078:PM6:1.1|ACMGCriterion|PM6\nClinGen:GN078:PP3:1.1|ACMGCriterion|PP3\nClinGen:GN078:PVS1:1.1|ACMGCriterion|PVS1\nClinGen:GN078:PS4:1.1|ACMGCriterion|PS4\nClinGen:GN078:PM1:1.1|ACMGCriterion|PM1\nClinGen:GN078:PM4:1.1|ACMGCriterion|PM4\nClinGen:GN078:PM5:1.1|ACMGCriterion|PM5\nClinGen:GN078:BP2:1.1|ACMGCriterion|BP2\nClinGen:GN078:BP5:1.1|ACMGCriterion|BP5\nClinGen:GN078:PP5:1.1|ACMGCriterion|PP5\nClinGen:GN078:BS1:1.1|ACMGCriterion|BS1\nClinGen:GN078:BP6:1.1|ACMGCriterion|BP6\nClinGen:GN078:PS3:1.1|ACMGCriterion|PS3\nClinGen:GN078:PP1:1.1|ACMGCriterion|PP1\nClinGen:GN078:PP4:1.1|ACMGCriterion|PP4\nClinGen:GN078:BP1:1.1|ACMGCriterion|BP1\nClinGen:GN078:BP3:1.1|ACMGCriterion|BP3\nClinGen:GN078:PM2:1.1|ACMGCriterion|PM2\nClinGen:GN078:PP2:1.1|ACMGCriterion|PP2\nClinGen:GN078:BA1:1.1|ACMGCriterion|BA1\nClinGen:GN078:BS2:1.1|ACMGCriterion|BS2\nClinGen:GN078:BS3:1.1|ACMGCriterion|BS3\nClinGen:GN078:BS4:1.1|ACMGCriterion|BS4\nClinGen:GN078:BP4:1.1|ACMGCriterion|BP4\nClinGen:GN078:BP7:1.1|ACMGCriterion|BP7\nEnsembl:ENST00000256474|Transcript|Ensembl:ENST00000256474\nEnsembl:ENSP00000256474|Protein|Ensembl:ENSP00000256474\nSPDI:NC_000003.12:10142084:A:G|Variant|SPDI:NC_000003.12:10142084:A:G\nEnsembl:ENST00001142295|Transcript|Ensembl:ENST00001142295\nEnsembl:ENST00001104678|Transcript|Ensembl:ENST00001104678\nEnsembl:ENST00000713982|Transcript|Ensembl:ENST00000713982\nEnsembl:ENST00000713816|Transcript|Ensembl:ENST00000713816\nEnsembl:ENST00000713815|Transcript|Ensembl:ENST00000713815\nEnsembl:ENST00000713814|Transcript|Ensembl:ENST00000713814\nEnsembl:ENST00000713813|Transcript|Ensembl:ENST00000713813\nEnsembl:ENST00000713812|Transcript|Ensembl:ENST00000713812\nEnsembl:ENST00000713811|Transcript|Ensembl:ENST00000713811\nEnsembl:ENST00000696153|Transcript|Ensembl:ENST00000696153\nEnsembl:ENST00000696143|Transcript|Ensembl:ENST00000696143\nEnsembl:ENST00000696142|Transcript|Ensembl:ENST00000696142\nEnsembl:ENST00000477538|Transcript|Ensembl:ENST00000477538\nEnsembl:ENST00000345392|Transcript|Ensembl:ENST00000345392\nSPDI:NC_000003.12:10149789:A:G|Variant|SPDI:NC_000003.12:10149789:A:G\nSPDI:NC_000003.12:10146630:T:A|Variant|SPDI:NC_000003.12:10146630:T:A\nSPDI:NC_000003.12:10151383:A:G|Variant|SPDI:NC_000003.12:10151383:A:G\nSPDI:NC_000003.12:10151335:A:G|Variant|SPDI:NC_000003.12:10151335:A:G\nSPDI:NC_000003.12:10151294:A:G|Variant|SPDI:NC_000003.12:10151294:A:G\nSPDI:NC_000003.12:10151292:C:A|Variant|SPDI:NC_000003.12:10151292:C:A\nSPDI:NC_000003.12:10151213:G:A|Variant|SPDI:NC_000003.12:10151213:G:A\nSPDI:NC_000003.12:10151171:G:A|Variant|SPDI:NC_000003.12:10151171:G:A\nSPDI:NC_000003.12:10151136:C:T|Variant|SPDI:NC_000003.12:10151136:C:T\nSPDI:NC_000003.12:10151024:C:T|Variant|SPDI:NC_000003.12:10151024:C:T\nSPDI:NC_000003.12:10150987:G:A|Variant|SPDI:NC_000003.12:10150987:G:A\nSPDI:NC_000003.12:10150953:C:T|Variant|SPDI:NC_000003.12:10150953:C:T\nSPDI:NC_000003.12:10150787:G:A|Variant|SPDI:NC_000003.12:10150787:G:A\nSPDI:NC_000003.12:10150784:A:G|Variant|SPDI:NC_000003.12:10150784:A:G\nSPDI:NC_000003.12:10150780:G:C|Variant|SPDI:NC_000003.12:10150780:G:C\nSPDI:NC_000003.12:10150688:T:G|Variant|SPDI:NC_000003.12:10150688:T:G\nSPDI:NC_000003.12:10150599:G:A|Variant|SPDI:NC_000003.12:10150599:G:A\nSPDI:NC_000003.12:10150561:G:A|Variant|SPDI:NC_000003.12:10150561:G:A\nSPDI:NC_000003.12:10150538:T:C|Variant|SPDI:NC_000003.12:10150538:T:C\nSPDI:NC_000003.12:10150356:G:A|Variant|SPDI:NC_000003.12:10150356:G:A\nSPDI:NC_000003.12:10150258:G:A|Variant|SPDI:NC_000003.12:10150258:G:A\nSPDI:NC_000003.12:10150244:A:G|Variant|SPDI:NC_000003.12:10150244:A:G\nSPDI:NC_000003.12:10149961:T:C|Variant|SPDI:NC_000003.12:10149961:T:C\nSPDI:NC_000003.12:10141857:G:T|Variant|SPDI:NC_000003.12:10141857:G:T\nSPDI:NC_000003.12:10141856:A:T|Variant|SPDI:NC_000003.12:10141856:A:T\nSPDI:NC_000003.12:10141783:C:T|Variant|SPDI:NC_000003.12:10141783:C:T\nSPDI:NC_000003.12:10141681:C:T|Variant|SPDI:NC_000003.12:10141681:C:T\nSPDI:NC_000003.12:10141652:G:A|Variant|SPDI:NC_000003.12:10141652:G:A\nSPDI:NC_000003.12:10146525::A|Variant|SPDI:NC_000003.12:10146525::A\nEDGES:\nE000289|ClinGen:GN078:PS1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000283|ClinGen:GN078:PS2:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000277|ClinGen:GN078:PM3:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000271|ClinGen:GN078:PM6:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000265|ClinGen:GN078:PP3:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000259|ClinGen:GN078:PVS1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000253|ClinGen:GN078:PS4:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000247|ClinGen:GN078:PM1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000241|ClinGen:GN078:PM4:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000235|ClinGen:GN078:PM5:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000229|ClinGen:GN078:BP2:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000223|ClinGen:GN078:BP5:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000217|ClinGen:GN078:PP5:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000210|ClinGen:GN078:BS1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000204|ClinGen:GN078:BP6:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000198|ClinGen:GN078:PS3:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000192|ClinGen:GN078:PP1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000186|ClinGen:GN078:PP4:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000180|ClinGen:GN078:BP1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000174|ClinGen:GN078:BP3:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000168|ClinGen:GN078:PM2:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000162|ClinGen:GN078:PP2:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000156|ClinGen:GN078:BA1:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000150|ClinGen:GN078:BS2:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000144|ClinGen:GN078:BS3:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000138|ClinGen:GN078:BS4:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000132|ClinGen:GN078:BP4:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000126|ClinGen:GN078:BP7:1.1|APPLIES_TO[-]|HGNC:12687|ClinGen VCEP\nE000005|Ensembl:ENST00000256474|RELATES_TO[encodes]|Ensembl:ENSP00000256474|Ensembl gene structure\nE000810|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00001142295|Ensembl VEP\nE000809|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00001104678|Ensembl VEP\nE000807|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713982|Ensembl VEP\nE000806|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713816|Ensembl VEP\nE000805|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713815|Ensembl VEP\nE000804|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713814|Ensembl VEP\nE000803|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713813|Ensembl VEP\nE000802|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713812|Ensembl VEP\nE000801|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713811|Ensembl VEP\nE000800|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000696153|Ensembl VEP\nE000799|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000696143|Ensembl VEP\nE000798|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000696142|Ensembl VEP\nE000797|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000477538|Ensembl VEP\nE000795|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000345392|Ensembl VEP\nE000794|SPDI:NC_000003.12:10142084:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000256474|Ensembl VEP\nE000622|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00001142295|Ensembl VEP\nE000621|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00001104678|Ensembl VEP\nE000620|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713982|Ensembl VEP\nE000619|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713816|Ensembl VEP\nE000618|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713815|Ensembl VEP\nE000617|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713814|Ensembl VEP\nE000616|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713813|Ensembl VEP\nE000615|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713812|Ensembl VEP\nE000614|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000713811|Ensembl VEP\nE000613|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000696153|Ensembl VEP\nE000612|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000696143|Ensembl VEP\nE000611|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000696142|Ensembl VEP\nE000610|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000477538|Ensembl VEP\nE000608|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000345392|Ensembl VEP\nE000607|SPDI:NC_000003.12:10149789:A:G|RELATES_TO[has_consequence]|Ensembl:ENST00000256474|Ensembl VEP\nE000555|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00001142295|Ensembl VEP\nE000553|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00001104678|Ensembl VEP\nE000552|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713982|Ensembl VEP\nE000550|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713816|Ensembl VEP\nE000548|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713815|Ensembl VEP\nE000547|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713814|Ensembl VEP\nE000545|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713813|Ensembl VEP\nE000542|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713812|Ensembl VEP\nE000540|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000713811|Ensembl VEP\nE000538|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000696153|Ensembl VEP\nE000537|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000696143|Ensembl VEP\nE000535|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000696142|Ensembl VEP\nE000534|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000477538|Ensembl VEP\nE000533|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000345392|Ensembl VEP\nE000530|SPDI:NC_000003.12:10146630:T:A|RELATES_TO[has_consequence]|Ensembl:ENST00000256474|Ensembl VEP\nE001367|SPDI:NC_000003.12:10151383:A:G|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001366|SPDI:NC_000003.12:10151335:A:G|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001365|SPDI:NC_000003.12:10151294:A:G|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001364|SPDI:NC_000003.12:10151292:C:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001363|SPDI:NC_000003.12:10151213:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001362|SPDI:NC_000003.12:10151171:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001361|SPDI:NC_000003.12:10151136:C:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001360|SPDI:NC_000003.12:10151024:C:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001359|SPDI:NC_000003.12:10150987:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001358|SPDI:NC_000003.12:10150953:C:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001357|SPDI:NC_000003.12:10150787:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001356|SPDI:NC_000003.12:10150784:A:G|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001355|SPDI:NC_000003.12:10150780:G:C|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001353|SPDI:NC_000003.12:10150688:T:G|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001350|SPDI:NC_000003.12:10150599:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001349|SPDI:NC_000003.12:10150561:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001348|SPDI:NC_000003.12:10150538:T:C|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001347|SPDI:NC_000003.12:10150356:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001332|SPDI:NC_000003.12:10150258:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001317|SPDI:NC_000003.12:10150244:A:G|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001283|SPDI:NC_000003.12:10149961:T:C|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001275|SPDI:NC_000003.12:10141857:G:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001273|SPDI:NC_000003.12:10141856:A:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001272|SPDI:NC_000003.12:10141783:C:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001271|SPDI:NC_000003.12:10141681:C:T|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001270|SPDI:NC_000003.12:10141652:G:A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nE001049|SPDI:NC_000003.12:10146525::A|RELATES_TO[in_gene]|HGNC:12687|ClinVar\nPATHS:\nSCORES:\nClinGen:GN078:PS1:1.1|rwr=0.00085\nHGNC:12687|rwr=0.69106\nClinGen:GN078:PS2:1.1|rwr=0.00085\nClinGen:GN078:PM3:1.1|rwr=0.00085\nClinGen:GN078:PM6:1.1|rwr=0.00085\nClinGen:GN078:PP3:1.1|rwr=0.00085\nClinGen:GN078:PVS1:1.1|rwr=0.00085\nClinGen:GN078:PS4:1.1|rwr=0.00085\nClinGen:GN078:PM1:1.1|rwr=0.00085\nClinGen:GN078:PM4:1.1|rwr=0.00085\nClinGen:GN078:PM5:1.1|rwr=0.00085\nClinGen:GN078:BP2:1.1|rwr=0.00085\nClinGen:GN078:BP5:1.1|rwr=0.00085\nClinGen:GN078:PP5:1.1|rwr=0.00085\nClinGen:GN078:BS1:1.1|rwr=0.00085\nClinGen:GN078:BP6:1.1|rwr=0.00085\nClinGen:GN078:PS3:1.1|rwr=0.00085\nClinGen:GN078:PP1:1.1|rwr=0.00085\nClinGen:GN078:PP4:1.1|rwr=0.00085\nClinGen:GN078:BP1:1.1|rwr=0.00085",
+  "ai_note": "Deterministic heuristic attention baseline; no clinical diagnosis or external LLM claim is made."
+}

@@ -720,3 +720,183 @@ Cross-layer edges: 107982 (70.9%)  ·  DERIVED-origin edges: 6153
 [15:43:58] Graph dump → D:\ForgePOC\runs/panel_50k\graph.jsonl.gz
 [15:43:58] Dirty ledger → D:\ForgePOC\runs/panel_50k\dirty_ledger.jsonl
 [15:43:58] Total wall clock: 1.02h
+[15:28:25] ============================================================================================
+[15:28:25] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[15:28:25]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[15:28:25]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[15:28:25]   enrichment  1 in 10 variants
+[15:28:25]   output      C:\Users\havis\OneDrive\Documents\Forgenome\ForGenome\runs/panel_50k
+[15:28:25] ============================================================================================
+[15:28:27]   [ 1/79] VHL         2,277 ClinVar records
+[15:28:28]   [ 2/79] BRCA1      16,104 ClinVar records
+[15:28:30]   [ 3/79] MYH7        6,011 ClinVar records
+[15:28:31]   [ 4/79] KCNQ1       3,280 ClinVar records
+[15:28:33]   [ 5/79] FBN1        9,750 ClinVar records
+[15:28:34]   [ 6/79] LDLR        4,969 ClinVar records
+[15:28:36]   [ 7/79] BRCA2      22,070 ClinVar records
+[15:28:37]   [ 8/79] MYBPC3      4,851 ClinVar records
+[15:28:38]   [ 9/79] KCNH2       4,016 ClinVar records
+[15:28:39]   [10/79] TGFBR1      1,298 ClinVar records
+[15:28:40]   [11/79] APOB        5,324 ClinVar records
+[15:28:41]   [12/79] PALB2       6,902 ClinVar records
+[15:28:42]   [13/79] TNNT2       1,193 ClinVar records
+[15:28:43]   [14/79] SCN5A       5,193 ClinVar records
+[15:28:45]   [15/79] TGFBR2      1,446 ClinVar records
+[15:28:46]   [16/79] PCSK9       1,577 ClinVar records
+[15:28:47]   [17/79] TP53        4,035 ClinVar records
+[15:28:48]   [18/79] TNNI3         913 ClinVar records
+[15:28:49]   [19/79] RYR2       10,335 ClinVar records
+[15:28:51]   [20/79] SMAD3       1,361 ClinVar records
+[15:28:51]   [21/79] OTC         1,193 ClinVar records
+[15:28:52]   [22/79] STK11       3,137 ClinVar records
+[15:28:53]   [23/79] TPM1        1,171 ClinVar records
+[15:28:55]   [24/79] CASQ2         916 ClinVar records
+[15:28:56]   [25/79] ACTA2         804 ClinVar records
+[15:28:57]   [26/79] BTD         1,030 ClinVar records
+[15:28:59]   [27/79] PTEN        4,291 ClinVar records
+[15:28:59]   [28/79] MYL2          673 ClinVar records
+[15:29:01]   [29/79] TRDN        1,672 ClinVar records
+[15:29:02]   [30/79] MYH11       4,751 ClinVar records
+[15:29:04]   [31/79] GAA         3,742 ClinVar records
+[15:29:06]   [32/79] CDH1        5,300 ClinVar records
+[15:29:07]   [33/79] MYL3          526 ClinVar records
+[15:29:08]   [34/79] RYR1       11,398 ClinVar records
+[15:29:10]   [35/79] COL3A1      4,075 ClinVar records
+[15:29:11]   [36/79] ATP7B       3,885 ClinVar records
+[15:29:13]   [37/79] MLH1        6,520 ClinVar records
+[15:29:13]   [38/79] ACTC1         934 ClinVar records
+[15:29:14]   [39/79] CACNA1S     3,585 ClinVar records
+[15:29:15]   [40/79] RPE65       1,280 ClinVar records
+[15:29:16]   [41/79] MSH2        8,647 ClinVar records
+[15:29:17]   [42/79] PRKAG2      1,652 ClinVar records
+[15:29:19]   [43/79] TTR           503 ClinVar records
+[15:29:20]   [44/79] MSH6       10,845 ClinVar records
+[15:29:22]   [45/79] GLA         2,367 ClinVar records
+[15:29:22]   [46/79] HNF1A       1,317 ClinVar records
+[15:29:23]   [47/79] PMS2        6,289 ClinVar records
+[15:29:25]   [48/79] LMNA        2,574 ClinVar records
+[15:29:25]   [49/79] ACVRL1      1,321 ClinVar records
+[15:29:27]   [50/79] APC        17,236 ClinVar records
+[15:29:28]   [51/79] FLNC        6,463 ClinVar records
+[15:29:30]   [52/79] ENG         2,215 ClinVar records
+[15:29:32]   [53/79] MUTYH       4,248 ClinVar records
+[15:29:35]   [54/79] TTN        41,446 ClinVar records
+[15:29:35]   [55/79] HFE           361 ClinVar records
+[15:29:36]   [56/79] BMPR1A      2,891 ClinVar records
+[15:29:37]   [57/79] BAG3        1,465 ClinVar records
+[15:29:38]   [58/79] SMAD4       2,704 ClinVar records
+[15:29:40]   [59/79] PLN           216 ClinVar records
+[15:29:41]   [60/79] RB1         4,890 ClinVar records
+[15:29:42]   [61/79] DSP         6,283 ClinVar records
+[15:29:43]   [62/79] RET         4,548 ClinVar records
+[15:29:44]   [63/79] PKP2        2,476 ClinVar records
+[15:29:45]   [64/79] MEN1        3,209 ClinVar records
+[15:29:47]   [65/79] DSG2        2,400 ClinVar records
+[15:29:49]   [66/79] TSC1        5,865 ClinVar records
+[15:29:49]   [67/79] DSC2        2,190 ClinVar records
+[15:29:51]   [68/79] TSC2       12,855 ClinVar records
+[15:29:52]   [69/79] TMEM43      1,213 ClinVar records
+[15:29:53]   [70/79] WT1         2,129 ClinVar records
+[15:29:55]   [71/79] NF2         2,669 ClinVar records
+[15:29:56]   [72/79] BAP1        3,652 ClinVar records
+[15:29:58]   [73/79] SDHB        1,738 ClinVar records
+[15:29:59]   [74/79] SDHC        1,066 ClinVar records
+[15:30:00]   [75/79] SDHD          979 ClinVar records
+[15:30:01]   [76/79] SDHAF2        782 ClinVar records
+[15:30:03]   [77/79] MAX           707 ClinVar records
+[15:30:04]   [78/79] TMEM127     1,265 ClinVar records
+[15:30:05]   [79/79] FH          2,664 ClinVar records
+[15:30:06] 
+[15:30:06] GENE        CLINVAR FAMILY   ALLOCATED   COVERAGE
+[15:30:06] ------------------------------------------------------------
+[15:30:06] TTN                 41,446         645     1.6%
+[15:30:06] BRCA2               22,070         645     2.9%
+[15:30:06] APC                 17,236         645     3.7%
+[15:30:06] BRCA1               16,104         645     4.0%
+[15:30:06] TSC2                12,855         645     5.0%
+[15:30:06] RYR1                11,398         645     5.7%
+[15:30:06] MSH6                10,845         645     5.9%
+[15:30:06] RYR2                10,335         645     6.2%
+[15:30:06] FBN1                 9,750         645     6.6%
+[15:30:06] MSH2                 8,647         645     7.5%
+[15:30:06] PALB2                6,902         645     9.3%
+[15:30:06] MLH1                 6,520         645     9.9%
+[15:30:06] FLNC                 6,463         645    10.0%
+[15:30:06] PMS2                 6,289         645    10.3%
+[15:30:06] DSP                  6,283         645    10.3%
+[15:30:06] MYH7                 6,011         645    10.7%
+[15:30:06] TSC1                 5,865         645    11.0%
+[15:30:06] APOB                 5,324         645    12.1%
+[15:30:06] CDH1                 5,300         645    12.2%
+[15:30:06] SCN5A                5,193         645    12.4%
+[15:30:06] LDLR                 4,969         645    13.0%
+[15:30:06] RB1                  4,890         645    13.2%
+[15:30:06] MYBPC3               4,851         645    13.3%
+[15:30:06] MYH11                4,751         645    13.6%
+[15:30:06] RET                  4,548         645    14.2%
+[15:30:06] PTEN                 4,291         645    15.0%
+[15:30:06] MUTYH                4,248         645    15.2%
+[15:30:06] COL3A1               4,075         645    15.8%
+[15:30:06] TP53                 4,035         645    16.0%
+[15:30:06] KCNH2                4,016         645    16.1%
+[15:30:06] ATP7B                3,885         645    16.6%
+[15:30:06] GAA                  3,742         645    17.2%
+[15:30:06] BAP1                 3,652         645    17.7%
+[15:30:06] CACNA1S              3,585         645    18.0%
+[15:30:06] KCNQ1                3,280         645    19.7%
+[15:30:06] MEN1                 3,209         645    20.1%
+[15:30:06] STK11                3,137         645    20.6%
+[15:30:06] BMPR1A               2,891         645    22.3%
+[15:30:06] SMAD4                2,704         645    23.9%
+[15:30:06] NF2                  2,669         645    24.2%
+[15:30:06] FH                   2,664         645    24.2%
+[15:30:06] LMNA                 2,574         645    25.1%
+[15:30:06] PKP2                 2,476         645    26.1%
+[15:30:06] DSG2                 2,400         645    26.9%
+[15:30:06] GLA                  2,367         645    27.2%
+[15:30:06] VHL                  2,277         645    28.3%
+[15:30:06] ENG                  2,215         645    29.1%
+[15:30:06] DSC2                 2,190         645    29.5%
+[15:30:06] WT1                  2,129         645    30.3%
+[15:30:06] SDHB                 1,738         645    37.1%
+[15:30:06] TRDN                 1,672         645    38.6%
+[15:30:06] PRKAG2               1,652         645    39.0%
+[15:30:06] PCSK9                1,577         645    40.9%
+[15:30:06] BAG3                 1,465         645    44.0%
+[15:30:06] TGFBR2               1,446         645    44.6%
+[15:30:06] SMAD3                1,361         645    47.4%
+[15:30:06] ACVRL1               1,321         645    48.8%
+[15:30:06] HNF1A                1,317         645    49.0%
+[15:30:06] TGFBR1               1,298         645    49.7%
+[15:30:06] RPE65                1,280         645    50.4%
+[15:30:06] TMEM127              1,265         645    51.0%
+[15:30:06] TMEM43               1,213         645    53.2%
+[15:30:06] TNNT2                1,193         645    54.1%
+[15:30:06] OTC                  1,193         645    54.1%
+[15:30:06] TPM1                 1,171         645    55.1%
+[15:30:06] SDHC                 1,066         645    60.5%
+[15:30:06] BTD                  1,030         645    62.6%
+[15:30:06] SDHD                   979         645    65.9%
+[15:30:06] ACTC1                  934         645    69.1%
+[15:30:06] CASQ2                  916         645    70.4%
+[15:30:06] TNNI3                  913         645    70.6%
+[15:30:06] ACTA2                  804         645    80.2%
+[15:30:06] SDHAF2                 782         645    82.5%
+[15:30:06] MAX                    707         645    91.2%
+[15:30:06] MYL2                   673         645    95.8%
+[15:30:06] MYL3                   526         526   100.0%  complete
+[15:30:06] TTR                    503         503   100.0%  complete
+[15:30:06] HFE                    361         361   100.0%  complete
+[15:30:06] PLN                    216         216   100.0%  complete
+[15:30:06] ------------------------------------------------------------
+[15:30:06] TOTAL              352,128      49,981
+[15:30:07] ============================================================================================
+[15:30:07] FORGE OVERNIGHT HARVEST  ·  panel=forge-actionable-panel-v1  ·  79 genes  ·  target 50000 variants
+[15:30:07]   connectors  ensembl_structure, uniprot, clingen, clinvar, dbsnp, ensembl_vep, gnomad
+[15:30:07]   stubs       omim, clingen_gene_disease, cosmic, dbnsfp, mondo, pharmgkb  (registered, not implemented -- excluded, not counted)
+[15:30:07]   enrichment  1 in 10 variants
+[15:30:07]   output      C:\Users\havis\OneDrive\Documents\Forgenome\ForGenome\runs/panel_50k
+[15:30:07] ============================================================================================
+[15:30:07] [plan] 79 genes · 347097 ClinVar records available · 49957 allocated (target 50000)
+[15:30:15] [TGFBR1] 645 variants allocated of 1272 in family
+[15:35:13]   … 6000 variants · 2681 nodes · 7263 edges · 15433 dirty tickets

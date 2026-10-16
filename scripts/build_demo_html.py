@@ -41,6 +41,8 @@ def trim(events: list[dict]) -> tuple[list[dict], int]:
 
 with open(os.path.join(BASE, "demo", "graph_data.json"), encoding="utf-8") as f:
     data = json.load(f)
+with open(os.path.join(BASE, "demo", "gemma_guides.json"), encoding="utf-8") as f:
+    gemma_guides = json.load(f)
 
 limit = int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_MAX_EVENTS
 data["events"], trimmed_count = trim(data.get("events", []))
@@ -52,6 +54,7 @@ with open(os.path.join(BASE, "demo", "template.html"), encoding="utf-8") as f:
     template = f.read()
 
 out = template.replace("__GRAPH_DATA_JSON__", json.dumps(data, separators=(",", ":")))
+out = out.replace("__GEMMA_GUIDES_JSON__", json.dumps(gemma_guides, separators=(",", ":")))
 
 out_path = os.path.join(BASE, "demo", "index.html")
 with open(out_path, "w", encoding="utf-8") as f:
